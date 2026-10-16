@@ -5,6 +5,12 @@ transforma o conteúdo dessa página em em markdown com maior riquesa possível 
 ## Observação
 não precisa anexar imagens, no máximo a descrição delas se já estiver disponível no HTML...
 
-# Revisão
+## Saida
+
+Arquivo `.md`;
+
+# Quanto terminar a primeira saída
+
+## Revisão
 
 na última saida, faz o loop de verificação, buscando a maior fidelidade possível ao conteúdo para os resultados obtidos na conversão do pdf->md
