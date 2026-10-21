@@ -1,0 +1,111 @@
+\documentclass[a1,portrait]{a0poster}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[absolute]{textpos} 
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+
+\definecolor{DarkBlue}{rgb}{0.1,0.1,0.5}
+\definecolor{Red}{rgb}{0.9,0.0,0.1}
+\definecolor{DarkGreen}{rgb}{0.10,0.50,0.10}
+
+\let\Textsize\normalsize
+\def\Head#1{\noindent\hbox to \hsize{\hfil{\LARGE\color{DarkBlue} #1}}\bigskip}
+\def\LHead#1{\noindent{\LARGE\color{DarkBlue} #1}\smallskip}
+\def\Subhead#1{\noindent{\large\color{DarkBlue} #1}}
+\newcommand{\quiteHuge}{\fontsize{55}{70}\selectfont}
+\def\Title#1{\begin{center}\noindent{\quiteHuge\color{DarkGreen}#1}\end{center}}
+
+\TPGrid[40mm,40mm]{23}{12}
+
+\parindent=0pt
+\parskip=0.5\baselineskip
+
+\begin{document}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=18cm]{unb-extenso.jpg}
+\end{figure}
+
+\begin{textblock}{23}(0,0)
+\vspace{0.5cm}
+\Title{\textsc{Gestão do Gêmeo Digital de Reciclagem em Cooperativas sob a Ótica da Privacidade (SIPA)}}
+\end{textblock}
+
+\begin{textblock}{23}(0,0.6)
+\begin{center}
+\parbox{0.8\textwidth}{
+    \small
+    \begin{center}
+    \textbf{Autores:} Filipe Alves de Sousa e Membros do Grupo Colégio Reciclagem 1\\
+    \textbf{Disciplina:} Gestão de Projetos de TI (GPTI) -- PPCA/CIC/UnB\\
+    \textbf{Componente:} \texttt{SRSR3.SIPA-CC} / \texttt{DSRSR3.SIPA-CC} | \textbf{Código:} 3p2 / 3R31
+    \end{center}
+}
+\end{center}
+\end{textblock}
+
+\begin{textblock}{11}(0,1.5)
+
+\LHead{1. Introdução e Paradigma Digital Twin-First}
+
+Este projeto apresenta a modelagem de governança para a planta de reciclagem de plásticos ($R3$) operada por cooperativas no DF. Adotando o PMBOK 8ª Edição estendido pela estrutura \texttt{GPH.SIPA}, o Gêmeo Digital ($DSR$) deixa de ser mera réplica passiva e passa a atuar como Referência de Decisão (\emph{Decision Reference}), orientando a evolução do sistema real ($RSR$).
+
+\vspace{0.3cm}
+\LHead{2. Modelagem Tetraédrica F/S/P/C}
+
+A caracterização do sistema utiliza a abordagem sistêmica de Gharajedaghi (2011), integrando Função, Estrutura, Processo e Contexto com foco em Privacidade (LGPD).
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=8cm]{DiagramaFSPC.png}
+\caption{Estrutura Tetraédrica $F/S/P/C$ Integrada.}
+\end{figure}
+
+\vspace{0.3cm}
+\LHead{3. Pesquisa Bibliométrica (Web of Science)}
+
+Realizou-se o afunilamento bibliométrico na base Web of Science (CAPES/CAFe) para isolar a literatura de interseção entre reciclagem, Gêmeos Digitais e Privacidade:
+\begin{itemize}
+    \item \textbf{Busca Base ($R3$):} \texttt{TS=("solid* wast* rec*")} -- 59.765 docs.
+    \item \textbf{Volume Sintético (4D):} \texttt{TS=(func* AND struct* AND proc* AND cont*)} -- 14 docs.
+    \item \textbf{Afunilamento Grupo (3p2):} \texttt{TS=(("solid* wast* rec*") AND ("digital twin" OR "IoT") AND ("privacy" OR "LGPD"))}.
+\end{itemize}
+
+\end{textblock}
+
+\begin{textblock}{11}(12,1.5)
+
+\LHead{4. Arquitetura de Capacidades DTC e Agentes de IA}
+
+Mapeamento entre o O QUÊ (DTC/CPT) e o COMO (DTC/AIACPT) para a especificação dos Agentes de IA (A1 Conversacional, A2 Workflow LGPD, A3 Autônomo e A4 MAGS Multiagentes).
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=8cm]{ArquiteturaDTC.png}
+\caption{Arquitetura de Capacidades do Gêmeo Digital.}
+\end{figure}
+
+\vspace{0.3cm}
+\LHead{5. Cadeia de Configurações $DSQ \rightarrow RSQ$ e Agilidade}
+
+A evolução do sistema real é guiada pelas configurações digitais de referência ($DSQ(t_k)$), viabilizando tomadas de decisão ágeis e orientadas a riscos na hierarquia P/P/P/O.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=20cm]{CadeiaConfigAlinhamentoDSQ-RSQ.png}
+\caption{Cadeia de Configurações e Alinhamento $DSQ \rightarrow RSQ$.}
+\end{figure}
+
+\vspace{0.3cm}
+\LHead{6. Conclusões}
+
+A extensão \texttt{GPH.SIPA} aliada ao paradigma \emph{Digital Twin-First} oferece uma estrutura robusta e segura para a transformação digital em cooperativas de reciclagem, garantindo conformidade estrita com a LGPD e inclusão socioeconômica.
+
+\end{textblock}
+
+\end{document}
