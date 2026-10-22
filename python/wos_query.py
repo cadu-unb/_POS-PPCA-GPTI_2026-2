@@ -24,6 +24,20 @@ QUERIES: dict[int, str] = {
        'OR "reverse logistic*")',
     7: 'TS=("solid waste*" OR "municipal solid waste*" OR "urban solid waste*" '
        'OR "post-consumer waste*" OR "electronic waste*" OR "e-waste")',
+    8: 'TS=(privac* OR "data protect*" OR "personal data" OR '
+       '"personal information" OR "personally identifiable information")',
+    9: 'TS=("privacy preserv*" OR "privacy protect*" OR "privacy by design" '
+       'OR "data minimiz*" OR "data minimis*" OR anonymiz* OR anonymis* '
+       'OR pseudonymiz* OR pseudonymis*)',
+    10: 'TS=("data govern*" OR "data steward*" OR "data ecosystem*" '
+        'OR "data flow*" OR "data shar*" OR "access control")',
+    11: 'TS=("data collect*" OR "data process*" OR "data stor*" '
+        'OR "data retention" OR "data delet*" OR "consent manag*" '
+        'OR "privacy impact assess*" OR "data protection impact assess*")',
+    12: 'TS=(LGPD OR GDPR OR "Lei Geral de Proteção de Dados" '
+        'OR "General Data Protection Regulation" '
+        'OR "Brazilian General Data Protection Law" '
+        'OR "privacy regulat*" OR "data protection law*")',
 }
 
 LABELS: dict[int, str] = {
@@ -34,6 +48,11 @@ LABELS: dict[int, str] = {
     5: "Contexto adicional: fluxos e materiais",
     6: "Processo: desmontagem, triagem e logística reversa",
     7: "Contexto corrigido (teste; não substitui 1)",
+    8: "Privacidade: núcleo do segundo volume",
+    9: "Função: medidas de proteção da privacidade",
+    10: "Estrutura: governança e fluxo de dados",
+    11: "Processo: ciclo de vida dos dados",
+    12: "Contexto: LGPD, GDPR e regulação",
 }
 
 TOKEN = re.compile(r"\s*(\d+|AND\b|OR\b|NOT\b|\(|\))", re.IGNORECASE)

@@ -25,4 +25,5 @@
 *.glo
 *.gls
 *.ist
+*.ps
 _minted-*/

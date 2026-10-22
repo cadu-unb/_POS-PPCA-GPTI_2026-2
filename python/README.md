@@ -15,7 +15,7 @@ argumentos e digitar a combinação quando aparecer `Expressão:`.
 A pasta sugerida é `_wos/tentativa1`. Para mudar:
 
 ```powershell
-python python/wos_query.py --folder _wos/tentativa2 "(2 AND 3) NOT 1"
+python python/wos_query.py --folder _wos/tentativa2 "8 AND 3"
 ```
 
 O nome do arquivo usa as chaves e operadores, sem parênteses. Um hífen indica
@@ -29,3 +29,8 @@ As chaves e suas buscas `TS=` ficam no dicionário `QUERIES`, no começo de
 resultados anteriores; a chave `7` contém uma versão corrigida para teste.
 Use parênteses para deixar clara a ordem de `AND`, `OR` e `NOT`. Chaves ainda
 não cadastradas geram erro em vez de uma busca incompleta.
+
+As chaves `8` a `12` iniciam a rodada de Privacidade descrita em
+[_wos/tentativa2/README.md](../_wos/tentativa2/README.md). Para essas buscas,
+informe `--folder _wos/tentativa2`, pois a pasta padrão continua sendo
+`_wos/tentativa1`.
