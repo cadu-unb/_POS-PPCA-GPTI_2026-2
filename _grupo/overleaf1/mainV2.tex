@@ -41,7 +41,11 @@
         \parbox{0.8\textwidth}{
             \small
     \begin{center}
-    \textbf{Autores:} Filipe Alves de Sousa e Membros do Grupo Colégio Reciclagem 1\\
+    \textbf{Autores -- Grupo Reciclagem 1}\\
+    \begin{tabular}{@{}l@{\hspace{0.5cm}}r@{\hspace{1.5cm}}r@{\hspace{0.5cm}}l@{}}
+    Filipe Alves de Sousa & 261108383 & 262114213 & Emanuel Brandão de Galvão Correia\\
+    Ruben Isaac Dias da Silva & 262115391 & 261107680 & Carlos Eduardo da Silva Papa
+    \end{tabular}\\
     \textbf{Disciplina:} Gestão de Projetos de TI (GPTI) -- PPCA/CIC/UnB\\
     \textbf{Componente:} \texttt{SRSR3.SIPA-CC} / \texttt{DSRSR3.SIPA-CC} | \textbf{Código:} 3p2 / 3R31
     \end{center}
@@ -49,7 +53,7 @@
 \end{center}
 \end{textblock}
 
-\begin{textblock}{11}(0,1.5)
+\begin{textblock}{11}(0,1.65)
 
 \LHead{1. Introdução e Paradigma Digital Twin-First}
 
@@ -71,15 +75,19 @@ A caracterização do sistema utiliza a abordagem sistêmica de Gharajedaghi (20
 \LHead{3. Pesquisa Bibliométrica (Web of Science)}
 
 Realizou-se o afunilamento bibliométrico na base Web of Science (CAPES/CAFe) para isolar a literatura de interseção entre reciclagem, Gêmeos Digitais e Privacidade:
-\begin{itemize}
+\begin{itemize}\raggedright
     \item \textbf{Busca Base ($R3$):} \texttt{TS=("solid* wast* rec*")} -- 59.765 docs.
-    \item \textbf{Volume Sintético (4D):} \texttt{TS=(func* AND struct* AND proc* AND cont*)} -- 14 docs.
-    \item \textbf{Afunilamento Grupo (3p2):} \texttt{TS=(("solid* wast* rec*") AND ("digital twin" OR "IoT") AND ("privacy" OR "LGPD"))}.
+    \item \textbf{Volume Sintético (4D):} \texttt{TS=(func* AND struct*}\allowbreak\texttt{ AND proc* AND cont*)} -- 14 docs.
+    \item \textbf{Afunilamento Grupo (3p2):} \texttt{TS=(("solid* wast* rec*") AND}\allowbreak\texttt{ ("digital twin" OR "IoT") AND}\allowbreak\texttt{ ("privacy" OR "LGPD"))}.
+    
+    \item \textbf{Reciclagem:} \texttt{(((TS=(recycl* OR "material recover*" OR "resource recover*" OR valoriz* OR valoris*)) AND (TS=("digital twin*"))) AND (TS=(disassembl* OR dismantl* OR demanufactur* OR "waste sort*" OR "reverse logistic*"))) NOT (TS=("solid waste*" OR "municipal waste*" OR "urban waste*" OR "post-consumer waste*" OR "electronic waste*" OR "e-waste"))}
+
+    \item \textbf{Privacidade:} \texttt{(TS=("digital twin*")) AND (TS=(LGPD OR GDPR OR "Lei Geral de Proteção de Dados" OR "General Data Protection Regulation" OR "Brazilian General Data Protection Law" OR "privacy regulat*" OR "data protection law*"))}
 \end{itemize}
 
 \end{textblock}
 
-\begin{textblock}{11}(12,1.5)
+\begin{textblock}{11}(12,1.65)
 
 \LHead{4. Arquitetura de Capacidades DTC e Agentes de IA}
 
