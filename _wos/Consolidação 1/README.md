@@ -99,6 +99,7 @@ As contagens abaixo são de **linhas bibliográficas exportadas**, verificadas p
 | `((2 AND 3) AND 5) NOT 1` | [2AND3-AND5__NOT_1.csv](../tentativa1/2AND3-AND5__NOT_1.csv) | 34 | 15h45 |
 | `((2 AND 3) AND 6) NOT (1 OR 5)` | [2AND3-AND6__NOT_1OR5.csv](../tentativa1/2AND3-AND6__NOT_1OR5.csv) | 30 | 16h06 |
 | `((2 AND 3) AND 6) NOT 1` | [2AND3-AND6__NOT_1.csv](../tentativa1/2AND3-AND6__NOT_1.csv) | 40 | 16h37 |
+| `(((2 AND 3) AND 6) NOT 1) AND 0` | | 40 | 19h42 |
 
 Os CSVs não foram copiados para esta pasta. Os **dez candidatos** escolhidos a partir do conjunto de 40 registros têm fichas curtas em [Manual 1](<../Manual 1/>), com título original e traduzido, resumo traduzido de forma condensada, palavras-chave, ano e DOI. Esta consolidação não repete essas fichas.
 

@@ -11,6 +11,7 @@ from pathlib import Path
 # Edite este dicionário quando uma busca mudar. Preserve as chaves antigas
 # para conseguir reproduzir as contagens já registradas.
 QUERIES: dict[int, str] = {
+    0: 'TS=(context* OR structur* OR process* OR function*)',
     1: 'TS=("solid waste*" OR "municipal waste*" OR "urban waste*" OR '
        '"post-consumer waste*" OR "electronic waste*" OR "e-waste")',
     2: 'TS=(recycl* OR "material recover*" OR "resource recover*" OR '
@@ -40,7 +41,17 @@ QUERIES: dict[int, str] = {
         'OR "privacy regulat*" OR "data protection law*")',
 }
 
+# Filtros literais dos quatro pilares. São opcionais e não substituem os
+# blocos temáticos 1–12; servem para testar se os termos aparecem nos registros.
+PILLAR_QUERIES: dict[str, str] = {
+    "0C": 'TS=(context*)',
+    "0E": 'TS=(structur*)',
+    "0P": 'TS=(process*)',
+    "0F": 'TS=(function*)',
+}
+
 LABELS: dict[int, str] = {
+    0: "Pilares gerais: pelo menos um termo de Contexto, Estrutura, Processo ou Função",
     1: "Contexto original (inclui municipal/urban waste*)",
     2: "Função: reciclagem e recuperação",
     3: "Gêmeos digitais",
@@ -55,7 +66,14 @@ LABELS: dict[int, str] = {
     12: "Contexto: LGPD, GDPR e regulação",
 }
 
-TOKEN = re.compile(r"\s*(\d+|AND\b|OR\b|NOT\b|\(|\))", re.IGNORECASE)
+PILLAR_LABELS: dict[str, str] = {
+    "0C": "Pilar literal: Contexto",
+    "0E": "Pilar literal: Estrutura",
+    "0P": "Pilar literal: Processo",
+    "0F": "Pilar literal: Função",
+}
+
+TOKEN = re.compile(r"\s*(0[CEPF]|\d+|AND\b|OR\b|NOT\b|\(|\))", re.IGNORECASE)
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_FOLDER = PROJECT_ROOT / "_wos" / "tentativa1"
 
@@ -81,12 +99,12 @@ def parse_expression(expression: str) -> list[str]:
     open_groups = 0
 
     for token in tokens:
-        if token.isdecimal():
+        if token.isdecimal() or token in PILLAR_QUERIES:
             if not expecting_term:
                 raise ValueError(f"Falta operador antes da chave {token}.")
-            key = int(token)
-            if key not in QUERIES:
-                raise ValueError(f"Chave {key} não definida. Use --list para ver as buscas.")
+            if token.isdecimal():
+                if int(token) not in QUERIES:
+                    raise ValueError(f"Chave {token} não definida. Use --list para ver as buscas.")
             expecting_term = False
         elif token == "(":
             if not expecting_term:
@@ -113,8 +131,9 @@ def expand(tokens: list[str]) -> str:
     """Substitui cada chave pela busca TS, mantendo o agrupamento informado."""
     output = ""
     for token in tokens:
-        if token.isdecimal():
-            output += f"({QUERIES[int(token)]})"
+        if token.isdecimal() or token in PILLAR_QUERIES:
+            query = QUERIES[int(token)] if token.isdecimal() else PILLAR_QUERIES[token]
+            output += f"({query})"
         elif token in {"AND", "OR", "NOT"}:
             output += f" {token} "
         else:
@@ -159,7 +178,12 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
 
     if args.list:
+        print(f"0 — {LABELS[0]}\n  {QUERIES[0]}")
+        for key, query in PILLAR_QUERIES.items():
+            print(f"{key} — {PILLAR_LABELS[key]}\n  {query}")
         for key, query in QUERIES.items():
+            if key == 0:
+                continue
             print(f"{key} — {LABELS[key]}\n  {query}")
         return 0
 
