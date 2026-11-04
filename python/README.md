@@ -12,6 +12,12 @@ Web of Science, com linhas vazias ao redor, e sugere pasta e nome para exportar
 o CSV. Também é possível executar `python python/wos_query.py` sem
 argumentos e digitar a combinação quando aparecer `Expressão:`.
 
+Depois de imprimir a busca, o programa espera **um Enter para cada cópia**:
+o primeiro copia o filtro para a área de transferência, o segundo copia o nome
+do arquivo **sem `.csv`** (o `.csv` continua aparecendo só na tela). A pasta é
+apenas impressa. Use `--no-copy` para só imprimir, sem pedir Enter. Se não houver
+entrada interativa (por exemplo, saída redirecionada), nada é copiado.
+
 A pasta sugerida é `_wos/tentativa1`. Para mudar:
 
 ```powershell
@@ -60,3 +66,40 @@ python -B python/wos_query.py --folder _wos/tentativa2 "3 AND 12 AND 0P"
 `0` usa `OR`: exige **ao menos um** radical, não os quatro. Para testar duas
 faces simultaneamente, combine as chaves, por exemplo `0C AND 0P`. A ausência
 dessas palavras no resultado não prova a ausência do pilar no artigo.
+
+## Conversor de XLS para CSV
+
+`xls_to_csv.py` lê arquivos `.xls` e grava CSVs válidos. Diferente do
+`wos_query.py`, ele precisa de uma biblioteca externa:
+
+```powershell
+python -m pip install xlrd
+python python/xls_to_csv.py _wos/tentativa3/saida_wos/8__NOT_0F.xls
+python python/xls_to_csv.py a.xls b.xls -o saida --encoding utf-8-sig
+```
+
+Sem `-o`, cada CSV fica ao lado do `.xls`, com o mesmo nome. Planilhas com mais
+de uma aba geram `nome__aba.csv`. Um CSV existente só é sobrescrito com
+`--force`.
+
+**Vírgulas dentro de campos não são removidas.** O formato CSV resolve isso com
+aspas: `"Silva, João"` continua sendo um único campo, e uma aspa interna vira
+duas (`"diz ""oi"""`). O programa usa o módulo `csv` para isso e, ao final,
+relê o arquivo gravado e confere que o conteúdo e o número de colunas de cada
+linha são idênticos ao da planilha. Se algo divergir, ele acusa erro.
+
+Correções aplicadas às células:
+
+- quebras de linha dentro de uma célula viram espaço (`--newline` muda o texto);
+- espaços nas pontas, espaço não separável, caracteres invisíveis e de controle
+  são removidos, e o texto é normalizado em Unicode NFC;
+- números inteiros saem sem `.0` (`11.0` vira `11`) e datas saem em ISO
+  (`2026-11-04`, `2026-11-04 13:05:00`);
+- células com erro do Excel (`#N/A`) ficam vazias;
+- linhas e colunas totalmente vazias são removidas;
+- cabeçalhos vazios ou repetidos são renomeados (`coluna_3`, `nome_2`).
+
+O padrão é UTF-8 sem BOM, que o pandas lê direto. Para abrir com acentos
+corretos no Excel do Windows, use `--encoding utf-8-sig`. `--delimiter ";"`
+muda o separador. O programa lê só `.xls`; um arquivo `.xlsx` ou um HTML
+renomeado para `.xls` gera mensagem de erro.

@@ -4,6 +4,8 @@ from __future__ import annotations
 
 import argparse
 import re
+import shutil
+import subprocess
 import sys
 from pathlib import Path
 
@@ -148,7 +150,7 @@ def filename_for(tokens: list[str]) -> str:
         if token in {"(", ")"}:
             continue
         if token == "NOT":
-            parts.append("__NOT_")
+            parts.append("_NOT_")
         elif token in {"AND", "OR"}:
             if index > 0 and tokens[index - 1] == ")":
                 parts.append("-")
@@ -159,6 +161,61 @@ def filename_for(tokens: list[str]) -> str:
             parts.append(token)
     name = "".join(parts)
     return f"{name}.csv"
+
+
+def copy_to_clipboard(text: str) -> None:
+    """Coloca o texto na área de transferência do sistema, sem bibliotecas externas."""
+    if sys.platform == "win32":
+        import ctypes
+
+        kernel32, user32 = ctypes.windll.kernel32, ctypes.windll.user32
+        # Handles como ponteiros de 64 bits; o padrão do ctypes (int) os truncaria.
+        kernel32.GlobalAlloc.restype = ctypes.c_void_p
+        kernel32.GlobalAlloc.argtypes = [ctypes.c_uint, ctypes.c_size_t]
+        kernel32.GlobalLock.restype = ctypes.c_void_p
+        kernel32.GlobalLock.argtypes = [ctypes.c_void_p]
+        kernel32.GlobalUnlock.argtypes = [ctypes.c_void_p]
+        user32.OpenClipboard.argtypes = [ctypes.c_void_p]
+        user32.SetClipboardData.restype = ctypes.c_void_p
+        user32.SetClipboardData.argtypes = [ctypes.c_uint, ctypes.c_void_p]
+
+        data = (text + "\0").encode("utf-16-le")
+        handle = kernel32.GlobalAlloc(0x0002, len(data))  # GMEM_MOVEABLE
+        pointer = kernel32.GlobalLock(handle)
+        ctypes.memmove(pointer, data, len(data))
+        kernel32.GlobalUnlock(handle)
+        if not user32.OpenClipboard(None):
+            raise OSError("não foi possível abrir a área de transferência")
+        try:
+            user32.EmptyClipboard()
+            if not user32.SetClipboardData(13, handle):  # CF_UNICODETEXT
+                raise OSError("não foi possível gravar na área de transferência")
+        finally:
+            user32.CloseClipboard()
+        return
+
+    # macOS, Wayland, X11 e WSL (clip.exe lê UTF-16 com BOM).
+    for command, encoding in (
+        (["pbcopy"], "utf-8"),
+        (["wl-copy"], "utf-8"),
+        (["xclip", "-selection", "clipboard"], "utf-8"),
+        (["clip.exe"], "utf-16"),
+    ):
+        if shutil.which(command[0]):
+            subprocess.run(command, input=text.encode(encoding), check=True)
+            return
+    raise OSError("nenhum comando de área de transferência encontrado")
+
+
+def wait_and_copy(prompt: str, text: str) -> None:
+    """Espera um Enter e copia o texto; avisa se a cópia falhar."""
+    input(prompt)
+    try:
+        copy_to_clipboard(text)
+    except (OSError, subprocess.SubprocessError) as exc:
+        print(f"Erro ao copiar: {exc}", file=sys.stderr)
+    else:
+        print("Copiado.")
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -174,6 +231,11 @@ def main(argv: list[str] | None = None) -> int:
         "--folder",
         default=str(DEFAULT_FOLDER),
         help="pasta sugerida para o CSV (padrão: _wos/tentativa1)",
+    )
+    parser.add_argument(
+        "--no-copy",
+        action="store_true",
+        help="só imprime; não pede Enter nem usa a área de transferência",
     )
     args = parser.parse_args(argv)
 
@@ -196,9 +258,23 @@ def main(argv: list[str] | None = None) -> int:
     folder = Path(args.folder)
     if not folder.is_absolute():
         folder = PROJECT_ROOT / folder
+    query = expand(tokens)
+    filename = filename_for(tokens)
     print("\nConsulta WoS:\n")
-    print(expand(tokens))
-    print(f"\nPasta: {folder}\nArquivo: {filename_for(tokens)}\n")
+    print(query)
+    print(f"\nPasta: {folder}")
+    if args.no_copy:
+        print(f"Arquivo: {filename}\n")
+        return 0
+
+    # Um Enter por cópia: primeiro o filtro, depois o nome do arquivo sem .csv.
+    try:
+        wait_and_copy("\nEnter para copiar o filtro...", query)
+        print(f"\nArquivo: {filename}")
+        wait_and_copy("Enter para copiar o nome do arquivo (sem .csv)...", Path(filename).stem)
+    except (EOFError, KeyboardInterrupt):
+        print("\nSem entrada interativa; nada foi copiado.")
+    print()
     return 0
 
 
