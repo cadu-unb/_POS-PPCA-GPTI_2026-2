@@ -112,3 +112,29 @@ O padrão é UTF-8 sem BOM, que o pandas lê direto. Para abrir com acentos
 corretos no Excel do Windows, use `--encoding utf-8-sig`. `--delimiter ";"`
 muda o separador. O programa lê só `.xls`; um arquivo `.xlsx` ou um HTML
 renomeado para `.xls` gera mensagem de erro.
+
+## Nomes dos artigos para download
+
+`nomes_artigos.py` lê as tabelas de
+[candidatos-leitura-integral.md](../_wos/Manual%203/candidatos-leitura-integral.md)
+e percorre os artigos **sem repetir** os que aparecem em mais de uma lista
+(21 distintos). Para cada um, mostra o título original, espera um Enter e o copia
+para a área de transferência; depois mostra o nome do arquivo, espera outro Enter e
+copia esse nome **sem `.pdf`**. Artigos que já têm PDF salvo são pulados.
+
+```powershell
+python python/nomes_artigos.py
+python python/nomes_artigos.py --list
+python python/nomes_artigos.py --start 7
+```
+
+O nome segue o padrão dos PDFs já salvos: `NN - Título.pdf`, com o título cortado
+antes dos dois-pontos e sem caracteres proibidos em nomes de arquivo (limite de 110
+caracteres). Quando o artigo tem ficha no Manual 1 ou 2, o `NN` é o número da ficha e
+a pasta é a do manual (`01 - Navigating Privacy in Digital Twin.pdf` em `_wos/Manual 2`).
+Os demais são numerados a partir de `01`, na ordem das tabelas, e a pasta mostrada é
+`_wos/artigos_m3`; mude com `--folder` se for outra.
+
+Opções: `--all` inclui os já salvos, `--start N` retoma a partir do artigo N (o
+programa informa o número ao ser interrompido com Ctrl+C), `--no-copy` só mostra os
+nomes e `--source` aponta para outro Markdown.
