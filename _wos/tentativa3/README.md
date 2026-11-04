@@ -16,6 +16,7 @@ As chaves abaixo já existem no [montador de consultas](../../python/wos_query.p
 | --- | --- | --- |
 | Privacidade, conjunto de partida | `8` | `privac*`, `data protect*`, `personal data`, `personal information`, `personally identifiable information` |
 | Gêmeos digitais | `3` | `digital twin*` |
+| Contraparte física/real, teste exploratório | `13` | `physical twin*`, `real twin*`, `physical counterpart*`, `real-world counterpart*` |
 | Função, termo literal | `0F` | `function*` |
 | Contexto, termo literal | `0C` | `context*` |
 | Estrutura, termo literal | `0E` | `structur*` |
@@ -23,15 +24,15 @@ As chaves abaixo já existem no [montador de consultas](../../python/wos_query.p
 
 Os códigos `0F`, `0C`, `0E` e `0P` medem **presença das palavras** nos campos `TS=`. Eles não provam que um estudo discute conceitualmente uma face. Na triagem, descreveremos separadamente **o que a proteção busca alcançar** (Função), **em que ambiente ocorre** (Contexto), **quais componentes e relações existem** (Estrutura) e **como os dados são tratados** (Processo). As chaves temáticas `9`–`12` da Tentativa 2 poderão ajudar numa etapa posterior, sem misturar seus resultados com estes testes literais.
 
-Na leitura dos artigos sobre gêmeos digitais, registrar também a **contraparte física ou real**: entidade representada, sensores/fontes de dados, fluxo entre os lados e informações pessoais envolvidas. Termos ingleses a observar incluem *physical twin*, *physical counterpart* e *real-world counterpart*. O [Digital Twin Consortium](https://www.digitaltwinconsortium.org/glossary/glossary/) usa *physical twin* para as entidades e processos do mundo real correspondentes a um gêmeo digital. Esses termos serão observados nos registros antes de decidir se entram em uma nova expressão; sua ausência literal não elimina um artigo.
+Na leitura dos artigos sobre gêmeos digitais, registrar também a **contraparte física ou real**: entidade representada, sensores/fontes de dados, fluxo entre os lados e informações pessoais envolvidas. O [Digital Twin Consortium](https://www.digitaltwinconsortium.org/glossary/glossary/) usa *physical twin* para as entidades e processos do mundo real correspondentes a um gêmeo digital. A chave `13` reúne formas de nomear essa contraparte. É um **teste de vocabulário**, sempre cruzado com `3` nesta rodada; a ausência literal dessas expressões não elimina um artigo.
 
 ## Sequência de trabalho
 
 1. **Feito:** medir `8`, `8 AND 0F`, `8 NOT 0F`, os outros pilares isolados e cruzamentos de três e quatro pilares. Registrar totais da WoS e tamanho efetivo de cada CSV no [registro](registro-pesquisa.md).
-2. **Próxima consulta, isoladamente:** medir `8 AND 3`. Registrar o total sob os mesmos filtros da WoS.
-3. Depois dessa contagem, comparar `8 AND 3 AND 0` e `(8 AND 3) NOT 0`. A chave `0` usa `OR` entre os quatro radicais; `NOT 0` indica ausência literal dos quatro.
-4. Com o tamanho desses conjuntos conhecido, decidir uma amostra pequena para títulos e resumos. Registrar evidência de privacidade e a relação entre o gêmeo digital e sua contraparte real.
-5. Só após essa inspeção testar as faces individualmente dentro de `8 AND 3` e ampliar o vocabulário de gêmeos digitais, se surgirem termos adicionais úteis.
+2. **Feito:** medir `8 AND 3`, `8 AND 3 AND 0` e `(8 AND 3) NOT 0`. A chave `0` usa `OR` entre os quatro radicais; `NOT 0` indica ausência literal dos quatro.
+3. **Próxima consulta, isoladamente:** medir `8 AND 3 AND 13` para testar palavras da contraparte física dentro do conjunto de privacidade e gêmeos digitais.
+4. Com o tamanho desse conjunto conhecido, decidir uma amostra pequena para títulos e resumos. Registrar evidência de privacidade e a relação entre gêmeo digital e contraparte real.
+5. Só após essa inspeção testar as faces individualmente dentro de `8 AND 3` e ampliar o vocabulário, se surgirem termos adicionais úteis.
 
 `8 NOT 0F` significa registros sobre privacidade **sem o radical `function*` nos campos pesquisados**. Não significa ausência conceitual de Função. O mesmo cuidado vale para as demais faces. O resultado `8` deve ser igual à soma dos resultados `8 AND 0F` e `8 NOT 0F` quando as três consultas usam os mesmos filtros e a mesma atualização da base.
 
@@ -40,7 +41,7 @@ Use a **Busca Avançada / Query Builder** da WoS. O campo `TS=` cobre título, r
 Na raiz do projeto, gere cada consulta; o programa também sugere um nome caso haja exportação posterior:
 
 ```powershell
-python -B python/wos_query.py --folder _wos/tentativa3 "8 AND 3"
+python -B python/wos_query.py --folder _wos/tentativa3 "8 AND 3 AND 13"
 ```
 
 O programa **não consulta a WoS**: copie a expressão impressa, execute-a na base e preencha o [registro da pesquisa](registro-pesquisa.md). Para esta etapa, **bastam as contagens**, sem CSV. Anote coleção/índices, anos, idioma, tipos de documento, outros filtros, modo *Exact Search*, data e hora; mantenha essas escolhas nas comparações. Se a inspeção indicar artigos promissores, uma exportação de **10 a 20 registros por conjunto** basta para a triagem inicial; o critério e a ordenação da amostra precisam ficar registrados. O [Manual 3](<../Manual 3/README.md>) receberá apenas fichas dos artigos selecionados, com indicação da consulta e, se houver, do CSV de origem.

@@ -33,22 +33,24 @@ Contagens informadas para consultas realizadas por volta das 19h de 04/11/2026. 
 
 **Verificação das contagens anotadas:** 23.679 + 215.718 = 239.397. Os dois subconjuntos fecham com o total de `8`. Os 12 CSVs foram lidos como CSV, com 72 colunas e identificadores WoS (`UT`) únicos em cada arquivo. Ainda falta registrar a configuração da sessão para documentar a comparação.
 
-## Etapa 2 — proposta de filtro para gêmeos digitais
+## Etapa 2 — privacidade e gêmeos digitais
 
-O cruzamento dos quatro radicais reduziu o universo de privacidade a 193 resultados, mas esse número, por si só, não mede a presença do tema gêmeos digitais. O próximo teste parte diretamente de **privacidade + gêmeo digital**, usando a chave `3` já existente. Não alterar a definição histórica da chave `3`.
+O cruzamento dos quatro radicais reduziu o universo de privacidade a 193 resultados, mas esse número, por si só, não mede a presença do tema gêmeos digitais. Por isso, a consulta `8 AND 3` partiu diretamente de **privacidade + gêmeo digital**, usando a chave `3` já existente. Sua definição histórica foi preservada.
 
-| Ordem | Expressão no montador | Pergunta | Resultados WoS | Data/hora | Observações |
-| ---: | --- | --- | ---: | --- | --- |
-| 13 | `8 AND 3` | Quantos registros associam privacidade e `digital twin*`? | — | — | Próxima consulta |
-| 14 | `8 AND 3 AND 0` | Quantos desses registros contêm ao menos um dos quatro radicais? | — | — | Fazer depois de 13 |
-| 15 | `(8 AND 3) NOT 0` | Quantos não contêm nenhum dos quatro radicais? | — | — | Fazer depois de 13 |
+| Ordem | Expressão no montador | Resultados WoS | CSV exportado | Registros no CSV |
+| ---: | --- | ---: | --- | ---: |
+| 13 | `8 AND 3` | 1.270 | [8AND3.csv](saida_wos/8AND3.csv) | 20 |
+| 14 | `8 AND 3 AND 0` | 646 | [8AND3AND0.csv](saida_wos/8AND3AND0.csv) | 20 |
+| 15 | `(8 AND 3) NOT 0` | 624 | [8AND3_NOT_0.csv](saida_wos/8AND3_NOT_0.csv) | 20 |
 
-| Ordem | Expressão no montador | Resultados WoS |
-| :---: | --- | --- |
-| | "8 AND 3"         | 1270 |
-| | "8 AND 3 AND 0"   | 646  |
-| | "(8 AND 3) NOT 0" | 624  |
+**Verificação:** 646 + 624 = 1.270. Os três CSVs contêm 20 identificadores WoS únicos cada. São amostras dos conjuntos, não seus totais. A planilha de visualização com menos campos pode ser usada na leitura; os CSVs de origem ficam como referência bibliográfica.
 
-`8 AND 3` será o conjunto de referência para testar cada face isoladamente. **Gêmeo físico/real** será tratado como contraparte do gêmeo digital na definição e na futura triagem; expressões como *physical twin*, *physical counterpart* e *real-world counterpart* poderão ser testadas em consulta própria após a contagem de `8 AND 3`. Nenhuma dessas expressões é requisito desta primeira consulta.
+`8 AND 3` será o conjunto de referência para testar cada face isoladamente. **Gêmeo físico/real** será tratado como contraparte do gêmeo digital na definição e na futura triagem; expressões como *physical twin*, *physical counterpart* e *real-world counterpart* poderão ser testadas em consulta própria. Nenhuma dessas expressões foi requisito das consultas 13–15.
 
-Quando as novas contagens chegarem, conferir se `8 AND 3` = (`8 AND 3 AND 0`) + (`(8 AND 3) NOT 0`) sob a mesma configuração da WoS. Só depois definir a próxima ampliação de termos. Registrar qualquer revisão sem sobrescrever contagens antigas.
+As condições da sessão WoS ainda precisam ser registradas no início deste documento. Próximo passo: testar a presença dos termos da contraparte física dentro de `8 AND 3`, sem torná-los critério definitivo de inclusão.
+
+| Ordem | Expressão no montador | Objetivo | Resultados WoS | CSV |
+| ---: | --- | --- | ---: | --- |
+| 16 | `8 AND 3 AND 13` | Testar *physical twin*, *real twin*, *physical counterpart* ou *real-world counterpart* no conjunto de privacidade e gêmeos digitais | 19 | 19 |
+
+Registrar qualquer revisão sem sobrescrever contagens antigas.

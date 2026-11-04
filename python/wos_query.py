@@ -41,6 +41,8 @@ QUERIES: dict[int, str] = {
         'OR "General Data Protection Regulation" '
         'OR "Brazilian General Data Protection Law" '
         'OR "privacy regulat*" OR "data protection law*")',
+    13: 'TS=("physical twin*" OR "real twin*" OR "physical counterpart*" '
+        'OR "real-world counterpart*")',
 }
 
 # Filtros literais dos quatro pilares. São opcionais e não substituem os
@@ -66,6 +68,7 @@ LABELS: dict[int, str] = {
     10: "Estrutura: governança e fluxo de dados",
     11: "Processo: ciclo de vida dos dados",
     12: "Contexto: LGPD, GDPR e regulação",
+    13: "Contraparte física/real do gêmeo digital (teste exploratório)",
 }
 
 PILLAR_LABELS: dict[str, str] = {
