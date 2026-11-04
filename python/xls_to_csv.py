@@ -139,10 +139,34 @@ def safe_name(text: str) -> str:
     return re.sub(r'[\\/:*?"<>|\s]+', "_", text).strip("_") or "aba"
 
 
-def convert(source: Path, args: argparse.Namespace) -> list[Path]:
+def collect_sources(path: Path, recursive: bool) -> list[tuple[Path, Path]]:
+    """Devolve pares (arquivo .xls, pasta-base) para um arquivo ou uma pasta.
+
+    A pasta-base serve para recriar a estrutura de subpastas dentro de --output-dir.
+    """
+    if path.is_file():
+        return [(path, path.parent)]
+    if not path.is_dir():
+        raise FileNotFoundError(f"{path} não existe")
+    candidates = path.rglob("*") if recursive else path.glob("*")
+    found = sorted(
+        item
+        for item in candidates
+        if item.is_file() and item.suffix.lower() == ".xls" and not item.name.startswith("~$")
+    )
+    if not found:
+        where = "nela nem em suas subpastas" if recursive else "nela (use -r para incluir subpastas)"
+        raise FileNotFoundError(f"nenhum arquivo .xls encontrado {where}")
+    return [(item, path) for item in found]
+
+
+def convert(source: Path, base: Path, args: argparse.Namespace) -> list[Path]:
     """Converte uma planilha; devolve os CSVs criados."""
     book = xlrd.open_workbook(source)
-    folder = Path(args.output_dir) if args.output_dir else source.parent
+    if args.output_dir:
+        folder = Path(args.output_dir) / source.parent.relative_to(base)
+    else:
+        folder = source.parent
     folder.mkdir(parents=True, exist_ok=True)
     sheets = [s for s in book.sheets() if s.nrows and s.ncols]
     if not sheets:
@@ -185,8 +209,23 @@ def main(argv: list[str] | None = None) -> int:
     sys.stdout.reconfigure(encoding="utf-8")
     sys.stderr.reconfigure(encoding="utf-8")
     parser = argparse.ArgumentParser(description="Converte arquivos .xls em CSV bem formado.")
-    parser.add_argument("files", nargs="+", type=Path, help="caminho de um ou mais arquivos .xls")
-    parser.add_argument("-o", "--output-dir", help="pasta de saída (padrão: a mesma do arquivo)")
+    parser.add_argument(
+        "files",
+        nargs="+",
+        type=Path,
+        help="arquivos .xls e/ou pastas; de cada pasta saem todos os .xls dela",
+    )
+    parser.add_argument(
+        "-r",
+        "--recursive",
+        action="store_true",
+        help="ao receber uma pasta, inclui também as subpastas",
+    )
+    parser.add_argument(
+        "-o",
+        "--output-dir",
+        help="pasta de saída (padrão: a mesma do arquivo); subpastas são recriadas com -r",
+    )
     parser.add_argument("--delimiter", default=",", help="separador de campos (padrão: vírgula)")
     parser.add_argument(
         "--encoding",
@@ -204,18 +243,30 @@ def main(argv: list[str] | None = None) -> int:
         parser.error("--delimiter deve ter exatamente um caractere")
 
     failures = 0
-    for source in args.files:
-        print(source)
+    converted = 0
+    for path in args.files:
         try:
-            if not source.is_file():
-                raise FileNotFoundError(f"{source} não existe")
-            convert(source, args)
-        except xlrd.XLRDError as exc:
+            sources = collect_sources(path, args.recursive)
+        except OSError as exc:
             failures += 1
-            print(f"  Erro: não é um .xls válido ({exc})", file=sys.stderr)
-        except (OSError, ValueError) as exc:
-            failures += 1
+            print(path)
             print(f"  Erro: {exc}", file=sys.stderr)
+            continue
+        if path.is_dir():
+            print(f"{path}: {len(sources)} arquivo(s) .xls")
+        for source, base in sources:
+            print(source)
+            try:
+                convert(source, base, args)
+                converted += 1
+            except xlrd.XLRDError as exc:
+                failures += 1
+                print(f"  Erro: não é um .xls válido ({exc})", file=sys.stderr)
+            except (OSError, ValueError) as exc:
+                failures += 1
+                print(f"  Erro: {exc}", file=sys.stderr)
+    if converted + failures > 1:
+        print(f"\nConcluído: {converted} convertido(s), {failures} com erro.")
     return 1 if failures else 0
 
 

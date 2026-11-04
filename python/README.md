@@ -76,7 +76,16 @@ dessas palavras no resultado não prova a ausência do pilar no artigo.
 python -m pip install xlrd
 python python/xls_to_csv.py _wos/tentativa3/saida_wos/8__NOT_0F.xls
 python python/xls_to_csv.py a.xls b.xls -o saida --encoding utf-8-sig
+python python/xls_to_csv.py _wos/tentativa3/saida_wos
+python python/xls_to_csv.py _wos -r -o _wos/csv
 ```
+
+Os argumentos podem ser arquivos, pastas ou os dois. De cada pasta saem todos os
+`.xls` dela (a extensão pode estar em maiúsculas; arquivos temporários `~$...`
+do Excel, `.xlsx` e outros formatos são ignorados). Com `-r`, as subpastas
+entram também, e com `-o` a estrutura de subpastas é recriada na saída. Ao final
+de uma execução com vários arquivos, o programa informa quantos foram
+convertidos e quantos deram erro; um erro em um arquivo não interrompe os demais.
 
 Sem `-o`, cada CSV fica ao lado do `.xls`, com o mesmo nome. Planilhas com mais
 de uma aba geram `nome__aba.csv`. Um CSV existente só é sobrescrito com
