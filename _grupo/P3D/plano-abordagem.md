@@ -159,9 +159,11 @@ A P3A pede aderência do novo domínio às cinco áreas de foco e aos seis princ
 - O resumo do Aprender3 não diz em que formato os arquivos devem ser enviados (PDF, DOCX etc.). Isso decide se a etapa 2 é necessária ou opcional. Confirmar com o professor ou na página da atividade.
 - Se a etapa 2 não couber no prazo (06/11, 12h), decidir antes, no dia 05/11, qual versão é enviada. O Markdown revisado é o ponto de partida seguro.
 
+> **Acréscimo de 04/11.** Layout de pastas adotado na P3A, recomendado também para a P3D: `entregas/MD/` com os Markdown congelados e `entregas/TEX/` com os `.tex`, as figuras em `figuras/`, os PDFs em `out/`, um `compilar.sh` e um `README.md` com os comandos. A P3A usa um gerador (`entregas/TEX/ferramentas/gerar_tex.py`) que converte o Markdown em LaTeX no estilo ABNT da P2B, com lista de siglas e referências numéricas; ele pode ser adaptado à P3D trocando os nomes de arquivo, as legendas das tabelas, a lista de siglas e as figuras.
+
 ## 10. Pôster: composição orientada por figuras
 
-O pôster precisa permitir uma leitura rápida **do PMBOK 8 inteiro**. Propomos três faixas visuais, com pouco texto fora dos diagramas. As [prévias do pôster P3A em português](../P3A/entregas/P3A_Privacidade2_Poster_PT.md) mostram o nível de detalhe esperado para as legendas e os comentários de desenho; a P3D usa conteúdo e hierarquia visual próprios.
+O pôster precisa permitir uma leitura rápida **do PMBOK 8 inteiro**. Propomos três faixas visuais, com pouco texto fora dos diagramas. As [prévias do pôster P3A em português](../P3A/entregas/MD/P3A_Privacidade2_Poster_PT.md) mostram o nível de detalhe esperado para as legendas e os comentários de desenho; a P3D usa conteúdo e hierarquia visual próprios.
 
 | Faixa do pôster | Figura e mensagem | Composição prevista |
 | --- | --- | --- |
@@ -284,3 +286,32 @@ Observações para a conversão:
 ### 12.4 Quando aplicar
 
 Por ora, **só este plano registra a decisão**. Aplicar no Markdown dos arquivos de `entregas/` e, depois, no LaTeX quando o grupo escolher a opção A ou B da seção 12.2 e confirmar os nomes dos modelos.
+
+
+---
+
+> **Acréscimo de 04/11.** A seção 13 é **nova** neste plano. Registra o estado das entregas depois da revisão; as seções 1 a 12 não foram reescritas por causa dela.
+
+## 13. Estado das entregas depois da revisão
+
+Os seis arquivos de `_grupo/P3D/entregas/` foram revisados em 04/11 contra este plano e as regras do grupo (só PMBOK 8; sem citar plataforma, outras atividades nem trabalhos do grupo; literatura externa; citações numéricas; sem links que não abrem).
+
+| Ponto do plano | Situação |
+| --- | --- |
+| Tabela-mestra dos 40 processos com coluna de concentração | Feita (seção 7.1) |
+| Mapa 7 × 5 com totais | Feito (seção 6). *Identify Stakeholders* em Iniciação confirmado na Figura 2-32 do *Guide* |
+| Matriz 6 × 7 com legenda e base expressa | Feita (seção 8): as 42 conexões constam nas seções 3.3.3 a 3.8.3 do *Standard*; células de 5SPA refeitas a partir do texto |
+| Sistema de entrega de valor, funções e papéis (*Standard* cap. 2) | Feito (seção 3) |
+| Ciclos de vida, abordagens, critérios de escolha e cadência (*Standard* cap. 4) | Feito (seção 5) |
+| Estrutura do *Guide* (cap. 1, 4 e 5) e mudanças da edição | Feito (seção 2) |
+| *Tailoring*: benefícios, três objetos, cinco operações com exemplos, quatro passos, filtro de adequação, atributos, PMO, diagnósticos (Tabela 3-1) e adaptação por domínio | Feito (seções 7.2 e 9) |
+| Três faixas do pôster (relações, mapa, concentrações) e ciclo | Pôster refeito conforme o plano |
+| Caixa curta sobre dados pessoais no PMBOK 8 | Feita (seção 11), sem propor processo |
+| Conclusão e relatório final do próprio trabalho | Feitos (seções 12 e 13 do relatório) |
+| Referências | 7 fontes numeradas em ordem alfabética: PMBOK 8 (documento de acesso restrito), ISO 21502:2020, quatro estudos científicos e o GDPR |
+
+Pontos que continuam em aberto:
+- **Gêmeo digital:** o PMBOK 8 não menciona o termo; o relatório registra isso e cita uma revisão sobre gêmeos digitais em projetos de construção.
+- **Páginas:** o relatório em português tem cerca de 8,4 mil palavras; só a compilação mostra o número de páginas (meta: 20 a 30).
+- **LaTeX:** ainda não foi gerado para a P3D; o gerador da P3A (`../P3A/entregas/TEX/ferramentas/gerar_tex.py`) pode ser adaptado.
+- **Declaração de uso de IA:** não aplicada nos arquivos de entregas.
