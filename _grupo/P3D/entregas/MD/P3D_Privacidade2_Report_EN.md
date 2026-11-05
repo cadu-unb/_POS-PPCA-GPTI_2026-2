@@ -1,7 +1,7 @@
 # PMBOK 8: principles, Focus Areas, performance domains and tailoring
 
 **SIPA group:** Privacy 2  
-**Members:** Filipe Alves de Sousa, Emanuel Brandão de Galvão Correia, Ruben Isaac Dias da Silva, and Carlos Eduardo da Silva Papa  
+**Members:** Filipe Alves de Sousa, Emanuel Brandão de Galvão Correia, Ruben Isaac Dias da Silva and Carlos Eduardo da Silva Papa  
 **Professors:** Dr. João Mello da Silva and Dr. Edison Ishikawa  
 **Nature:** technical synthesis of PMBOK 8, with an analytical grouping of the domains presented separately from PMI's official structure.
 

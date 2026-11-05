@@ -7,7 +7,8 @@
 #      bash compilar.sh docs       (só os seis documentos originais; as figuras já devem estar em out/)
 #      bash compilar.sh style2     (só as alternativas style2; as figuras já devem estar em out/)
 #      bash compilar.sh limpar     (só apaga os auxiliares de out/; todos os modos limpam ao final)
-# Os relatórios style2 são regenerados dos originais por ferramentas/gerar_style2.py (se houver python);
+# Os relatórios style2 são gerados dos originais por ferramentas/gerar_style2.py só se faltarem
+# ou se o original for mais novo (para forçar: apague o *_style2.tex ou rode o script à mão);
 # os pôsteres style2 são escritos à mão.
 cd "$(dirname "$0")" || exit 1
 mkdir -p out
@@ -35,12 +36,23 @@ docs() {
 }
 
 style2() {
-  PY="$(command -v python3 || command -v python)"
-  if [ -n "$PY" ]; then
-    echo ">> gerando os relatórios style2 a partir dos originais"
-    "$PY" ferramentas/gerar_style2.py || { echo "ERRO em gerar_style2.py"; exit 1; }
+  # Gera os relatórios style2 só se faltar algum ou se o original for mais novo que o style2
+  # (assim edições à mão no style2 não são sobrescritas a cada compilação).
+  precisa=0
+  for base in P3D_Privacidade2_Relatorio_PT P3D_Privacidade2_Report_EN; do
+    if [ ! -f "${base}_style2.tex" ] || [ "${base}.tex" -nt "${base}_style2.tex" ]; then precisa=1; fi
+  done
+  if [ "$precisa" = 1 ]; then
+    PY="$(command -v python3 || command -v python)"
+    if [ -n "$PY" ]; then
+      echo ">> gerando os relatórios style2 a partir dos originais"
+      "$PY" ferramentas/gerar_style2.py || { echo "ERRO em gerar_style2.py"; exit 1; }
+    else
+      echo "ERRO: faltam *_style2.tex (ou estão desatualizados) e python não foi encontrado"
+      exit 1
+    fi
   else
-    echo "(python não encontrado: usando os *_style2.tex dos relatórios como estão)"
+    echo ">> relatórios style2 já existem e estão em dia (nada a gerar)"
   fi
   compila P3D_Privacidade2_Relatorio_PT_style2 P3D_Privacidade2_Report_EN_style2 \
           P3D_Privacidade2_Poster_PT_style2 P3D_Privacidade2_Poster_EN_style2

@@ -1,7 +1,7 @@
 # Lessons learned
 
 **SIPA Privacy 2 group**  
-**Members:** Filipe Alves de Sousa, Emanuel Brandão de Galvão Correia, Ruben Isaac Dias da Silva, and Carlos Eduardo da Silva Papa  
+**Members:** Filipe Alves de Sousa, Emanuel Brandão de Galvão Correia, Ruben Isaac Dias da Silva and Carlos Eduardo da Silva Papa  
 **Professors:** Dr. João Mello da Silva and Dr. Edison Ishikawa  
 
 ## What we learned while synthesizing PMBOK 8

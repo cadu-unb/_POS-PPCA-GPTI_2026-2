@@ -339,7 +339,7 @@ def matrix_tabular(rows, ctx):
 # ---------------------------------------------------------------------------
 MEMBERS = {
     "pt": 'Filipe Alves de Sousa, Emanuel Brandão de Galvão Correia, Ruben Isaac Dias da Silva e Carlos Eduardo da Silva Papa',
-    "en": 'Filipe Alves de Sousa, Emanuel Brandão de Galvão Correia, Ruben Isaac Dias da Silva, and Carlos Eduardo da Silva Papa',
+    "en": 'Filipe Alves de Sousa, Emanuel Brandão de Galvão Correia, Ruben Isaac Dias da Silva and Carlos Eduardo da Silva Papa',
 }
 
 

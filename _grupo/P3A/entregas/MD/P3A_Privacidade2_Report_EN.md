@@ -1,7 +1,7 @@
 # Privacy as a proposed PMBOK 8 performance domain
 
 **SIPA group:** Privacy 2  
-**Members:** Filipe Alves de Sousa, Emanuel Brandão de Galvão Correia, Ruben Isaac Dias da Silva, and Carlos Eduardo da Silva Papa  
+**Members:** Filipe Alves de Sousa, Emanuel Brandão de Galvão Correia, Ruben Isaac Dias da Silva and Carlos Eduardo da Silva Papa  
 **Professors:** Dr. João Mello da Silva and Dr. Edison Ishikawa  
 **Concentration:** Who  
 **Related existing domains:** Stakeholders and Risk  
