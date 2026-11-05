@@ -42,7 +42,7 @@
 \definecolor{ctxText}{RGB}{38,52,67}
 
 \newcommand{\corpo}{\fontsize{16}{21}\selectfont}
-\newcommand{\figtitulo}[1]{{\fontsize{19}{23}\selectfont\bfseries\color{exLine}#1\par}\vspace{2mm}}
+\newcommand{\figtitulo}[1]{{\centering\fontsize{16}{20}\selectfont\bfseries\color{exLine}#1\par}\vspace{2mm}}
 \newcommand{\leitura}[1]{\vspace{2mm}{\fontsize{13}{17}\selectfont\color{ctxText}#1\par}}
 
 % --- Authors, course and code (edit here) -----------------------------------
@@ -79,16 +79,16 @@
 
 % ----------------------- ROW 1: Figure P1 | Figure P2 ------------------------
 \noindent
-\begin{minipage}[t]{0.485\linewidth}
+\begin{minipage}[t]{0.45\linewidth}
 \raggedright
-\figtitulo{Figure P1 --- How the pieces relate}
+\figtitulo{Figure P1 --- Principles and tailoring}
 \includegraphics[width=\linewidth]{out/FigP1_EN.pdf}
 \leitura{\textbf{Five operations on processes:} add $\cdot$ modify $\cdot$ remove $\cdot$ blend $\cdot$ align. \textbf{Three objects of tailoring:} life cycle and development approach $\cdot$ processes $\cdot$ engagement [5].}
 \end{minipage}\hfill
-\begin{minipage}[t]{0.485\linewidth}
+\begin{minipage}[t]{0.52\linewidth}
 \raggedright
-\figtitulo{Figure P2 --- 40 processes in 7 domains $\times$ 5 Focus Areas}
-{\fontsize{18}{23}\selectfont
+\figtitulo{Figure P2 --- Map of 40 processes}
+{\fontsize{16}{21}\selectfont
 \setlength{\tabcolsep}{4pt}
 \renewcommand{\arraystretch}{1.45}
 \noindent\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lrrrrrr}
@@ -112,7 +112,7 @@ Risk & 0 & \cellcolor{exLine!36}4 & \cellcolor{exLine!9}1 & \cellcolor{exLine!9}
 \vspace{4mm}
 
 % ----------------------- ROW 2: Figure P3 (full width) -----------------------
-\figtitulo{Figure P3 --- Four concentrations for reading the seven domains}
+\figtitulo{Figure P3 --- Four domain concentrations}
 \includegraphics[width=\linewidth]{out/FigP3_EN.pdf}
 \leitura{\textbf{Reading notice:} the four concentrations and the A, S, I, and P labels are the \textbf{analytical grouping of this work}; the seven domains and their 40 processes are from PMBOK 8 [5].}
 
