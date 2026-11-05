@@ -1,20 +1,26 @@
 % =============================================================================
 % P3A -- Privacidade 2: pôster (PT-BR)
-% Formato: A1 retrato (594 x 841 mm), duas colunas, fonte Latin Modern.
+% Formato: A3 retrato (297 x 420 mm), UMA página, duas colunas, Latin Modern.
 % Figuras esperadas em out/: Fig1_PT.pdf, Fig2_PT.pdf, Fig4_PT.pdf
 % (compiladas a partir de figuras/). Conteúdo espelha MD/P3A_Privacidade2_Poster_PT.md.
-% Ajuste de tamanho: \corpo (texto), \figcol (largura das figuras na coluna).
+%
+% UMA PÁGINA: todo o conteúdo fica dentro de uma única caixa (\parbox) envolvida por
+% adjustbox com "max totalsize": se o conteúdo for mais alto que a página, ele é
+% reduzido proporcionalmente até caber; se for menor, não é ampliado.
+% Ajustes de tamanho: \corpo (texto) e \figw (largura das figuras na coluna).
+% Autores: editar o bloco \blocoautores logo abaixo.
 % =============================================================================
 \documentclass[12pt]{article}
 
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
-\usepackage[paperwidth=594mm,paperheight=841mm,margin=18mm]{geometry}
+\usepackage[paperwidth=297mm,paperheight=420mm,margin=10mm]{geometry}
 \usepackage[english,brazil]{babel}
 \usepackage{graphicx}
 \usepackage{xcolor}
 \usepackage[skins]{tcolorbox}
+\usepackage{adjustbox}
 \usepackage[expansion=false]{microtype}
 
 \pagestyle{empty}
@@ -28,51 +34,63 @@
 \definecolor{prText}{RGB}{6,79,87}
 \definecolor{ctxText}{RGB}{38,52,67}
 
-\newcommand{\corpo}{\fontsize{27}{35}\selectfont}
-\newcommand{\figtitulo}[1]{{\fontsize{32}{38}\selectfont\bfseries\color{exLine}#1\par}\vspace{4mm}}
-\newcommand{\leitura}[1]{\vspace{4mm}{\corpo\itshape\color{ctxText}#1\par}}
+\newcommand{\corpo}{\fontsize{14}{18}\selectfont}
+\newcommand{\figtitulo}[1]{{\fontsize{17}{21}\selectfont\bfseries\color{exLine}#1\par}\vspace{2mm}}
+\newcommand{\leitura}[1]{\vspace{2mm}{\corpo\itshape\color{ctxText}#1\par}}
 
-\newtcolorbox{caixa}[1]{enhanced,colback=white,colframe=exLine,boxrule=1.4mm,arc=4mm,
-  left=7mm,right=7mm,top=5mm,bottom=6mm,
-  title={#1},fonttitle=\fontsize{34}{40}\selectfont\bfseries,coltitle=white,colbacktitle=exLine}
+% --- Autores, disciplina e código (editar aqui) ------------------------------
+\newcommand{\blocoautores}{%
+  \textbf{Autores:} Filipe Alves de Sousa e Membros do Grupo Colégio Reciclagem 1\\
+  \textbf{Disciplina:} Gestão de Projetos de TI (GPTI) -- PPCA/CIC/UnB\\
+  \textbf{Código:} 3p2 / 3R31}
+
+\newtcolorbox{caixa}[1]{enhanced,colback=white,colframe=exLine,boxrule=0.7mm,arc=2mm,
+  left=4mm,right=4mm,top=3mm,bottom=3.5mm,
+  title={#1},fonttitle=\fontsize{17}{21}\selectfont\bfseries,coltitle=white,colbacktitle=exLine}
 
 \begin{document}
+\thispagestyle{empty}
 \corpo
 
+\noindent\begin{adjustbox}{max totalsize={\textwidth}{\textheight},center}
+\parbox{\textwidth}{%
+
 % ------------------------------- BANNER --------------------------------------
-\begin{tcolorbox}[enhanced,colback=exLine,colframe=exLine,coltext=white,arc=4mm,
-  left=12mm,right=12mm,top=9mm,bottom=9mm]
-{\fontsize{58}{66}\selectfont\bfseries Privacidade como domínio de desempenho proposto para o PMBOK 8\par}
-\vspace{5mm}
-{\fontsize{30}{38}\selectfont Grupo SIPA Privacidade 2 \ $\cdot$ \ Concentração Quem (WH)\par}
-{\fontsize{30}{38}\selectfont\bfseries Proposta acadêmica: os processos P1--P8 não integram oficialmente o PMBOK 8.\par}
+\begin{tcolorbox}[enhanced,colback=exLine,colframe=exLine,coltext=white,arc=2mm,
+  left=6mm,right=6mm,top=4.5mm,bottom=4.5mm]
+{\fontsize{30}{34}\selectfont\bfseries Privacidade como domínio de desempenho proposto para o PMBOK 8\par}
+\vspace{2.5mm}
+{\fontsize{15}{19}\selectfont Grupo SIPA Privacidade 2 \ $\cdot$ \ Concentração Quem (WH)\par}
+{\fontsize{15}{19}\selectfont\bfseries Proposta acadêmica: os processos P1--P8 não integram oficialmente o PMBOK 8.\par}
+\vspace{2.5mm}
+{\fontsize{14}{18}\selectfont\blocoautores\par}
 \end{tcolorbox}
 
-\vspace{8mm}
+\vspace{4mm}
 
 \noindent
 \begin{minipage}[t]{0.485\linewidth}
 % ------------------------------ COLUNA ESQUERDA ------------------------------
 \begin{caixa}{Problema e contribuição}
 \corpo
-O PMBOK 8 [13] menciona proteção de dados e privacidade, mas seus sete domínios e 40 processos não organizam o tratamento de dados pessoais como objeto de gestão próprio. Os estudos sobre gêmeos digitais examinados tratam de requisitos legais e controles técnicos, não de processos de gestão de projetos [5, 10, 17]. Propomos \textbf{Privacidade} ao lado de \textbf{Partes Interessadas (7 processos)} e \textbf{Riscos (6 processos)}. A pergunta central é: \textbf{que efeitos o projeto produz sobre as pessoas cujos dados trata, e que evidências justificam suas decisões?}
+O PMBOK 8 [13] menciona proteção de dados e privacidade, mas seus sete domínios e 40 processos não organizam o tratamento de dados pessoais como objeto de gestão próprio. Os estudos sobre gêmeos digitais examinados tratam de requisitos legais e controles técnicos, não de processos de gestão de projetos [17]. Propomos \textbf{Privacidade} ao lado de \textbf{Partes Interessadas (7 processos)} e \textbf{Riscos (6 processos)}. A pergunta central é: \textbf{que efeitos o projeto produz sobre as pessoas cujos dados trata, e que evidências justificam suas decisões?}
 \end{caixa}
 
-\vspace{8mm}
+\vspace{4mm}
 
 \figtitulo{Figura 1 --- Onde entra Privacidade}
 \includegraphics[width=\linewidth]{out/Fig1_PT.pdf}
 \leitura{As quatro concentrações são uma organização adotada neste trabalho; \textbf{Privacidade} é a contribuição deste grupo à concentração \textbf{Quem}.}
 
-\vspace{8mm}
+\vspace{4mm}
 
 \begin{caixa}{Aderência aos 6 princípios}
 \corpo
-\textbf{1AHV} visão integral do fluxo de dados\par\medskip
-\textbf{2FOV} benefício comparado ao dano potencial\par\medskip
-\textbf{3QPD} privacidade como critério verificável de qualidade\par\medskip
-\textbf{4BAL} decisões e responsáveis registrados\par\medskip
-\textbf{5SPA} efeitos duradouros sobre pessoas\par\medskip
+\textbf{1AHV} visão integral do fluxo de dados\par\smallskip
+\textbf{2FOV} benefício comparado ao dano potencial\par\smallskip
+\textbf{3QPD} privacidade como critério verificável de qualidade\par\smallskip
+\textbf{4BAL} decisões e responsáveis registrados\par\smallskip
+\textbf{5SPA} efeitos duradouros sobre pessoas\par\smallskip
 \textbf{6BEC} canais para contestação e aprendizado
 \end{caixa}
 \end{minipage}\hfill
@@ -82,31 +100,24 @@ O PMBOK 8 [13] menciona proteção de dados e privacidade, mas seus sete domíni
 \includegraphics[width=\linewidth]{out/Fig2_PT.pdf}
 \leitura{Os \textbf{P1--P8 são propostas do grupo}. A seta de retorno representa reavaliação; o tratamento de dados pode continuar após o encerramento do projeto.}
 
-\vspace{8mm}
+\vspace{4mm}
 
 \figtitulo{Figura 3 --- Gêmeos digitais: a direção do fluxo define a exposição}
 \includegraphics[width=\linewidth]{out/Fig4_PT.pdf}
-\leitura{A classificação segue Kritzinger et al. [11]; quanto mais automático e frequente o fluxo, maior a exposição das pessoas. P1--P8 devem identificar titulares, finalidades, compartilhamentos, riscos e destino dos registros sem duplicar Partes Interessadas e Riscos. As inclusões propostas aos 13 processos existentes e as interfaces com as demais concentrações estão no relatório (\S7).}
+\leitura{A classificação segue Kritzinger et al. [11]; quanto mais automático e frequente o fluxo, maior a exposição das pessoas. P1--P8 devem identificar titulares, finalidades, compartilhamentos, riscos e destino dos registros sem duplicar Partes Interessadas e Riscos.}
 
-\vspace{8mm}
+\vspace{4mm}
 
-\begin{caixa}{Referências}
-\fontsize{20}{26}\selectfont
-Numeração do relatório completo, em ordem alfabética.\par\smallskip
-[1] ANPD. Relatório de Impacto à Proteção de Dados Pessoais (RIPD): perguntas e respostas.\par
-[2] BRASIL. Lei nº 13.709/2018 (LGPD).\par
-[3] BROOKS et al. NISTIR 8062, 2017.\par
-[5] DHINAKARAN et al. \textit{MethodsX}, 2025.\par
-[6] DTC. Digital Twin Consortium defines digital twin, 2020.\par
-[7] DTC. Digital twins capabilities periodic table, v. 1.2, 2025.\par
-[8] DTC. AI agent capabilities periodic table, v. 1.0, 2025.\par
-[10] KORCHENKO et al. \textit{Sustainability}, 2026.\par
-[11] KRITZINGER et al. \textit{IFAC-PapersOnLine}, 2018.\par
-[12] NIST. Privacy Framework v. 1.0, 2020.\par
-[13] PMI. \textit{PMBOK Guide}, 8. ed., 2025 (\S\S2.5 e 2.7).\par
-[17] WANG et al. \textit{IEEE Internet of Things Journal}, 2023.\par\smallskip
-Referências completas, com DOI e endereço, no relatório.
+\begin{caixa}{Referências principais}
+\fontsize{11}{14}\selectfont
+Numeração do relatório completo.\par\smallskip
+[11] KRITZINGER, W. et al. Digital twin in manufacturing: a categorical literature review and classification. \textbf{IFAC-PapersOnLine}, v. 51, n. 11, 2018.\par\smallskip
+[13] PMI. \textbf{The Standard for Project Management and A Guide to the PMBOK (PMBOK Guide)}. 8. ed., 2025.\par\smallskip
+[17] WANG, Y. et al. A survey on digital twins: architecture, enabling technologies, security and privacy, and future prospects. \textbf{IEEE Internet of Things Journal}, v. 10, n. 17, 2023.
 \end{caixa}
 \end{minipage}
+
+}% fim do \parbox
+\end{adjustbox}
 
 \end{document}
