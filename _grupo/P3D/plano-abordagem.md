@@ -94,11 +94,12 @@ Um exemplo breve, com Privacidade/Quem, pode ilustrar a adaptação para o nosso
 5. **Sintetizar os sete domínios por contribuição.** Dar a cada domínio um parágrafo sobre sua finalidade e suas interfaces principais, mais uma linha com as considerações de adaptação de 2.x.3. Usar a tabela-mestra para assegurar que nenhum dos 40 processos desapareça do panorama.
 6. **Compilar a matriz princípios × domínios** (6 × 7), a partir dos itens "Connected Performance Domains". Pontos já confirmados na seção 3.2 do *Standard*: a visão holística é sustentada por todos os domínios; qualidade e foco em valor ligam-se sobretudo a Governança, Escopo, Riscos, Cronograma, Finanças e Partes interessadas; "líder responsável" cruza Governança, Partes interessadas e Riscos.
 7. **Introduzir as quatro concentrações.** Mostrar o agrupamento adotado na disciplina e a posição proposta dos quatro SIPA, sempre rotulados como organização do curso.
-8. **Revisar rastreabilidade e consistência.** Verificar nomes, contagens, tradução dos termos, distinção entre conteúdo do PMI e proposta da disciplina, e correspondência entre relatório, pôster e lições aprendidas.
+8. **Esboçar as figuras no Markdown.** Inserir os diagramas nos pontos em que explicam uma relação do texto, com título, legenda, fonte, descrição visual e texto alternativo. Mermaid, tabela ou imagem já existente servem nesta fase; a seção 10 orienta o pôster e a seção 11 orienta o relatório.
+9. **Revisar rastreabilidade e consistência.** Verificar nomes, contagens, tradução dos termos, distinção entre conteúdo do PMI e proposta da disciplina, e correspondência entre relatório, pôster e lições aprendidas.
 
 ## 5. Estrutura sugerida
 
-O relatório de **20 a 30 páginas por idioma** pode seguir esta distribuição aproximada:
+O relatório de **20 a 30 páginas por idioma** pode seguir esta distribuição aproximada. As figuras da seção 11 devem entrar junto da explicação correspondente, e não somente em um apêndice:
 
 | Seção | Páginas |
 | --- | --- |
@@ -115,7 +116,7 @@ O relatório de **20 a 30 páginas por idioma** pode seguir esta distribuição 
 
 A organização final deve acomodar o formato de **Relatório Final** indicado no Aprender3, sem fingir que este trabalho já é o encerramento de um projeto real. A página cita o item "4.7.3.3, pp. 121–128", que é numeração do PMBOK 6. No PMBOK 8, o equivalente é a saída *Final report* do processo *Close Project or Phase* (Guia, seção 2.1.6.9), que resume: descrição do projeto ou fase; objetivos e critérios de escopo; qualidade; custo; validação do produto; cronograma e benefícios; necessidades de negócio atendidas; riscos e questões. Dizer no relatório quais desses itens se aplicam a uma síntese e quais não.
 
-O **pôster de uma página por idioma** deve privilegiar um diagrama de relações (princípios → escolhas de adaptação → áreas de foco e processos, agrupados em domínios e concentrações), com contagens legíveis. As **lições aprendidas de uma a duas páginas por idioma** devem registrar decisões de síntese, dificuldades de interpretação e como as fontes foram conferidas. São, portanto, **seis arquivos**: pôster, relatório e lições aprendidas em português e inglês.
+O **pôster de uma página por idioma** deve ser guiado por figuras, com pouco texto de apoio e contagens legíveis. A composição está detalhada na seção 10. As **lições aprendidas de uma a duas páginas por idioma** devem registrar decisões de síntese, dificuldades de interpretação e como as fontes foram conferidas. São, portanto, **seis arquivos**: pôster, relatório e lições aprendidas em português e inglês.
 
 ## 6. Cuidados específicos
 
@@ -147,10 +148,6 @@ A P3A pede aderência do novo domínio às cinco áreas de foco e aos seis princ
 | Formato *Final report* estranho a uma síntese | Dizer quais itens do modelo se aplicam (seção 5). |
 | Versão em inglês fraca por falta de tempo | Nomes oficiais em inglês desde o primeiro rascunho. |
 
----
-
-> **Acréscimo de 04/11.** As seções 9 e 10 são **novas** neste plano. Elas não estavam nas versões anteriores, e as seções 1 a 8 ainda não foram revisadas para refletir o que dizem.
-
 ## 9. Desenvolvimento em duas etapas: Markdown e, se autorizado, LaTeX
 
 **Etapa 1 — Markdown.** Todo o conteúdo é escrito primeiro em Markdown, um arquivo por entrega, em `_grupo/P3D/entregas/`. A convenção de nomes segue a da P3A: `P3D_Privacidade2_Relatorio_PT.md`, `P3D_Privacidade2_Report_EN.md`, `P3D_Privacidade2_Poster_PT.md`, `P3D_Privacidade2_Poster_EN.md`, `P3D_Privacidade2_Licoes_PT.md` e `P3D_Privacidade2_Lessons_EN.md`. O Markdown é um formato direto e simples para a IA gerar e para o grupo revisar: o texto é legível sem compilar, as tabelas são curtas e as diferenças entre versões aparecem no Git. Nesta etapa, o grupo confere o conteúdo contra o PDF do PMBOK 8: nomes e contagens dos 40 processos, tabela por área de foco e rótulos de "organização do curso" e "proposta SIPA".
@@ -163,21 +160,32 @@ A P3A pede aderência do novo domínio às cinco áreas de foco e aos seis princ
 - O resumo do Aprender3 não diz em que formato os arquivos devem ser enviados (PDF, DOCX etc.). Isso decide se a etapa 2 é necessária ou opcional. Confirmar com o professor ou na página da atividade.
 - Se a etapa 2 não couber no prazo (06/11, 12h), decidir antes, no dia 05/11, qual versão é enviada. O Markdown revisado é o ponto de partida seguro.
 
-## 10. Pôster: diagramas, tabelas e figuras
+## 10. Pôster: composição orientada por figuras
 
-Um pôster só com texto e tabelas simples cansa a leitura. A meta é ter **no mínimo duas ou três figuras ou diagramas**, além do texto curto, em cada idioma. Sugestão para a P3D, em ordem de prioridade:
+O pôster precisa permitir uma leitura rápida **do PMBOK 8 inteiro**. Propomos três faixas visuais, com pouco texto fora dos diagramas. As [prévias do pôster P3A em português](../P3A/entregas/P3A_Privacidade2_Poster_PT.md) mostram o nível de detalhe esperado para as legendas e os comentários de desenho; a P3D usa conteúdo e hierarquia visual próprios.
 
-| # | Elemento | Conteúdo | Observação |
-| --- | --- | --- | --- |
-| 1 | **Diagrama de relações** | Princípios → escolhas de adaptação → áreas de foco e processos, agrupados em domínios e concentrações | Já previsto na seção 5. É a figura central. |
-| 2 | **Mapa de calor 7 domínios × 5 áreas de foco** | A tabela da seção 4, passo 2, com a contagem de processos em cada célula e o total de 40 | Fechar antes o caso de *Identify Stakeholders*. Mostra de relance onde se concentra o esforço (Planejamento tem a maior parte). |
-| 3 | **Mapa das quatro concentrações** | Blocos Consolidação, Nascimento, Meios e Quem, com os domínios existentes e o SIPA associado | Rotular como "organização da disciplina", não como PMBOK. |
-| 4 | **Ciclo do *tailoring*** (opcional) | Os quatro passos da adaptação e as cinco ações sobre um processo | Dá corpo à ênfase pedida no enunciado, se houver espaço. |
+| Faixa do pôster | Figura e mensagem | Composição prevista |
+| --- | --- | --- |
+| **Superior: arquitetura** | **Figura P1 — Como as peças se relacionam.** Os seis princípios orientam as escolhas; o *tailoring* ajusta práticas ao contexto; cinco áreas de foco organizam o trabalho nos sete domínios. | Três camadas rotuladas, sem seta que sugira correspondência de um princípio com uma única área ou um único processo. Princípios agrupados em três pares; *tailoring* no centro; áreas de foco e domínios abaixo. |
+| **Central: evidência numérica** | **Figura P2 — Mapa de calor 7 × 5.** Cada célula conta processos de um domínio em uma área de foco; totais por domínio, por área e geral = 40. | Matriz grande e legível, com número escrito em todas as células. Cor intensifica a contagem, mas o número permanece visível em preto e branco. Confirmar antes a posição de *Identify Stakeholders* no PDF. |
+| **Inferior: leitura da disciplina** | **Figura P3 — Quatro concentrações.** Consolidação, Nascimento, Meios e Quem agrupam os sete domínios; S, I, P e A indicam acréscimos propostos no curso. | Quatro cartões alinhados; domínios oficiais em azul e acréscimos SIPA com sinal **+**, contorno tracejado e legenda "proposta da disciplina". Privacidade/Quem recebe a mesma ênfase visual que os outros três, pois P3D não é centrada em Privacidade. |
 
-Cuidados de legibilidade:
-- cada figura tem legenda curta e fonte ("Fonte: PMBOK 8, ..." ou "Organização da disciplina");
-- a cor não é o único meio de distinguir categorias (usar também rótulo ou forma), para a leitura em impressão em preto e branco;
-- os números têm tamanho de leitura à distância;
-- cada figura existe em português e em inglês, com os mesmos elementos.
+Um **pequeno ciclo de *tailoring*** pode aparecer dentro da Figura P1 ou como quarta figura somente se couber sem reduzir a legibilidade da matriz. Ele mostra: escolher abordagem inicial → adaptar à organização → adaptar ao projeto → melhorar continuamente; a volta da última etapa indica revisão. As cinco ações sobre um processo — adicionar, modificar, remover, combinar e alinhar — podem ficar em uma linha abaixo do ciclo. Essas relações precisam ser conferidas no capítulo 3 do Guia antes de desenhar a versão final.
 
-**Na etapa 1 (Markdown)**, cada figura entra com uma especificação: título, o que mostra, os elementos e a fonte dos dados. Uma tabela ou um diagrama em Mermaid serve como esboço. **Na etapa 2 (LaTeX)**, a figura é redesenhada em TikZ.
+**Legenda e estilo.** Reservar cor escura para elementos oficiais do PMBOK 8 e uma cor de acento para *tailoring*. Usar cinza e contorno tracejado para a organização SIPA da disciplina. Rótulos e formas também distinguem categorias quando o pôster é impresso sem cor. Evitar fotografias decorativas e ícones sem função. Cada figura traz título curto, fonte específica (PMBOK8S, PMBOK8G ou material da disciplina) e uma frase explicando **o que se aprende ao olhá-la**.
+
+**Descrição que deve acompanhar cada esboço no Markdown:** posição aproximada no pôster, elementos e números, significado de cores e setas, fonte, legenda e texto alternativo. Produzir versões PT e EN com a mesma estrutura e contagens. Mermaid é aceitável como esboço; a representação final fica para eventual etapa posterior autorizada pelo usuário.
+
+## 11. Relatório: figuras integradas à argumentação
+
+O relatório também precisa de apoio visual. Cada figura entra **imediatamente após o parágrafo que a apresenta** e é interpretada no parágrafo seguinte. Um diagrama pode começar em Mermaid ou como descrição detalhada; não é necessário gerar imagem agora.
+
+| Figura | Onde entra | O que deve mostrar e por quê |
+| --- | --- | --- |
+| **R1 — Estrutura das duas obras** | Depois da explicação do método e das fontes. | Dois blocos: *Standard* (valor, princípios, ciclos de vida e áreas de foco) e *Guide* (domínios, 40 processos e *tailoring*). Uma terceira moldura, explicitamente marcada "organização da disciplina", abriga as quatro concentrações. A figura previne atribuir ao PMI o agrupamento SIPA. |
+| **R2 — Princípios × domínios** | Após a síntese dos seis princípios. | Matriz **6 × 7** fundamentada nos trechos *Connected Performance Domains*. Destacar as conexões documentadas, com legenda que distingue relação expressa no PMBOK 8 de interpretação do grupo. É uma visão de relações, não uma nota de desempenho dos domínios. |
+| **R3 — Domínios × áreas de foco** | Junto da tabela-mestra dos 40 processos. | Mapa de calor **7 × 5**, com contagens, totais marginais e fonte. Permite verificar a distribuição dos processos. A lista com os **40 nomes** continua no texto ou em tabela próxima; o mapa não a substitui. Conferir *Identify Stakeholders* antes de fechar as somas. |
+| **R4 — Ciclo de adaptação sob medida** | No capítulo de *tailoring*. | Quatro passos do Guia ligados em sequência com seta de retorno; à margem, fatores que influenciam a escolha (escala, complexidade, ambiente e pessoas) e as cinco ações possíveis sobre um processo. Setas significam revisão de decisão, não execução obrigatória de todos os processos. |
+| **R5 — Quatro concentrações** | Após a apresentação dos sete domínios oficiais. | Cartões Consolidação (GO), Nascimento (SO + SH), Meios (FI + RE) e Quem (ST + RI); em cada um, um acréscimo SIPA destacado como **proposta do curso**. Exibir os totais 9, 9, 9 e 13 dos processos existentes, sem somar processos ainda não definidos dos novos domínios. |
+
+**Especificação mínima de cada figura:** título, uma frase com a mensagem principal, nós/linhas/eixos e seus significados, números a conferir, fonte exata, legenda, texto alternativo e notas de layout para a futura versão. Nas matrizes, usar números e rótulos além da cor; indicar células sem relação documentada sem inventar correspondências. As figuras PT e EN devem conservar os mesmos dados e diferenças de fonte. A versão em Markdown já deve conter o esboço Mermaid, uma tabela visual ou uma descrição suficiente para o grupo avaliar a ideia **antes** de qualquer conversão para LaTeX.
