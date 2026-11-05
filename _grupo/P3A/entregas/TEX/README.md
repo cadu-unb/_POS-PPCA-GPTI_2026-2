@@ -53,3 +53,18 @@ Isso **sobrescreve** o relatório, as lições e as figuras. Se você editar ess
 - **Pôster:** o conteúdo fica em uma única caixa envolvida por `adjustbox`, que reduz tudo proporcionalmente se passar de uma página. O tamanho do texto está em `\corpo`. Os autores, a disciplina e o código ficam no bloco `\blocoautores`, no preâmbulo de cada pôster.
 - **Declaração de uso de IA:** **não** foi incluída. O plano em `../../plano-abordagem.md` (seção 11) descreve como inserir o aviso e o ambiente LaTeX que o liga e desliga.
 - **Figuras:** os esboços Mermaid do Markdown foram redesenhados em TikZ. Confira o resultado visual na primeira compilação.
+
+## Versões alternativas `style2`
+
+Quatro documentos extras, com o visual da P2A (`_grupo/P2A`), sem alterar os originais:
+
+| Arquivo | Estilo |
+| --- | --- |
+| `P3A_Privacidade2_Relatorio_PT_style2.tex`, `P3A_Privacidade2_Report_EN_style2.tex` | Relatório como o `P2B-RELATÓRIO.pdf`: A4, Times, títulos azuis, cabeçalho com filete, capa com a marca da UnB e título em versalete verde, resumo e siglas em páginas romanas |
+| `P3A_Privacidade2_Poster_PT_style2.tex`, `P3A_Privacidade2_Poster_EN_style2.tex` | Pôster como o `P2A/mainV3.tex`: `a0poster` A1 retrato, marca da UnB, título verde, duas colunas com seções numeradas |
+
+- Os relatórios `style2` são **gerados** dos relatórios originais por `ferramentas/gerar_style2.py` (mesmo conteúdo; muda só a forma). Se editar o original, rode o gerador de novo; editar o `_style2.tex` à mão vale até a próxima geração.
+- Os pôsteres `style2` são escritos à mão (conteúdo igual ao dos pôsteres originais).
+- A marca da UnB está em `figuras/marca_unb.png` (cópia de `_grupo/P2A/png/marca_unb.png`).
+- A capa traz os quatro integrantes do Grupo Reciclagem 1 e Privacidade 2 (nomes e matrículas da P2A).
+- `bash compilar.sh style2` compila só as alternativas; `bash compilar.sh` compila tudo.

@@ -1,0 +1,806 @@
+% =============================================================================
+% P3D_Privacidade2_Relatorio_PT_style2 -- versão alternativa no estilo do relatório da P2A (P2B-RELATÓRIO.pdf)
+% ARQUIVO GERADO por ferramentas/gerar_style2.py a partir de P3D_Privacidade2_Relatorio_PT.tex.
+% Para mudar o conteúdo, edite o original e gere de novo, ou edite este .tex à mão.
+% Figuras esperadas em out/ (compiladas a partir de figuras/); marca em figuras/marca_unb.png.
+% =============================================================================
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathptmx}
+\usepackage[scaled=.92]{helvet}
+\usepackage[english,brazil]{babel}
+\usepackage[a4paper,margin=2.5cm,top=2.6cm,bottom=2.4cm,headheight=14pt]{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+\usepackage{array,tabularx,longtable,booktabs}
+\usepackage{url}
+\usepackage[expansion=false]{microtype}
+\usepackage{titlesec,fancyhdr,caption,tocloft}
+\usepackage[colorlinks=true,linkcolor=Link,citecolor=Link,urlcolor=Link]{hyperref}
+\Urlmuskip=0mu plus 1mu\relax
+
+\definecolor{DarkBlue}{rgb}{0.12,0.15,0.60}
+\definecolor{DarkGreen}{rgb}{0.10,0.50,0.10}
+\definecolor{Link}{rgb}{0.10,0.25,0.75}
+
+% Macros do original (cores das figuras-tabela, citações numéricas)
+\Urlmuskip=0mu plus 1mu\relax
+\definecolor{exLine}{RGB}{23,54,93}
+\definecolor{bandaProativa}{RGB}{220,233,247}
+\definecolor{bandaResp}{RGB}{200,240,236}
+\definecolor{bandaValor}{RGB}{238,242,245}
+\newcommand{\defref}[2]{\expandafter\gdef\csname refnum@#1\endcsname{#2}}
+\newcommand{\refnum}[1]{\csname refnum@#1\endcsname}
+\newcommand{\cit}[1]{[\refnum{#1}]}
+\newcommand{\refitem}[2]{\par\noindent\hangindent=1.2cm\hangafter=1\makebox[1.2cm][l]{[\refnum{#1}]}#2\par}
+\defref{iso}{1}
+\defref{manzoor}{2}
+\defref{noll}{3}
+\defref{pmi}{4}
+\defref{reed}{5}
+\defref{silvius}{6}
+\defref{gdpr}{7}
+
+\newcommand{\SingleSpacing}{}
+\newcommand{\onelineskip}{\baselineskip}
+\newcommand{\fontetab}[1]{\par\vspace{3pt}{\small\noindent Fonte: #1\par}}
+\newenvironment{resumo}[1][Resumo]{\section*{#1}\noindent\ignorespaces}{\bigskip}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+\setlength{\emergencystretch}{3em}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{2}
+\renewcommand{\arraystretch}{1.2}
+
+\titleformat{\section}{\sffamily\Large\color{DarkBlue}}{\thesection}{0.8em}{}
+\titleformat{\subsection}{\sffamily\large\color{DarkBlue}}{\thesubsection}{0.8em}{}
+\titleformat{\subsubsection}{\sffamily\normalsize\color{DarkBlue}}{\thesubsubsection}{0.8em}{}
+\titlespacing*{\section}{0pt}{16pt plus 2pt}{7pt}
+\titlespacing*{\subsection}{0pt}{12pt plus 2pt}{5pt}
+\titlespacing*{\subsubsection}{0pt}{9pt plus 2pt}{4pt}
+
+\captionsetup{font=small,labelfont=bf,labelsep=colon}
+\addto\captionsbrazil{\renewcommand{\contentsname}{Sumário}\renewcommand{\listfigurename}{Lista de ilustrações}\renewcommand{\listtablename}{Lista de tabelas}}
+\renewcommand{\cftsecfont}{\bfseries}
+\renewcommand{\cftsecpagefont}{\bfseries}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\sffamily\small GPTI/PPCA/UnB • Entrega P3D • Grupo SIPA Privacidade 2}
+\fancyhead[R]{\sffamily\small PMBOK 8 : relatório final da fase}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\begin{document}
+
+% ------------------------------- CAPA ----------------------------------------
+\thispagestyle{empty}
+\begin{center}
+\vspace*{0.5cm}
+\includegraphics[width=0.5\textwidth]{figuras/marca_unb.png}
+
+\vspace{2.2cm}
+{\LARGE\color{DarkGreen}\textsc{PMBOK 8: Princípios, Áreas de Foco, Domínios e Adaptação Sob Medida}\par}
+\vspace{1.4cm}
+
+{\small
+\textbf{Autores -- Grupo Reciclagem 1 e Privacidade 2}\\[3pt]
+\begin{tabular}{@{}l@{\hspace{0.5cm}}r@{\hspace{1.5cm}}r@{\hspace{0.5cm}}l@{}}
+    Filipe Alves de Sousa & 261108383 & 262114213 & Emanuel Brandão de Galvão Correia\\
+    Ruben Isaac Dias da Silva & 262115391 & 261107680 & Carlos Eduardo da Silva Papa
+\end{tabular}\\[6pt]
+\textbf{Disciplina:} Gestão de Projetos de TI (GPTI) -- PPCA/CIC/UnB\\
+\textbf{Professor:} Dr. João Mello da Silva\\
+\textbf{Entrega:} P3D -- Grupo SIPA Privacidade 2\\[6pt]
+Brasília -- DF, 2026\par}
+\end{center}
+\clearpage
+\pagenumbering{roman}
+\setcounter{page}{2}
+
+\begin{resumo}
+Este relatório sintetiza \textit{The Standard for Project Management} e \textit{A Guide to the Project Management Body of Knowledge}, ambos da oitava edição do PMBOK. O objetivo é explicar como seis princípios orientam decisões, cinco áreas de foco organizam atividades e sete domínios de desempenho reúnem 40 processos. A leitura enfatiza a adaptação sob medida (\textit{tailoring}): escolher abordagem de desenvolvimento, processos e formas de engajamento que façam sentido para a organização e o projeto, revendo as escolhas conforme os resultados. O texto cobre o sistema de entrega de valor, os ciclos de vida e a escolha da abordagem, as cinco ações sobre processos, os quatro passos do processo de adaptação e os diagnósticos do capítulo de adaptação. Uma tabela relaciona cada um dos 40 processos ao domínio, à área de foco e a um agrupamento analítico; um mapa 7 \ensuremath{\times} 5 mostra a distribuição dos processos; uma matriz 6 \ensuremath{\times} 7 resume as conexões entre princípios e domínios que o \textit{Standard} descreve. Quatro concentrações — Consolidação, Nascimento, Meios e Quem — são usadas como \textbf{agrupamento analítico deste trabalho}, sem atribuí-las ao PMI. Estudos recentes sobre abordagens híbridas e uma norma internacional de gestão de projetos situam a síntese. Um quadro final mostra onde o PMBOK 8 já toca dados pessoais; não se propõe aqui um novo processo.
+
+\vspace{\onelineskip}
+\noindent\textbf{Palavras-chave:} PMBOK 8; gerenciamento de projetos; princípios; áreas de foco; domínios de desempenho; processos; adaptação sob medida; abordagens híbridas.
+\end{resumo}
+\begin{resumo}[Abstract]
+\begin{otherlanguage*}{english}
+This report synthesizes \textit{The Standard for Project Management} and \textit{A Guide to the Project Management Body of Knowledge}, both from the eighth edition of the PMBOK. Its aim is to explain how six principles guide decisions, five Focus Areas organize activities, and seven performance domains group 40 processes. The reading emphasizes tailoring: choosing the development approach, processes, and forms of engagement that make sense for the organization and the project, and reviewing those choices as results come in. The text covers the value delivery system, life cycles and the choice of approach, the five actions on processes, the four steps of the tailoring process, and the diagnostics in the tailoring chapter. A table relates each of the 40 processes to its domain, Focus Area, and an analytical grouping; a 7 \ensuremath{\times} 5 map shows the distribution of the processes; a 6 \ensuremath{\times} 7 matrix summarizes the connections between principles and domains that the \textit{Standard} describes. Four concentrations — Consolidation, Birth, Means, and Who — are used as an \textbf{analytical grouping of this work}, without attributing them to PMI. Recent studies on hybrid approaches and an international project management standard situate the synthesis. A final table shows where PMBOK 8 already touches personal data; no new process is proposed here.
+
+\vspace{\onelineskip}
+\noindent\textbf{Keywords:} PMBOK 8; project management; principles; Focus Areas; performance domains; processes; tailoring; hybrid approaches.
+\end{otherlanguage*}
+\end{resumo}
+\clearpage
+
+\begingroup
+\SingleSpacing
+\section*{Lista de abreviaturas e siglas}
+\small
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{2.6cm}>{\raggedright\arraybackslash}p{\dimexpr\linewidth-2.6cm-2\tabcolsep\relax}@{}}
+\textbf{1AHV} & \textit{Adopt a Holistic View}: adotar uma visão holística\\[2pt]
+\textbf{2FOV} & \textit{Focus on Value}: focar em valor\\[2pt]
+\textbf{3QPD} & \textit{Embed Quality Into Processes and Deliverables}: embutir qualidade em processos e entregas\\[2pt]
+\textbf{4BAL} & \textit{Be an Accountable Leader}: ser um líder responsável\\[2pt]
+\textbf{5SPA} & \textit{Integrate Sustainability Within All Project Areas}: integrar sustentabilidade em todas as áreas do projeto\\[2pt]
+\textbf{6BEC} & \textit{Build an Empowered Culture}: construir uma cultura empoderada\\[2pt]
+\textbf{A, S, I, P} & Temas em análise fora do PMI: análise de negócios, sustentabilidade, inovação e privacidade\\[2pt]
+\textbf{CL} & Encerramento (\textit{Closing}), área de foco\\[2pt]
+\textbf{EX} & Execução (\textit{Executing}), área de foco\\[2pt]
+\textbf{FI} & Domínio Finanças (\textit{Finance})\\[2pt]
+\textbf{GDPR} & \textit{General Data Protection Regulation} (Regulamento Geral sobre a Proteção de Dados)\\[2pt]
+\textbf{GO} & Domínio Governança (\textit{Governance})\\[2pt]
+\textbf{IA} & Inteligência artificial\\[2pt]
+\textbf{IN} & Iniciação (\textit{Initiating}), área de foco\\[2pt]
+\textbf{ISO} & \textit{International Organization for Standardization}\\[2pt]
+\textbf{MC} & Monitoramento e controle (\textit{Monitoring and Controlling}), área de foco\\[2pt]
+\textbf{PL} & Planejamento (\textit{Planning}), área de foco\\[2pt]
+\textbf{PMBOK} & \textit{Project Management Body of Knowledge}\\[2pt]
+\textbf{PMI} & \textit{Project Management Institute}\\[2pt]
+\textbf{PMO} & Escritório de projetos (\textit{Project Management Office})\\[2pt]
+\textbf{RE} & Domínio Recursos (\textit{Resources})\\[2pt]
+\textbf{RI} & Domínio Riscos (\textit{Risk})\\[2pt]
+\textbf{SH} & Domínio Cronograma (\textit{Schedule})\\[2pt]
+\textbf{SIPA} & Sustentabilidade, Inovação, Privacidade e Análise de negócios com decisões ajustadas a riscos\\[2pt]
+\textbf{SO} & Domínio Escopo (\textit{Scope})\\[2pt]
+\textbf{SOX} & \textit{Sarbanes-Oxley Act}\\[2pt]
+\textbf{ST} & Domínio Partes Interessadas (\textit{Stakeholders})\\[2pt]
+\textbf{TIC} & Tecnologia da informação e comunicação\\[2pt]
+\end{longtable}
+\endgroup
+\clearpage
+
+\tableofcontents
+\bigskip
+\listoffigures
+\bigskip
+\listoftables
+\clearpage
+\pagenumbering{arabic}
+\setcounter{table}{0}
+
+\begin{flushleft}\small\SingleSpacing
+\noindent\textbf{Nota de natureza.} \textbf{Grupo SIPA:} Privacidade 2\\ \textbf{Natureza:} síntese técnica do PMBOK 8, com um agrupamento analítico dos domínios apresentado separadamente da estrutura oficial do PMI.
+\end{flushleft}
+\vspace{\onelineskip}
+
+\section{Objetivo, fonte e método}
+
+O PMBOK 8 reúne um \textit{Standard}, que apresenta fundamentos para a gestão de projetos, e um \textit{Guide}, que organiza domínios de desempenho, processos, entradas, saídas, ferramentas e técnicas e critérios de adaptação. O objetivo deste relatório é oferecer uma síntese das duas obras que permita entender \textbf{como a edição se organiza e como pode ser adaptada a um projeto concreto}, com ênfase no \textit{tailoring}.
+
+\textbf{Fonte.} A fonte primária é a edição integral publicada pelo PMI em 2025 [\refnum{pmi}]. Trata-se de um \textbf{documento de acesso restrito}: a edição integral é obtida mediante aquisição ou associação ao PMI. Por isso, o texto cita seções, tabelas e figuras e evita reproduzir trechos extensos; as descrições são paráfrases de trabalho. O \textit{Guide} indica, em sua introdução, quatro seções principais: domínios de desempenho (seção 2), adaptação (3), entradas e saídas (4) e ferramentas e técnicas (5) [\refnum{pmi}, \textit{Guide} §1.1].
+
+\textbf{Método.} Para cada elemento, perguntamos \textbf{que decisão ele orienta}, \textbf{onde se manifesta} e \textbf{que resultado se espera}. Identificamos os nomes e a contagem dos processos nas seções 2.1 a 2.7 do \textit{Guide}, na Tabela 2-1 e nas figuras de visão geral de cada domínio. Os seis princípios e suas conexões com os domínios foram lidos no capítulo 3 do \textit{Standard}, os ciclos de vida e as áreas de foco no capítulo 4 do \textit{Standard} e o \textit{tailoring} no capítulo 3 do \textit{Guide}. Termos originais em inglês aparecem na primeira ocorrência de cada conceito; as traduções são de trabalho e não são traduções autorizadas pelo PMI.
+
+\textbf{Literatura complementar.} Para situar a síntese, usamos três estudos recentes sobre abordagens híbridas e adaptação [\refnum{noll}, \refnum{reed}, \refnum{silvius}], uma revisão sobre gêmeos digitais em projetos de construção [\refnum{manzoor}] e a norma ISO 21502:2020, de orientações para gestão de projetos [\refnum{iso}]. Esses trabalhos não substituem o PMBOK 8; servem para comparar a leitura do PMI com o que a literatura observa na prática.
+
+\textbf{Limites do método.} A lista dos 40 processos é completa para permitir auditoria da contagem, mas o relatório não reproduz o livro. O PMBOK 8 afirma que as entradas e saídas do capítulo 4 do \textit{Guide} não pretendem ser abrangentes nem obrigatórias em qualquer projeto: são seleções comuns entre muitas opções [\refnum{pmi}, \textit{Guide} §1.1]. O número de processos apresentados não equivale, portanto, ao número de processos a executar em um projeto.
+
+\begin{figure}[!htbp]
+\centering
+
+\includegraphics[width=\linewidth]{out/Fig1_PT.pdf}
+\caption{Estrutura das duas obras e agrupamento analítico deste trabalho}\label{fig:1}
+\fontetab{Elaborado pelos autores (2026) com base em [\refnum{pmi}].}
+\end{figure}
+
+O \textit{Standard} fornece a orientação de valor, os princípios, o ciclo de vida e as áreas de foco; o \textit{Guide} oferece o detalhamento dos domínios, dos processos e das decisões de adaptação. Uma terceira moldura, tracejada, identifica o agrupamento analítico em quatro concentrações, que não pertence ao PMI.
+
+Esta separação facilita a leitura, mas não isola conceitos. O sistema de entrega de valor afeta escolhas em todos os domínios; os processos do \textit{Guide} podem ser configurados para diferentes abordagens de desenvolvimento. Também não há equivalência entre princípio, área de foco, domínio e processo: cada termo responde a uma pergunta distinta.
+
+\section{Estrutura da edição e o que mudou}
+
+A edição de 2025 reúne dois volumes com funções diferentes. A tabela resume o que cada parte contém e onde está, com os números de página da edição impressa [\refnum{pmi}].
+
+\begingroup\SingleSpacing\small
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*269/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*595/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*136/1000\relax}@{}}
+\caption{Estrutura do PMBOK 8: Standard e Guide}\label{tab:t1}\\
+\hline
+\textbf{Obra e parte} & \textbf{Conteúdo} & \textbf{Onde}\\
+\hline
+\endfirsthead
+\hline
+\textbf{Obra e parte} & \textbf{Conteúdo} & \textbf{Onde}\\
+\hline
+\endhead
+\hline
+\endfoot
+\hline
+\endlastfoot
+\textit{Standard} — 1 Introdução & Finalidade, características de um projeto, governança organizacional e de projeto, operações e gestão de projetos, relação entre portfólio, programa, projeto e operações & cap. 1\\[3pt]
+\textit{Standard} — 2 Sistema de entrega de valor & Criação de valor, ambiente do projeto, gestão de produto, funções e papéis & cap. 2\\[3pt]
+\textit{Standard} — 3 Princípios & Mentalidade e seis princípios, com impacto, aplicação e domínios conectados & cap. 3, p. 35\\[3pt]
+\textit{Standard} — 4 Ciclos de vida & Fases, abordagens de desenvolvimento, critérios de escolha, cadência de entrega e cinco áreas de foco & cap. 4, p. 57\\[3pt]
+\textit{Guide} — 1 Introdução & Estrutura do \textit{Guide}, relação com o \textit{Standard} e mudanças da edição & cap. 1\\[3pt]
+\textit{Guide} — 2 Domínios de desempenho & Sete domínios, cada um com conceitos-chave, processos, adaptação, interações e verificação de resultados & cap. 2, p. 7\\[3pt]
+\textit{Guide} — 3 Adaptação & O que é \textit{tailoring}, por que e como adaptar, diagnósticos & cap. 3, p. 103\\[3pt]
+\textit{Guide} — 4 Entradas e saídas & Catálogo de ativos e artefatos de exemplo & cap. 4, p. 113\\[3pt]
+\textit{Guide} — 5 Ferramentas e técnicas & Catálogo de ferramentas e técnicas de exemplo & cap. 5, p. 145\\[3pt]
+\end{longtable}
+\endgroup
+\fontetab{Elaborado pelos autores (2026), com base em \cit{pmi}.}
+
+O prefácio agrupa as mudanças da edição em quatro categorias: atualização de termos e conceitos-chave, refinamento dos princípios, reintrodução dos grupos de processos como \textbf{áreas de foco} e atualização dos domínios de desempenho [\refnum{pmi}, prefácio]. A edição apresenta seis princípios acionáveis, cinco áreas de foco e sete domínios que reúnem 40 processos reformulados. O \textit{Guide} sintetiza as antigas áreas de conhecimento com outros conceitos aceitos em sete domínios e insere considerações de adaptação e exemplos em cada um.
+
+O PMBOK 8 \textbf{não menciona gêmeo digital}: o termo não aparece no texto da edição. Isso importa para o uso deste relatório em projetos de TIC, porque a edição fornece a estrutura de gestão, não orientação específica sobre essa tecnologia. A literatura sobre gêmeos digitais em gestão de projetos concentra-se hoje em construção civil, como mostra a revisão sistemática e bibliométrica de Manzoor et al. [\refnum{manzoor}], que analisa fatores críticos de sucesso para sua implantação.
+
+\section{Sistema de entrega de valor, ambiente e funções}
+
+O capítulo 2 do \textit{Standard} descreve onde o projeto opera. \textbf{Criação de valor:} as organizações criam valor para as partes interessadas, e o valor esperado de qualquer investimento em projeto deve igualar ou superar um limiar de retorno, financeiro ou não, tangível ou intangível. O valor de negócio é o benefício líquido quantificável, em qualquer forma tangível ou intangível, e a entrega de valor hoje inclui impacto social e metas de sustentabilidade [\refnum{pmi}, \textit{Standard} §2.1]. A avaliação do sucesso de um projeto considera duas dimensões: o sucesso dos \textbf{resultados} do projeto, isto é, a realização do valor pretendido, e o sucesso dos \textbf{processos} de gestão [\refnum{pmi}, \textit{Standard} §2.1.2].
+
+\textbf{Ambiente do projeto.} Duas categorias de influência atuam sobre o projeto: os \textbf{fatores ambientais da empresa} (\textit{enterprise environmental factors}), internos e externos à organização, e os \textbf{ativos de processos organizacionais} (\textit{organizational process assets}), que incluem processos, políticas e procedimentos e o repositório de conhecimento. Entre os fatores externos aparecem restrições legais, como leis e regulamentos sobre segurança, proteção de dados, conduta empresarial, emprego e aquisições. O \textit{Standard} trata também das estruturas organizacionais e de seus efeitos sobre o gerente de projeto e a disponibilidade de recursos, e das considerações de gestão de produto ao longo do ciclo de vida do produto [\refnum{pmi}, \textit{Standard} §§2.2–2.3].
+
+\textbf{Funções e papéis.} As pessoas conduzem a entrega ao exercer sete funções: oferecer supervisão e coordenação; solicitar e gerir \textit{feedback}; facilitar e apoiar; executar o trabalho; aplicar conhecimento especializado; oferecer direção e visão organizacional; e fornecer recursos. Elas podem ser exercidas por uma pessoa, uma equipe ou uma combinação de papéis, e a forma de coordenação varia: descentralizada, em projetos que se autoorganizam, ou centralizada, com um gerente designado. Os papéis tratados são a equipe de gestão do projeto, o patrocinador, o cliente ou dono do produto, a equipe do projeto e os usuários finais e demais partes interessadas [\refnum{pmi}, \textit{Standard} §§2.4–2.5].
+
+\section{Os seis princípios e a mentalidade do \textit{Standard}}
+
+O \textit{Standard} organiza uma mentalidade de gestão em três dimensões: \textbf{proativa}, de \textbf{responsabilidade} (\textit{ownership}) e \textbf{orientada a valor}. Cada dimensão integra dois princípios [\refnum{pmi}, \textit{Standard} §3.1].
+
+\begingroup\SingleSpacing\small
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*278/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*722/1000\relax}@{}}
+\caption{Dimensões da mentalidade e princípios}\label{tab:t2}\\
+\hline
+\textbf{Dimensão} & \textbf{Princípios}\\
+\hline
+\endfirsthead
+\hline
+\textbf{Dimensão} & \textbf{Princípios}\\
+\hline
+\endhead
+\hline
+\endfoot
+\hline
+\endlastfoot
+Proativa & \textbf{1AHV} \textit{Adopt a Holistic View} e \textbf{3QPD} \textit{Embed Quality Into Processes and Deliverables}\\[3pt]
+De responsabilidade (\textit{ownership}) & \textbf{4BAL} \textit{Be an Accountable Leader} e \textbf{6BEC} \textit{Build an Empowered Culture}\\[3pt]
+Orientada a valor & \textbf{2FOV} \textit{Focus on Value} e \textbf{5SPA} \textit{Integrate Sustainability Within All Project Areas}\\[3pt]
+\end{longtable}
+\endgroup
+\fontetab{Elaborado pelos autores (2026), com base em \cit{pmi}.}
+
+A tabela formula, em linguagem de trabalho, uma pergunta útil para aplicar cada princípio e uma consequência para uma decisão; não substitui a definição do PMI [\refnum{pmi}, \textit{Standard} §§3.3–3.8].
+
+\begingroup\SingleSpacing\small
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*252/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*347/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*401/1000\relax}@{}}
+\caption{Perguntas práticas e consequências de cada princípio}\label{tab:t3}\\
+\hline
+\textbf{Código e princípio oficial} & \textbf{Pergunta prática} & \textbf{Consequência para uma decisão}\\
+\hline
+\endfirsthead
+\hline
+\textbf{Código e princípio oficial} & \textbf{Pergunta prática} & \textbf{Consequência para uma decisão}\\
+\hline
+\endhead
+\hline
+\endfoot
+\hline
+\endlastfoot
+\textbf{1AHV — Adopt a Holistic View} & Que relações e efeitos fora da entrega imediata influenciam o resultado? & Examinar dependências entre domínios, organização, pessoas e ambiente.\\[3pt]
+\textbf{2FOV — Focus on Value} & Que resultado justifica o trabalho e como saber se continua valioso? & Comparar alternativas pelo benefício esperado, não só pela quantidade de atividades.\\[3pt]
+\textbf{3QPD — Embed Quality Into Processes and Deliverables} & Como a qualidade será construída e verificada durante o trabalho? & Definir critérios, revisões e correções cedo, evitando inspeção apenas no fim.\\[3pt]
+\textbf{4BAL — Be an Accountable Leader} & Quem assume e explica as decisões difíceis? & Tornar responsabilidades, critérios e escalonamento visíveis.\\[3pt]
+\textbf{5SPA — Integrate Sustainability Within All Project Areas} & Quais efeitos persistem para pessoas, ambiente e organização? & Incluir consequências de longo prazo nas escolhas de escopo, recursos e risco.\\[3pt]
+\textbf{6BEC — Build an Empowered Culture} & A equipe consegue agir, aprender e levantar problemas? & Criar confiança, autonomia responsável e canais de retorno.\\[3pt]
+\end{longtable}
+\endgroup
+\fontetab{Elaborado pelos autores (2026), com base em \cit{pmi}.}
+
+Os princípios atravessam os sete domínios; não há relação exclusiva de um princípio com um único domínio. O \textit{Standard} afirma que todos os princípios se relacionam com todos os domínios, e a seção 8 explicita essas interfaces. Os princípios orientam julgamentos: não são processos adicionais.
+
+\section{Ciclos de vida, abordagens de desenvolvimento e cadência}
+
+O capítulo 4 do \textit{Standard} trata de como o trabalho se organiza no tempo. Um projeto se decompõe em \textbf{fases}, que podem ser sequenciais, de transição ou sobrepostas. Cada fase tem atributos, como nome, duração, necessidade de recursos e critérios de entrada e de saída, e pode terminar em um ponto de decisão (\textit{phase gate}), no fim da fase ou, como alternativa, no início (\textit{pre-phase gate}). O ciclo de vida do projeto é independente do ciclo de vida do produto. Adaptar o ciclo de vida envolve selecionar a abordagem ou a mistura de abordagens, os tipos de processos e atividades e os atributos de uma fase [\refnum{pmi}, \textit{Standard} §4.1].
+\subsection{Preditiva, adaptativa e híbrida}
+
+A \textbf{abordagem de desenvolvimento} é o meio usado para criar e evoluir o produto, serviço ou resultado ao longo do ciclo de vida. As três abordagens usuais formam um espectro, da preditiva à adaptativa, com a híbrida como combinação das duas [\refnum{pmi}, \textit{Standard} §4.2].
+
+\begingroup\SingleSpacing\small
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*162/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*327/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*511/1000\relax}@{}}
+\caption{Abordagens de desenvolvimento: preditiva, adaptativa e híbrida}\label{tab:t4}\\
+\hline
+\textbf{Abordagem} & \textbf{Quando tende a servir} & \textbf{Características}\\
+\hline
+\endfirsthead
+\hline
+\textbf{Abordagem} & \textbf{Quando tende a servir} & \textbf{Características}\\
+\hline
+\endhead
+\hline
+\endfoot
+\hline
+\endlastfoot
+\textbf{Preditiva} & Escopo estável cedo; grandes investimentos; supervisão regulatória; custo de iterar maior que o valor & Planejamento antecipado, linhas de base de escopo, cronograma e custo; controle de mudanças robusto; pode entregar de modo incremental\\[3pt]
+\textbf{Adaptativa} & Requisitos e solução técnica com alta incerteza e volatilidade & Visão clara no início; requisitos elaborados progressivamente com \textit{feedback}; revisões periódicas em ciclos curtos; alguns métodos usam iterações de 1 a 4 semanas\\[3pt]
+\textbf{Híbrida} & Incerteza apenas em parte do escopo; entregas modularizáveis; vários fluxos de trabalho & Elementos preditivos e adaptativos combinados; o \textit{Standard} descreve quatro padrões comuns, como desenvolvimento adaptativo seguido de implantação preditiva ou uso simultâneo das duas\\[3pt]
+\end{longtable}
+\endgroup
+\fontetab{Elaborado pelos autores (2026), com base em \cit{pmi}.}
+
+O \textit{Standard} observa que, na prática, a maioria dos projetos pode se beneficiar de uma abordagem híbrida e que focar exclusivamente em uma das duas deixa de tratar parte dos desafios dos projetos modernos. Esse achado é coerente com a literatura. Uma pesquisa com 400 profissionais mostrou que poucos gerentes usam métodos ágeis sem técnicas preditivas, que o setor e o tipo de projeto influenciam a escolha e que não há uma melhor abordagem em absoluto [\refnum{reed}]. Na análise dos dados do estudo HELENA, cerca de dois terços dos projetos pesquisados combinavam métodos ágeis e tradicionais em algum grau [\refnum{noll}]. Uma abordagem baseada em contingência identifica seis formas de combinar as abordagens conforme critérios de adequação e trata a adaptação como núcleo do tema [\refnum{silvius}].
+\subsection{Como escolher e com que cadência entregar}
+
+A escolha da abordagem depende de variáveis do \textbf{produto}, do \textbf{projeto} e da \textbf{organização}. O quadro resume os fatores que o \textit{Standard} lista [\refnum{pmi}, \textit{Standard} §4.3].
+
+\begingroup\SingleSpacing\small
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*176/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*824/1000\relax}@{}}
+\caption{Fatores de escolha da abordagem de desenvolvimento}\label{tab:t5}\\
+\hline
+\textbf{Categoria} & \textbf{Fatores}\\
+\hline
+\endfirsthead
+\hline
+\textbf{Categoria} & \textbf{Fatores}\\
+\hline
+\endhead
+\hline
+\endfoot
+\hline
+\endlastfoot
+Entregas & Grau de inovação; certeza dos requisitos; estabilidade do escopo; facilidade de mudança; opções de entrega; risco; requisitos de segurança; \textit{feedback}; regulamentação\\[3pt]
+Projeto & Partes interessadas; restrições de cronograma; incerteza de financiamento; tamanho e complexidade; experiência e habilidades da equipe; interdependências\\[3pt]
+Organização & Estrutura organizacional; cultura; capacidade organizacional; tamanho e localização da equipe\\[3pt]
+\end{longtable}
+\endgroup
+\fontetab{Elaborado pelos autores (2026), com base em \cit{pmi}.}
+
+A abordagem escolhida condiciona a \textbf{cadência de entrega}: entrega única, múltiplas entregas, entregas periódicas (comuns em abordagens adaptativas, em calendário regular) ou entrega contínua, em que incrementos testados e validados chegam à produção de forma permanente [\refnum{pmi}, \textit{Standard} §4.4]. A norma ISO 21502:2020 trata o assunto de modo próximo: aplica-se a qualquer tipo de projeto, independentemente da abordagem de entrega e do modelo de ciclo de vida, e passou de um formato baseado em processos para um formato baseado em práticas, ao substituir a ISO 21500:2012 [\refnum{iso}]. O PMBOK 8 combina os dois enfoques: princípios, áreas de foco e domínios, de um lado, e 40 processos com entradas e saídas de exemplo, de outro.
+
+\section{Cinco áreas de foco e a distribuição dos processos}
+
+As \textit{Project Management Focus Areas} são \textbf{Iniciação (IN), Planejamento (PL), Execução (EX), Monitoramento e Controle (MC) e Encerramento (CL)}. Elas agrupam práticas de gestão e são aplicáveis independentemente da área de aplicação, do setor e da abordagem de desenvolvimento. Não impõem sequência rígida nem se confundem com as fases do ciclo de vida. Os processos, práticas ou ações de cada área costumam ser iterados antes de concluir uma fase ou o projeto [\refnum{pmi}, \textit{Standard} §4.5].
+
+\begingroup\SingleSpacing\small
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*202/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*493/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*305/1000\relax}@{}}
+\caption{As cinco áreas de foco}\label{tab:t6}\\
+\hline
+\textbf{Área} & \textbf{O que reúne} & \textbf{Pergunta orientadora}\\
+\hline
+\endfirsthead
+\hline
+\textbf{Área} & \textbf{O que reúne} & \textbf{Pergunta orientadora}\\
+\hline
+\endhead
+\hline
+\endfoot
+\hline
+\endlastfoot
+\textbf{IN} Iniciação & Ações para definir um novo projeto ou fase, com autorização formal; escopo inicial, recursos financeiros iniciais, partes interessadas e papéis & Que trabalho deve ser autorizado e quem está envolvido?\\[3pt]
+\textbf{PL} Planejamento & Ações que estabelecem o escopo pretendido, refinam objetivos e desenvolvem o curso de ação; laços repetidos de \textit{feedback} & Como integrar planos, requisitos, recursos, custos, comunicação e respostas a risco?\\[3pt]
+\textbf{EX} Execução & Ações para concluir o trabalho conforme o curso de ação acordado; é onde a escolha da abordagem fica mais evidente & Como conduzir o trabalho, engajar pessoas e implementar respostas?\\[3pt]
+\textbf{MC} Monitoramento e controle & Ações para acompanhar, medir, revisar e regular o progresso, identificar mudanças necessárias e iniciá-las & Como comparar resultado com objetivos e corrigir desvios?\\[3pt]
+\textbf{CL} Encerramento & Ações para concluir formalmente fase, projeto ou contrato, ou encerrá-lo antes do fim; verificação de saídas, resultados e benefícios & Como encerrar e transferir resultados à operação?\\[3pt]
+\end{longtable}
+\endgroup
+\fontetab{Elaborado pelos autores (2026), com base em \cit{pmi}.}
+
+A distribuição dos 40 processos pelas áreas aparece na Tabela 2-1 do \textit{Guide} e nas figuras de visão geral de cada domínio. \textit{Identify Stakeholders} é o único processo de Partes Interessadas na Iniciação, como mostra a Figura 2-32 do \textit{Guide} [\refnum{pmi}, \textit{Guide} §2.5.2]; com ele, os totais por área fecham em 2 + 19 + 8 + 10 + 1 = 40.
+
+\begingroup\SingleSpacing\small
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*495/1000\relax}>{\raggedleft\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*505/1000\relax}@{}}
+\caption{Contagem de processos por área de foco}\label{tab:t7}\\
+\hline
+\textbf{Área} & \textbf{Processos no quadro do PMBOK 8}\\
+\hline
+\endfirsthead
+\hline
+\textbf{Área} & \textbf{Processos no quadro do PMBOK 8}\\
+\hline
+\endhead
+\hline
+\endfoot
+\hline
+\endlastfoot
+IN & \textbf{2}\\[3pt]
+PL & \textbf{19}\\[3pt]
+EX & \textbf{8}\\[3pt]
+MC & \textbf{10}\\[3pt]
+CL & \textbf{1}\\[3pt]
+\end{longtable}
+\endgroup
+\fontetab{Elaborado pelos autores (2026), a partir de \cit{pmi}.}
+
+\begin{figure}[!htbp]
+\centering
+
+\begingroup\SingleSpacing\small
+\begin{tabular}{@{}lrrrrrr@{}}
+\hline
+\textbf{Domínio} & \textbf{IN} & \textbf{PL} & \textbf{EX} & \textbf{MC} & \textbf{CL} & \textbf{Total}\\
+\hline
+Governança (GO) & \cellcolor{exLine!11}1 & \cellcolor{exLine!22}2 & \cellcolor{exLine!33}3 & \cellcolor{exLine!22}2 & \cellcolor{exLine!11}1 & 9\\
+Escopo (SO) & 0 & \cellcolor{exLine!44}4 & 0 & \cellcolor{exLine!22}2 & 0 & 6\\
+Cronograma (SH) & 0 & \cellcolor{exLine!22}2 & 0 & \cellcolor{exLine!11}1 & 0 & 3\\
+Finanças (FI) & 0 & \cellcolor{exLine!33}3 & 0 & \cellcolor{exLine!11}1 & 0 & 4\\
+Partes Interessadas (ST) & \cellcolor{exLine!11}1 & \cellcolor{exLine!22}2 & \cellcolor{exLine!22}2 & \cellcolor{exLine!22}2 & 0 & 7\\
+Recursos (RE) & 0 & \cellcolor{exLine!22}2 & \cellcolor{exLine!22}2 & \cellcolor{exLine!11}1 & 0 & 5\\
+Riscos (RI) & 0 & \cellcolor{exLine!44}4 & \cellcolor{exLine!11}1 & \cellcolor{exLine!11}1 & 0 & 6\\
+\hline
+\textbf{Total} & \textbf{2} & \textbf{19} & \textbf{8} & \textbf{10} & \textbf{1} & \textbf{40}\\
+\hline
+\end{tabular}
+\endgroup
+\fontetab{[\refnum{pmi}, Guide, Tabela 2-1 e figuras de visão geral dos domínios]; cálculo e apresentação próprios.}
+\caption{Mapa 7 \ensuremath{\times} 5 dos 40 processos}\label{fig:2}
+\end{figure}
+
+As células são \textbf{contagens}, não intensidade de importância.
+
+Planejamento concentra 19 processos, mas esse número não significa que ocupe quase metade do tempo de um projeto. A tabela classifica processos, não duração, custo ou relevância. Governança aparece nas cinco áreas, enquanto os demais domínios têm distribuições mais concentradas. O controle pode atualizar decisões de qualquer domínio; uma linha com zero em determinada área não significa que o tema desapareça dela.
+
+\section{Os sete domínios de desempenho do \textit{Guide}}
+
+Um domínio de desempenho é um grupo de processos relacionados e essenciais para a entrega efetiva de valor. Os sete domínios são interativos, inter-relacionados e interdependentes, e operam como sistema integrado, \textbf{sem ordem nem ponderação específicas} [\refnum{pmi}, \textit{Guide} §2]. Para cada um, o \textit{Guide} apresenta conceitos-chave, processos, considerações de adaptação, interações com outros domínios e verificação de resultados (Tabelas 2-5 a 2-11 do \textit{Guide}). Eles não são departamentos isolados.
+
+\textbf{Governança (GO, 9 processos)} é a estrutura, as funções e os processos que orientam as decisões e atividades de gestão para otimizar a entrega de valor. É holística e integradora, considera todos os outros domínios, inclui elementos de gestão da integração (alinhamento estratégico, decisão e mudança, critérios de sucesso) e \textbf{integra a gestão de riscos e oportunidades}. Também assegura o alinhamento do projeto com o portfólio e a estratégia da organização [\refnum{pmi}, \textit{Guide} §2.1].
+
+\textbf{Escopo (SO, 6)} garante que o projeto contenha todo o trabalho necessário, e somente ele, para maximizar valor. O domínio \textbf{inclui a qualidade}: quanto às entregas, trata dos critérios de aceitação e do atendimento às expectativas das partes interessadas e aos requisitos do projeto e do produto [\refnum{pmi}, \textit{Guide} §2.2; \textit{Standard} §3.2].
+
+\textbf{Cronograma (SH, 3)} estabelece um plano de como e quando o projeto entregará produtos, serviços e resultados. Serve como ferramenta de comunicação, gestão de expectativas e base para relatórios de desempenho, e facilita a identificação antecipada de atrasos e riscos [\refnum{pmi}, \textit{Guide} §2.3].
+
+\textbf{Finanças (FI, 4)} abrange custos, financiamento e, em alguns casos, a proposta de valor do projeto: planejar, estimar, orçar, financiar, gerir, medir e controlar custos para otimizar o valor para a organização [\refnum{pmi}, \textit{Guide} §2.4].
+
+\textbf{Partes Interessadas (ST, 7)} trata do engajamento, da identificação das partes interessadas ao monitoramento do engajamento durante todo o ciclo de vida, e está ligado à gestão das comunicações. As partes interessadas incluem o patrocinador, a equipe e todas as pessoas afetadas, ou que sintam que podem ser afetadas, pelo projeto; podem ser de poucas a milhões [\refnum{pmi}, \textit{Guide} §2.5].
+
+\textbf{Recursos (RE, 5)} refere-se a como a equipe planeja e utiliza os recursos disponíveis: pessoas, equipamentos, materiais, instalações, infraestrutura, software, ambientes de teste, licenças, serviços e informação. Cobre também disponibilidade, utilização e manutenção [\refnum{pmi}, \textit{Guide} §2.6].
+
+\textbf{Riscos (RI, 6)} é uma abordagem abrangente para criar resiliência do projeto, com capacidade de antecipar, preparar, responder e se adaptar a riscos e interrupções, de modo proativo e com respostas flexíveis [\refnum{pmi}, \textit{Guide} §2.7].
+\subsection{Inventário auditável dos 40 processos}
+
+A tabela mantém os \textbf{nomes oficiais em inglês}. A coluna em português serve à leitura e não é tradução autorizada pelo PMI. A coluna \textbf{concentração} traz o agrupamento analítico deste trabalho (seção 10), que \textbf{não} pertence ao PMI. A presença de um processo no inventário não obriga sua execução formal em todos os projetos; sua aplicação depende de \textit{tailoring} [\refnum{pmi}, \textit{Guide} Tabela 2-1 e §§2.1–2.7].
+
+\begingroup\SingleSpacing\footnotesize
+\begin{longtable}{@{}>{\raggedleft\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*99/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*117/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*99/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*178/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*507/1000\relax}@{}}
+\caption{Inventário dos 40 processos do PMBOK 8}\label{tab:t8}\\
+\hline
+\textbf{\#} & \textbf{Domínio} & \textbf{Área} & \textbf{Concentração} & \textbf{Processo oficial — tradução de trabalho}\\
+\hline
+\endfirsthead
+\hline
+\textbf{\#} & \textbf{Domínio} & \textbf{Área} & \textbf{Concentração} & \textbf{Processo oficial — tradução de trabalho}\\
+\hline
+\endhead
+\hline
+\endfoot
+\hline
+\endlastfoot
+1 & GO & IN & Consolidação & \textit{Initiate Project or Phase} — iniciar projeto ou fase\\[3pt]
+2 & GO & PL & Consolidação & \textit{Integrate and Align Project Plans} — integrar e alinhar planos do projeto\\[3pt]
+3 & GO & PL & Consolidação & \textit{Plan Sourcing Strategy} — planejar estratégia de suprimento\\[3pt]
+4 & GO & EX & Consolidação & \textit{Manage Project Execution} — gerenciar execução do projeto\\[3pt]
+5 & GO & EX & Consolidação & \textit{Manage Quality Assurance} — gerenciar garantia da qualidade\\[3pt]
+6 & GO & EX & Consolidação & \textit{Manage Project Knowledge} — gerenciar conhecimento do projeto\\[3pt]
+7 & GO & MC & Consolidação & \textit{Monitor and Control Project Performance} — monitorar e controlar desempenho\\[3pt]
+8 & GO & MC & Consolidação & \textit{Assess and Implement Changes} — avaliar e implementar mudanças\\[3pt]
+9 & GO & CL & Consolidação & \textit{Close Project or Phase} — encerrar projeto ou fase\\[3pt]
+10 & SO & PL & Nascimento & \textit{Plan Scope Management} — planejar gestão do escopo\\[3pt]
+11 & SO & PL & Nascimento & \textit{Elicit and Analyze Requirements} — elicitar e analisar requisitos\\[3pt]
+12 & SO & PL & Nascimento & \textit{Define Scope} — definir escopo\\[3pt]
+13 & SO & PL & Nascimento & \textit{Develop Scope Structure} — desenvolver estrutura do escopo\\[3pt]
+14 & SO & MC & Nascimento & \textit{Monitor and Control Scope} — monitorar e controlar escopo\\[3pt]
+15 & SO & MC & Nascimento & \textit{Validate Scope} — validar escopo\\[3pt]
+16 & SH & PL & Nascimento & \textit{Plan Schedule Management} — planejar gestão do cronograma\\[3pt]
+17 & SH & PL & Nascimento & \textit{Develop Schedule} — desenvolver cronograma\\[3pt]
+18 & SH & MC & Nascimento & \textit{Monitor and Control Schedule} — monitorar e controlar cronograma\\[3pt]
+19 & FI & PL & Meios & \textit{Plan Financial Management} — planejar gestão financeira\\[3pt]
+20 & FI & PL & Meios & \textit{Estimate Costs} — estimar custos\\[3pt]
+21 & FI & PL & Meios & \textit{Develop Budget} — desenvolver orçamento\\[3pt]
+22 & FI & MC & Meios & \textit{Monitor and Control Finances} — monitorar e controlar finanças\\[3pt]
+23 & ST & IN & Quem & \textit{Identify Stakeholders} — identificar partes interessadas\\[3pt]
+24 & ST & PL & Quem & \textit{Plan Stakeholder Engagement} — planejar engajamento das partes interessadas\\[3pt]
+25 & ST & PL & Quem & \textit{Plan Communications Management} — planejar gestão das comunicações\\[3pt]
+26 & ST & EX & Quem & \textit{Manage Stakeholder Engagement} — gerenciar engajamento das partes interessadas\\[3pt]
+27 & ST & EX & Quem & \textit{Manage Communications} — gerenciar comunicações\\[3pt]
+28 & ST & MC & Quem & \textit{Monitor Stakeholder Engagement} — monitorar engajamento das partes interessadas\\[3pt]
+29 & ST & MC & Quem & \textit{Monitor Communications} — monitorar comunicações\\[3pt]
+30 & RE & PL & Meios & \textit{Plan Resource Management} — planejar gestão dos recursos\\[3pt]
+31 & RE & PL & Meios & \textit{Estimate Resources} — estimar recursos\\[3pt]
+32 & RE & EX & Meios & \textit{Acquire Resources} — adquirir recursos\\[3pt]
+33 & RE & EX & Meios & \textit{Lead the Team} — liderar a equipe\\[3pt]
+34 & RE & MC & Meios & \textit{Monitor and Control Resourcing} — monitorar e controlar disponibilização de recursos\\[3pt]
+35 & RI & PL & Quem & \textit{Plan Risk Management} — planejar gestão dos riscos\\[3pt]
+36 & RI & PL & Quem & \textit{Identify Risks} — identificar riscos\\[3pt]
+37 & RI & PL & Quem & \textit{Perform Risk Analysis} — realizar análise de riscos\\[3pt]
+38 & RI & PL & Quem & \textit{Plan Risk Responses} — planejar respostas a riscos\\[3pt]
+39 & RI & EX & Quem & \textit{Implement Risk Responses} — implementar respostas a riscos\\[3pt]
+40 & RI & MC & Quem & \textit{Monitor Risks} — monitorar riscos\\[3pt]
+\end{longtable}
+\endgroup
+\fontetab{Elaborado pelos autores (2026), com base em \cit{pmi}; a concentração é o agrupamento analítico deste trabalho.}
+
+O inventário revela dependências concretas. Um requisito do Escopo pode exigir recurso, orçamento e decisão de Governança; mudanças no cronograma podem alterar riscos e expectativas de partes interessadas. O fato de um processo estar sob um domínio e uma área de foco facilita localizá-lo, mas não limita suas interações.
+\subsection{Considerações de adaptação por domínio}
+
+Cada domínio traz uma seção de considerações de adaptação (2.x.3 do \textit{Guide}). A tabela resume uma consideração característica de cada um; as listas completas estão no livro [\refnum{pmi}, \textit{Guide} §§2.1.7, 2.2.3, 2.3.3, 2.4.3, 2.5.3, 2.6.3 e 2.7.3].
+
+\begingroup\SingleSpacing\small
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*189/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*811/1000\relax}@{}}
+\caption{Consideração de adaptação característica de cada domínio}\label{tab:t9}\\
+\hline
+\textbf{Domínio} & \textbf{Consideração de adaptação característica}\\
+\hline
+\endfirsthead
+\hline
+\textbf{Domínio} & \textbf{Consideração de adaptação característica}\\
+\hline
+\endhead
+\hline
+\endfoot
+\hline
+\endlastfoot
+Governança & Adaptar ao setor, às considerações regulatórias, à organização e ao contexto do projeto; identificar comitês e requisitos de relato de situação\\[3pt]
+Escopo & Dependência de parceiros externos (como integrar o escopo a acordos contratuais) e dinamismo do ambiente, que pede flexibilidade na gestão do escopo\\[3pt]
+Cronograma & Ciclo de vida e abordagem escolhidos: no preditivo, cronograma definido cedo e linha de base aprovada; atributos do produto, da equipe e da cultura\\[3pt]
+Finanças & Produto em setor regulado pode exigir controles formais, como conformidade com SOX ou GDPR; abordagem iterativa achata a curva de gastos\\[3pt]
+Partes Interessadas & A cultura organizacional é o principal fator: organizações planas usam canais abertos e informais; hierárquicas, abordagens mais formais\\[3pt]
+Recursos & Estilos de liderança conforme o projeto; no preditivo, recursos planejados cedo; no adaptativo, equipes autoorganizadas\\[3pt]
+Riscos & Tamanho e complexidade definem se é preciso uma abordagem detalhada ou se um processo simplificado basta\\[3pt]
+\end{longtable}
+\endgroup
+\fontetab{Elaborado pelos autores (2026), com base em \cit{pmi}.}
+
+\section{Como os princípios atravessam os domínios}
+
+As subseções \textit{Connected Performance Domains} do \textit{Standard} (§§3.3.3 a 3.8.3) descrevem, para cada princípio, como ele se conecta a cada um dos sete domínios. Em cada uma das seis seções o texto trata dos sete domínios, o que dá \textbf{42 conexões expressas}. O \textit{Standard} acrescenta que a visão holística é apoiada por todos os domínios; que qualidade e foco em valor são tratados sobretudo em Governança, Escopo, Riscos, Cronograma, Finanças e Partes Interessadas; e que o líder responsável cruza Governança, Partes Interessadas e Riscos [\refnum{pmi}, \textit{Standard} §3.2].
+
+A matriz da Figura 3 resume \textbf{uma contribuição característica por célula}. É paráfrase analítica dos trechos do PMBOK 8, não uma escala de força, prioridade ou conformidade. \textbf{Legenda:} todas as células têm base expressa no texto do \textit{Standard}; a redação curta é do grupo.
+
+\begin{figure}[!htbp]
+\centering
+
+\begingroup\SingleSpacing\scriptsize
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-14\tabcolsep)*130/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-14\tabcolsep)*124/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-14\tabcolsep)*124/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-14\tabcolsep)*124/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-14\tabcolsep)*124/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-14\tabcolsep)*124/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-14\tabcolsep)*124/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-14\tabcolsep)*126/1000\relax}@{}}
+\hline
+\textbf{Princípio} & \textbf{GO} & \textbf{SO} & \textbf{SH} & \textbf{FI} & \textbf{ST} & \textbf{RE} & \textbf{RI}\\
+\hline
+\rowcolor{bandaProativa}\textbf{1AHV} Visão holística & decisão transparente e baseada em dados & alinha as atividades ao escopo & considera interdependências & alinha orçamento às prioridades & engajamento inclusivo & integra os componentes para maximizar valor & riscos em todos os domínios e suas interdependências\\
+\rowcolor{bandaValor}\textbf{2FOV} Valor & governança dimensionada ao valor, sem burocracia & todo trabalho contribui ao valor; evita excesso & prazo ligado ao valor esperado & recursos financeiros para maximizar valor & valor na perspectiva das partes interessadas & decisões guiadas pela proposta de valor & respostas pragmáticas e eficazes\\
+\rowcolor{bandaProativa}\textbf{3QPD} Qualidade & estruturas que asseguram padrões de qualidade & conexão especialmente forte com as entregas & revisões de qualidade no cronograma & evita retrabalho e desperdício & feedback integrado às decisões & recursos certos mantêm os limiares & riscos de qualidade antecipados\\
+\rowcolor{bandaResp}\textbf{4BAL} Liderança responsável & decisões transparentes e éticas & resolver desacordos sobre incluir ou excluir & discussões com as partes certas & pressões financeiras tratadas com responsabilidade & obter e manter apoio & gerir com responsabilidade e integridade & agir com integridade diante de ameaças e oportunidades\\
+\rowcolor{bandaValor}\textbf{5SPA} Sustentabilidade & metas de sustentabilidade na governança & requisitos sustentáveis no escopo & decisões consideram impacto ambiental & custos e benefícios de longo prazo & educação e colaboração em sustentabilidade & acesso a recursos alinhado aos requisitos & ameaças ambientais e sociais identificadas e mitigadas\\
+\rowcolor{bandaResp}\textbf{6BEC} Cultura empoderada & canal transparente entre equipe e governança & ajustar requisitos com comunicação aberta & equipe sugere acelerar, desacelerar ou parar & menos gasto não planejado, foco em valor & equipe define o nível de engajamento & acesso a recursos conforme os requisitos & equipe define limites de risco e participa\\
+\hline
+\end{tabular}
+\endgroup
+\par\vspace{3pt}{\scriptsize\noindent Faixas: azul = dimensão proativa; turquesa = dimensão de responsabilidade; cinza = dimensão orientada a valor.\par}
+\fontetab{Elaborado pelos autores (2026) a partir de [\refnum{pmi}, Standard, §§3.2 a 3.8].}
+\caption{Matriz de relações dos princípios}\label{fig:3}
+\end{figure}
+
+Na figura, a cor de fundo distingue os três pares da mentalidade do \textit{Standard}, e o texto curto mantém a leitura acessível sem cor. A matriz não cria índice numérico de desempenho.
+
+Esta leitura evita dois erros. O primeiro seria transformar princípios em processos adicionais. O segundo seria tomar os domínios como silos: uma escolha de qualidade em Escopo pode requerer orçamento, competência e resposta a risco.
+
+\section{Adaptação sob medida (\textit{tailoring})}
+
+O capítulo 3 do \textit{Guide} define \textit{tailoring} como a adaptação deliberada da abordagem de gestão, da governança e dos processos para alinhá-los ao ambiente e aos objetivos do projeto. A adaptação considera a abordagem de desenvolvimento, os processos, o ciclo de vida, as entregas e a forma de envolver partes interessadas e equipe. Ela é guiada pelos princípios do \textit{Standard}: organizações com baixa tolerância a risco costumam adotar processos estruturados e mecanismos de supervisão, enquanto as de maior tolerância podem priorizar agilidade e autonomia de decisão [\refnum{pmi}, \textit{Guide} §3.1].
+\subsection{Por que adaptar}
+
+Não existe uma forma única de gerir todos os projetos. Poucos processos podem deixar decisões críticas sem tratamento; processos em excesso custam caro e desperdiçam esforço. A adaptação traz três benefícios apontados pelo \textit{Guide}: maior compromisso dos membros da equipe que ajudaram a adaptar a abordagem; foco no cliente, porque suas necessidades influenciam a construção; e uso mais eficiente dos recursos do projeto. Criticidade, escala, duração, complexidade, padrões do setor, cultura, quantidade de partes interessadas e maturidade organizacional influenciam a escolha. Há situações em que a adaptação é limitada, por exemplo quando a política organizacional ou um contrato impõe uma abordagem [\refnum{pmi}, \textit{Guide} §§3.1–3.2].
+\subsection{O que adaptar}
+
+Três objetos podem ser adaptados [\refnum{pmi}, \textit{Guide} §3.3]:
+
+\begin{itemize}
+\item \textbf{Ciclo de vida e abordagem de desenvolvimento.} Escolher fases, cadência e combinação preditiva, adaptativa ou híbrida. Um projeto pode ter, por exemplo, abordagem preditiva para a construção de um prédio e adaptativa para definir as capacidades de computação; do ponto de vista do projeto, trata-se de uma abordagem híbrida.
+\item \textbf{Processos.} Cinco operações podem ser aplicadas aos elementos de um processo: \textbf{adicionar}, para tratar condições próprias ou aumentar o rigor; \textbf{modificar}, para ajustar entradas, saídas e ferramentas; \textbf{remover}, para reduzir custo ou esforço desnecessário; \textbf{combinar}, para somar valor; e \textbf{alinhar}, para garantir consistência de definição e aplicação.
+\item \textbf{Engajamento.} Pessoas (avaliar competências da liderança e da equipe), empoderamento (que responsabilidades e decisões locais ficam com a equipe) e integração (como formar uma equipe a partir de contribuintes diversos, internos e externos).
+\end{itemize}
+
+Essas operações não autorizam omitir uma exigência legal ou contratual; ajudam a configurar a prática de gestão sob restrições reais.
+
+\textbf{Exemplos hipotéticos das cinco operações.} A tabela ilustra, em um projeto de TIC com gêmeo digital, como as operações poderiam ser usadas. São exemplos de trabalho, \textbf{não prescrições do PMBOK 8}.
+
+\begingroup\SingleSpacing\small
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*149/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*251/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*600/1000\relax}@{}}
+\caption{Exemplos hipotéticos das cinco operações sobre processos}\label{tab:t10}\\
+\hline
+\textbf{Operação} & \textbf{Processo} & \textbf{Exemplo hipotético}\\
+\hline
+\endfirsthead
+\hline
+\textbf{Operação} & \textbf{Processo} & \textbf{Exemplo hipotético}\\
+\hline
+\endhead
+\hline
+\endfoot
+\hline
+\endlastfoot
+Adicionar & \textit{Identify Risks} & Acrescentar categorias de risco de dados e de integração entre sistemas de informação e de operação\\[3pt]
+Modificar & \textit{Plan Communications Management} & Ajustar canais e frequência para operadores de campo com conectividade limitada\\[3pt]
+Remover & \textit{Plan Sourcing Strategy} & Dispensar a formalização se não houver aquisição externa relevante, mantendo as exigências contratuais aplicáveis\\[3pt]
+Combinar & \textit{Plan Scope Management} e \textit{Plan Schedule Management} & Reunir em um plano integrado, em um projeto pequeno, sem perder a rastreabilidade de cada um\\[3pt]
+Alinhar & \textit{Manage Communications} & Unificar termos e registros entre organizações parceiras\\[3pt]
+\end{longtable}
+\endgroup
+\fontetab{Elaborado pelos autores (2026); exemplos ilustrativos, não prescrições do PMBOK 8.}
+\subsection{O processo de adaptação em quatro passos}
+
+O processo começa com a análise do ambiente e segue quatro passos, com realimentação [\refnum{pmi}, \textit{Guide} §3.4]: (1) \textbf{escolher a abordagem inicial de desenvolvimento}; (2) \textbf{adaptar para a organização}; (3) \textbf{adaptar para o projeto}; e (4) \textbf{implementar a melhoria contínua}, com inspeção e adaptação.
+
+\begin{figure}[!htbp]
+\centering
+
+\includegraphics[width=\linewidth]{out/Fig4_PT.pdf}
+\caption{Ciclo de adaptação}\label{fig:4}
+\fontetab{Elaborado pelos autores (2026) com base em [\refnum{pmi}, Guide, §3.4 e Figura 3-1].}
+\end{figure}
+
+O caminho inicia na escolha da abordagem de desenvolvimento, passa pelo ajuste à organização e ao projeto e volta às decisões anteriores por melhoria contínua. Condicionantes como criticidade, escala, equipe, cultura e contrato influenciam o ajuste; as cinco operações sobre processos aplicam-se ao ajuste ao projeto.
+
+\textbf{Passo 1.} A escolha considera o produto, a cadência de entrega e a consciência das opções disponíveis. Um \textbf{filtro de adequação} (\textit{suitability filter}) é uma ferramenta de decisão, não um método rígido: avalia critérios de cultura, dinâmica da equipe e fatores do projeto para discutir a abordagem inicial entre preditiva, adaptativa e híbrida. Silvius-Zuchi e Silvius propõem critérios de adequação para projetar abordagens híbridas [\refnum{silvius}].
+
+\textbf{Passo 2.} As organizações podem oferecer metodologias e abordagens como ponto de partida, e as que têm governança de processos devem garantir que a adaptação esteja alinhada à política. O escritório de projetos (PMO), quando existe, tem papel em revisar e aprovar abordagens adaptadas: a adaptação que afeta só a equipe exige menos supervisão do que a que afeta grupos externos. Em projetos com várias organizações, a adaptação deve usar uma abordagem multiorganizacional, harmonizando processos, governança e abordagens de cada participante.
+
+\textbf{Passo 3.} Três grupos de atributos orientam o ajuste ao projeto, cada um com perguntas-guia: o \textbf{produto ou entrega} (oito atributos, entre eles conformidade com normas, tipo de produto, mercado do setor, tecnologia, prazo, estabilidade dos requisitos, segurança e possibilidade de entrega incremental), a \textbf{equipe} (seis, entre eles tamanho, geografia, distribuição organizacional, experiência, acesso ao cliente e diversidade) e a \textbf{cultura} (adesão, confiança, empoderamento e cultura organizacional).
+
+\textbf{Passo 4.} Resultados, retrospectivas e outras informações mantêm ou revisam as escolhas; a figura do \textit{Guide} usa os rótulos \textquotedblleft{}inspecionar e adaptar\textquotedblright{} e \textquotedblleft{}melhoria\textquotedblright{}.
+\subsection{Adaptar os domínios e fazer diagnósticos}
+
+O trabalho de cada domínio também pode ser adaptado conforme a singularidade do projeto; os princípios orientam o comportamento dos profissionais ao fazê-lo, e os exemplos de cada domínio estão na seção 2 do \textit{Guide} [\refnum{pmi}, \textit{Guide} §3.5; Figura 3-4]. Os \textbf{diagnósticos} usam retrospectivas ou lições aprendidas para avaliar a eficácia das abordagens atuais; equipes que não usam retrospectivas podem recorrer a problemas, ameaças, métricas de qualidade e \textit{feedback} das partes interessadas. A Tabela 3-1 do \textit{Guide} relaciona oito situações comuns a sugestões de adaptação [\refnum{pmi}, \textit{Guide} §3.6]. O quadro resume os gatilhos e a resposta sugerida.
+
+\begingroup\SingleSpacing\small
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*346/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*654/1000\relax}@{}}
+\caption{Situações comuns e sugestões de adaptação}\label{tab:t11}\\
+\hline
+\textbf{Situação} & \textbf{Sugestão de adaptação}\\
+\hline
+\endfirsthead
+\hline
+\textbf{Situação} & \textbf{Sugestão de adaptação}\\
+\hline
+\endhead
+\hline
+\endfoot
+\hline
+\endlastfoot
+Entregas de baixa qualidade & Analisar causas e aplicar medidas direcionadas de \textit{feedback} e garantia da qualidade, com foco em melhorar processos e não só em aumentar verificações\\[3pt]
+Equipe insegura sobre como trabalhar & Avaliar necessidades da equipe e oferecer orientação, mentoria, treinamento e compartilhamento de conhecimento\\[3pt]
+Equipe pouco cooperativa e em silos & Atividades de integração e conversas individuais; fortalecer vínculos e a coordenação\\[3pt]
+Longas esperas por aprovações & Simplificar a aprovação, designando pessoas autorizadas a decidir até certos limites de valor\\[3pt]
+Excesso de trabalho em andamento ou desperdício & Mapeamento de fluxo de valor e quadros \textit{kanban} para visualizar o trabalho e achar soluções\\[3pt]
+Partes interessadas pouco engajadas ou com \textit{feedback} negativo & Verificar se recebem informação oportuna e relevante e adaptar os métodos de comunicação\\[3pt]
+Falta de transparência sobre o progresso & Conferir se os dados certos são coletados, analisados, compartilhados e discutidos, e validar as medidas com equipe e partes interessadas\\[3pt]
+Problemas e riscos para os quais a equipe não está preparada continuam surgindo & Investigar as causas para identificar lacunas nos processos ou atividades\\[3pt]
+\end{longtable}
+\endgroup
+\fontetab{Elaborado pelos autores (2026), com base em \cit{pmi}.}
+
+Em síntese, o capítulo 3 do \textit{Guide} descreve a adaptação como análise e modificação de pessoas, processos e ferramentas ao ambiente e aos objetivos do projeto [\refnum{pmi}, \textit{Guide} §3.7].
+
+\section{Quatro concentrações como agrupamento analítico}
+
+Para apresentar os sete domínios em blocos, este relatório usa \textbf{quatro concentrações analíticas}: \textbf{Consolidação} reúne Governança; \textbf{Nascimento} reúne Escopo e Cronograma; \textbf{Meios} reúne Finanças e Recursos; \textbf{Quem} reúne Partes Interessadas e Riscos. Esse agrupamento \textbf{não é um componente oficial do PMBOK 8}: é uma organização de leitura adotada neste trabalho. Os rótulos A, S, I e P indicam, respectivamente, possíveis extensões em análise de negócios, sustentabilidade, inovação e privacidade; não entram na soma dos 40 processos nem são descritos aqui como novos processos do PMI.
+
+\begingroup\SingleSpacing\footnotesize
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*232/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*383/1000\relax}>{\raggedleft\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*177/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*208/1000\relax}@{}}
+\caption{Concentrações analíticas e contagem de processos}\label{tab:t12}\\
+\hline
+\textbf{Concentração} & \textbf{Domínios} & \textbf{Processos} & \textbf{Extensão em análise (fora do PMI)}\\
+\hline
+\endfirsthead
+\hline
+\textbf{Concentração} & \textbf{Domínios} & \textbf{Processos} & \textbf{Extensão em análise (fora do PMI)}\\
+\hline
+\endhead
+\hline
+\endfoot
+\hline
+\endlastfoot
+Consolidação & Governança & 9 & A\\[3pt]
+Nascimento & Escopo e Cronograma & 9 & S\\[3pt]
+Meios & Finanças e Recursos & 9 & I\\[3pt]
+Quem & Partes Interessadas e Riscos & 13 & P\\[3pt]
+\end{longtable}
+\endgroup
+\fontetab{Elaborado pelos autores (2026).}
+
+\begin{figure}[!htbp]
+\centering
+
+\includegraphics[width=\linewidth]{out/Fig5_PT.pdf}
+\caption{Agrupamento dos sete domínios em quatro concentrações}\label{fig:5}
+\fontetab{Domínios e contagens: [\refnum{pmi}, Guide, Tabela 2-1]. Agrupamento e rótulos: organização analítica deste relatório.}
+\end{figure}
+
+Os números 9, 9, 9 e 13 somam apenas processos existentes. Cartões de contorno tracejado marcam temas de extensão e impedem que sejam confundidos com domínios oficiais.
+
+O agrupamento facilita a conversa e a distribuição de trabalho, mas não altera a forma como o \textit{Guide} apresenta os domínios. Governança continua interagindo com todos os outros; uma decisão sobre pessoas pode envolver escopo, tempo, finanças e recursos. Para que o mapa analítico não vire barreira artificial, as conexões entre os sete domínios devem ser lidas junto das tabelas de processos e princípios.
+
+\section{Onde o PMBOK 8 já toca dados pessoais e privacidade}
+
+Como o relatório será lido também por quem trabalha com projetos que tratam dados pessoais, este quadro registra, \textbf{sem propor processo novo}, os pontos em que a edição já menciona o tema. As referências são paráfrases de trabalho [\refnum{pmi}].
+
+\begingroup\SingleSpacing\small
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*202/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*662/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*136/1000\relax}@{}}
+\caption{Pontos do PMBOK 8 que tocam dados pessoais}\label{tab:t13}\\
+\hline
+\textbf{Onde} & \textbf{O que a edição diz} & \textbf{Seção}\\
+\hline
+\endfirsthead
+\hline
+\textbf{Onde} & \textbf{O que a edição diz} & \textbf{Seção}\\
+\hline
+\endhead
+\hline
+\endfoot
+\hline
+\endlastfoot
+Fatores ambientais da empresa & Restrições legais incluem leis e regulamentos sobre segurança, proteção de dados, conduta empresarial, emprego e aquisições & \textit{Standard} §2.2.1\\[3pt]
+Atributos do produto na adaptação & O atributo \textquotedblleft{}segurança\textquotedblright{} pergunta se elementos do produto são confidenciais ou classificados & \textit{Guide} §3.4.3.1\\[3pt]
+Adaptação de Finanças & Setores regulados podem exigir controles formais de conformidade, como SOX ou GDPR [\refnum{gdpr}], para a integridade e a segurança de dados financeiros & \textit{Guide} §2.4.3\\[3pt]
+Gerenciar comunicações & O processo cobre coleta, criação, distribuição, armazenamento, recuperação, monitoramento e destino final da informação do projeto & \textit{Guide} §2.5.2\\[3pt]
+IA no gerenciamento de projetos & Sistemas de IA usam grandes conjuntos de dados que podem ser sensíveis e regulados por políticas e leis de privacidade; é preciso proteger os dados e coletá-los com política de privacidade & \textit{Guide}, anexo X3.3\\[3pt]
+\end{longtable}
+\endgroup
+\fontetab{Elaborado pelos autores (2026), com base em \cit{pmi}.}
+
+A edição \textbf{não} define titular de dados, base legal, avaliação de impacto à privacidade nem eliminação de dados pessoais como objetos de gestão; o termo \textquotedblleft{}gêmeo digital\textquotedblright{} também não aparece. Esse registro delimita o que a síntese afirma: o PMBOK 8 oferece a estrutura de gestão e menciona o tema em pontos dispersos, e uma proposta de organização específica para privacidade seria um trabalho distinto deste.
+
+\section{Conclusão}
+
+A oitava edição combina \textbf{orientação por princípios} com \textbf{detalhamento técnico} e insiste na adaptação. Essa combinação evita dois extremos: usar uma lista de processos como receita universal ou invocar princípios sem explicar como as decisões serão acompanhadas. O \textit{Standard} oferece o sistema de entrega de valor, os seis princípios, o ciclo de vida, as abordagens de desenvolvimento e as cinco áreas de foco; o \textit{Guide} distribui 40 processos em sete domínios e descreve como adaptá-los. A tabela de 40 processos mostra possibilidades de ação; o ciclo de adaptação explica por que sua forma, intensidade e combinação variam. A literatura consultada converge com essa visão: abordagens híbridas são frequentes, a escolha depende do contexto e a adaptação é o núcleo do tema [\refnum{noll}, \refnum{reed}, \refnum{silvius}].
+
+As quatro concentrações apresentadas aqui são um modo de leitura, não substituem o índice oficial do PMI. Os exemplos de adaptação são hipotéticos e não demonstram benefício realizado. Esta síntese tampouco valida uma extensão ou mede desempenho de projeto. Uma aplicação concreta precisaria escolher indicadores, responsabilidades, artefatos e frequência de revisão, além de verificar restrições próprias da organização e do contrato. Como o PMBOK 8 não trata de gêmeos digitais, um projeto dessa natureza deve completar a estrutura de gestão com referências técnicas específicas.
+
+\section{Relatório final do trabalho}
+
+Seguindo o formato do \textit{Final report}, saída do processo \textit{Close Project or Phase} [\refnum{pmi}, \textit{Guide} §2.1.6.9], este item resume o desempenho do trabalho de elaboração desta síntese, tomado como o projeto relatado.
+
+\begingroup\SingleSpacing\small
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*197/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*803/1000\relax}@{}}
+\caption{Relatório final do trabalho}\label{tab:t14}\\
+\hline
+\textbf{Item do relatório final} & \textbf{Situação do trabalho}\\
+\hline
+\endfirsthead
+\hline
+\textbf{Item do relatório final} & \textbf{Situação do trabalho}\\
+\hline
+\endhead
+\hline
+\endfoot
+\hline
+\endlastfoot
+\textbf{Descrição resumida} & Elaboração de uma síntese do \textit{Standard} e do \textit{Guide} do PMBOK 8: estrutura da edição, sistema de entrega de valor, seis princípios, ciclos de vida e abordagens, cinco áreas de foco, sete domínios e 40 processos, adaptação sob medida, agrupamento analítico em concentrações e pontos de contato com dados pessoais.\\[3pt]
+\textbf{Objetivos de escopo e evidência de conclusão} & Escopo: cobrir os elementos do PMBOK 8 acima, com ênfase em \textit{tailoring}. Critério de conclusão: seções 2 a 11 produzidas. Evidência: tabela-mestra dos 40 processos, mapa 7 \ensuremath{\times} 5, matriz 6 \ensuremath{\times} 7, ciclo de adaptação e quadro de diagnósticos. Limite: o relatório não reproduz os capítulos 4 e 5 do \textit{Guide}, que são catálogos de consulta.\\[3pt]
+\textbf{Objetivos de qualidade e verificação} & Nomes e contagens dos 40 processos conferidos nas seções 2.1 a 2.7, na Tabela 2-1 e nas figuras de visão geral dos domínios do \textit{Guide}; as 42 conexões princípio-domínio conferidas nas seções 3.3.3 a 3.8.3 do \textit{Standard}; mesmas estruturas e dados nas versões em português e em inglês. Sem revisão externa.\\[3pt]
+\textbf{Objetivos de custo e variações} & O trabalho não teve orçamento financeiro. O esforço da equipe não é reportado aqui.\\[3pt]
+\textbf{Validação do resultado final} & Conferência documental feita. Validação por especialistas em gestão de projetos, ainda pendente.\\[3pt]
+\textbf{Cronograma e realização de benefícios} & Trabalho realizado em ciclo curto de elaboração, revisão e conferência, com entrega na data prevista. Os benefícios de aplicação da síntese são hipóteses a testar.\\[3pt]
+\textbf{Necessidades de negócio atendidas} & A necessidade de uma síntese adaptável do PMBOK 8 como base para guias de gestão de projetos recebeu uma resposta estruturada; sua efetividade depende de validação.\\[3pt]
+\textbf{Riscos e questões encontrados} & (i) Confusão entre estrutura oficial e agrupamento analítico: tratada com rótulos e figuras separadas. (ii) Tradução e simplificação excessiva: tratada com nomes oficiais em inglês e ressalvas. (iii) Fonte de acesso restrito: tratada citando seções, tabelas e figuras. (iv) Ausência de gêmeo digital no PMBOK 8: registrada na seção 2 e na seção 11.\\[3pt]
+\end{longtable}
+\endgroup
+\fontetab{Elaborado pelos autores (2026), no formato do \textit{Final report} de \cit{pmi}.}
+
+\clearpage
+\section*{Referências}
+\addcontentsline{toc}{section}{Referências}
+\begingroup
+\SingleSpacing
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{10pt}
+
+\refitem{iso}{ISO — INTERNATIONAL ORGANIZATION FOR STANDARDIZATION. \textbf{ISO 21502:2020: Project, programme and portfolio management — Guidance on project management}. Genebra: ISO, 2020.}
+
+\refitem{manzoor}{MANZOOR, B.; ANTWI-AFARI, M. F.; ALOTAIBI, K. S.; EDWARDS, D. J.; POSILLICO, J. J. Critical success factors for implementing digital twin technology in construction projects: a systematic and bibliometric approach. \textbf{Journal of Construction Engineering and Management}, v. 151, art. 031250, 2025. DOI: 10.1061/JCEMD4.COENG-17248.}
+
+\refitem{noll}{NOLL, J.; BEECHAM, S. How agile is hybrid agile? An analysis of the HELENA data. In: FRANCH, X.; MÄNNISTÖ, T.; MARTÍNEZ-FERNÁNDEZ, S. (ed.). \textbf{Product-Focused Software Process Improvement: 20th International Conference, PROFES 2019}. Cham: Springer, 2019. p. 341-349. (Lecture Notes in Computer Science, v. 11915). DOI: 10.1007/978-3-030-35333-9\_25.}
+
+\refitem{pmi}{PMI — PROJECT MANAGEMENT INSTITUTE. \textbf{The Standard for Project Management and A Guide to the Project Management Body of Knowledge (PMBOK Guide)}. 8. ed. Newtown Square: PMI, 2025. Documento de acesso restrito, obtido mediante aquisição ou associação ao PMI.}
+
+\refitem{reed}{REED, A. H.; ANGOLIA, M. G.; BAHAM, C.; IGAH, R. Usage of hybrid project management approaches and influences on approach selection. \textbf{Communications of the Association for Information Systems}, v. 54, p. 402-427, 2024. DOI: 10.17705/1CAIS.05415.}
+
+\refitem{silvius}{SILVIUS-ZUCHI, D.; SILVIUS, G. Designing a fitting hybrid project management approach: a contingency perspective. \textbf{International Journal of Information Systems and Project Management}, v. 14, n. 1, art. 4, 2026.}
+
+\refitem{gdpr}{UNIÃO EUROPEIA. \textbf{Regulamento (UE) 2016/679 do Parlamento Europeu e do Conselho, de 27 de abril de 2016} (Regulamento Geral sobre a Proteção de Dados).}
+
+\endgroup
+
+\end{document}
