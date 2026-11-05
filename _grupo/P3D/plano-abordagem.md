@@ -146,3 +146,38 @@ A P3A pede aderência do novo domínio às cinco áreas de foco e aos seis princ
 | Sumário virar paráfrase longa | Ancorar o texto na tabela-mestra, nas matrizes e no capítulo de *tailoring*. |
 | Formato *Final report* estranho a uma síntese | Dizer quais itens do modelo se aplicam (seção 5). |
 | Versão em inglês fraca por falta de tempo | Nomes oficiais em inglês desde o primeiro rascunho. |
+
+---
+
+> **Acréscimo de 04/11.** As seções 9 e 10 são **novas** neste plano. Elas não estavam nas versões anteriores, e as seções 1 a 8 ainda não foram revisadas para refletir o que dizem.
+
+## 9. Desenvolvimento em duas etapas: Markdown e, se autorizado, LaTeX
+
+**Etapa 1 — Markdown.** Todo o conteúdo é escrito primeiro em Markdown, um arquivo por entrega, em `_grupo/P3D/entregas/`. A convenção de nomes segue a da P3A: `P3D_Privacidade2_Relatorio_PT.md`, `P3D_Privacidade2_Report_EN.md`, `P3D_Privacidade2_Poster_PT.md`, `P3D_Privacidade2_Poster_EN.md`, `P3D_Privacidade2_Licoes_PT.md` e `P3D_Privacidade2_Lessons_EN.md`. O Markdown é um formato direto e simples para a IA gerar e para o grupo revisar: o texto é legível sem compilar, as tabelas são curtas e as diferenças entre versões aparecem no Git. Nesta etapa, o grupo confere o conteúdo contra o PDF do PMBOK 8: nomes e contagens dos 40 processos, tabela por área de foco e rótulos de "organização do curso" e "proposta SIPA".
+
+**Ponto de parada.** O Markdown fica **congelado** depois da revisão do grupo. Alterações de conteúdo depois da conversão obrigariam a mexer em dois formatos.
+
+**Etapa 2 — LaTeX, só com autorização do usuário.** A conversão para LaTeX **não é automática**: depende de o usuário autorizar, depois de ver o Markdown. Se autorizada, segue o que já funcionou na P2B: classe `abntex2`, `pdflatex`, saída em `out/`, figuras como TikZ independentes em `figuras/` com o PDF gerado em `out/` e incluído a partir dali. Como na P2B, quem compila é o grupo; o ajuste dos erros de compilação é feito no `.tex`. Os pôsteres e as figuras são os itens que mais ganham com o LaTeX, porque o TikZ gera figuras vetoriais e controla o layout da página.
+
+**Pontos em aberto desta divisão**
+- O resumo do Aprender3 não diz em que formato os arquivos devem ser enviados (PDF, DOCX etc.). Isso decide se a etapa 2 é necessária ou opcional. Confirmar com o professor ou na página da atividade.
+- Se a etapa 2 não couber no prazo (06/11, 12h), decidir antes, no dia 05/11, qual versão é enviada. O Markdown revisado é o ponto de partida seguro.
+
+## 10. Pôster: diagramas, tabelas e figuras
+
+Um pôster só com texto e tabelas simples cansa a leitura. A meta é ter **no mínimo duas ou três figuras ou diagramas**, além do texto curto, em cada idioma. Sugestão para a P3D, em ordem de prioridade:
+
+| # | Elemento | Conteúdo | Observação |
+| --- | --- | --- | --- |
+| 1 | **Diagrama de relações** | Princípios → escolhas de adaptação → áreas de foco e processos, agrupados em domínios e concentrações | Já previsto na seção 5. É a figura central. |
+| 2 | **Mapa de calor 7 domínios × 5 áreas de foco** | A tabela da seção 4, passo 2, com a contagem de processos em cada célula e o total de 40 | Fechar antes o caso de *Identify Stakeholders*. Mostra de relance onde se concentra o esforço (Planejamento tem a maior parte). |
+| 3 | **Mapa das quatro concentrações** | Blocos Consolidação, Nascimento, Meios e Quem, com os domínios existentes e o SIPA associado | Rotular como "organização da disciplina", não como PMBOK. |
+| 4 | **Ciclo do *tailoring*** (opcional) | Os quatro passos da adaptação e as cinco ações sobre um processo | Dá corpo à ênfase pedida no enunciado, se houver espaço. |
+
+Cuidados de legibilidade:
+- cada figura tem legenda curta e fonte ("Fonte: PMBOK 8, ..." ou "Organização da disciplina");
+- a cor não é o único meio de distinguir categorias (usar também rótulo ou forma), para a leitura em impressão em preto e branco;
+- os números têm tamanho de leitura à distância;
+- cada figura existe em português e em inglês, com os mesmos elementos.
+
+**Na etapa 1 (Markdown)**, cada figura entra com uma especificação: título, o que mostra, os elementos e a fonte dos dados. Uma tabela ou um diagrama em Mermaid serve como esboço. **Na etapa 2 (LaTeX)**, a figura é redesenhada em TikZ.

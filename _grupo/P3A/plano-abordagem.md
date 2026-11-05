@@ -155,3 +155,28 @@ Hoje é 04/11 e o prazo é 06/11, às 12h. Restam cerca de dois dias, então a p
 | Processos propostos sem apoio na literatura | Texto parecer opinião | Citar o guia SIPA (LGPD, GDPR, FIPPs, NIST) e os artigos do Manual 3 em cada processo. |
 | Formato do relatório (*Final report* do PMBOK 8) pensado para fechar projeto, não para propor extensão | Itens do modelo sem correspondência no nosso texto | Seguir a estrutura da seção 6 e dizer no relatório quais itens do modelo se aplicam e quais não. |
 | Citações do PMBOK 8 imprecisas | Perda de credibilidade | Conferir página no PDF antes de citar. |
+
+---
+
+> **Acréscimo de 04/11.** A seção 10 é **nova** neste plano. As seções 1 a 9 foram escritas antes de a implementação começar e não foram atualizadas por causa dela (o cronograma da seção 8, por exemplo, segue o plano original).
+
+## 10. Observação: a implementação já começou
+
+O grupo já começou a escrever a P3A, em Markdown, em `_grupo/P3A/entregas/`. Seis arquivos existem, um para cada entrega prevista na seção 1:
+
+| Entrega | Português | Inglês |
+| --- | --- | --- |
+| Pôster | `P3A_Privacidade2_Poster_PT.md` | `P3A_Privacidade2_Poster_EN.md` |
+| Relatório | `P3A_Privacidade2_Relatorio_PT.md` | `P3A_Privacidade2_Report_EN.md` |
+| Lições aprendidas | `P3A_Privacidade2_Licoes_PT.md` | `P3A_Privacidade2_Lessons_EN.md` |
+
+Situação em 04/11:
+- Os arquivos **ainda não foram versionados** no Git (aparecem como não rastreados).
+- O relatório em português tem cerca de 4,6 mil palavras. Falta conferir se isso cobre as 20 a 30 páginas por idioma pedidas.
+- O relatório tem os blocos previstos neste plano: diagnóstico do PMBOK 8, justificativa em quatro aspectos (caracterização da necessidade, critérios, publicação e formato, desenvolvimento e manutenção), domínio Privacidade na concentração Quem, aderência às cinco áreas de foco e aos seis princípios, conexões para a P3C, exemplo de reciclagem por cooperativas e correspondência com o formato de Relatório Final.
+- Os oito processos do domínio estão numerados P1 a P8 no rascunho do pôster, e o rascunho os marca como proposta acadêmica, fora do PMBOK 8.
+- O rascunho do pôster em português tem duas tabelas e nenhum diagrama. A mesma meta de duas ou três figuras do pôster da P3D (ver `../P3D/plano-abordagem.md`, seção 10) vale aqui.
+
+Não revisei o conteúdo dos relatórios; só li o pôster em português e a estrutura de seções do relatório.
+
+O desenvolvimento segue a mesma divisão em duas etapas descrita na P3D (seção 9): o Markdown vem primeiro e é revisado pelo grupo; a conversão para LaTeX só acontece se o usuário autorizar.
