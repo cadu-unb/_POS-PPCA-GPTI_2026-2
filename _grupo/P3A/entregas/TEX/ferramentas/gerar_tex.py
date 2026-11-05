@@ -623,20 +623,20 @@ FIG_LABELS = {
         co="Consolidação", co2="Governança (9)\\\\+ Análise de negócios",
         bi="Nascimento", bi2="Escopo (6), Cronograma (3)\\\\+ Sustentabilidade",
         me="Meios", me2="Finanças (4), Recursos (5)\\\\+ Inovação",
-        quem="Quem (WH)", st="Partes Interessadas", st2="domínio existente (7)",
+        quem="Quem (WH)", st="Partes\\\\Interessadas", st2="domínio existente (7)",
         pv="+ Privacidade", pv2="domínio proposto", ri="Riscos", ri2="domínio existente (6)",
-        areas=[("IN · Iniciação", "P1", "Identificar titulares e dados", "Inventário"),
-               ("PL · Planejamento", "P2–P4", "Planejar, avaliar impactos e definir controles", "Plano e avaliação"),
-               ("EX · Execução", "P5–P6", "Gerir direitos e implementar controles", "Registros"),
-               ("MC · Monitoramento e controle", "P7", "Monitorar riscos e práticas", "Revisões"),
-               ("CL · Encerramento", "P8", "Transferir ou encerrar o tratamento", "Destino dos dados")],
+        areas=[("IN\\\\Iniciação", "P1", "Identificar\\\\titulares\\\\e dados", "Inventário"),
+               ("PL\\\\Planejamento", "P2–P4", "Planejar\\\\avaliar impactos\\\\definir controles", "Plano e\\\\avaliação"),
+               ("EX\\\\Execução", "P5–P6", "Gerir direitos\\\\aplicar controles", "Registros"),
+               ("MC\\\\Monitoramento\\\\e controle", "P7", "Monitorar riscos\\\\e práticas", "Revisões"),
+               ("CL\\\\Encerramento", "P8", "Transferir ou\\\\encerrar o\\\\tratamento", "Destino dos\\\\dados")],
         change="mudança relevante",
         fv="F · Função", fv2="efeitos sobre pessoas", sv="S · Estrutura", sv2="papéis e evidências",
         pvv="P · Processo", pvv2="decisões P1–P8", cv="C · Contexto", cv2="lei, tecnologia, cooperativa",
         center="Privacidade", center2="volume conceitual",
         phys="Mundo físico", rep="Réplica digital",
         t1="Modelo digital", t2="Sombra digital", t3="Gêmeo digital",
-        manual="atualização manual", auto="fluxo automático", back="retorno automático: efeito sobre pessoas",
+        manual="atualização manual", auto="fluxo automático", back="retorno automático",
         s1="Mobilização digital", s1b="cadastro e rota", s2="Reciclagem", s2b="operação e indicadores",
         s3="Destinação final", s3b="retenção ou descarte",
         mat="materiais separados", rej="rejeitos e suportes", qual="qualidade por rota",
@@ -649,18 +649,18 @@ FIG_LABELS = {
         me="Means", me2="Finance (4), Resources (5)\\\\+ Innovation",
         quem="Who (WH)", st="Stakeholders", st2="existing domain (7)",
         pv="+ Privacy", pv2="proposed domain", ri="Risk", ri2="existing domain (6)",
-        areas=[("IN · Initiating", "P1", "Identify data subjects and data", "Inventory"),
-               ("PL · Planning", "P2–P4", "Plan, assess impacts and define controls", "Plan and assessment"),
-               ("EX · Executing", "P5–P6", "Manage rights and implement controls", "Records"),
-               ("MC · Monitoring and Controlling", "P7", "Monitor risks and practices", "Reviews"),
-               ("CL · Closing", "P8", "Transfer or close the processing", "Data disposition")],
+        areas=[("IN\\\\Initiating", "P1", "Identify data\\\\subjects and\\\\data", "Inventory"),
+               ("PL\\\\Planning", "P2–P4", "Plan\\\\assess impacts\\\\define controls", "Plan and\\\\assessment"),
+               ("EX\\\\Executing", "P5–P6", "Manage rights\\\\apply controls", "Records"),
+               ("MC\\\\Monitoring\\\\and Controlling", "P7", "Monitor risks\\\\and practices", "Reviews"),
+               ("CL\\\\Closing", "P8", "Transfer or close\\\\the processing", "Data\\\\disposition")],
         change="material change",
         fv="F · Function", fv2="effects on people", sv="S · Structure", sv2="roles and evidence",
         pvv="P · Process", pvv2="decisions P1–P8", cv="C · Context", cv2="law, technology, cooperative",
         center="Privacy", center2="conceptual volume",
         phys="Physical world", rep="Digital replica",
         t1="Digital model", t2="Digital shadow", t3="Digital twin",
-        manual="manual update", auto="automatic flow", back="automatic return: effect on people",
+        manual="manual update", auto="automatic flow", back="automatic return",
         s1="Digital mobilization", s1b="registration and route", s2="Recycling", s2b="operations and indicators",
         s3="Final disposal", s3b="retention or deletion",
         mat="sorted materials", rej="tailings and media", qual="quality by route",
@@ -675,34 +675,34 @@ def fig1(l):
     cards = [(0.2, l["co"], l["co2"]), (5.5, l["bi"], l["bi2"]), (10.8, l["me"], l["me2"])]
     for x, t, d in cards:
         s += (f"  \\draw[fill=ctxFill,draw=ctxLine,line width=0.9pt,rounded corners=0.25cm] ({x},5.3) rectangle ({x + 5},7.2);\n"
-              f"  \\node[align=center,text=ctxText] at ({x + 2.5},6.25) {{\\textbf{{{t}}}\\\\ {d}}};\n")
+              f"  \\node[align=center,text=ctxText] at ({x + 2.5},6.25) {{\\normalsize\\textbf{{{t}}}\\\\ \\small {d}}};\n")
     s += ("  \\draw[fill=exFill!40,draw=exLine,line width=1.4pt,rounded corners=0.3cm] (0.2,0.2) rectangle (15.8,4.8);\n"
           f"  \\node[anchor=west,text=exLine] at (0.55,4.35) {{\\textbf{{{l['quem']}}}}};\n"
           "  \\draw[fill=exFill,draw=exLine,line width=1pt,rounded corners=0.2cm] (0.6,0.6) rectangle (4.9,3.8);\n"
           "  \\draw[fill=prFill,draw=prLine,line width=1.8pt,rounded corners=0.2cm] (5.6,0.6) rectangle (10.4,3.8);\n"
           "  \\draw[fill=exFill,draw=exLine,line width=1pt,rounded corners=0.2cm] (11.1,0.6) rectangle (15.4,3.8);\n"
-          f"  \\node[align=center,text=exLine] at (2.75,2.2) {{\\textbf{{{l['st']}}}\\\\ {l['st2']}}};\n"
-          f"  \\node[align=center,text=prText] at (8.0,2.2) {{\\large\\textbf{{{l['pv']}}}\\\\ {l['pv2']}}};\n"
-          f"  \\node[align=center,text=exLine] at (13.25,2.2) {{\\textbf{{{l['ri']}}}\\\\ {l['ri2']}}};\n"
+          f"  \\node[align=center,text width=4cm,text=exLine] at (2.75,2.2) {{\\normalsize\\bfseries {l['st']}\\\\ \\mdseries {l['st2']}}};\n"
+          f"  \\node[align=center,text=prText] at (8.0,2.2) {{\\Large\\textbf{{{l['pv']}}}\\\\ \\normalsize {l['pv2']}}};\n"
+          f"  \\node[align=center,text=exLine] at (13.25,2.2) {{\\normalsize\\textbf{{{l['ri']}}}\\\\ {l['ri2']}}};\n"
           "  \\draw[draw=prLine,line width=1.2pt] (4.9,2.2) -- (5.6,2.2);\n"
           "  \\draw[draw=prLine,line width=1.2pt] (10.4,2.2) -- (11.1,2.2);\n")
     return s + FIG_TAIL
 
 
 def fig2(l):
-    s = FIG_HEAD.replace("@@H@@", "5.9")
+    s = FIG_HEAD.replace("@@H@@", "6.2")
     for i, (area, code, act, ev) in enumerate(l["areas"]):
         x = 0.2 + i * 3.2
-        s += (f"  \\draw[fill=phFill,draw=exLine,line width=1.2pt,rounded corners=0.2cm] ({x},0.4) rectangle ({x + 2.7},4.0);\n"
-              f"  \\node[align=center,text width=2.5cm,text=exLine] at ({x + 1.35},3.35) {{\\footnotesize\\textbf{{{area}}}}};\n"
-              f"  \\node[align=center,text=prText] at ({x + 1.35},2.55) {{\\large\\textbf{{{code}}}}};\n"
-              f"  \\node[align=center,text width=2.5cm] at ({x + 1.35},1.75) {{\\footnotesize {act}}};\n"
-              f"  \\node[align=center,text width=2.5cm,text=ctxText] at ({x + 1.35},0.85) {{\\scriptsize\\textit{{{ev}}}}};\n")
+        s += (f"  \\draw[fill=phFill,draw=exLine,line width=1.2pt,rounded corners=0.2cm] ({x},0.3) rectangle ({x + 2.7},4.65);\n"
+              f"  \\node[align=center,text width=2.5cm,text=exLine] at ({x + 1.35},3.9) {{\\small\\bfseries {area}}};\n"
+              f"  \\node[align=center,text=prText] at ({x + 1.35},2.9) {{\\large\\textbf{{{code}}}}};\n"
+              f"  \\node[align=center,text width=2.5cm] at ({x + 1.35},1.9) {{\\small {act}}};\n"
+              f"  \\node[align=center,text width=2.5cm,text=ctxText] at ({x + 1.35},0.75) {{\\small\\itshape {ev}}};\n")
         if i < 4:
-            s += f"  \\draw[draw=exLine,line width=1.1pt,-{{Triangle[length=5pt,width=5pt]}}] ({x + 2.7},2.2) -- ({x + 3.2},2.2);\n"
+            s += f"  \\draw[draw=exLine,line width=1.1pt,-{{Triangle[length=5pt,width=5pt]}}] ({x + 2.7},2.4) -- ({x + 3.2},2.4);\n"
     x_mc, x_pl = 0.2 + 3 * 3.2 + 1.35, 0.2 + 1 * 3.2 + 1.35
-    s += (f"  \\draw[draw=prLine,line width=1.1pt,dash pattern=on 4pt off 3pt,-{{Triangle[length=5pt,width=5pt]}}] ({x_mc},4.0) -- ({x_mc},5.0) -- ({x_pl},5.0) -- ({x_pl},4.0);\n"
-          f"  \\node[text=prText,fill=white,inner sep=2pt] at ({(x_mc + x_pl) / 2},5.0) {{\\footnotesize {l['change']}}};\n")
+    s += (f"  \\draw[draw=prLine,line width=1.1pt,dash pattern=on 4pt off 3pt,-{{Triangle[length=5pt,width=5pt]}}] ({x_mc},4.65) -- ({x_mc},5.5) -- ({x_pl},5.5) -- ({x_pl},4.65);\n"
+          f"  \\node[text=prText,fill=white,inner sep=2pt] at ({(x_mc + x_pl) / 2},5.5) {{\\small {l['change']}}};\n")
     return s + FIG_TAIL
 
 
@@ -726,20 +726,20 @@ def fig4(l):
     for j, (title, yc) in enumerate(strips):
         s += (f"  \\node[anchor=west,text=exLine] at (0.2,{yc + 0.95}) {{\\textbf{{{title}}}}};\n"
               f"  \\draw[fill=ctxFill,draw=ctxLine,line width=0.9pt,rounded corners=0.15cm] (0.4,{yc - 0.55}) rectangle (4.4,{yc + 0.55});\n"
-              f"  \\node[text=ctxText] at (2.4,{yc}) {{{l['phys']}}};\n"
+              f"  \\node[text=ctxText] at (2.4,{yc}) {{\\normalsize {l['phys']}}};\n"
               f"  \\draw[fill=exFill,draw=exLine,line width=1pt,rounded corners=0.15cm] (11.6,{yc - 0.55}) rectangle (15.6,{yc + 0.55});\n"
-              f"  \\node[text=exLine] at (13.6,{yc}) {{{l['rep']}}};\n")
+              f"  \\node[text=exLine] at (13.6,{yc}) {{\\normalsize {l['rep']}}};\n")
         if j == 0:
             s += (f"  \\draw[draw=ctxLine,line width=1.1pt,dash pattern=on 4pt off 3pt,-{{Triangle[length=5pt,width=5pt]}}] (4.4,{yc}) -- (11.6,{yc});\n"
-                  f"  \\node[text=ctxText,fill=white,inner sep=2pt] at (8,{yc}) {{\\footnotesize {l['manual']}}};\n")
+                  f"  \\node[text=ctxText,fill=white,inner sep=2pt] at (8,{yc}) {{\\normalsize {l['manual']}}};\n")
         elif j == 1:
             s += (f"  \\draw[draw=exLine,line width=1.2pt,-{{Triangle[length=5pt,width=5pt]}}] (4.4,{yc}) -- (11.6,{yc});\n"
-                  f"  \\node[text=exLine,fill=white,inner sep=2pt] at (8,{yc}) {{\\footnotesize {l['auto']}}};\n")
+                  f"  \\node[text=exLine,fill=white,inner sep=2pt] at (8,{yc}) {{\\normalsize {l['auto']}}};\n")
         else:
             s += (f"  \\draw[draw=exLine,line width=1.2pt,-{{Triangle[length=5pt,width=5pt]}}] (4.4,{yc + 0.25}) -- (11.6,{yc + 0.25});\n"
                   f"  \\draw[draw=prLine,line width=1.4pt,-{{Triangle[length=5pt,width=5pt]}}] (11.6,{yc - 0.25}) -- (4.4,{yc - 0.25});\n"
-                  f"  \\node[text=exLine,fill=white,inner sep=2pt] at (8,{yc + 0.25}) {{\\footnotesize {l['auto']}}};\n"
-                  f"  \\node[text=prText,fill=white,inner sep=2pt] at (8,{yc - 0.25}) {{\\footnotesize {l['back']}}};\n")
+                  f"  \\node[text=exLine,fill=white,inner sep=2pt] at (8,{yc + 0.25}) {{\\normalsize {l['auto']}}};\n"
+                  f"  \\node[text=prText,fill=white,inner sep=2pt] at (8,{yc - 0.25}) {{\\normalsize {l['back']}}};\n")
     return s + FIG_TAIL
 
 

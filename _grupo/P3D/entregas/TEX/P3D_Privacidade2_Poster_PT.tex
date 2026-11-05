@@ -42,9 +42,9 @@
 \definecolor{prText}{RGB}{6,79,87}
 \definecolor{ctxText}{RGB}{38,52,67}
 
-\newcommand{\corpo}{\fontsize{19}{25}\selectfont}
-\newcommand{\figtitulo}[1]{{\fontsize{24}{28}\selectfont\bfseries\color{exLine}#1\par}\vspace{2.5mm}}
-\newcommand{\leitura}[1]{\vspace{2.5mm}{\fontsize{17}{22}\selectfont\itshape\color{ctxText}#1\par}}
+\newcommand{\corpo}{\fontsize{16}{21}\selectfont}
+\newcommand{\figtitulo}[1]{{\fontsize{19}{23}\selectfont\bfseries\color{exLine}#1\par}\vspace{2mm}}
+\newcommand{\leitura}[1]{\vspace{2mm}{\fontsize{13}{17}\selectfont\color{ctxText}#1\par}}
 
 % --- Autores, disciplina e código (editar aqui) ------------------------------
 \newcommand{\blocoautores}{%
@@ -52,9 +52,9 @@
   \textbf{Disciplina:} Gestão de Projetos de TI (GPTI) -- PPCA/CIC/UnB\\
   \textbf{Código:} 3p2 / 3R31}
 
-\newtcolorbox{caixa}[1]{enhanced,colback=white,colframe=exLine,boxrule=0.8mm,arc=2mm,
-  left=5mm,right=5mm,top=3.5mm,bottom=4mm,
-  title={#1},fonttitle=\fontsize{22}{26}\selectfont\bfseries,coltitle=white,colbacktitle=exLine}
+\newtcolorbox{caixa}[1]{enhanced,colback=white,colframe=exLine,boxrule=0.5mm,arc=2mm,
+  left=4mm,right=4mm,top=3mm,bottom=3mm,
+  title={#1},fonttitle=\fontsize{18}{22}\selectfont\bfseries,coltitle=white,colbacktitle=exLine}
 
 \begin{document}
 \thispagestyle{empty}
@@ -66,17 +66,17 @@
 
 % ------------------------------- FAIXA ---------------------------------------
 \begin{tcolorbox}[enhanced,colback=exLine,colframe=exLine,coltext=white,arc=2mm,
-  left=7mm,right=7mm,top=5mm,bottom=5mm]
-{\fontsize{44}{48}\selectfont\bfseries PMBOK 8 em uma página: princípios, processos e adaptação\par}
-\vspace{3mm}
-{\fontsize{21}{26}\selectfont Grupo SIPA Privacidade 2 \ $\cdot$ \ Síntese do PMBOK 8\par}
+  left=6mm,right=6mm,top=4mm,bottom=4mm]
+{\fontsize{32}{37}\selectfont\bfseries PMBOK 8 em uma página\par}
 \vspace{1mm}
-{\fontsize{21}{26}\selectfont\bfseries Ideia central: princípios orientam decisões; domínios e áreas de foco ajudam a localizar o trabalho; \textit{tailoring} ajusta a forma de executá-lo [4].\par}
-\vspace{3mm}
-{\fontsize{19}{24}\selectfont\blocoautores\par}
+{\fontsize{20}{25}\selectfont Princípios, processos e adaptação sob medida\par}
+\vspace{2mm}
+{\fontsize{15}{19}\selectfont Princípios orientam decisões; domínios e áreas de foco organizam o trabalho; \textit{tailoring} ajusta sua aplicação [4].\par}
+\vspace{2mm}
+{\fontsize{12.5}{16}\selectfont\blocoautores\par}
 \end{tcolorbox}
 
-\vspace{6mm}
+\vspace{4mm}
 
 % ----------------------- LINHA 1: Figura P1 | Figura P2 -----------------------
 \noindent
@@ -110,14 +110,14 @@ Riscos & 0 & \cellcolor{exLine!36}4 & \cellcolor{exLine!9}1 & \cellcolor{exLine!
 \leitura{\textbf{Legenda:} IN Iniciação $\cdot$ PL Planejamento $\cdot$ EX Execução $\cdot$ MC Monitoramento e Controle $\cdot$ CL Encerramento. Contagem de processos $\neq$ duração ou importância de uma área. \textit{Identify Stakeholders} está em Iniciação (Figura 2-32 do \textit{Guide}).}
 \end{minipage}
 
-\vspace{6mm}
+\vspace{4mm}
 
 % ----------------------- LINHA 2: Figura P3 (largura total) ------------------
 \figtitulo{Figura P3 --- Quatro concentrações para ler os sete domínios}
 \includegraphics[width=\linewidth]{out/FigP3_PT.pdf}
 \leitura{\textbf{Aviso de leitura:} as quatro concentrações e as etiquetas A, S, I e P são \textbf{agrupamento analítico deste trabalho}; os sete domínios e seus 40 processos são do PMBOK 8 [4].}
 
-\vspace{6mm}
+\vspace{4mm}
 
 % ----------------------- LINHA 3: limites | referências ----------------------
 \noindent
