@@ -1,6 +1,6 @@
 ## Gabarito
 
-Cada justificativa indica o título do Glossário (pp. 241-254, [9789264304604-en.md](documentos/questionario1/9789264304604-en.md) a partir da linha 7730) a que cada opção pertence.
+Cada justificativa indica o título do Glossário (pp. 241-254, [9789264304604-en.md](documentos/OsloManual2018/9789264304604-en.md) a partir da linha 7730) a que cada opção pertence.
 
 | Q | Grupo | Resposta | Justificativa |
 |---|---|---|---|

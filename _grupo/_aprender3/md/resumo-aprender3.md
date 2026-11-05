@@ -1,6 +1,6 @@
 # Resumo do Aprender3 — Gestão de Projetos de TI (2026/2)
 
-Fonte: [cópia local da página do curso](<../raw/Curso_ PPCA0006 - GESTÃO DE PROJETOS DE TI - Turma 01 - 2026_2 _ Aprender3.html>). Este resumo registra o conteúdo dessa cópia; prazos e estados das atividades podem mudar na plataforma.
+Fonte: página do curso no Aprender3 (PPCA0006, turma 01, 2026/2), salva em 04/11/2026. A cópia HTML foi removida do repositório depois da conferência deste resumo; ela continua no histórico do Git, no commit anterior à remoção. Este resumo registra o conteúdo dessa cópia; prazos e estados das atividades podem mudar na plataforma.
 
 ## Organização do curso
 
