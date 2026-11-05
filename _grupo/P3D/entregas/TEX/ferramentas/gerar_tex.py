@@ -608,14 +608,21 @@ def build_lessons(lang):
     blocks = parse_blocks(aviso_ia.remove((MD / c["md_lessons"]).read_text(encoding="utf-8")))
     ctx = Ctx({})
     out = [preamble(lang, {}, f"P3D -- Lições aprendidas ({'PT-BR' if lang == 'pt' else 'EN'})"),
-           r"\begin{document}", r"\SingleSpacing", r"\small", r"\thispagestyle{plain}", ""]
+           r"\begin{document}", r"\SingleSpacing", r"\small",
+           # um pouco mais de ar entre linhas e entre parágrafos, para aproveitar melhor a 2ª página
+           r"\linespread{1.04}\selectfont", r"\setlength{\parskip}{5pt plus 1pt}", r"\thispagestyle{plain}", ""]
     title = next(b[2] for b in blocks if b[0] == "h" and b[1] == 1)
     out.append(r"\begin{center}\textbf{" + inline(title.upper(), ctx) + r"}\end{center}")
+    seen_h2 = False
     for b in blocks:
         if b[0] == "h" and b[1] == 2:
+            seen_h2 = True
             out += ["", r"\subsection*{" + inline(b[2], ctx) + "}"]
         elif b[0] == "p":
-            out += ["", para_text(b[1], ctx)]
+            text = para_text(b[1], ctx)
+            if not seen_h2:  # bloco de identificação (grupo, integrantes, professores): sem recuo da primeira linha
+                text = r"\noindent " + text
+            out += ["", text]
     out += ["", r"\end{document}", ""]
     return "\n".join(out)
 
@@ -703,7 +710,7 @@ def fig1(l):
           f"  \\node[align=center,text=exLine] at (3.7,4.4) {{\\large\\textbf{{{l['std']}}}\\\\ {l['std2']}}};\n"
           f"  \\node[align=center,text=exLine] at (12.3,4.4) {{\\large\\textbf{{{l['gui']}}}\\\\ {l['gui2']}}};\n"
           f"  \\draw[draw=exLine,line width=1.2pt,{ARR2}] (7.2,4.4) -- (8.8,4.4);\n"
-          "  \\draw[fill=ctxFill,draw=ctxLine,line width=1.1pt,dash pattern=on 5pt off 4pt,rounded corners=0.25cm] (2.4,0.2) rectangle (13.6,1.9);\n"
+          "  \\draw[fill=ctxFill,draw=ctxLine,line width=1.1pt,dash pattern=on 5pt off 4pt,rounded corners=0.25cm] (1.4,0.2) rectangle (14.6,1.9);\n"
           f"  \\node[align=center,text=ctxText] at (8.0,1.05) {{\\textbf{{{l['ana']}}}\\\\ {l['ana2']}}};\n"
           f"  \\draw[draw=ctxLine,line width=1.1pt,dash pattern=on 4pt off 3pt,{ARR}] (12.3,2.9) -- (12.3,2.4) -- (10.5,2.4) -- (10.5,1.9);\n")
     return s + FIG_TAIL

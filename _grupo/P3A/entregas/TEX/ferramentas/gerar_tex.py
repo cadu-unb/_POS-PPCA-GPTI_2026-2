@@ -638,7 +638,7 @@ FIG_LABELS = {
         quem="Quem (WH)", st="Partes\\\\Interessadas", st2="domínio existente (7)",
         pv="+ Privacidade", pv2="domínio proposto", ri="Riscos", ri2="domínio existente (6)",
         areas=[("IN\\\\Iniciação", "P1", "Identificar\\\\titulares\\\\e dados", "Inventário"),
-               ("PL\\\\Planejamento", "P2–P4", "Planejar\\\\avaliar impactos\\\\definir controles", "Plano e\\\\avaliação"),
+               ("PL\\\\Planejamento", "P2–P4", "Planejar,\\\\avaliar impactos,\\\\definir controles", "Plano e\\\\avaliação"),
                ("EX\\\\Execução", "P5–P6", "Gerir direitos\\\\aplicar controles", "Registros"),
                ("MC\\\\Monitoramento\\\\e controle", "P7", "Monitorar riscos\\\\e práticas", "Revisões"),
                ("CL\\\\Encerramento", "P8", "Transferir ou\\\\encerrar o\\\\tratamento", "Destino dos\\\\dados")],
@@ -662,10 +662,10 @@ FIG_LABELS = {
         quem="Who (WH)", st="Stakeholders", st2="existing domain (7)",
         pv="+ Privacy", pv2="proposed domain", ri="Risk", ri2="existing domain (6)",
         areas=[("IN\\\\Initiating", "P1", "Identify data\\\\subjects and\\\\data", "Inventory"),
-               ("PL\\\\Planning", "P2–P4", "Plan\\\\assess impacts\\\\define controls", "Plan and\\\\assessment"),
+               ("PL\\\\Planning", "P2–P4", "Plan,\\\\assess impacts,\\\\define controls", "Plan and\\\\assessment"),
                ("EX\\\\Executing", "P5–P6", "Manage rights\\\\apply controls", "Records"),
-               ("MC\\\\Monitoring\\\\and Controlling", "P7", "Monitor risks\\\\and practices", "Reviews"),
-               ("CL\\\\Closing", "P8", "Transfer or close\\\\the processing", "Data\\\\disposition")],
+               ("MC\\\\Monitoring and\\\\Controlling", "P7", "Monitor risks\\\\and practices", "Reviews"),
+               ("CL\\\\Closing", "P8", "Transfer or\\\\close the\\\\processing", "Data\\\\disposition")],
         change="material change",
         fv="F · Function", fv2="effects on people", sv="S · Structure", sv2="roles and evidence",
         pvv="P · Process", pvv2="decisions P1–P8", cv="C · Context", cv2="law, technology, cooperative",
@@ -795,4 +795,11 @@ def main():
             name.write_text(f(FIG_LABELS[lang]), encoding="utf-8")
         import aviso_ia  # declaração de uso de IA (ferramentas/aviso_ia.py)
         (TEX / L[lang]["out_report"]).write_text(
-            aviso_ia.injec
+            aviso_ia.inject_report_tex(ajustes_tabelas.apply(build_report(lang), lang), lang), encoding="utf-8")
+        (TEX / L[lang]["out_lessons"]).write_text(
+            aviso_ia.inject_lessons_tex(build_lessons(lang), lang), encoding="utf-8")
+    print("gerado em", TEX)
+
+
+if __name__ == "__main__":
+    main()
