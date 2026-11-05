@@ -62,3 +62,7 @@ Os estudos de saúde e de pessoas digitalizadas fornecem **mecanismos e pergunta
 Já estão no projeto: [triagem manual](<../Manual 1/02 - DIGITAL TWIN CONCEPT FOR MANUAL WASTE SORTING MANAGEMENT.pdf>), [estrutura de conformidade](<../Manual 2/01 - Navigating Privacy in Digital Twin.pdf>), [privacidade automotiva](<../Manual 2/02 - A Digital Twin-based Privacy Enhancement Mechanism for the Automotive Industry.pdf>) e [direito da UE](<../Manual 2/03 - Digital Twins Under EU Law.pdf>). Os demais títulos são indicações para localizar o texto integral pelo DOI ou pelo acesso institucional.
 
 Na leitura posterior, confirmar se cada texto realmente sustenta a contribuição proposta, registrar limitações e decidir quais referências entram em P3A, P3D ou na discussão dos tetraedros. A relação entre os quatro domínios SIPA e as cinco áreas de foco, seis princípios, sete domínios e quarenta processos do PMBOK 8 ainda será construída pelo grupo.
+
+# Observações do User
+
+> User: Não foi possível realzar o download do arquivo `Federated Digital Twin Architecture with Synthetic Data Generation for Privacy-Preserving Diabetes Management`, o mesmo se encontrar indisponível para o público geral. Acess restrito ao associados do IEEE;

@@ -8,17 +8,32 @@ O Aprender3 reúne questionários e tarefas para entrega. Os materiais de apoio 
 
 Dois eixos orientam o trabalho: a adaptação do PMBOK 8 por meio dos domínios **SIPA** — sustentabilidade, inovação, privacidade e análise de negócios com decisões ajustadas a riscos — e a descrição de sistemas abertos por **função, estrutura, processo e contexto (F/S/P/C)**.
 
+## Questionários
+
+A disciplina inclui 4 ou 5 questionários, e a **média aritmética deles pesa 1/4 da nota final**. Todos permitem **uma tentativa**. Os de Agenda 2030 e Oslo duram 60 minutos; a duração dos demais consta nos respectivos enunciados.
+
+| Questionário | Assunto | Abertura | Fechamento | Estado na cópia |
+| --- | --- | --- | --- | --- |
+| GPTI1 | Desenvolvimento sustentável e Agenda 2030 | 16/10/2026 | 25/10/2026, 23h | Concluído |
+| GPTI2 | Inovação e Manual Oslo 2018 | 16/10/2026 | 25/10/2026, 23h | Concluído |
+| GPTIC | Guia PMBOK 8 (C) | 21/10/2026 | 25/10/2026, 23h | Pendente |
+| GPTID | Guia PMBOK 8 (D) | 21/10/2026 | 25/10/2026, 23h | Pendente |
+| GPTI1S | Agenda 2030, 2ª possibilidade de resposta | 30/10/2026 | 08/11/2026, 23h | Concluído |
+| GPTI2S | Inovação e Manual Oslo, 2ª possibilidade de resposta | 30/10/2026 | 08/11/2026, 23h | Concluído |
+
+O texto introdutório fala em questionários GPTI3 e GPTI4 para o PMBOK 8, mas a página lista GPTIC e GPTID. Também restam na página itens de orientação com nomes PSP1 (PSP1C, PSP1D e PSP1AR), de uma versão anterior da disciplina.
+
 ## Entregas apresentadas na página
 
 ### P2 — Descrição do sistema e dos gêmeos digitais
 
 **P2A, por grupo:** descrever o gêmeo real de um componente do sistema de resíduos sólidos e seu gêmeo digital correspondente, usando função, estrutura, processo e contexto (F/S/P/C). A descrição deve ser fundamentada em buscas bibliométricas e considerar as tabelas de capacidades do *Digital Twin Consortium*: uma para o que o gêmeo digital pode fazer e outra para como agentes de IA podem atuar. O texto distingue o sistema físico do digital e propõe que o gêmeo digital ajude a avaliar decisões futuras, além de representar o estado atual. **Prazo registrado: 23/10/2026, às 12h.**
 
-**P2B, por colégio de grupos:** consolidar essas descrições dos componentes, preservando o tratamento de gêmeos reais, gêmeos digitais, agentes de IA e F/S/P/C. **Prazo registrado: 30/10/2026, às 12h.**
+**P2B, por colégio de grupos:** consolidar, em termos de F/S/P/C, as descrições dos gêmeos digitais e dos agentes de IA dos componentes, com base nas mesmas buscas bibliométricas e nas mesmas tabelas do *Digital Twin Consortium*. **Prazo registrado: 30/10/2026, às 12h.**
 
 ### P3 — Extensão do PMBOK 8 e síntese de referência
 
-**P3A, por grupo SIPA:** justificar a necessidade de uma extensão do PMBOK 8 e propor a inclusão de **um** novo domínio de desempenho, em formato adaptado de extensão PMBOK. A justificativa segue quatro aspectos: necessidade, critérios de desenvolvimento, publicação e formato, e desenvolvimento e manutenção. Os quatro grupos produzem, em conjunto, os domínios de sustentabilidade, inovação, privacidade e análise de negócios com decisões ajustadas a riscos. Cada domínio é relacionado aos processos da sua concentração:
+**P3A, por grupo SIPA:** justificar a necessidade de uma extensão do PMBOK 8 e incluir novos domínios de desempenho SIPA, em formato adaptado de extensão PMBOK (o título da atividade diz "PMBOK6", mas o texto trata do PMBOK 8). A justificativa segue quatro aspectos: caracterização da necessidade, critérios para desenvolvimento, publicação e formato, e desenvolvimento e manutenção. Cada domínio — sustentabilidade, inovação, privacidade e análise de negócios com decisões ajustadas a riscos — é incluído em uma das concentrações e relacionado aos processos dela:
 
 | Novo domínio | Concentração e domínios existentes |
 | --- | --- |
@@ -29,9 +44,12 @@ Dois eixos orientam o trabalho: a adaptação do PMBOK 8 por meio dos domínios 
 
 Para o grupo de **privacidade**, o foco da P3A é a conexão do novo domínio com **partes interessadas e riscos**, na concentração **Quem**. O enunciado também pede examinar a aderência às **cinco áreas de foco** do PMBOK 8. Possíveis conexões com processos das outras concentrações devem ser listadas separadamente para a consolidação geral da **P3C**. **Peso: 10%; prazo registrado: 06/11/2026, às 12h.**
 
-Há uma diferença entre duas orientações da página: o enunciado da P3A cita a aderência aos **seis princípios** do PMBOK 8, mas o texto de apoio diz que a **inclusão dos princípios** na evolução do guia será abordada somente na P3C.
+Há duas inconsistências na página sobre a P3A:
 
-**P3D, por grupo SIPA:** produzir um resumo do PMBOK8S e do PMBOK8G. Deve cobrir a adaptação (*tailoring*), os **seis princípios**, as **cinco áreas de foco** (iniciação, planejamento, execução, monitoramento e controle, encerramento) e os **sete domínios existentes**, distribuídos nas quatro concentrações acima. A página contabiliza **40 processos**: governança (9), escopo (6), cronograma (3), finanças (4), recursos (5), partes interessadas (7) e riscos (6). A P3D resume o conjunto do PMBOK 8, mesmo para um grupo cujo domínio SIPA seja privacidade. **Peso: 10%; prazo registrado: 06/11/2026, às 12h.**
+- **Quantidade de domínios.** A ementa fala em incluir os **4** novos domínios por grupo SIPA, com resultado em "4 conjuntos de sistemas", um por domínio. O parágrafo que descreve os arquivos de entrega diz "a inclusão de **um** novo domínio" e atribui a elaboração ao "grupo de componente SRS". A página não esclarece qual vale para cada grupo.
+- **Princípios.** O enunciado cita a aderência aos **seis princípios** do PMBOK 8, mas o texto de apoio diz que a **inclusão dos princípios** na evolução do guia será abordada somente na P3C.
+
+**P3D, por grupo SIPA:** produzir um resumo do PMBOK8S e do PMBOK8G. Deve cobrir a adaptação (*tailoring*), os **seis princípios**, as **cinco áreas de foco** (iniciação, planejamento, execução, monitoramento e controle, encerramento) e os **sete domínios existentes**, distribuídos nas quatro concentrações acima. A página contabiliza **40 processos**: governança (9), escopo (6), cronograma (3), finanças (4), recursos (5), partes interessadas (7) e riscos (6). **Peso: 10%; prazo registrado: 06/11/2026, às 12h.**
 
 O material de apoio também situa **P3B** como consolidação parcial por colégios SIPA e **P3C** como consolidação geral da proposta GPH.SIPA. Na cópia consultada, elas aparecem nesse material de apoio, sem enunciados de tarefa próprios na seção exibida.
 
@@ -41,8 +59,12 @@ O material de apoio descreve a **P4A** como aplicação do guia GPH.SIPA resulta
 
 Para a **P4B**, o apoio pede explicitar os marcos iniciais do projeto do gêmeo digital tratado pelo guia: necessidades e lacunas, *business case*, plano de gestão de benefícios, termo de abertura e plano de gestão do projeto. Na cópia consultada, P4A e P4B constam como orientação de apoio, sem tarefas de envio próprias na seção exibida.
 
+### P6 — Encerramento
+
+O resumo das tarefas lista dois tele-eventos de encerramento: **P6C1**, com a apresentação dos colégios parciais de componentes (DM, R2, R3 e DS), e **P6C2**, com a apresentação do colégio total, "espelhando a classe toda como uma equipe". Na cópia consultada, eles aparecem só nesse resumo, sem atividade própria.
+
 ### Formato dos arquivos e materiais indicados
 
-Para **P2A, P2B, P3A e P3D**, os enunciados pedem, em **português e inglês**, um pôster de uma página por idioma, um relatório técnico-científico de 20 a 30 páginas por idioma e um relato de lições aprendidas de uma a duas páginas por idioma. Na P3A e na P3D, o envio é atribuído ao líder, com identificação do grupo nos nomes dos arquivos.
+Para **P2A, P2B, P3A e P3D**, os enunciados pedem, em **português e inglês**, um pôster de uma página por idioma, um relatório técnico-científico de 20 a 30 páginas por idioma e um relato de lições aprendidas de uma a duas páginas por idioma. O relatório segue o formato **Relatório Final do PMBOK 6** (item 4.7.3.3, "Relatório Final", do tópico 4.7 *Close Project or Phase*, pp. 121–128 do capítulo 4). Na P3A e na P3D, o envio é atribuído ao líder, com identificação do grupo nos nomes dos arquivos.
 
 As referências indicadas incluem PMBOK8S (*Standard*), PMBOK8G (*Guide*), materiais da equipe no Teams sobre SIPA e P3 e, para P2, as tabelas de capacidades do *Digital Twin Consortium*.
