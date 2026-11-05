@@ -313,5 +313,5 @@ Os seis arquivos de `_grupo/P3D/entregas/` foram revisados em 04/11 contra este 
 Pontos que continuam em aberto:
 - **Gêmeo digital:** o PMBOK 8 não menciona o termo; o relatório registra isso e cita uma revisão sobre gêmeos digitais em projetos de construção.
 - **Páginas:** o relatório em português tem cerca de 8,4 mil palavras; só a compilação mostra o número de páginas (meta: 20 a 30).
-- **LaTeX:** ainda não foi gerado para a P3D; o gerador da P3A (`../P3A/entregas/TEX/ferramentas/gerar_tex.py`) pode ser adaptado.
+- **LaTeX:** a versão LaTeX foi escrita em 04/11, sem compilar, seguindo a da P3A. A pasta `entregas/` passou a ter `MD/` (Markdown congelado) e `TEX/` (relatório, pôster e lições em português e inglês, figuras em TikZ, `compilar.sh`, `README.md` e o gerador `ferramentas/gerar_tex.py`, adaptado do da P3A). Pendências: preencher os nomes dos integrantes na capa, confirmar o bloco de autores do pôster, compilar e ajustar erros de LaTeX e de layout, e conferir visualmente as figuras. As Figuras 2 e 3 do relatório são tabelas coloridas, não TikZ.
 - **Declaração de uso de IA:** não aplicada nos arquivos de entregas.

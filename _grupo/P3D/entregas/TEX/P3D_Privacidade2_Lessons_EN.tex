@@ -1,0 +1,94 @@
+% =============================================================================
+% P3D -- Lições aprendidas (EN)
+% Formatação: ABNT (classe abnTeX2, modo article), A4, Latin Modern, 12 pt,
+% margens 3/2/3/2 cm, espaçamento 1,5, recuo de parágrafo 1,25 cm.
+% Figuras esperadas em out/ (compiladas a partir de figuras/):
+%   Fig1_EN.pdf, Fig4_EN.pdf, Fig5_EN.pdf
+% (as figuras 2 e 3 são tabelas coloridas escritas neste arquivo).
+% ARQUIVO GERADO por ferramentas/gerar_tex.py a partir de ../MD. Para mudar o
+% conteúdo, edite o Markdown e gere de novo, ou edite este .tex diretamente.
+% =============================================================================
+\documentclass[12pt,a4paper,article,oneside,brazil,english]{abntex2}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}           % Latin Modern (fonte padrão do LaTeX, com T1)
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage[expansion=false]{microtype}
+\usepackage{url}
+\Urlmuskip=0mu plus 1mu\relax
+
+% Margens ABNT: superior 3 cm, inferior 2 cm, esquerda 3 cm, direita 2 cm
+\setlrmarginsandblock{3cm}{2cm}{*}
+\setulmarginsandblock{3cm}{2cm}{*}
+\checkandfixthelayout
+
+\setlength{\parindent}{1.25cm}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{3em}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+\renewcommand{\contentsname}{CONTENTS}
+\renewcommand{\listfigurename}{LIST OF FIGURES}
+\renewcommand{\listtablename}{LIST OF TABLES}
+
+% Cores das figuras-tabela (mapa de calor e matriz de princípios)
+\definecolor{exLine}{RGB}{23,54,93}
+\definecolor{bandaProativa}{RGB}{220,233,247}
+\definecolor{bandaResp}{RGB}{200,240,236}
+\definecolor{bandaValor}{RGB}{238,242,245}
+
+% Tabelas: sem filetes verticais (padrão IBGE adotado pela ABNT)
+\renewcommand{\arraystretch}{1.2}
+
+% Fonte abaixo de tabelas e figuras (ABNT NBR 14724)
+\newcommand{\fontetab}[1]{\par\vspace{3pt}{\small\noindent Source: #1\par}}
+
+% Citações numéricas: o número de cada referência é definido uma vez (ordem
+% alfabética da lista) e usado por \refnum{chave}, \cit{chave} e \refitem.
+\newcommand{\defref}[2]{\expandafter\gdef\csname refnum@#1\endcsname{#2}}
+\newcommand{\refnum}[1]{\csname refnum@#1\endcsname}
+\newcommand{\cit}[1]{[\refnum{#1}]}
+\newcommand{\refitem}[2]{\par\noindent\hangindent=1.2cm\hangafter=1\makebox[1.2cm][l]{[\refnum{#1}]}#2\par}
+
+
+% Integrantes do grupo (preencher; a capa usa esta macro)
+\newcommand{\integrantes}{[nomes dos integrantes do grupo]}
+
+\begin{document}
+\SingleSpacing
+\thispagestyle{plain}
+
+\begin{center}\textbf{LESSONS LEARNED}\end{center}
+
+\textbf{SIPA Privacy 2 group}
+
+\subsection*{What we learned while synthesizing PMBOK 8}
+
+\textbf{1. Separating principle, Focus Area, domain, and process.} These four elements answer different questions: the principle guides judgment; the Focus Area locates a type of activity; the domain brings together a management concern; the process describes a possible practice. To avoid suggesting a rigid chain among them, we used distinct verbs in the relationships and separate matrices: 7 \ensuremath{\times} 5 for processes and Focus Areas, and 6 \ensuremath{\times} 7 for principles and domains.
+
+\textbf{2. Recording the origin of each count.} The converted text of Table 2-1 of the \textit{Guide} lists the processes of each domain without indicating the Focus Area. The area of \textit{Identify Stakeholders} comes from Figure 2-32 of the \textit{Guide}, which places it in Initiating. Thus the totals by area are 2, 19, 8, 10, and 1, and the totals by domain are 9, 6, 3, 4, 7, 5, and 6. Noting the source of each number made the table verifiable.
+
+\textbf{3. Making \textit{tailoring} the axis of the synthesis.} A list of the 40 names, on its own, would explain little. Chapter 3 of the \textit{Guide} shows why and how to adjust life cycle, processes, and engagement, and provides diagnostics for common situations. We began reading each domain through the question: what tailoring decision does this domain require in the project's context?
+
+\textbf{4. Distinguishing PMBOK 8 from our analytical grouping.} The four concentrations help present the seven domains, but they are not an official PMI classification. The themes A, S, I, and P are additions under analysis and are not part of the sum of the 40 processes. Making this boundary visible in the captions and in the text avoided incorrect attribution to the source.
+
+\textbf{5. Working with a restricted-access source.} The complete edition of PMBOK 8 can only be obtained through purchase or PMI membership. For this reason the report cites sections, tables, and figures, paraphrases instead of reproducing passages, and makes clear that the translations of the process names are working translations.
+
+\textbf{6. Complementing PMBOK 8 with external literature.} The edition does not mention the digital twin. Recent studies show that hybrid approaches are common and that the choice depends on context, which reinforces PMBOK 8's emphasis on tailoring. For digital twin projects, the management structure of PMBOK 8 needs to be complemented with specific technical references.
+
+\textbf{7. Using figures to explain relationships, not to decorate.} The heat map shows distribution, the cycle represents the review of decisions, and the concentration cards make clear what is official and what is analytical organization. Each figure has a title, source, caption, and interpretive sentence; the numbers and labels remain legible without color.
+
+\subsection*{What we would revise in a next version}
+
+Check the translation of the process names against the original English text, test whether someone who did not take part in the writing understands the difference between the two volumes, and obtain validation from project management experts. The final size of the figures depends on the layout.
+
+\textbf{Limit of this work:} it is a documentary synthesis. It does not report a completed project, does not validate an extension of PMBOK 8, and does not measure results of the hypothetical examples.
+
+\end{document}

@@ -1,0 +1,129 @@
+% =============================================================================
+% P3D -- Privacidade 2: pôster (PT-BR)
+% Formato: A3 retrato (297 x 420 mm), UMA página, duas colunas, Latin Modern.
+% Figuras esperadas em out/: FigP1_PT.pdf, Fig5_PT.pdf (compiladas a partir de figuras/).
+% O mapa de calor (Figura P2) é uma tabela colorida escrita neste arquivo.
+% Conteúdo espelha MD/P3D_Privacidade2_Poster_PT.md.
+%
+% UMA PÁGINA: todo o conteúdo fica dentro de uma única caixa (\parbox) envolvida por
+% adjustbox com "max totalsize": se o conteúdo for mais alto que a página, ele é
+% reduzido proporcionalmente até caber; se for menor, não é ampliado.
+% Ajuste de tamanho: \corpo (texto). Autores: editar o bloco \blocoautores.
+% =============================================================================
+\documentclass[12pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[paperwidth=297mm,paperheight=420mm,margin=10mm]{geometry}
+\usepackage[english,brazil]{babel}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage[skins]{tcolorbox}
+\usepackage{adjustbox}
+\usepackage[expansion=false]{microtype}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\definecolor{exLine}{RGB}{23,54,93}
+\definecolor{exFill}{RGB}{220,233,247}
+\definecolor{prFill}{RGB}{200,240,236}
+\definecolor{prLine}{RGB}{8,127,140}
+\definecolor{prText}{RGB}{6,79,87}
+\definecolor{ctxText}{RGB}{38,52,67}
+
+\newcommand{\corpo}{\fontsize{14}{18}\selectfont}
+\newcommand{\figtitulo}[1]{{\fontsize{17}{21}\selectfont\bfseries\color{exLine}#1\par}\vspace{2mm}}
+\newcommand{\leitura}[1]{\vspace{2mm}{\corpo\itshape\color{ctxText}#1\par}}
+
+% --- Autores, disciplina e código (editar aqui) ------------------------------
+\newcommand{\blocoautores}{%
+  \textbf{Autores:} Filipe Alves de Sousa e Membros do Grupo Colégio Reciclagem 1\\
+  \textbf{Disciplina:} Gestão de Projetos de TI (GPTI) -- PPCA/CIC/UnB\\
+  \textbf{Código:} 3p2 / 3R31}
+
+\newtcolorbox{caixa}[1]{enhanced,colback=white,colframe=exLine,boxrule=0.7mm,arc=2mm,
+  left=4mm,right=4mm,top=3mm,bottom=3.5mm,
+  title={#1},fonttitle=\fontsize{17}{21}\selectfont\bfseries,coltitle=white,colbacktitle=exLine}
+
+\begin{document}
+\thispagestyle{empty}
+\corpo
+
+\noindent\begin{adjustbox}{max totalsize={\textwidth}{\textheight},center}
+\parbox{\textwidth}{%
+
+% ------------------------------- BANNER --------------------------------------
+\begin{tcolorbox}[enhanced,colback=exLine,colframe=exLine,coltext=white,arc=2mm,
+  left=6mm,right=6mm,top=4.5mm,bottom=4.5mm]
+{\fontsize{30}{34}\selectfont\bfseries PMBOK 8 em uma página: princípios, processos e adaptação\par}
+\vspace{2.5mm}
+{\fontsize{15}{19}\selectfont Grupo SIPA Privacidade 2 \ $\cdot$ \ Síntese do PMBOK 8\par}
+{\fontsize{15}{19}\selectfont\bfseries Ideia central: princípios orientam decisões; domínios e áreas de foco ajudam a localizar o trabalho; \textit{tailoring} ajusta a forma de executá-lo [4].\par}
+\vspace{2.5mm}
+{\fontsize{14}{18}\selectfont\blocoautores\par}
+\end{tcolorbox}
+
+\vspace{4mm}
+
+\noindent
+\begin{minipage}[t]{0.485\linewidth}
+% ------------------------------ COLUNA ESQUERDA ------------------------------
+\figtitulo{Figura P1 --- Como as peças se relacionam}
+\includegraphics[width=\linewidth]{out/FigP1_PT.pdf}
+\leitura{\textbf{Cinco operações sobre processos:} adicionar $\cdot$ modificar $\cdot$ remover $\cdot$ combinar $\cdot$ alinhar. \textbf{Três objetos da adaptação:} ciclo de vida e abordagem de desenvolvimento $\cdot$ processos $\cdot$ engajamento [4].}
+
+\vspace{4mm}
+
+\figtitulo{Figura P3 --- Quatro concentrações para ler os sete domínios}
+\includegraphics[width=\linewidth]{out/Fig5_PT.pdf}
+\leitura{\textbf{Aviso de leitura:} as quatro concentrações e as etiquetas A, S, I e P são \textbf{agrupamento analítico deste trabalho}; os sete domínios e seus 40 processos são do PMBOK 8 [4].}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.485\linewidth}
+% ------------------------------ COLUNA DIREITA -------------------------------
+\figtitulo{Figura P2 --- 40 processos em 7 domínios $\times$ 5 áreas de foco}
+{\fontsize{15}{20}\selectfont
+\renewcommand{\arraystretch}{1.35}
+\noindent\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lrrrrrr}
+\hline
+\textbf{Domínio} & \textbf{IN} & \textbf{PL} & \textbf{EX} & \textbf{MC} & \textbf{CL} & \textbf{Total}\\
+\hline
+Governança & \cellcolor{exLine!9}1 & \cellcolor{exLine!18}2 & \cellcolor{exLine!27}3 & \cellcolor{exLine!18}2 & \cellcolor{exLine!9}1 & 9\\
+Escopo & 0 & \cellcolor{exLine!36}4 & 0 & \cellcolor{exLine!18}2 & 0 & 6\\
+Cronograma & 0 & \cellcolor{exLine!18}2 & 0 & \cellcolor{exLine!9}1 & 0 & 3\\
+Finanças & 0 & \cellcolor{exLine!27}3 & 0 & \cellcolor{exLine!9}1 & 0 & 4\\
+Partes Interessadas & \cellcolor{exLine!9}1 & \cellcolor{exLine!18}2 & \cellcolor{exLine!18}2 & \cellcolor{exLine!18}2 & 0 & 7\\
+Recursos & 0 & \cellcolor{exLine!18}2 & \cellcolor{exLine!18}2 & \cellcolor{exLine!9}1 & 0 & 5\\
+Riscos & 0 & \cellcolor{exLine!36}4 & \cellcolor{exLine!9}1 & \cellcolor{exLine!9}1 & 0 & 6\\
+\hline
+\textbf{Total} & \textbf{2} & \textbf{19} & \textbf{8} & \textbf{10} & \textbf{1} & \textbf{40}\\
+\hline
+\end{tabular*}\par}
+\leitura{\textbf{Legenda:} IN Iniciação $\cdot$ PL Planejamento $\cdot$ EX Execução $\cdot$ MC Monitoramento e Controle $\cdot$ CL Encerramento. Contagem de processos $\neq$ duração ou importância de uma área. \textit{Identify Stakeholders} está em Iniciação (Figura 2-32 do \textit{Guide}).}
+
+\vspace{4mm}
+
+\begin{caixa}{Em prática e limites}
+\corpo
+O PMBOK 8 não menciona gêmeo digital. Abordagens híbridas são frequentes na prática [3, 5]; por isso a adaptação sob medida é o eixo da síntese.
+\end{caixa}
+
+\vspace{4mm}
+
+\begin{caixa}{Referências principais}
+\fontsize{11}{14}\selectfont
+Numeração do relatório completo.\par\smallskip
+[3] NOLL, J.; BEECHAM, S. How agile is hybrid agile? An analysis of the HELENA data. \textbf{Product-Focused Software Process Improvement (PROFES 2019)}, LNCS v. 11915, p. 341-349, 2019.\par\smallskip
+[4] PMI. \textbf{The Standard for Project Management and A Guide to the PMBOK (PMBOK Guide)}. 8. ed., 2025. Documento de acesso restrito.\par\smallskip
+[5] REED, A. H. et al. Usage of hybrid project management approaches and influences on approach selection. \textbf{Communications of the Association for Information Systems}, v. 54, 2024.
+\end{caixa}
+\end{minipage}
+
+}% fim do \parbox
+\end{adjustbox}
+
+\end{document}

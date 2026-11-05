@@ -1,0 +1,45 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{geometry}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,shapes.geometric}
+
+\geometry{paperwidth=16cm,paperheight=8.4cm,margin=0cm}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+\definecolor{ctxFill}{RGB}{238,242,245}
+\definecolor{ctxLine}{RGB}{155,168,179}
+\definecolor{ctxText}{RGB}{38,52,67}
+\definecolor{exFill}{RGB}{220,233,247}
+\definecolor{exLine}{RGB}{23,54,93}
+\definecolor{prFill}{RGB}{200,240,236}
+\definecolor{prLine}{RGB}{8,127,140}
+\definecolor{prText}{RGB}{6,79,87}
+
+\begin{document}
+\noindent
+\begin{tikzpicture}[x=1cm,y=1cm,font=\small]
+  \path[use as bounding box] (0,0) rectangle (16,8.4);
+  \node[anchor=west,text=exLine] at (0.2,8.05) {\footnotesize\textbf{Camada 1 · Princípios (mentalidade)}};
+  \draw[fill=exFill,draw=exLine,line width=1.1pt,rounded corners=0.2cm] (0.2,6.1) rectangle (5.2,7.7);
+  \node[align=center,text=exLine] at (2.7,6.9) {\textbf{Proativa}\\ 1AHV · 3QPD};
+  \draw[fill=exFill,draw=exLine,line width=1.1pt,rounded corners=0.2cm] (5.5,6.1) rectangle (10.5,7.7);
+  \node[align=center,text=exLine] at (8.0,6.9) {\textbf{De responsabilidade}\\ 4BAL · 6BEC};
+  \draw[fill=exFill,draw=exLine,line width=1.1pt,rounded corners=0.2cm] (10.8,6.1) rectangle (15.8,7.7);
+  \node[align=center,text=exLine] at (13.3,6.9) {\textbf{Orientada a valor}\\ 2FOV · 5SPA};
+  \draw[draw=exLine,line width=1.2pt,-{Triangle[length=5pt,width=5pt]}] (8.0,6.1) -- (8.0,5.55);
+  \node[text=exLine,fill=white,inner sep=2pt,anchor=west] at (8.15,5.85) {\footnotesize orientam};
+  \draw[fill=prFill,draw=prLine,line width=1.6pt,rounded corners=0.25cm] (3.2,3.5) rectangle (12.8,5.5);
+  \node[align=center,text=prText] at (8.0,4.5) {\large\textbf{TAILORING}\\ abordagem · processos · engajamento\\ \footnotesize Ciclo de quatro passos: 1 $\rightarrow$ 2 $\rightarrow$ 3 $\rightarrow$ 4};
+  \draw[draw=exLine,line width=1.2pt,-{Triangle[length=5pt,width=5pt]}] (8.0,3.5) -- (8.0,2.55);
+  \node[text=exLine,fill=white,inner sep=2pt,anchor=west] at (8.15,3.0) {\footnotesize ajusta a aplicação};
+  \node[anchor=west,text=exLine] at (0.2,2.3) {\footnotesize\textbf{Camada 3 · Estrutura de trabalho}};
+  \draw[fill=exFill,draw=exLine,line width=1.1pt,rounded corners=0.2cm] (0.2,0.2) rectangle (7.6,1.9);
+  \draw[fill=exFill,draw=exLine,line width=1.1pt,rounded corners=0.2cm] (8.4,0.2) rectangle (15.8,1.9);
+  \node[text=exLine] at (3.9,1.05) {\textbf{5 áreas de foco}};
+  \node[text=exLine] at (12.1,1.05) {\textbf{7 domínios · 40 processos}};
+\end{tikzpicture}
+\end{document}
