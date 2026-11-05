@@ -1,11 +1,11 @@
 # Privacidade como domínio de desempenho proposto para o PMBOK 8
 
-**P3A · Grupo SIPA Privacidade 2 · Concentração Quem (WH)**  
+**Grupo SIPA Privacidade 2 · Concentração Quem (WH)**  
 **Proposta acadêmica:** os processos P1–P8 **não integram oficialmente o PMBOK 8**.
 
 ## Problema e contribuição
 
-O PMBOK 8 menciona proteção de dados e privacidade, mas seus sete domínios e 40 processos não organizam o tratamento de dados pessoais como objeto de gestão próprio. Propomos **Privacidade** ao lado de **Partes Interessadas (7 processos)** e **Riscos (6 processos)**. A pergunta central é: **que efeitos o projeto produz sobre as pessoas cujos dados trata, e que evidências justificam suas decisões?**
+O PMBOK 8 [13] menciona proteção de dados e privacidade, mas seus sete domínios e 40 processos não organizam o tratamento de dados pessoais como objeto de gestão próprio. Os estudos sobre gêmeos digitais examinados tratam de requisitos legais e controles técnicos, não de processos de gestão de projetos [5, 10, 17]. Propomos **Privacidade** ao lado de **Partes Interessadas (7 processos)** e **Riscos (6 processos)**. A pergunta central é: **que efeitos o projeto produz sobre as pessoas cujos dados trata, e que evidências justificam suas decisões?**
 
 ## Figura 1 — Onde entra Privacidade
 
@@ -16,9 +16,9 @@ Quem ganha contorno azul-escuro. Junto a Quem, mostrar Privacidade como cartão
 turquesa acrescentado, ligado a Partes Interessadas e Riscos.
 Os números 9/6/3/4/5/7/6 contam apenas processos oficiais do PMBOK 8.
 Não usar logotipo do PMI nem sugerir que os quatro domínios SIPA já são oficiais.
-Legenda sob a figura: azul = domínios PMBOK 8 de Quem; turquesa = proposta P3A;
+Legenda sob a figura: azul = domínios PMBOK 8 de Quem; turquesa = proposta;
 cinza = contexto das outras concentrações. Sem fotografia decorativa.
-Texto alternativo: quatro concentrações da disciplina; Privacidade entra em Quem,
+Texto alternativo: quatro concentrações; Privacidade entra em Quem,
 ao lado de Partes Interessadas e Riscos. -->
 
 ```mermaid
@@ -28,7 +28,7 @@ flowchart LR
     ME["ME · Meios<br/>Finanças (4) · Recursos (5)<br/>+ Inovação"]
     WH["WH · Quem<br/>Partes Interessadas (7) · Riscos (6)"]
     P["+ PRIVACIDADE<br/>novo domínio proposto"]
-    WH -->|inclusão P3A| P
+    WH -->|inclusão proposta| P
     classDef other fill:#eef2f5,stroke:#9ba8b3,color:#263443
     classDef focus fill:#dce9f7,stroke:#17365d,stroke-width:3px,color:#17365d
     classDef proposal fill:#c8f0ec,stroke:#087f8c,stroke-width:3px,color:#064f57
@@ -37,7 +37,7 @@ flowchart LR
     class P proposal
 ```
 
-*Leitura:* as quatro concentrações são a organização da disciplina; **Privacidade** é a contribuição deste grupo à concentração **Quem**.
+*Leitura:* as quatro concentrações são uma organização adotada neste trabalho; **Privacidade** é a contribuição deste grupo à concentração **Quem**.
 
 ## Figura 2 — Como o domínio percorre o projeto
 
@@ -72,25 +72,47 @@ flowchart LR
 
 **1AHV** visão integral do fluxo de dados · **2FOV** benefício comparado ao dano potencial · **3QPD** privacidade como critério verificável de qualidade · **4BAL** decisões e responsáveis registrados · **5SPA** efeitos duradouros sobre pessoas · **6BEC** canais para contestação e aprendizado.
 
-## Figura 3 — Caso que testa a proposta
+## Figura 3 — Gêmeos digitais: a direção do fluxo define a exposição
 
 <!-- Direção visual para o pôster final:
-Posição: rodapé visual, antes das fontes. Desenhar uma cadeia de três blocos
-vetoriais, inspirada no percurso da P2B: mobilização digital, reciclagem R3
-e destinação final. As setas representam possíveis compartilhamentos ou
-transferências de dados no cenário estudado, não fluxos reais já auditados.
-Sobre a cadeia, quatro perguntas curtas: quem é o titular, qual a finalidade,
-quem recebe, e qual o destino do dado. A figura é exemplo de teste da extensão,
-não diagrama de conformidade legal. Texto alternativo: cenário de dados pessoais
-atravessando três componentes do sistema de resíduos sólidos. -->
+Posição: rodapé visual, antes das fontes. Três faixas horizontais, uma por tipo
+de réplica digital (modelo, sombra, gêmeo), cada uma com os blocos "Mundo físico"
+e "Réplica digital". Seta tracejada no modelo (atualização manual); seta contínua
+do físico ao digital na sombra; setas nos dois sentidos no gêmeo, com a seta de
+retorno em turquesa e o rótulo "efeito sobre pessoas". À direita de cada faixa,
+uma frase curta com o risco de privacidade predominante. A figura é esquema
+conceitual, não diagrama de conformidade legal. Texto alternativo: três tipos
+de réplica digital, distinguidos pela direção do fluxo de dados. -->
 
 ```mermaid
 flowchart LR
-    DM["Mobilização digital<br/>cadastro e rota"] --> R3["Reciclagem R3<br/>operação e indicadores"] --> DF["Destinação final<br/>retenção ou descarte"]
-    classDef case fill:#f0f6f6,stroke:#087f8c,stroke-width:2px,color:#17365d
-    class DM,R3,DF case
+    subgraph A["Modelo digital · sem fluxo automático"]
+        A1["Mundo físico"] -. "atualização manual" .-> A2["Réplica digital"]
+    end
+    subgraph B["Sombra digital · coleta contínua"]
+        B1["Mundo físico"] -- "fluxo automático" --> B2["Réplica digital"]
+    end
+    subgraph C["Gêmeo digital · coleta e retorno"]
+        C1["Mundo físico"] -- "fluxo automático" --> C2["Réplica digital"]
+        C2 -- "efeito sobre pessoas" --> C1
+    end
+    classDef replica fill:#f0f6f6,stroke:#087f8c,stroke-width:2px,color:#17365d
+    class A1,A2,B1,B2,C1,C2 replica
 ```
 
-*Teste:* P1–P8 devem identificar titulares, finalidades, compartilhamentos, riscos e destino dos registros sem duplicar Partes Interessadas e Riscos. **Para P3C:** avaliar separadamente conexões com Governança, Escopo, Cronograma, Finanças e Recursos.
+*Leitura:* a classificação segue Kritzinger et al. [11]; quanto mais automático e frequente o fluxo, maior a exposição das pessoas. P1–P8 devem identificar titulares, finalidades, compartilhamentos, riscos e destino dos registros sem duplicar Partes Interessadas e Riscos. As inclusões propostas aos 13 processos existentes e as interfaces com as demais concentrações estão no relatório (§7).
 
-**Fontes:** PMI, *PMBOK Guide*, 8ª ed., §§2.5 e 2.7; LGPD (Lei 13.709/2018); ANPD, orientações sobre RIPD; NIST, *Privacy Framework* e IR 8062; consolidação P2B do grupo. Detalhamento e referências no relatório P3A em português.
+**Referências** (numeração do relatório completo, em ordem alfabética):
+[1] ANPD, Relatório de Impacto à Proteção de Dados Pessoais (RIPD): perguntas e respostas. ·
+[2] BRASIL, Lei nº 13.709/2018 (LGPD). ·
+[3] BROOKS et al., NISTIR 8062, 2017. ·
+[5] DHINAKARAN et al., *MethodsX*, 2025. ·
+[6] DTC, Digital Twin Consortium defines digital twin, 2020. ·
+[7] DTC, Digital twins capabilities periodic table, v1.2, 2025. ·
+[8] DTC, AI agent capabilities periodic table, v1.0, 2025. ·
+[10] KORCHENKO et al., *Sustainability*, 2026. ·
+[11] KRITZINGER et al., *IFAC-PapersOnLine*, 2018. ·
+[12] NIST, Privacy Framework v1.0, 2020. ·
+[13] PMI, *PMBOK Guide*, 8. ed., 2025 (§§2.5 e 2.7). ·
+[17] WANG et al., *IEEE Internet of Things Journal*, 2023.
+Referências completas, com DOI e endereço, no relatório.
