@@ -1,6 +1,8 @@
 # Lessons learned
 
-**SIPA Privacy 2 group**
+**SIPA Privacy 2 group**  
+**Members:** Filipe Alves de Sousa, Emanuel Brandão de Galvão Correia, Ruben Isaac Dias da Silva, and Carlos Eduardo da Silva Papa  
+**Professors:** Dr. João Mello da Silva and Dr. Edison Ishikawa  
 
 ## What we learned while preparing the proposal
 
@@ -25,3 +27,7 @@
 We would test the eight processes with project, privacy, and cooperative practitioners to remove duplication and calibrate the effort required in the three context profiles. We would check whether each process has an available input, an applicable technique, an assigned decision, a useful output, and a clear interface with Stakeholders and Risk. We would test the hypothesis that greater data frequency and resolution increase the possibility of identification in digital twin projects with bidirectional flow.
 
 **Limit of this work:** the matrices and processes are a documentary academic proposal. They do not constitute an official PMI extension, a legal audit, or empirical validation.
+
+<!-- AVISO-IA:INICIO -->
+*AI use: generative AI (ChatGPT Astral 6 Sol and Sonnet 5.5, high mode) supported text editing, formatting, figure creation, and table drafting; the group is responsible for the content (COPE, 2023).*
+<!-- AVISO-IA:FIM -->

@@ -18,6 +18,8 @@ import sys
 from pathlib import Path
 
 sys.stdout.reconfigure(encoding="utf-8")
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import aviso_ia  # noqa: E402  declaração de uso de IA (ferramentas/aviso_ia.py)
 
 TEX = Path(__file__).resolve().parent.parent
 ENTREGA = TEX.parents[1].name  # P3A, P3D, ...
@@ -45,7 +47,7 @@ L = {
     "pt": {
         "babel": "english,brazil", "autores": "Autores", "grupo": "Grupo Reciclagem 1 e Privacidade 2",
         "disc": "Disciplina", "disc_v": "Gestão de Projetos de TI (GPTI) -- PPCA/CIC/UnB",
-        "prof": "Professor", "prof_v": "Dr. João Mello da Silva", "entrega": "Entrega",
+        "prof": "Professores", "prof_v": "Dr. João Mello da Silva e Dr. Edison Ishikawa", "entrega": "Entrega",
         "cidade": r"Brasília -- DF, 2026", "sumario": "Sumário", "figs": "Lista de ilustrações",
         "tabs": "Lista de tabelas", "siglas": "Lista de abreviaturas e siglas", "refs": "Referências",
         "hl": f"GPTI/PPCA/UnB • Entrega {{E}} • Grupo SIPA Privacidade 2",
@@ -54,7 +56,7 @@ L = {
     "en": {
         "babel": "brazil,english", "autores": "Authors", "grupo": "Recycling 1 and Privacy 2 Groups",
         "disc": "Course", "disc_v": "IT Project Management (GPTI) -- PPCA/CIC/UnB",
-        "prof": "Professor", "prof_v": "Dr. João Mello da Silva", "entrega": "Deliverable",
+        "prof": "Professors", "prof_v": "Dr. João Mello da Silva and Dr. Edison Ishikawa", "entrega": "Deliverable",
         "cidade": r"Brasília -- DF, 2026", "sumario": "Contents", "figs": "List of figures",
         "tabs": "List of tables", "siglas": "List of abbreviations and acronyms", "refs": "References",
         "hl": "GPTI/PPCA/UnB • Deliverable {E} • SIPA Privacy 2 Group",
@@ -146,7 +148,7 @@ def booktabs_rules(body: str) -> str:
 
 def convert(src: Path, lang: str) -> str:
     t = L[lang]
-    text = src.read_text(encoding="utf-8")
+    text = aviso_ia.remove(src.read_text(encoding="utf-8"))  # o style2 tem a sua própria caixa de IA na capa
     pre, rest = text.split(r"\begin{document}", 1)
 
     # macros do preâmbulo original que o corpo usa (cores, citações numéricas, etc.)
@@ -172,6 +174,7 @@ def convert(src: Path, lang: str) -> str:
     body = re.sub(r"\\section\{(.*)\}", lambda m: "\\section{" + sentence_case(m.group(1)) + "}", body)
     body = move_captions(body)
     body = booktabs_rules(body)
+    body = aviso_ia.inject_final_tex(body, lang)
 
     resumos = [re.sub(r"\\begin\{resumo\}(\[[^\]]*\])?", lambda m: "\\begin{resumo}" + (m.group(1) or ""), r) for r in resumos]
 
@@ -211,6 +214,7 @@ def convert(src: Path, lang: str) -> str:
 \\definecolor{{DarkGreen}}{{rgb}}{{0.10,0.50,0.10}}
 \\definecolor{{Link}}{{rgb}}{{0.10,0.25,0.75}}
 
+{aviso_ia.flags_tex()}
 % Macros do original (cores das figuras-tabela, citações numéricas)
 {chr(10).join(keep)}
 
@@ -270,7 +274,8 @@ def convert(src: Path, lang: str) -> str:
 \\textbf{{{t['entrega']}:}} {ENTREGA} -- {'Grupo SIPA Privacidade 2' if lang == 'pt' else 'SIPA Privacy 2 Group'}\\\\[6pt]
 {t['cidade']}\\par}}
 \\end{{center}}
-\\clearpage
+\\vspace{{1.2cm}}
+{aviso_ia.tex_box(lang, 'avisocapa')}\\clearpage
 \\pagenumbering{{roman}}
 \\setcounter{{page}}{{2}}
 

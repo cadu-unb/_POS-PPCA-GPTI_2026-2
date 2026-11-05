@@ -1,6 +1,8 @@
 # Privacidade como domínio de desempenho proposto para o PMBOK 8
 
 **Grupo SIPA:** Privacidade 2  
+**Integrantes:** Filipe Alves de Sousa, Emanuel Brandão de Galvão Correia, Ruben Isaac Dias da Silva e Carlos Eduardo da Silva Papa  
+**Professores:** Dr. João Mello da Silva e Dr. Edison Ishikawa  
 **Concentração:** Quem (*Who*)  
 **Domínios existentes relacionados:** Partes Interessadas (*Stakeholders*) e Riscos (*Risk*)  
 **Natureza:** proposta acadêmica de extensão; os processos P1–P8 abaixo **não são processos oficiais do PMI**.
@@ -31,9 +33,9 @@ Esse argumento é **organizacional**, não uma alegação de que o PMBOK 8 desco
 
 ### 2.1 O que já existe
 
-O domínio **Partes Interessadas** contém sete processos: identificar partes interessadas; planejar seu engajamento; planejar comunicações; gerenciar o engajamento; gerenciar comunicações; monitorar o engajamento; e monitorar comunicações [13, §2.5.2]. A própria definição de *Manage Communications* alcança criação, distribuição, armazenamento, recuperação e disposição de informação do projeto. Esse é um ponto de contato real com governança de dados, embora não especifique todo o ciclo dos dados pessoais nem os direitos dos titulares.
+O domínio **Partes Interessadas** contém sete processos: identificar partes interessadas; planejar seu engajamento; planejar comunicações; gerenciar o engajamento; gerenciar comunicações; monitorar o engajamento; e monitorar comunicações [13, *Guide* §2.5.2]. A própria definição de *Manage Communications* alcança criação, distribuição, armazenamento, recuperação e disposição de informação do projeto. Esse é um ponto de contato real com governança de dados, embora não especifique todo o ciclo dos dados pessoais nem os direitos dos titulares.
 
-O domínio **Riscos** contém seis processos: planejar gestão de riscos; identificar riscos; analisar riscos; planejar respostas; implementar respostas; monitorar riscos [13, §2.7.2]. É uma estrutura adequada para reconhecer incertezas e acompanhar respostas. Entretanto, sua descrição geral abrange ameaças e oportunidades para os objetivos do projeto; uma avaliação de privacidade precisa considerar também problemas que o tratamento de dados pode causar às pessoas, mesmo sem falha de segurança. O NIST Privacy Framework afirma que gerir risco de cibersegurança contribui para gerir risco de privacidade, mas não é suficiente, pois há riscos de privacidade que surgem por meios alheios a incidentes de cibersegurança [12].
+O domínio **Riscos** contém seis processos: planejar gestão de riscos; identificar riscos; analisar riscos; planejar respostas; implementar respostas; monitorar riscos [13, *Guide* §2.7.2]. É uma estrutura adequada para reconhecer incertezas e acompanhar respostas. Entretanto, sua descrição geral abrange ameaças e oportunidades para os objetivos do projeto; uma avaliação de privacidade precisa considerar também problemas que o tratamento de dados pode causar às pessoas, mesmo sem falha de segurança. O NIST Privacy Framework afirma que gerir risco de cibersegurança contribui para gerir risco de privacidade, mas não é suficiente, pois há riscos de privacidade que surgem por meios alheios a incidentes de cibersegurança [12].
 
 Há ainda referências dispersas no PMBOK 8: leis de proteção de dados podem limitar opções de projeto; ferramentas de IA introduzem questões de privacidade; comunicações podem exigir proteção de informação sensível [13]. Logo, a hipótese que sustentamos é mais precisa: **o tema aparece, mas não está organizado como domínio e conjunto de processos dedicados** nos sete domínios oficiais.
 
@@ -338,7 +340,7 @@ A relação com **5SPA** merece atenção, pois a proposta SIPA associa sustenta
 
 ### 7.1 Inclusões e alterações nos processos de Partes Interessadas e Riscos
 
-O domínio Privacidade não substitui os treze processos existentes em Quem [13, §§2.5.2 e 2.7.2]: utiliza seus registros e acrescenta uma pergunta específica sobre tratamento de dados e efeitos sobre titulares. A tabela propõe, para cada processo, a inclusão ou alteração mínima que o torna sensível à privacidade, sem mudar seu nome nem sua finalidade geral. Todas são propostas deste trabalho.
+O domínio Privacidade não substitui os treze processos existentes em Quem [13, *Guide* §§2.5.2 e 2.7.2]: utiliza seus registros e acrescenta uma pergunta específica sobre tratamento de dados e efeitos sobre titulares. A tabela propõe, para cada processo, a inclusão ou alteração mínima que o torna sensível à privacidade, sem mudar seu nome nem sua finalidade geral. Todas são propostas deste trabalho.
 
 | Processo existente | Tipo | Inclusão ou alteração proposta |
 | --- | --- | --- |
@@ -405,9 +407,25 @@ Para validar a proposta, recomendamos uma matriz de revisão por três perfis: g
 
 Concluímos que o PMBOK 8 oferece instrumentos de gestão úteis para privacidade, mas a organização proposta pode tornar esse objeto mais explícito e contínuo. O domínio **Privacidade → Quem** acrescenta o ciclo dos dados pessoais e a avaliação dos efeitos sobre titulares ao diálogo com **Partes Interessadas** e **Riscos**. Para projetos de gêmeos digitais, ele oferece uma linha de decisão sobre o tratamento de dados que as tabelas de capacidades técnicas não organizam. A contribuição é uma estrutura de perguntas, processos e evidências a ser avaliada, não uma promessa de conformidade automática.
 
+<!-- AVISO-IA:INICIO (subseção final; apagar tudo entre os marcadores a remove) -->
+### 9.1 Uso de inteligência artificial
+
+Este trabalho usou IA generativa (ChatGPT Astral 6 Sol e Sonnet 5.5, ambos no modo alto) como apoio à revisão de texto, à formatação, à criação de figuras e à formulação de tabelas. Seguimos a posição do COPE sobre autoria e ferramentas de IA (COPE, 2023), que pede declarar o uso e manter a responsabilidade com os autores. Três pontos orientam a leitura desta declaração.
+
+**A IA não é autora nem fonte.** Nenhuma afirmação sobre o PMBOK 8, a LGPD ou a literatura deve ser aceita porque um modelo de linguagem a produziu. Cada uma indica a sua fonte (seção, tabela, norma ou referência) para que quem lê possa conferi-la.
+
+**Riscos conhecidos desse uso.** Modelos de linguagem podem inventar referências, trocar números e suavizar ressalvas, e a tradução entre português e inglês pode deslocar sentidos técnicos. Por isso, referências, contagens e nomes de processos são os pontos que mais merecem conferência contra as fontes, e este relatório não substitui a leitura da edição do PMBOK 8.
+
+**Responsabilidade.** O grupo responde pelo conteúdo, inclusive pelas partes produzidas com apoio de IA. A declaração descreve categorias de uso, não registra cada interação, e o esforço da equipe não foi medido.
+
+**Relação com o tema.** O trabalho é documental e o cenário de reciclagem é hipotético; não houve coleta nem tratamento de dados pessoais de terceiros. Em um projeto real que usasse IA sobre dados de pessoas, esse uso entraria no inventário de dados e na avaliação de impacto (P1 e P3).
+
+COMMITTEE ON PUBLICATION ETHICS (COPE). *Authorship and AI tools: COPE position statement*. 13 fev. 2023. Disponível em: <https://publicationethics.org/guidance/cope-position/authorship-and-ai-tools>.
+<!-- AVISO-IA:FIM -->
+
 ## 10. Relatório final do trabalho
 
-Seguindo o formato do *Final report*, saída do processo *Close Project or Phase* [13, §2.1.6.9], este item resume o desempenho do trabalho de elaboração da proposta, tomado como o projeto relatado.
+Seguindo o formato do *Final report*, saída do processo *Close Project or Phase* [13, *Guide* §2.1.6.9], este item resume o desempenho do trabalho de elaboração da proposta, tomado como o projeto relatado.
 
 | Item do relatório final | Situação do trabalho |
 | --- | --- |
@@ -416,7 +434,7 @@ Seguindo o formato do *Final report*, saída do processo *Close Project or Phase
 | **Objetivos de qualidade e verificação** | Critérios de desenvolvimento da seção 3.2 usados como critérios de aceitação. Verificação: nomes, contagens e seções do PMBOK 8 conferidos no texto da edição; mesmas estruturas e dados nas versões em português e em inglês. Sem revisão externa. |
 | **Objetivos de custo e variações** | O trabalho não teve orçamento financeiro. O esforço da equipe não é reportado aqui. |
 | **Validação do resultado final** | Conferência documental feita. Validação por especialistas em gestão de projetos, proteção de dados e operação de cooperativas, proposta na seção 9, ainda pendente. |
-| **Cronograma e realização de benefícios** | Trabalho realizado em ciclo curto de elaboração, revisão e conferência, com entrega na data prevista. Os benefícios de adoção do domínio são hipóteses a testar. |
+| **Cronograma e realização de benefícios** | Trabalho realizado em ciclo curto de elaboração, revisão e conferência, com entrega prevista para 06/11/2026. Os benefícios de adoção do domínio são hipóteses a testar. |
 | **Necessidades de negócio atendidas** | A necessidade descrita na seção 3.1, gerir os efeitos do tratamento de dados pessoais ao longo do projeto, recebeu uma proposta estruturada. Seu atendimento efetivo depende de validação. |
 | **Riscos e questões encontrados** | (i) Delimitação de escopo: optou-se por desenvolver um único domínio, Privacidade. (ii) Redundância com Partes Interessadas e Riscos: tratada pela tabela de inclusões e alterações (§7.1) e pelo critério de não duplicar. (iii) Formulação da lacuna: a hipótese inicial de ausência foi substituída por uma formulação mais precisa, após a leitura do *Guide* (§2.1). (iv) Aplicação jurídica variável conforme o caso e a jurisdição: tratada com ressalvas ao longo do texto. |
 
@@ -454,6 +472,6 @@ Numeradas em ordem alfabética do primeiro autor (ou da entidade responsável). 
 
 [15] SON, S.; KWON, D.; LEE, J.; YU, S.; JHO, N.-S.; PARK, Y. On the design of a privacy-preserving communication scheme for cloud-based digital twin environments using blockchain. *IEEE Access*, v. 10, p. 75365-75375, 2022. DOI: 10.1109/ACCESS.2022.3191414.
 
-[16] UNIÃO EUROPEIA. *Regulamento (UE) 2016/679 do Parlamento Europeu e do Conselho, de 27 de abril de 2016* (Regulamento Geral sobre a Proteção de Dados).
+[16] UNIÃO EUROPEIA. *Regulamento (UE) 2016/679 do Parlamento Europeu e do Conselho, de 27 de abril de 2016* (Regulamento Geral sobre a Proteção de Dados). *Jornal Oficial da União Europeia*, L 119, 4 maio 2016.
 
 [17] WANG, Y.; SU, Z.; GUO, S.; DAI, M.; LUAN, T. H.; LIU, Y. A survey on digital twins: architecture, enabling technologies, security and privacy, and future prospects. *IEEE Internet of Things Journal*, v. 10, n. 17, p. 14965-14987, 2023. DOI: 10.1109/JIOT.2023.3263909.

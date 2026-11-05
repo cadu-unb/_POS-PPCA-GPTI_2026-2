@@ -1,6 +1,8 @@
 # PMBOK 8: principles, Focus Areas, performance domains and tailoring
 
 **SIPA group:** Privacy 2  
+**Members:** Filipe Alves de Sousa, Emanuel Brandão de Galvão Correia, Ruben Isaac Dias da Silva, and Carlos Eduardo da Silva Papa  
+**Professors:** Dr. João Mello da Silva and Dr. Edison Ishikawa  
 **Nature:** technical synthesis of PMBOK 8, with an analytical grouping of the domains presented separately from PMI's official structure.
 
 ## Abstract
@@ -88,7 +90,7 @@ The *Standard* organizes a management mindset in three dimensions: **proactive**
 
 The table formulates, in working language, a useful question for applying each principle and a consequence for a decision; it does not replace PMI's definition [5, Standard §§3.3–3.8].
 
-| Code and official principle | Practical question | Consequence for a decision |
+| Official principle (code used in the course) | Practical question | Consequence for a decision |
 | --- | --- | --- |
 | **1AHV — Adopt a Holistic View** | What relationships and effects beyond the immediate deliverable influence the result? | Examine dependencies among domains, organization, people, and environment. |
 | **2FOV — Focus on Value** | What result justifies the work, and how do we know it remains valuable? | Compare alternatives by expected benefit, not only by the quantity of activities. |
@@ -239,7 +241,7 @@ The inventory reveals concrete dependencies. A Scope requirement may demand reso
 
 ### 7.2 Tailoring considerations by domain
 
-Each domain carries a section of tailoring considerations (2.x.3 of the *Guide*). The table summarizes one characteristic consideration for each; the complete lists are in the book [5, Guide §§2.1.7, 2.2.3, 2.3.3, 2.4.3, 2.5.3, 2.6.3, and 2.7.3].
+Each domain carries a section of tailoring considerations (section 2.x.3 of the *Guide*, except Governance, which is 2.1.7). The table summarizes one characteristic consideration for each; the complete lists are in the book [5, Guide §§2.1.7, 2.2.3, 2.3.3, 2.4.3, 2.5.3, 2.6.3, and 2.7.3].
 
 | Domain | Characteristic tailoring consideration |
 | --- | --- |
@@ -407,6 +409,22 @@ The eighth edition combines **principle-based guidance** with **technical detail
 
 The four concentrations presented here are a way of reading, not a replacement for PMI's official index. The tailoring examples are hypothetical and do not demonstrate realized benefit. This synthesis likewise neither validates an extension nor measures project performance. A concrete application would need to choose indicators, responsibilities, artifacts, and review frequency, in addition to verifying the organization's and the contract's own constraints. Since PMBOK 8 does not address digital twins, a project of that nature must complement the management structure with specific technical references.
 
+<!-- AVISO-IA:INICIO (subseção final; apagar tudo entre os marcadores a remove) -->
+### 12.1 Use of artificial intelligence
+
+This work used generative AI (ChatGPT Astral 6 Sol and Sonnet 5.5, both in high mode) to support text editing, formatting, figure creation, and table drafting. We follow the COPE position on authorship and AI tools (COPE, 2023), which asks authors to disclose the use and to remain responsible for the work. Three points guide how to read this statement.
+
+**AI is neither an author nor a source.** No claim about PMBOK 8, the LGPD, or the literature should be accepted because a language model produced it. Each claim points to its source (section, table, regulation, or reference) so that readers can check it.
+
+**Known risks of this use.** Language models can invent references, swap numbers, and soften caveats, and translation between Portuguese and English can shift technical meanings. References, counts, and process names are therefore the points that most deserve checking against the sources, and this report does not replace reading the PMBOK 8 edition.
+
+**Responsibility.** The group is responsible for the content, including the parts produced with AI support. The statement describes categories of use, does not log each interaction, and the team's effort was not measured.
+
+**Relation to the topic.** PMBOK 8 does not organize the use of AI as a domain, but it devotes an appendix (X3) to it [5]. A project that adopts AI should treat it like any other element to tailor, not as an exception to the method.
+
+COMMITTEE ON PUBLICATION ETHICS (COPE). *Authorship and AI tools: COPE position statement*. 13 Feb. 2023. Available at: <https://publicationethics.org/guidance/cope-position/authorship-and-ai-tools>.
+<!-- AVISO-IA:FIM -->
+
 ## 13. Final report of the work
 
 Following the format of the *Final report*, an output of the *Close Project or Phase* process [5, Guide §2.1.6.9], this item summarizes the performance of the work of preparing this synthesis, taken as the project reported.
@@ -418,7 +436,7 @@ Following the format of the *Final report*, an output of the *Close Project or P
 | **Quality objectives and verification** | Names and counts of the 40 processes checked in sections 2.1 to 2.7, in Table 2-1, and in the domain overview figures of the *Guide*; the 42 principle-domain connections checked in sections 3.3.3 to 3.8.3 of the *Standard*; same structures and data in the Portuguese and English versions. No external review. |
 | **Cost objectives and variances** | The work had no financial budget. The team's effort is not reported here. |
 | **Validation of the final result** | Documentary check done. Validation by project management experts still pending. |
-| **Schedule and realization of benefits** | Work carried out in a short cycle of preparation, review, and checking, delivered on the scheduled date. The benefits of applying the synthesis are hypotheses to be tested. |
+| **Schedule and realization of benefits** | Work carried out in a short cycle of preparation, review, and checking, with delivery scheduled for 6 November 2026. The benefits of applying the synthesis are hypotheses to be tested. |
 | **Business needs met** | The need for an adaptable PMBOK 8 synthesis as a basis for project management guides received a structured response; its effectiveness depends on validation. |
 | **Risks and issues encountered** | (i) Confusion between official structure and analytical grouping: addressed with separate labels and figures. (ii) Translation and oversimplification: addressed with official English names and caveats. (iii) Restricted-access source: addressed by citing sections, tables, and figures. (iv) Absence of the digital twin in PMBOK 8: recorded in section 2 and in section 11. |
 
@@ -426,7 +444,7 @@ Following the format of the *Final report*, an output of the *Close Project or P
 
 Numbered in alphabetical order of the first author (or responsible entity). In the text, the number appears in square brackets, with the section where pertinent.
 
-[1] EUROPEAN UNION. *Regulation (EU) 2016/679 of the European Parliament and of the Council, of 27 April 2016* (General Data Protection Regulation).
+[1] EUROPEAN UNION. *Regulation (EU) 2016/679 of the European Parliament and of the Council, of 27 April 2016* (General Data Protection Regulation). *Official Journal of the European Union*, L 119, 4 May 2016.
 
 [2] ISO — INTERNATIONAL ORGANIZATION FOR STANDARDIZATION. *ISO 21502:2020: Project, programme and portfolio management — Guidance on project management*. Geneva: ISO, 2020.
 
@@ -436,6 +454,6 @@ Numbered in alphabetical order of the first author (or responsible entity). In t
 
 [5] PMI — PROJECT MANAGEMENT INSTITUTE. *The Standard for Project Management and A Guide to the Project Management Body of Knowledge (PMBOK Guide)*. 8th ed. Newtown Square: PMI, 2025. Restricted-access document, obtained by purchase or PMI membership.
 
-[6] REED, A. H.; ANGOLIA, M. G.; BAHAM, C.; IGAH, R. Usage of hybrid project management approaches and influences on approach selection. *Communications of the Association for Information Systems*, vol. 54, pp. 402-427, 2024. DOI: 10.17705/1CAIS.05415.
+[6] REED, A.; ANGOLIA, M.; BAHAM, C.; IGAH, R. Usage of hybrid project management approaches and influences on approach selection. *Communications of the Association for Information Systems*, vol. 54, pp. 402-427, 2024. DOI: 10.17705/1CAIS.05415.
 
 [7] SILVIUS-ZUCHI, D.; SILVIUS, G. Designing a fitting hybrid project management approach: a contingency perspective. *International Journal of Information Systems and Project Management*, vol. 14, no. 1, art. 4, 2026.

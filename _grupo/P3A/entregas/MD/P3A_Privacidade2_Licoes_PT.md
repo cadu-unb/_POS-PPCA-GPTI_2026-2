@@ -1,6 +1,8 @@
 # Relato de lições aprendidas
 
-**Grupo SIPA Privacidade 2**
+**Grupo SIPA Privacidade 2**  
+**Integrantes:** Filipe Alves de Sousa, Emanuel Brandão de Galvão Correia, Ruben Isaac Dias da Silva e Carlos Eduardo da Silva Papa  
+**Professores:** Dr. João Mello da Silva e Dr. Edison Ishikawa  
 
 ## O que aprendemos na elaboração da proposta
 
@@ -25,3 +27,7 @@
 Testaríamos os oito processos com profissionais de projetos, privacidade e cooperativas para eliminar duplicações e calibrar o esforço necessário nos três perfis de contexto. Conferiríamos se cada processo tem entrada disponível, técnica aplicável, decisão atribuída, saída útil e interface clara com Partes Interessadas e Riscos. Testaríamos a hipótese de que maior frequência e resolução dos dados aumentam a possibilidade de identificação em projetos de gêmeo digital com fluxo bidirecional.
 
 **Limite deste trabalho:** as matrizes e processos são proposta acadêmica documental. Não constituem extensão oficial do PMI, auditoria jurídica ou validação empírica.
+
+<!-- AVISO-IA:INICIO -->
+*Uso de IA: IA generativa (ChatGPT Astral 6 Sol e Sonnet 5.5, modo alto) apoiou a revisão de texto, a formatação, a criação de figuras e a formulação de tabelas; o grupo é responsável pelo conteúdo (COPE, 2023).*
+<!-- AVISO-IA:FIM -->

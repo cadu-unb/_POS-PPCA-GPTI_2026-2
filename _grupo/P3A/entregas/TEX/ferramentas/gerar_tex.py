@@ -12,6 +12,8 @@ from __future__ import annotations
 
 import re
 import sys
+import aviso_ia  # declaração de uso de IA (ferramentas/aviso_ia.py)
+import ajustes_tabelas  # layout das tabelas (ferramentas/ajustes_tabelas.py)
 from pathlib import Path
 
 sys.stdout.reconfigure(encoding="utf-8")
@@ -42,7 +44,7 @@ L = {
         "refs_title": "REFERÊNCIAS",
         "nota": "Nota de natureza",
         "cover": [
-            r"UNIVERSIDADE DE BRASÍLIA -- UNB\\PROGRAMA DE PÓS-GRADUAÇÃO EM COMPUTAÇÃO APLICADA -- PPCA\\DISCIPLINA: GESTÃO DE PROJETOS DE TI (GPTI)\\PROFESSOR: Dr. JOÃO MELLO DA SILVA",
+            r"UNIVERSIDADE DE BRASÍLIA -- UNB\\PROGRAMA DE PÓS-GRADUAÇÃO EM COMPUTAÇÃO APLICADA -- PPCA\\DISCIPLINA: GESTÃO DE PROJETOS DE TI (GPTI)\\PROFESSORES: Dr. JOÃO MELLO DA SILVA e Dr. EDISON ISHIKAWA",
         ],
         "group_label": "Grupo SIPA Privacidade 2",
         "cover_city": r"BRASÍLIA -- DF\\2026",
@@ -68,7 +70,7 @@ L = {
         "refs_title": "REFERENCES",
         "nota": "Nature of the work",
         "cover": [
-            r"UNIVERSITY OF BRASÍLIA -- UnB\\GRADUATE PROGRAM IN APPLIED COMPUTING -- PPCA\\COURSE: IT PROJECT MANAGEMENT (GPTI)\\PROFESSOR: Dr. JOÃO MELLO DA SILVA",
+            r"UNIVERSITY OF BRASÍLIA -- UnB\\GRADUATE PROGRAM IN APPLIED COMPUTING -- PPCA\\COURSE: IT PROJECT MANAGEMENT (GPTI)\\PROFESSORS: Dr. JOÃO MELLO DA SILVA and Dr. EDISON ISHIKAWA",
         ],
         "group_label": "SIPA Privacy 2 Group",
         "cover_city": r"BRASÍLIA -- DF\\2026",
@@ -328,6 +330,12 @@ def table_tex(rows, cap, ctx, label):
 # ---------------------------------------------------------------------------
 # Preâmbulo
 # ---------------------------------------------------------------------------
+MEMBERS = {
+    "pt": 'Filipe Alves de Sousa, Emanuel Brandão de Galvão Correia, Ruben Isaac Dias da Silva e Carlos Eduardo da Silva Papa',
+    "en": 'Filipe Alves de Sousa, Emanuel Brandão de Galvão Correia, Ruben Isaac Dias da Silva, and Carlos Eduardo da Silva Papa',
+}
+
+
 def preamble(lang: str, keymap: dict[int, str], title_comment: str, with_lists: bool) -> str:
     c = L[lang]
     defs = "\n".join(r"\defref{%s}{%d}" % (k, n) for n, k in sorted(keymap.items()))
@@ -383,7 +391,7 @@ def preamble(lang: str, keymap: dict[int, str], title_comment: str, with_lists: 
 {defs}
 
 % Integrantes do grupo (preencher; a capa usa esta macro)
-\newcommand{{\integrantes}}{{[nomes dos integrantes do grupo]}}
+\newcommand{{\integrantes}}{{{MEMBERS[lang]}}}
 """
 
 
@@ -432,7 +440,7 @@ def siglas_block(lang: str) -> str:
 # Relatório
 # ---------------------------------------------------------------------------
 def abstract_of(md_name: str, ctx_dummy: Ctx):
-    blocks = parse_blocks((MD / md_name).read_text(encoding="utf-8"))
+    blocks = parse_blocks(aviso_ia.remove((MD / md_name).read_text(encoding="utf-8")))
     i = next(k for k, b in enumerate(blocks) if b[0] == "h" and b[1] == 2 and b[2] in ("Resumo", "Abstract"))
     paras = []
     for b in blocks[i + 1:]:
@@ -446,7 +454,7 @@ def abstract_of(md_name: str, ctx_dummy: Ctx):
 def build_report(lang: str) -> str:
     c = L[lang]
     other = "en" if lang == "pt" else "pt"
-    blocks = parse_blocks((MD / c["md_report"]).read_text(encoding="utf-8"))
+    blocks = parse_blocks(aviso_ia.remove((MD / c["md_report"]).read_text(encoding="utf-8")))
     ridx, items, keymap = parse_refs(blocks)
     ctx = Ctx(keymap)
     body_blocks = blocks[:ridx]
@@ -455,7 +463,7 @@ def build_report(lang: str) -> str:
     meta = next(b for b in body_blocks if b[0] == "p")
     # resumo/abstract
     own = abstract_of(c["md_report"], ctx)
-    oth_blocks = parse_blocks((MD / L[other]["md_report"]).read_text(encoding="utf-8"))
+    oth_blocks = parse_blocks(aviso_ia.remove((MD / L[other]["md_report"]).read_text(encoding="utf-8")))
     _, _, other_keymap = parse_refs(oth_blocks)
     oth = abstract_of(L[other]["md_report"], Ctx(other_keymap))
 
@@ -569,7 +577,7 @@ def build_report(lang: str) -> str:
 # ---------------------------------------------------------------------------
 def build_lessons(lang: str) -> str:
     c = L[lang]
-    blocks = parse_blocks((MD / c["md_lessons"]).read_text(encoding="utf-8"))
+    blocks = parse_blocks(aviso_ia.remove((MD / c["md_lessons"]).read_text(encoding="utf-8")))
     ctx = Ctx({})
     out = [preamble(lang, {}, f"P3A -- Lições aprendidas ({'PT-BR' if lang == 'pt' else 'EN'})", False),
            r"\begin{document}", r"\SingleSpacing", r"\thispagestyle{plain}", ""]
@@ -667,7 +675,7 @@ FIG_LABELS = {
         manual="manual update", auto="automatic flow", back="automatic return",
         s1="Digital mobilization", s1b="registration and route", s2="Recycling", s2b="operations and indicators",
         s3="Final disposal", s3b="retention or deletion",
-        mat="sorted materials", rej="tailings and media", qual="quality by route",
+        mat="sorted materials", rej="rejects and media", qual="quality by route",
         q=["Whose data is it?", "For what purpose?", "Who receives it?", "What happens to it?"],
         legend5="Hypothetical scenario",
     ),
@@ -694,19 +702,21 @@ def fig1(l):
 
 
 def fig2(l):
-    s = FIG_HEAD.replace("@@H@@", "6.2")
+    # Caixas mais altas (0,3 a 4,95): o título da área (até 3 linhas) e a evidência em itálico (até 2 linhas)
+    # ficam dentro da caixa. O título usa \footnotesize sem hifenização; a evidência ancora na base.
+    s = FIG_HEAD.replace("@@H@@", "6.5")
     for i, (area, code, act, ev) in enumerate(l["areas"]):
         x = 0.2 + i * 3.2
-        s += (f"  \\draw[fill=phFill,draw=exLine,line width=1.2pt,rounded corners=0.2cm] ({x},0.3) rectangle ({x + 2.7},4.65);\n"
-              f"  \\node[align=center,text width=2.5cm,text=exLine] at ({x + 1.35},3.9) {{\\small\\bfseries {area}}};\n"
-              f"  \\node[align=center,text=prText] at ({x + 1.35},2.9) {{\\large\\textbf{{{code}}}}};\n"
-              f"  \\node[align=center,text width=2.5cm] at ({x + 1.35},1.9) {{\\small {act}}};\n"
-              f"  \\node[align=center,text width=2.5cm,text=ctxText] at ({x + 1.35},0.75) {{\\small\\itshape {ev}}};\n")
+        s += (f"  \\draw[fill=phFill,draw=exLine,line width=1.2pt,rounded corners=0.2cm] ({x},0.3) rectangle ({x + 2.7},4.95);\n"
+              f"  \\node[align=center,text width=2.55cm,text=exLine,anchor=north] at ({x + 1.35},4.8) {{\\hyphenpenalty=10000\\exhyphenpenalty=10000\\footnotesize\\bfseries {area}}};\n"
+              f"  \\node[align=center,text=prText] at ({x + 1.35},3.2) {{\\large\\textbf{{{code}}}}};\n"
+              f"  \\node[align=center,text width=2.5cm] at ({x + 1.35},2.2) {{\\small {act}}};\n"
+              f"  \\node[align=center,text width=2.5cm,text=ctxText,anchor=south] at ({x + 1.35},0.5) {{\\small\\itshape {ev}}};\n")
         if i < 4:
-            s += f"  \\draw[draw=exLine,line width=1.1pt,-{{Triangle[length=5pt,width=5pt]}}] ({x + 2.7},2.4) -- ({x + 3.2},2.4);\n"
+            s += f"  \\draw[draw=exLine,line width=1.1pt,-{{Triangle[length=5pt,width=5pt]}}] ({x + 2.7},2.6) -- ({x + 3.2},2.6);\n"
     x_mc, x_pl = 0.2 + 3 * 3.2 + 1.35, 0.2 + 1 * 3.2 + 1.35
-    s += (f"  \\draw[draw=prLine,line width=1.1pt,dash pattern=on 4pt off 3pt,-{{Triangle[length=5pt,width=5pt]}}] ({x_mc},4.65) -- ({x_mc},5.5) -- ({x_pl},5.5) -- ({x_pl},4.65);\n"
-          f"  \\node[text=prText,fill=white,inner sep=2pt] at ({(x_mc + x_pl) / 2},5.5) {{\\small {l['change']}}};\n")
+    s += (f"  \\draw[draw=prLine,line width=1.1pt,dash pattern=on 4pt off 3pt,-{{Triangle[length=5pt,width=5pt]}}] ({x_mc},4.95) -- ({x_mc},5.8) -- ({x_pl},5.8) -- ({x_pl},4.95);\n"
+          f"  \\node[text=prText,fill=white,inner sep=2pt] at ({(x_mc + x_pl) / 2},5.8) {{\\small {l['change']}}};\n")
     return s + FIG_TAIL
 
 
@@ -783,10 +793,6 @@ def main():
         for k, f in enumerate(FIGS, start=1):
             name = TEX / "figuras" / f"Fig{k}{L[lang]['fig_dir']}.tex"
             name.write_text(f(FIG_LABELS[lang]), encoding="utf-8")
-        (TEX / L[lang]["out_report"]).write_text(build_report(lang), encoding="utf-8")
-        (TEX / L[lang]["out_lessons"]).write_text(build_lessons(lang), encoding="utf-8")
-    print("gerado em", TEX)
-
-
-if __name__ == "__main__":
-    main()
+        import aviso_ia  # declaração de uso de IA (ferramentas/aviso_ia.py)
+        (TEX / L[lang]["out_report"]).write_text(
+            aviso_ia.injec

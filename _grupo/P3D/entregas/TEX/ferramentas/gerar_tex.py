@@ -14,6 +14,8 @@ from __future__ import annotations
 
 import re
 import sys
+import aviso_ia  # declaração de uso de IA (ferramentas/aviso_ia.py)
+import ajustes_tabelas  # layout das tabelas (ferramentas/ajustes_tabelas.py)
 from pathlib import Path
 
 sys.stdout.reconfigure(encoding="utf-8")
@@ -28,7 +30,7 @@ L = {
         "docopts": "english,brazil", "kw": "Palavras-chave", "source": "Fonte", "fig_dir": "_PT",
         "contents": "SUMÁRIO", "listfig": "LISTA DE ILUSTRAÇÕES", "listtab": "LISTA DE TABELAS",
         "siglas": "LISTA DE ABREVIATURAS E SIGLAS", "refs_title": "REFERÊNCIAS", "nota": "Nota de natureza",
-        "cover": r"UNIVERSIDADE DE BRASÍLIA -- UNB\\PROGRAMA DE PÓS-GRADUAÇÃO EM COMPUTAÇÃO APLICADA -- PPCA\\DISCIPLINA: GESTÃO DE PROJETOS DE TI (GPTI)\\PROFESSOR: Dr. JOÃO MELLO DA SILVA",
+        "cover": r"UNIVERSIDADE DE BRASÍLIA -- UNB\\PROGRAMA DE PÓS-GRADUAÇÃO EM COMPUTAÇÃO APLICADA -- PPCA\\DISCIPLINA: GESTÃO DE PROJETOS DE TI (GPTI)\\PROFESSORES: Dr. JOÃO MELLO DA SILVA e Dr. EDISON ISHIKAWA",
         "group_label": "Grupo SIPA Privacidade 2", "cover_city": r"BRASÍLIA -- DF\\2026",
         "title_caps": "PMBOK 8: PRINCÍPIOS, ÁREAS DE FOCO, DOMÍNIOS E ADAPTAÇÃO SOB MEDIDA",
         "legend_bands": "Faixas: azul = dimensão proativa; turquesa = dimensão de responsabilidade; cinza = dimensão orientada a valor.",
@@ -40,7 +42,7 @@ L = {
         "docopts": "brazil,english", "kw": "Keywords", "source": "Source", "fig_dir": "_EN",
         "contents": "CONTENTS", "listfig": "LIST OF FIGURES", "listtab": "LIST OF TABLES",
         "siglas": "LIST OF ABBREVIATIONS AND ACRONYMS", "refs_title": "REFERENCES", "nota": "Nature of the work",
-        "cover": r"UNIVERSITY OF BRASÍLIA -- UnB\\GRADUATE PROGRAM IN APPLIED COMPUTING -- PPCA\\COURSE: IT PROJECT MANAGEMENT (GPTI)\\PROFESSOR: Dr. JOÃO MELLO DA SILVA",
+        "cover": r"UNIVERSITY OF BRASÍLIA -- UnB\\GRADUATE PROGRAM IN APPLIED COMPUTING -- PPCA\\COURSE: IT PROJECT MANAGEMENT (GPTI)\\PROFESSORS: Dr. JOÃO MELLO DA SILVA and Dr. EDISON ISHIKAWA",
         "group_label": "SIPA Privacy 2 Group", "cover_city": r"BRASÍLIA -- DF\\2026",
         "title_caps": "PMBOK 8: PRINCIPLES, FOCUS AREAS, PERFORMANCE DOMAINS AND TAILORING",
         "legend_bands": "Bands: blue = proactive dimension; turquoise = ownership dimension; gray = value-driven dimension.",
@@ -335,6 +337,12 @@ def matrix_tabular(rows, ctx):
 # ---------------------------------------------------------------------------
 # Preâmbulo, capa, siglas
 # ---------------------------------------------------------------------------
+MEMBERS = {
+    "pt": 'Filipe Alves de Sousa, Emanuel Brandão de Galvão Correia, Ruben Isaac Dias da Silva e Carlos Eduardo da Silva Papa',
+    "en": 'Filipe Alves de Sousa, Emanuel Brandão de Galvão Correia, Ruben Isaac Dias da Silva, and Carlos Eduardo da Silva Papa',
+}
+
+
 def preamble(lang, keymap, title_comment):
     c = L[lang]
     defs = "\n".join(r"\defref{%s}{%d}" % (k, n) for n, k in sorted(keymap.items()))
@@ -401,7 +409,7 @@ def preamble(lang, keymap, title_comment):
 {defs}
 
 % Integrantes do grupo (preencher; a capa usa esta macro)
-\newcommand{{\integrantes}}{{[nomes dos integrantes do grupo]}}
+\newcommand{{\integrantes}}{{{MEMBERS[lang]}}}
 """
 
 
@@ -447,7 +455,7 @@ def siglas_block(lang):
 
 
 def abstract_of(md_name):
-    blocks = parse_blocks((MD / md_name).read_text(encoding="utf-8"))
+    blocks = parse_blocks(aviso_ia.remove((MD / md_name).read_text(encoding="utf-8")))
     i = next(k for k, b in enumerate(blocks) if b[0] == "h" and b[1] == 2 and b[2] in ("Resumo", "Abstract"))
     paras = []
     for b in blocks[i + 1:]:
@@ -494,13 +502,13 @@ def clean_source(src, lang):
 def build_report(lang):
     c = L[lang]
     other = "en" if lang == "pt" else "pt"
-    blocks = reorder_figure_tables(parse_blocks((MD / c["md_report"]).read_text(encoding="utf-8")))
+    blocks = reorder_figure_tables(parse_blocks(aviso_ia.remove((MD / c["md_report"]).read_text(encoding="utf-8"))))
     ridx, items, keymap = parse_refs(blocks)
     ctx = Ctx(keymap)
     body_blocks = blocks[:ridx]
     meta = next(b for b in body_blocks if b[0] == "p")
     own = abstract_of(c["md_report"])
-    oth_blocks = parse_blocks((MD / L[other]["md_report"]).read_text(encoding="utf-8"))
+    oth_blocks = parse_blocks(aviso_ia.remove((MD / L[other]["md_report"]).read_text(encoding="utf-8")))
     _, _, other_keymap = parse_refs(oth_blocks)
     oth = abstract_of(L[other]["md_report"])
 
@@ -597,7 +605,7 @@ def build_report(lang):
 
 def build_lessons(lang):
     c = L[lang]
-    blocks = parse_blocks((MD / c["md_lessons"]).read_text(encoding="utf-8"))
+    blocks = parse_blocks(aviso_ia.remove((MD / c["md_lessons"]).read_text(encoding="utf-8")))
     ctx = Ctx({})
     out = [preamble(lang, {}, f"P3D -- Lições aprendidas ({'PT-BR' if lang == 'pt' else 'EN'})"),
            r"\begin{document}", r"\SingleSpacing", r"\small", r"\thispagestyle{plain}", ""]
@@ -695,7 +703,7 @@ def fig1(l):
           f"  \\node[align=center,text=exLine] at (3.7,4.4) {{\\large\\textbf{{{l['std']}}}\\\\ {l['std2']}}};\n"
           f"  \\node[align=center,text=exLine] at (12.3,4.4) {{\\large\\textbf{{{l['gui']}}}\\\\ {l['gui2']}}};\n"
           f"  \\draw[draw=exLine,line width=1.2pt,{ARR2}] (7.2,4.4) -- (8.8,4.4);\n"
-          "  \\draw[fill=ctxFill,draw=ctxLine,line width=1.1pt,dash pattern=on 5pt off 4pt,rounded corners=0.25cm] (3.6,0.2) rectangle (12.4,1.9);\n"
+          "  \\draw[fill=ctxFill,draw=ctxLine,line width=1.1pt,dash pattern=on 5pt off 4pt,rounded corners=0.25cm] (2.4,0.2) rectangle (13.6,1.9);\n"
           f"  \\node[align=center,text=ctxText] at (8.0,1.05) {{\\textbf{{{l['ana']}}}\\\\ {l['ana2']}}};\n"
           f"  \\draw[draw=ctxLine,line width=1.1pt,dash pattern=on 4pt off 3pt,{ARR}] (12.3,2.9) -- (12.3,2.4) -- (10.5,2.4) -- (10.5,1.9);\n")
     return s + FIG_TAIL
@@ -785,8 +793,11 @@ def main():
     for lang in ("pt", "en"):
         for name, f in FIGS:
             (TEX / "figuras" / f"{name}{L[lang]['fig_dir']}.tex").write_text(f(FIG_LABELS[lang]), encoding="utf-8")
-        (TEX / L[lang]["out_report"]).write_text(build_report(lang), encoding="utf-8")
-        (TEX / L[lang]["out_lessons"]).write_text(build_lessons(lang), encoding="utf-8")
+        import aviso_ia  # declaração de uso de IA (ferramentas/aviso_ia.py)
+        (TEX / L[lang]["out_report"]).write_text(
+            aviso_ia.inject_report_tex(ajustes_tabelas.apply(build_report(lang), lang), lang), encoding="utf-8")
+        (TEX / L[lang]["out_lessons"]).write_text(
+            aviso_ia.inject_lessons_tex(build_lessons(lang), lang), encoding="utf-8")
     print("gerado em", TEX)
 
 

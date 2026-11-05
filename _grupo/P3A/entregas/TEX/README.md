@@ -43,12 +43,12 @@ pdflatex -output-directory=out -interaction=nonstopmode P3A_Privacidade2_Relator
 python ferramentas/gerar_tex.py
 ```
 
-Isso **sobrescreve** o relatório, as lições e as figuras. Se você editar esses `.tex` à mão, não rode o gerador sem antes guardar as edições. O conteúdo de cada documento é o do Markdown correspondente; os pôsteres não são gerados.
+Isso **sobrescreve** o relatório, as lições e as figuras. Os ajustes de tabela e figura, o aviso de IA e os nomes estão no gerador (`ferramentas/ajustes_tabelas.py`, `aviso_ia.py`), então regenerar não os perde; edições à mão em texto corrido, sim: faça-as no Markdown. O conteúdo de cada documento é o do Markdown correspondente; os pôsteres não são gerados.
 
 ## Pontos a preencher ou conferir
 
-- **Integrantes do grupo:** a macro `\integrantes` na capa traz o texto provisório "[nomes dos integrantes do grupo]". Edite a linha `\newcommand{\integrantes}{...}` no preâmbulo de cada relatório.
-- **Capa:** segue a da P2B (universidade, programa, disciplina e professor). Ajuste se o grupo preferir outro formato.
+- **Integrantes e professores:** preenchidos (os quatro integrantes e os professores Dr. João Mello da Silva e Dr. Edison Ishikawa; ver `../../README.md`). A macro `\integrantes` e a capa vêm de `ferramentas/gerar_tex.py` (dicionário `MEMBERS`); a capa `style2`, de `ferramentas/gerar_style2.py`.
+- **Capa:** segue a da P2B (universidade, programa, disciplina e professores). Ajuste se o grupo preferir outro formato.
 - **Citações numéricas:** cada referência tem um número definido por `\defref{chave}{n}` no preâmbulo (ordem alfabética da lista). Para reordenar a lista, altere os números e a ordem dos `\refitem` no fim do arquivo.
 - **Pôster:** o conteúdo fica em uma única caixa envolvida por `adjustbox`, que reduz tudo proporcionalmente se passar de uma página. O tamanho do texto está em `\corpo`. Os autores, a disciplina e o código ficam no bloco `\blocoautores`, no preâmbulo de cada pôster.
 - **Declaração de uso de IA:** **não** foi incluída. O plano em `../../plano-abordagem.md` (seção 11) descreve como inserir o aviso e o ambiente LaTeX que o liga e desliga.

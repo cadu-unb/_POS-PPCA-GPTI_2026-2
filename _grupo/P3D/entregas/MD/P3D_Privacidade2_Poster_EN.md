@@ -91,3 +91,8 @@ flowchart LR
 [5] PMI. *PMBOK Guide*, 8th ed., 2025 (*Standard* chs. 2 to 4; *Guide* chs. 2 and 3; restricted-access document). ·
 [6] REED et al. *Communications of the AIS*, 2024.
 Full references, with DOI, in the report.
+
+<!-- AVISO-IA:INICIO -->
+---
+***AI use:** generative AI (ChatGPT Astral 6 Sol and Sonnet 5.5, high mode) supported text editing, formatting, figure creation, and table drafting. The group is responsible for the content (COPE, 2023: <https://publicationethics.org/guidance/cope-position/authorship-and-ai-tools>).*
+<!-- AVISO-IA:FIM -->

@@ -26,6 +26,11 @@
 \definecolor{DarkGreen}{rgb}{0.10,0.50,0.10}
 \definecolor{Link}{rgb}{0.10,0.25,0.75}
 
+% AVISO-IA:INICIO (chaves: trocar true/false)
+\newif\ifavisocapa   \avisocapafalse    % caixa de declaração na capa
+\newif\ifavisofinal  \avisofinaltrue    % subseção "Uso de inteligência artificial" no fim da conclusão
+% AVISO-IA:FIM
+
 % Macros do original (cores das figuras-tabela, citações numéricas)
 \Urlmuskip=0mu plus 1mu\relax
 \definecolor{exLine}{RGB}{23,54,93}
@@ -97,10 +102,16 @@
     Ruben Isaac Dias da Silva & 262115391 & 261107680 & Carlos Eduardo da Silva Papa
 \end{tabular}\\[6pt]
 \textbf{Disciplina:} Gestão de Projetos de TI (GPTI) -- PPCA/CIC/UnB\\
-\textbf{Professor:} Dr. João Mello da Silva\\
+\textbf{Professores:} Dr. João Mello da Silva e Dr. Edison Ishikawa\\
 \textbf{Entrega:} P3D -- Grupo SIPA Privacidade 2\\[6pt]
 Brasília -- DF, 2026\par}
 \end{center}
+\vspace{1.2cm}
+% AVISO-IA:INICIO (caixa na capa; liga com \avisocapatrue no preâmbulo)
+\ifavisocapa
+\begin{center}\fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\SingleSpacing\small\noindent\textbf{Declaração de uso de inteligência artificial.} Foi utilizada IA generativa (ChatGPT Astral 6 Sol e Sonnet 5.5, ambos no modo alto) como apoio à revisão de texto, à formatação, à criação de figuras e à formulação de tabelas. A IA não é autora: o grupo é responsável pelo conteúdo, conforme a posição do COPE sobre autoria e ferramentas de IA (COPE, 2023).\par\smallskip\noindent COMMITTEE ON PUBLICATION ETHICS (COPE). \textit{Authorship and AI tools: COPE position statement}. 13 fev. 2023. Disponível em: \url{https://publicationethics.org/guidance/cope-position/authorship-and-ai-tools}.}}\end{center}
+\fi
+% AVISO-IA:FIM
 \clearpage
 \pagenumbering{roman}
 \setcounter{page}{2}
@@ -168,7 +179,7 @@ This report synthesizes \textit{The Standard for Project Management} and \textit
 \setcounter{table}{0}
 
 \begin{flushleft}\small\SingleSpacing
-\noindent\textbf{Nota de natureza.} \textbf{Grupo SIPA:} Privacidade 2\\ \textbf{Natureza:} síntese técnica do PMBOK 8, com um agrupamento analítico dos domínios apresentado separadamente da estrutura oficial do PMI.
+\noindent\textbf{Nota de natureza.} \textbf{Grupo SIPA:} Privacidade 2\\ \textbf{Integrantes:} Filipe Alves de Sousa, Emanuel Brandão de Galvão Correia, Ruben Isaac Dias da Silva e Carlos Eduardo da Silva Papa\\ \textbf{Professores:} Dr. João Mello da Silva e Dr. Edison Ishikawa\\ \textbf{Natureza:} síntese técnica do PMBOK 8, com um agrupamento analítico dos domínios apresentado separadamente da estrutura oficial do PMI.
 \end{flushleft}
 \vspace{\onelineskip}
 
@@ -269,14 +280,14 @@ Orientada a valor & \textbf{2FOV} \textit{Focus on Value} e \textbf{5SPA} \texti
 A tabela formula, em linguagem de trabalho, uma pergunta útil para aplicar cada princípio e uma consequência para uma decisão; não substitui a definição do PMI [\refnum{pmi}, \textit{Standard} §§3.3–3.8].
 
 \begingroup\SingleSpacing\small
-\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*252/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*347/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*401/1000\relax}@{}}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*263/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*342/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*395/1000\relax}@{}}
 \caption{Perguntas práticas e consequências de cada princípio}\label{tab:t3}\\
 \toprule
-\textbf{Código e princípio oficial} & \textbf{Pergunta prática} & \textbf{Consequência para uma decisão}\\
+\textbf{Princípio oficial (código usado na disciplina)} & \textbf{Pergunta prática} & \textbf{Consequência para uma decisão}\\
 \midrule
 \endfirsthead
 \toprule
-\textbf{Código e princípio oficial} & \textbf{Pergunta prática} & \textbf{Consequência para uma decisão}\\
+\textbf{Princípio oficial (código usado na disciplina)} & \textbf{Pergunta prática} & \textbf{Consequência para uma decisão}\\
 \midrule
 \endhead
 \bottomrule
@@ -520,7 +531,7 @@ A tabela mantém os \textbf{nomes oficiais em inglês}. A coluna em português s
 O inventário revela dependências concretas. Um requisito do Escopo pode exigir recurso, orçamento e decisão de Governança; mudanças no cronograma podem alterar riscos e expectativas de partes interessadas. O fato de um processo estar sob um domínio e uma área de foco facilita localizá-lo, mas não limita suas interações.
 \subsection{Considerações de adaptação por domínio}
 
-Cada domínio traz uma seção de considerações de adaptação (2.x.3 do \textit{Guide}). A tabela resume uma consideração característica de cada um; as listas completas estão no livro [\refnum{pmi}, \textit{Guide} §§2.1.7, 2.2.3, 2.3.3, 2.4.3, 2.5.3, 2.6.3 e 2.7.3].
+Cada domínio traz uma seção de considerações de adaptação (seção 2.x.3 do \textit{Guide}, exceto Governança, que é a 2.1.7). A tabela resume uma consideração característica de cada um; as listas completas estão no livro [\refnum{pmi}, \textit{Guide} §§2.1.7, 2.2.3, 2.3.3, 2.4.3, 2.5.3, 2.6.3 e 2.7.3].
 
 \begingroup\SingleSpacing\small
 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*189/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*811/1000\relax}@{}}
@@ -754,6 +765,24 @@ A oitava edição combina \textbf{orientação por princípios} com \textbf{deta
 
 As quatro concentrações apresentadas aqui são um modo de leitura, não substituem o índice oficial do PMI. Os exemplos de adaptação são hipotéticos e não demonstram benefício realizado. Esta síntese tampouco valida uma extensão ou mede desempenho de projeto. Uma aplicação concreta precisaria escolher indicadores, responsabilidades, artefatos e frequência de revisão, além de verificar restrições próprias da organização e do contrato. Como o PMBOK 8 não trata de gêmeos digitais, um projeto dessa natureza deve completar a estrutura de gestão com referências técnicas específicas.
 
+% AVISO-IA:INICIO (subseção final; liga/desliga com \avisofinaltrue/\avisofinalfalse no preâmbulo)
+\ifavisofinal
+\subsection{Uso de inteligência artificial}
+
+Este trabalho usou IA generativa (ChatGPT Astral 6 Sol e Sonnet 5.5, ambos no modo alto) como apoio à revisão de texto, à formatação, à criação de figuras e à formulação de tabelas. Seguimos a posição do COPE sobre autoria e ferramentas de IA (COPE, 2023), que pede declarar o uso e manter a responsabilidade com os autores. Três pontos orientam a leitura desta declaração.
+
+\textbf{A IA não é autora nem fonte.} Nenhuma afirmação sobre o PMBOK 8, a LGPD ou a literatura deve ser aceita porque um modelo de linguagem a produziu. Cada uma indica a sua fonte (seção, tabela, norma ou referência) para que quem lê possa conferi-la.
+
+\textbf{Riscos conhecidos desse uso.} Modelos de linguagem podem inventar referências, trocar números e suavizar ressalvas, e a tradução entre português e inglês pode deslocar sentidos técnicos. Por isso, referências, contagens e nomes de processos são os pontos que mais merecem conferência contra as fontes, e este relatório não substitui a leitura da edição do PMBOK 8.
+
+\textbf{Responsabilidade.} O grupo responde pelo conteúdo, inclusive pelas partes produzidas com apoio de IA. A declaração descreve categorias de uso, não registra cada interação, e o esforço da equipe não foi medido.
+
+\textbf{Relação com o tema.} O PMBOK 8 não organiza o uso de IA como domínio, mas dedica a ela um apêndice (X3) \cit{pmi}. Um projeto que a adote deve tratá-la como qualquer outro elemento a adaptar (\textit{tailoring}), e não como exceção ao método.
+
+\begingroup\small\noindent COMMITTEE ON PUBLICATION ETHICS (COPE). \textit{Authorship and AI tools: COPE position statement}. 13 fev. 2023. Disponível em: \url{https://publicationethics.org/guidance/cope-position/authorship-and-ai-tools}.\par\endgroup
+\fi
+% AVISO-IA:FIM
+
 \section{Relatório final do trabalho}
 
 Seguindo o formato do \textit{Final report}, saída do processo \textit{Close Project or Phase} [\refnum{pmi}, \textit{Guide} §2.1.6.9], este item resume o desempenho do trabalho de elaboração desta síntese, tomado como o projeto relatado.
@@ -778,7 +807,7 @@ Seguindo o formato do \textit{Final report}, saída do processo \textit{Close Pr
 \textbf{Objetivos de qualidade e verificação} & Nomes e contagens dos 40 processos conferidos nas seções 2.1 a 2.7, na Tabela 2-1 e nas figuras de visão geral dos domínios do \textit{Guide}; as 42 conexões princípio-domínio conferidas nas seções 3.3.3 a 3.8.3 do \textit{Standard}; mesmas estruturas e dados nas versões em português e em inglês. Sem revisão externa.\\[3pt]
 \textbf{Objetivos de custo e variações} & O trabalho não teve orçamento financeiro. O esforço da equipe não é reportado aqui.\\[3pt]
 \textbf{Validação do resultado final} & Conferência documental feita. Validação por especialistas em gestão de projetos, ainda pendente.\\[3pt]
-\textbf{Cronograma e realização de benefícios} & Trabalho realizado em ciclo curto de elaboração, revisão e conferência, com entrega na data prevista. Os benefícios de aplicação da síntese são hipóteses a testar.\\[3pt]
+\textbf{Cronograma e realização de benefícios} & Trabalho realizado em ciclo curto de elaboração, revisão e conferência, com entrega prevista para 06/11/2026. Os benefícios de aplicação da síntese são hipóteses a testar.\\[3pt]
 \textbf{Necessidades de negócio atendidas} & A necessidade de uma síntese adaptável do PMBOK 8 como base para guias de gestão de projetos recebeu uma resposta estruturada; sua efetividade depende de validação.\\[3pt]
 \textbf{Riscos e questões encontrados} & (i) Confusão entre estrutura oficial e agrupamento analítico: tratada com rótulos e figuras separadas. (ii) Tradução e simplificação excessiva: tratada com nomes oficiais em inglês e ressalvas. (iii) Fonte de acesso restrito: tratada citando seções, tabelas e figuras. (iv) Ausência de gêmeo digital no PMBOK 8: registrada na seção 2 e na seção 11.\\[3pt]
 \end{longtable}
@@ -801,11 +830,11 @@ Seguindo o formato do \textit{Final report}, saída do processo \textit{Close Pr
 
 \refitem{pmi}{PMI — PROJECT MANAGEMENT INSTITUTE. \textbf{The Standard for Project Management and A Guide to the Project Management Body of Knowledge (PMBOK Guide)}. 8. ed. Newtown Square: PMI, 2025. Documento de acesso restrito, obtido mediante aquisição ou associação ao PMI.}
 
-\refitem{reed}{REED, A. H.; ANGOLIA, M. G.; BAHAM, C.; IGAH, R. Usage of hybrid project management approaches and influences on approach selection. \textbf{Communications of the Association for Information Systems}, v. 54, p. 402-427, 2024. DOI: 10.17705/1CAIS.05415.}
+\refitem{reed}{REED, A.; ANGOLIA, M.; BAHAM, C.; IGAH, R. Usage of hybrid project management approaches and influences on approach selection. \textbf{Communications of the Association for Information Systems}, v. 54, p. 402-427, 2024. DOI: 10.17705/1CAIS.05415.}
 
 \refitem{silvius}{SILVIUS-ZUCHI, D.; SILVIUS, G. Designing a fitting hybrid project management approach: a contingency perspective. \textbf{International Journal of Information Systems and Project Management}, v. 14, n. 1, art. 4, 2026.}
 
-\refitem{gdpr}{UNIÃO EUROPEIA. \textbf{Regulamento (UE) 2016/679 do Parlamento Europeu e do Conselho, de 27 de abril de 2016} (Regulamento Geral sobre a Proteção de Dados).}
+\refitem{gdpr}{UNIÃO EUROPEIA. \textbf{Regulamento (UE) 2016/679 do Parlamento Europeu e do Conselho, de 27 de abril de 2016} (Regulamento Geral sobre a Proteção de Dados). \textbf{Jornal Oficial da União Europeia}, L 119, 4 maio 2016.}
 
 \endgroup
 

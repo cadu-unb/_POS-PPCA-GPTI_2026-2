@@ -1,6 +1,8 @@
 # PMBOK 8: princípios, áreas de foco, domínios e adaptação sob medida
 
 **Grupo SIPA:** Privacidade 2  
+**Integrantes:** Filipe Alves de Sousa, Emanuel Brandão de Galvão Correia, Ruben Isaac Dias da Silva e Carlos Eduardo da Silva Papa  
+**Professores:** Dr. João Mello da Silva e Dr. Edison Ishikawa  
 **Natureza:** síntese técnica do PMBOK 8, com um agrupamento analítico dos domínios apresentado separadamente da estrutura oficial do PMI.
 
 ## Resumo
@@ -88,7 +90,7 @@ O *Standard* organiza uma mentalidade de gestão em três dimensões: **proativa
 
 A tabela formula, em linguagem de trabalho, uma pergunta útil para aplicar cada princípio e uma consequência para uma decisão; não substitui a definição do PMI [4, *Standard* §§3.3–3.8].
 
-| Código e princípio oficial | Pergunta prática | Consequência para uma decisão |
+| Princípio oficial (código usado na disciplina) | Pergunta prática | Consequência para uma decisão |
 | --- | --- | --- |
 | **1AHV — Adopt a Holistic View** | Que relações e efeitos fora da entrega imediata influenciam o resultado? | Examinar dependências entre domínios, organização, pessoas e ambiente. |
 | **2FOV — Focus on Value** | Que resultado justifica o trabalho e como saber se continua valioso? | Comparar alternativas pelo benefício esperado, não só pela quantidade de atividades. |
@@ -239,7 +241,7 @@ O inventário revela dependências concretas. Um requisito do Escopo pode exigir
 
 ### 7.2 Considerações de adaptação por domínio
 
-Cada domínio traz uma seção de considerações de adaptação (2.x.3 do *Guide*). A tabela resume uma consideração característica de cada um; as listas completas estão no livro [4, *Guide* §§2.1.7, 2.2.3, 2.3.3, 2.4.3, 2.5.3, 2.6.3 e 2.7.3].
+Cada domínio traz uma seção de considerações de adaptação (seção 2.x.3 do *Guide*, exceto Governança, que é a 2.1.7). A tabela resume uma consideração característica de cada um; as listas completas estão no livro [4, *Guide* §§2.1.7, 2.2.3, 2.3.3, 2.4.3, 2.5.3, 2.6.3 e 2.7.3].
 
 | Domínio | Consideração de adaptação característica |
 | --- | --- |
@@ -407,6 +409,22 @@ A oitava edição combina **orientação por princípios** com **detalhamento t�
 
 As quatro concentrações apresentadas aqui são um modo de leitura, não substituem o índice oficial do PMI. Os exemplos de adaptação são hipotéticos e não demonstram benefício realizado. Esta síntese tampouco valida uma extensão ou mede desempenho de projeto. Uma aplicação concreta precisaria escolher indicadores, responsabilidades, artefatos e frequência de revisão, além de verificar restrições próprias da organização e do contrato. Como o PMBOK 8 não trata de gêmeos digitais, um projeto dessa natureza deve completar a estrutura de gestão com referências técnicas específicas.
 
+<!-- AVISO-IA:INICIO (subseção final; apagar tudo entre os marcadores a remove) -->
+### 12.1 Uso de inteligência artificial
+
+Este trabalho usou IA generativa (ChatGPT Astral 6 Sol e Sonnet 5.5, ambos no modo alto) como apoio à revisão de texto, à formatação, à criação de figuras e à formulação de tabelas. Seguimos a posição do COPE sobre autoria e ferramentas de IA (COPE, 2023), que pede declarar o uso e manter a responsabilidade com os autores. Três pontos orientam a leitura desta declaração.
+
+**A IA não é autora nem fonte.** Nenhuma afirmação sobre o PMBOK 8, a LGPD ou a literatura deve ser aceita porque um modelo de linguagem a produziu. Cada uma indica a sua fonte (seção, tabela, norma ou referência) para que quem lê possa conferi-la.
+
+**Riscos conhecidos desse uso.** Modelos de linguagem podem inventar referências, trocar números e suavizar ressalvas, e a tradução entre português e inglês pode deslocar sentidos técnicos. Por isso, referências, contagens e nomes de processos são os pontos que mais merecem conferência contra as fontes, e este relatório não substitui a leitura da edição do PMBOK 8.
+
+**Responsabilidade.** O grupo responde pelo conteúdo, inclusive pelas partes produzidas com apoio de IA. A declaração descreve categorias de uso, não registra cada interação, e o esforço da equipe não foi medido.
+
+**Relação com o tema.** O PMBOK 8 não organiza o uso de IA como domínio, mas dedica a ela um apêndice (X3) [4]. Um projeto que a adote deve tratá-la como qualquer outro elemento a adaptar (*tailoring*), e não como exceção ao método.
+
+COMMITTEE ON PUBLICATION ETHICS (COPE). *Authorship and AI tools: COPE position statement*. 13 fev. 2023. Disponível em: <https://publicationethics.org/guidance/cope-position/authorship-and-ai-tools>.
+<!-- AVISO-IA:FIM -->
+
 ## 13. Relatório final do trabalho
 
 Seguindo o formato do *Final report*, saída do processo *Close Project or Phase* [4, *Guide* §2.1.6.9], este item resume o desempenho do trabalho de elaboração desta síntese, tomado como o projeto relatado.
@@ -418,7 +436,7 @@ Seguindo o formato do *Final report*, saída do processo *Close Project or Phase
 | **Objetivos de qualidade e verificação** | Nomes e contagens dos 40 processos conferidos nas seções 2.1 a 2.7, na Tabela 2-1 e nas figuras de visão geral dos domínios do *Guide*; as 42 conexões princípio-domínio conferidas nas seções 3.3.3 a 3.8.3 do *Standard*; mesmas estruturas e dados nas versões em português e em inglês. Sem revisão externa. |
 | **Objetivos de custo e variações** | O trabalho não teve orçamento financeiro. O esforço da equipe não é reportado aqui. |
 | **Validação do resultado final** | Conferência documental feita. Validação por especialistas em gestão de projetos, ainda pendente. |
-| **Cronograma e realização de benefícios** | Trabalho realizado em ciclo curto de elaboração, revisão e conferência, com entrega na data prevista. Os benefícios de aplicação da síntese são hipóteses a testar. |
+| **Cronograma e realização de benefícios** | Trabalho realizado em ciclo curto de elaboração, revisão e conferência, com entrega prevista para 06/11/2026. Os benefícios de aplicação da síntese são hipóteses a testar. |
 | **Necessidades de negócio atendidas** | A necessidade de uma síntese adaptável do PMBOK 8 como base para guias de gestão de projetos recebeu uma resposta estruturada; sua efetividade depende de validação. |
 | **Riscos e questões encontrados** | (i) Confusão entre estrutura oficial e agrupamento analítico: tratada com rótulos e figuras separadas. (ii) Tradução e simplificação excessiva: tratada com nomes oficiais em inglês e ressalvas. (iii) Fonte de acesso restrito: tratada citando seções, tabelas e figuras. (iv) Ausência de gêmeo digital no PMBOK 8: registrada na seção 2 e na seção 11. |
 
@@ -434,8 +452,8 @@ Numeradas em ordem alfabética do primeiro autor (ou da entidade responsável). 
 
 [4] PMI — PROJECT MANAGEMENT INSTITUTE. *The Standard for Project Management and A Guide to the Project Management Body of Knowledge (PMBOK Guide)*. 8. ed. Newtown Square: PMI, 2025. Documento de acesso restrito, obtido mediante aquisição ou associação ao PMI.
 
-[5] REED, A. H.; ANGOLIA, M. G.; BAHAM, C.; IGAH, R. Usage of hybrid project management approaches and influences on approach selection. *Communications of the Association for Information Systems*, v. 54, p. 402-427, 2024. DOI: 10.17705/1CAIS.05415.
+[5] REED, A.; ANGOLIA, M.; BAHAM, C.; IGAH, R. Usage of hybrid project management approaches and influences on approach selection. *Communications of the Association for Information Systems*, v. 54, p. 402-427, 2024. DOI: 10.17705/1CAIS.05415.
 
 [6] SILVIUS-ZUCHI, D.; SILVIUS, G. Designing a fitting hybrid project management approach: a contingency perspective. *International Journal of Information Systems and Project Management*, v. 14, n. 1, art. 4, 2026.
 
-[7] UNIÃO EUROPEIA. *Regulamento (UE) 2016/679 do Parlamento Europeu e do Conselho, de 27 de abril de 2016* (Regulamento Geral sobre a Proteção de Dados).
+[7] UNIÃO EUROPEIA. *Regulamento (UE) 2016/679 do Parlamento Europeu e do Conselho, de 27 de abril de 2016* (Regulamento Geral sobre a Proteção de Dados). *Jornal Oficial da União Europeia*, L 119, 4 maio 2016.

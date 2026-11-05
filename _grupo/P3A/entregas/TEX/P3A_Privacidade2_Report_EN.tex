@@ -66,7 +66,12 @@
 \defref{wang}{17}
 
 % Integrantes do grupo (preencher; a capa usa esta macro)
-\newcommand{\integrantes}{[nomes dos integrantes do grupo]}
+\newcommand{\integrantes}{Filipe Alves de Sousa, Emanuel Brandão de Galvão Correia, Ruben Isaac Dias da Silva, and Carlos Eduardo da Silva Papa}
+
+% AVISO-IA:INICIO (chaves: trocar true/false)
+\newif\ifavisocapa   \avisocapafalse    % caixa de declaração na capa
+\newif\ifavisofinal  \avisofinaltrue    % subseção "Uso de inteligência artificial" no fim da conclusão
+% AVISO-IA:FIM
 
 \begin{document}
 
@@ -75,7 +80,7 @@
 \noindent\begin{minipage}[t][0.92\textheight]{\textwidth}
 \centering
 \SingleSpacing
-\textbf{UNIVERSITY OF BRASÍLIA -- UnB\\GRADUATE PROGRAM IN APPLIED COMPUTING -- PPCA\\COURSE: IT PROJECT MANAGEMENT (GPTI)\\PROFESSOR: Dr. JOÃO MELLO DA SILVA}
+\textbf{UNIVERSITY OF BRASÍLIA -- UnB\\GRADUATE PROGRAM IN APPLIED COMPUTING -- PPCA\\COURSE: IT PROJECT MANAGEMENT (GPTI)\\PROFESSORS: Dr. JOÃO MELLO DA SILVA and Dr. EDISON ISHIKAWA}
 
 \vspace{1cm}
 
@@ -85,6 +90,12 @@
 
 \textbf{PRIVACY AS A PROPOSED PMBOK 8 PERFORMANCE DOMAIN}
 
+% AVISO-IA:INICIO (caixa na capa; liga com \avisocapatrue no preâmbulo)
+\vspace{1.2cm}
+\ifavisocapa
+\begin{center}\fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\SingleSpacing\small\noindent\textbf{Statement on the use of artificial intelligence.} Generative AI (ChatGPT Astral 6 Sol and Sonnet 5.5, both in high mode) was used to support text editing, formatting, figure creation, and table drafting. AI is not an author: the group is responsible for the content, in line with the COPE position on authorship and AI tools (COPE, 2023).\par\smallskip\noindent COMMITTEE ON PUBLICATION ETHICS (COPE). \textit{Authorship and AI tools: COPE position statement}. 13 Feb. 2023. Available at: \url{https://publicationethics.org/guidance/cope-position/authorship-and-ai-tools}.}}\end{center}
+\fi
+% AVISO-IA:FIM
 \vfill
 
 BRASÍLIA -- DF\\2026
@@ -163,7 +174,7 @@ Este relatório propõe um domínio de desempenho Privacidade como extensão do 
 \clearpage
 
 \begin{flushleft}\small\SingleSpacing
-\noindent\textbf{Nature of the work.} \textbf{SIPA group:} Privacy 2\\ \textbf{Concentration:} Who\\ \textbf{Related existing domains:} Stakeholders and Risk\\ \textbf{Nature:} academic extension proposal; processes P1–P8 below \textbf{are not official PMI processes}.
+\noindent\textbf{Nature of the work.} \textbf{SIPA group:} Privacy 2\\ \textbf{Members:} Filipe Alves de Sousa, Emanuel Brandão de Galvão Correia, Ruben Isaac Dias da Silva, and Carlos Eduardo da Silva Papa\\ \textbf{Professors:} Dr. João Mello da Silva and Dr. Edison Ishikawa\\ \textbf{Concentration:} Who\\ \textbf{Related existing domains:} Stakeholders and Risk\\ \textbf{Nature:} academic extension proposal; processes P1–P8 below \textbf{are not official PMI processes}.
 \end{flushleft}
 \vspace{\onelineskip}
 
@@ -185,9 +196,9 @@ This argument is \textbf{organizational}, not a claim that PMBOK 8 is unaware of
 \section{DIAGNOSIS OF PMBOK 8}
 \subsection{What already exists}
 
-The \textbf{Stakeholders} domain contains seven processes: Identify Stakeholders; Plan Stakeholder Engagement; Plan Communications Management; Manage Stakeholder Engagement; Manage Communications; Monitor Stakeholder Engagement; and Monitor Communications [\refnum{pmi}, §2.5.2]. The definition of \textit{Manage Communications} itself reaches the creation, distribution, storage, retrieval, and disposition of project information. This is a real point of contact with data governance, although it does not specify the entire life cycle of personal data or data subject rights.
+The \textbf{Stakeholders} domain contains seven processes: Identify Stakeholders; Plan Stakeholder Engagement; Plan Communications Management; Manage Stakeholder Engagement; Manage Communications; Monitor Stakeholder Engagement; and Monitor Communications [\refnum{pmi}, \textit{Guide} §2.5.2]. The definition of \textit{Manage Communications} itself reaches the creation, distribution, storage, retrieval, and disposition of project information. This is a real point of contact with data governance, although it does not specify the entire life cycle of personal data or data subject rights.
 
-The \textbf{Risk} domain contains six processes: Plan Risk Management; Identify Risks; Perform Risk Analysis; Plan Risk Responses; Implement Risk Responses; and Monitor Risks [\refnum{pmi}, §2.7.2]. It is an adequate structure for recognizing uncertainty and tracking responses. However, its general description covers threats and opportunities for project objectives; a privacy assessment must also consider problems that data processing may cause to people, even without a security failure. The NIST Privacy Framework states that managing cybersecurity risk contributes to managing privacy risk but is not sufficient, since there are privacy risks that arise by means other than cybersecurity incidents [\refnum{nistpf}].
+The \textbf{Risk} domain contains six processes: Plan Risk Management; Identify Risks; Perform Risk Analysis; Plan Risk Responses; Implement Risk Responses; and Monitor Risks [\refnum{pmi}, \textit{Guide} §2.7.2]. It is an adequate structure for recognizing uncertainty and tracking responses. However, its general description covers threats and opportunities for project objectives; a privacy assessment must also consider problems that data processing may cause to people, even without a security failure. The NIST Privacy Framework states that managing cybersecurity risk contributes to managing privacy risk but is not sufficient, since there are privacy risks that arise by means other than cybersecurity incidents [\refnum{nistpf}].
 
 There are also scattered references in PMBOK 8: data protection laws may limit project options; AI tools raise privacy issues; communications may require protection of sensitive information [\refnum{pmi}]. Hence, the hypothesis we support is more precise: \textbf{the topic appears, but it is not organized as a dedicated domain and set of processes} among the seven official domains.
 \subsection{What the new organization needs to make observable}
@@ -295,31 +306,31 @@ As in the domains of the \textit{Guide}, the section begins with the concepts th
 The codes \textbf{P1–P8} below identify only this proposal. The inputs and outputs are examples to guide \textit{tailoring}; they do not reproduce official PMBOK 8 tables.
 
 \begingroup\SingleSpacing\footnotesize
-\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*198/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*84/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*528/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*190/1000\relax}@{}}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*210/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*80/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*490/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*220/1000\relax}@{}}
 \caption{Processes proposed for the Privacy domain}\label{tab:t3}\\
 \hline
-\textbf{Proposed code and process} & \textbf{Primary Focus Area} & \textbf{Input \ensuremath{\rightarrow} decision/activity \ensuremath{\rightarrow} output} & \textbf{Interface with existing process}\\
+\textbf{Proposed code and process} & \textbf{Area} & \textbf{Input \ensuremath{\rightarrow} decision/activity \ensuremath{\rightarrow} output} & \textbf{Interface with existing process}\\
 \hline
 \endfirsthead
 \hline
-\textbf{Proposed code and process} & \textbf{Primary Focus Area} & \textbf{Input \ensuremath{\rightarrow} decision/activity \ensuremath{\rightarrow} output} & \textbf{Interface with existing process}\\
+\textbf{Proposed code and process} & \textbf{Area} & \textbf{Input \ensuremath{\rightarrow} decision/activity \ensuremath{\rightarrow} output} & \textbf{Interface with existing process}\\
 \hline
 \endhead
 \hline
 \endfoot
 \hline
 \endlastfoot
-\textbf{P1 Identify data subjects and personal data} & Initiating & Project idea, expected flows \ensuremath{\rightarrow} recognize categories of people, data, collection points, and direction of flows \ensuremath{\rightarrow} initial inventory & \textit{Identify Stakeholders}; \textit{Identify Risks}\\[3pt]
-\textbf{P2 Plan privacy management} & Planning & Inventory, objectives, legal environment \ensuremath{\rightarrow} define purpose, legal basis to be verified, roles, retention, and response to data subjects \ensuremath{\rightarrow} privacy plan & \textit{Plan Risk Management}; \textit{Plan Communications Management}\\[3pt]
-\textbf{P3 Assess privacy impacts} & Planning & Data operations, architecture, and risks \ensuremath{\rightarrow} assess possible effects on people and the need for a DPIA \ensuremath{\rightarrow} assessment record and, when applicable, DPIA & \textit{Perform Risk Analysis}\\[3pt]
-\textbf{P4 Plan responses and controls} & Planning & Impact assessment \ensuremath{\rightarrow} select minimization, access, transparency, retention, and other proportionate responses \ensuremath{\rightarrow} control plan, owners, and acceptance criteria & \textit{Plan Risk Responses}\\[3pt]
-\textbf{P5 Manage communication and data-subject rights} & Executing & Plan, channels, and requests \ensuremath{\rightarrow} inform, receive, and route requests according to the applicable rule \ensuremath{\rightarrow} communication and response records & \textit{Manage Stakeholder Engagement}; \textit{Manage Communications}\\[3pt]
-\textbf{P6 Implement controls and handle incidents} & Executing & Control plan, changes, and alerts \ensuremath{\rightarrow} implement safeguards, log the occurrence, and trigger a response \ensuremath{\rightarrow} implementation evidence and incident log & \textit{Implement Risk Responses}\\[3pt]
-\textbf{P7 Monitor privacy risks and practices} & Monitoring and Controlling & Metrics, records, and changes \ensuremath{\rightarrow} review effectiveness, new purposes, and risks \ensuremath{\rightarrow} recommendations, plan revisions, and evidence & \textit{Monitor Risks}; \textit{Monitor Stakeholder Engagement}\\[3pt]
-\textbf{P8 Close or transfer processing under control} & Closing & Updated inventory, retention and transition requirements \ensuremath{\rightarrow} decide retention, transfer, or deletion as appropriate \ensuremath{\rightarrow} record of disposition and future responsibilities & \textit{Close Project or Phase}\\[3pt]
+\textbf{P1 Identify data subjects and personal data} & IN & Project idea, expected flows \ensuremath{\rightarrow} recognize categories of people, data, collection points, and direction of flows \ensuremath{\rightarrow} initial inventory & \textit{Identify Stakeholders}; \textit{Identify Risks}\\[3pt]
+\textbf{P2 Plan privacy management} & PL & Inventory, objectives, legal environment \ensuremath{\rightarrow} define purpose, legal basis to be verified, roles, retention, and response to data subjects \ensuremath{\rightarrow} privacy plan & \textit{Plan Risk Management}; \textit{Plan Communications Management}\\[3pt]
+\textbf{P3 Assess privacy impacts} & PL & Data operations, architecture, and risks \ensuremath{\rightarrow} assess possible effects on people and the need for a DPIA \ensuremath{\rightarrow} assessment record and, when applicable, DPIA & \textit{Perform Risk Analysis}\\[3pt]
+\textbf{P4 Plan responses and controls} & PL & Impact assessment \ensuremath{\rightarrow} select minimization, access, transparency, retention, and other proportionate responses \ensuremath{\rightarrow} control plan, owners, and acceptance criteria & \textit{Plan Risk Responses}\\[3pt]
+\textbf{P5 Manage communication and data-subject rights} & EX & Plan, channels, and requests \ensuremath{\rightarrow} inform, receive, and route requests according to the applicable rule \ensuremath{\rightarrow} communication and response records & \textit{Manage Stakeholder Engagement}; \textit{Manage Communications}\\[3pt]
+\textbf{P6 Implement controls and handle incidents} & EX & Control plan, changes, and alerts \ensuremath{\rightarrow} implement safeguards, log the occurrence, and trigger a response \ensuremath{\rightarrow} implementation evidence and incident log & \textit{Implement Risk Responses}\\[3pt]
+\textbf{P7 Monitor privacy risks and practices} & MC & Metrics, records, and changes \ensuremath{\rightarrow} review effectiveness, new purposes, and risks \ensuremath{\rightarrow} recommendations, plan revisions, and evidence & \textit{Monitor Risks}; \textit{Monitor Stakeholder Engagement}\\[3pt]
+\textbf{P8 Close or transfer processing under control} & CL & Updated inventory, retention and transition requirements \ensuremath{\rightarrow} decide retention, transfer, or deletion as appropriate \ensuremath{\rightarrow} record of disposition and future responsibilities & \textit{Close Project or Phase}\\[3pt]
 \end{longtable}
 \endgroup
-\fontetab{Prepared by the authors (2026).}
+\fontetab{Prepared by the authors (2026). Focus Areas: IN Initiating; PL Planning; EX Executing; MC Monitoring and Controlling; CL Closing.}
 
 \begin{figure}[!htbp]
 \centering
@@ -459,7 +470,7 @@ The DTC also lists privacy among the trustworthiness capabilities of the digital
 PMBOK 8 closes each domain with guidance on keeping the focus on value [\refnum{pmi}]: for each process output there should be a higher-order result in view. The table applies this logic to Privacy.
 
 \begingroup\SingleSpacing\footnotesize
-\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*248/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*477/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*212/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*63/1000\relax}@{}}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*230/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*420/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*230/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*120/1000\relax}@{}}
 \caption{Expected results and verification}\label{tab:t7}\\
 \hline
 \textbf{Expected result} & \textbf{Verification questions} & \textbf{Evidence} & \textbf{Processes}\\
@@ -488,22 +499,22 @@ Processing closed or transferred under control & Does each dataset have a decide
 The matrix below indicates the \textbf{primary} Focus Area of each proposed process, without prohibiting iterations in other areas. Focus Areas are categories of activities, not a single sequence for all projects [\refnum{pmi}, §4.5 of the Standard].
 
 \begingroup\SingleSpacing\footnotesize
-\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*144/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*400/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*85/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*371/1000\relax}@{}}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*150/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*320/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*100/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*430/1000\relax}@{}}
 \caption{Alignment of the domain with the five Focus Areas}\label{tab:t8}\\
 \hline
-\textbf{Focus Area} & \textbf{Privacy question} & \textbf{Processes in the proposal} & \textbf{Decision evidence}\\
+\textbf{Focus Area} & \textbf{Privacy question} & \textbf{Processes} & \textbf{Decision evidence}\\
 \hline
 \endfirsthead
 \hline
-\textbf{Focus Area} & \textbf{Privacy question} & \textbf{Processes in the proposal} & \textbf{Decision evidence}\\
+\textbf{Focus Area} & \textbf{Privacy question} & \textbf{Processes} & \textbf{Decision evidence}\\
 \hline
 \endhead
 \hline
 \endfoot
 \hline
 \endlastfoot
-\textbf{IN — Initiating} & Who may be affected and what processing is anticipated? & P1 & Initial inventory of data and categories of data subjects; assumptions and uncertainties\\[3pt]
-\textbf{PL — Planning} & Why process the data, what are the risks, and which responses are proportionate? & P2, P3, P4 & Privacy plan; impact assessment; control and acceptance criteria\\[3pt]
+\textbf{IN — Initiating} & Who may be affected and what processing is anticipated? & P1 & $\bullet$~Initial inventory of data and categories of data subjects\newline$\bullet$~Assumptions and uncertainties\\[3pt]
+\textbf{PL — Planning} & Why process the data, what are the risks, and which responses are proportionate? & P2, P3, P4 & $\bullet$~Privacy plan\newline$\bullet$~Impact assessment\newline$\bullet$~Control and acceptance criteria\\[3pt]
 \textbf{EX — Executing} & Do the planned communications, rights, and safeguards work in practice? & P5, P6 & Records of implementation, requests, and occurrences\\[3pt]
 \textbf{MC — Monitoring and Controlling} & Have changes altered the purpose, exposure, or effectiveness of the responses? & P7 & Indicators, risk review, corrective decisions, and audit trail\\[3pt]
 \textbf{CL — Closing} & Who becomes responsible for the data and what will be their disposition? & P8 & Record of transition, retention, or deletion and owners\\[3pt]
@@ -555,7 +566,7 @@ The relationship with \textbf{5SPA} deserves attention, since the SIPA proposal 
 \section{INTERACTIONS WITH EXISTING DOMAINS AND WITH THE OTHER CONCENTRATIONS}
 \subsection{Additions and changes to the Stakeholders and Risk processes}
 
-The Privacy domain does not replace the thirteen existing processes in Who [\refnum{pmi}, §§2.5.2 and 2.7.2]: it uses their records and adds a specific question about data processing and effects on data subjects. The table proposes, for each process, the minimal addition or change that makes it privacy-sensitive, without changing its name or general purpose. All are proposals of this work.
+The Privacy domain does not replace the thirteen existing processes in Who [\refnum{pmi}, \textit{Guide} §§2.5.2 and 2.7.2]: it uses their records and adds a specific question about data processing and effects on data subjects. The table proposes, for each process, the minimal addition or change that makes it privacy-sensitive, without changing its name or general purpose. All are proposals of this work.
 
 \begingroup\SingleSpacing\small
 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*202/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*102/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*696/1000\relax}@{}}
@@ -618,7 +629,7 @@ We record separately, as working hypotheses, the interfaces that Privacy may hav
 
 \section{ILLUSTRATIVE SCENARIO: RECYCLING BY COOPERATIVES AND DIGITAL TWINS}
 
-To test the proposed processes, we considered a \textbf{hypothetical scenario}, devised by the authors: a digital twin project for a recycling system run by cooperatives of waste pickers, with an app to mobilize residents, sorting in a warehouse, and final disposal of tailings. In this scenario, the app could collect registration data, location, and images of residents; the recycling twin could receive, by route, indicators of sorting quality; warehouse workers could be recorded in attendance or productivity controls; and physical media holding data would be discarded at the end. This is an illustration, not a description of an existing operation.
+To test the proposed processes, we considered a \textbf{hypothetical scenario}, devised by the authors: a digital twin project for a recycling system run by cooperatives of waste pickers, with an app to mobilize residents, sorting in a warehouse, and final disposal of rejects. In this scenario, the app could collect registration data, location, and images of residents; the recycling twin could receive, by route, indicators of sorting quality; warehouse workers could be recorded in attendance or productivity controls; and physical media holding data would be discarded at the end. This is an illustration, not a description of an existing operation.
 
 \begin{figure}[!htbp]
 \centering
@@ -641,12 +652,30 @@ To validate the proposal, we recommend a review matrix by three profiles: projec
 
 We conclude that PMBOK 8 offers management instruments useful for privacy, but the proposed organization may make this object more explicit and continuous. The \textbf{Privacy \ensuremath{\rightarrow} Who} domain adds the life cycle of personal data and the assessment of effects on data subjects to the dialogue with \textbf{Stakeholders} and \textbf{Risk}. For digital twin projects, it offers a line of decision on data processing that the technical capability tables do not organize. The contribution is a structure of questions, processes, and evidence to be evaluated, not a promise of automatic compliance.
 
+% AVISO-IA:INICIO (subseção final; liga/desliga com \avisofinaltrue/\avisofinalfalse no preâmbulo)
+\ifavisofinal
+\subsection{Use of artificial intelligence}
+
+This work used generative AI (ChatGPT Astral 6 Sol and Sonnet 5.5, both in high mode) to support text editing, formatting, figure creation, and table drafting. We follow the COPE position on authorship and AI tools (COPE, 2023), which asks authors to disclose the use and to remain responsible for the work. Three points guide how to read this statement.
+
+\textbf{AI is neither an author nor a source.} No claim about PMBOK 8, the LGPD, or the literature should be accepted because a language model produced it. Each claim points to its source (section, table, regulation, or reference) so that readers can check it.
+
+\textbf{Known risks of this use.} Language models can invent references, swap numbers, and soften caveats, and translation between Portuguese and English can shift technical meanings. References, counts, and process names are therefore the points that most deserve checking against the sources, and this report does not replace reading the PMBOK 8 edition.
+
+\textbf{Responsibility.} The group is responsible for the content, including the parts produced with AI support. The statement describes categories of use, does not log each interaction, and the team's effort was not measured.
+
+\textbf{Relation to the topic.} The work is documentary and the recycling scenario is hypothetical; no personal data of third parties was collected or processed. In a real project that used AI on data about people, that use would enter the data inventory and the impact assessment (P1 and P3).
+
+\begingroup\small\noindent COMMITTEE ON PUBLICATION ETHICS (COPE). \textit{Authorship and AI tools: COPE position statement}. 13 Feb. 2023. Available at: \url{https://publicationethics.org/guidance/cope-position/authorship-and-ai-tools}.\par\endgroup
+\fi
+% AVISO-IA:FIM
+
 \section{FINAL REPORT OF THE WORK}
 
-Following the format of the \textit{Final report}, an output of the \textit{Close Project or Phase} process [\refnum{pmi}, §2.1.6.9], this item summarizes the performance of the work of preparing the proposal, taken as the project reported.
+Following the format of the \textit{Final report}, an output of the \textit{Close Project or Phase} process [\refnum{pmi}, \textit{Guide} §2.1.6.9], this item summarizes the performance of the work of preparing the proposal, taken as the project reported.
 
 \begingroup\SingleSpacing\small
-\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*182/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*818/1000\relax}@{}}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*181/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*819/1000\relax}@{}}
 \caption{Final report of the work}\label{tab:t12}\\
 \hline
 \textbf{Final report item} & \textbf{Status of the work}\\
@@ -665,7 +694,7 @@ Following the format of the \textit{Final report}, an output of the \textit{Clos
 \textbf{Quality objectives and verification} & Development criteria of section 3.2 used as acceptance criteria. Verification: names, counts, and sections of PMBOK 8 checked against the text of the edition; same structures and data in the Portuguese and English versions. No external review.\\[3pt]
 \textbf{Cost objectives and variances} & The work had no financial budget. The team's effort is not reported here.\\[3pt]
 \textbf{Validation of the final result} & Documentary check done. Validation by experts in project management, data protection, and cooperative operation, proposed in section 9, still pending.\\[3pt]
-\textbf{Schedule and realization of benefits} & Work carried out in a short cycle of preparation, review, and checking, delivered on the scheduled date. The benefits of adopting the domain are hypotheses to be tested.\\[3pt]
+\textbf{Schedule and realization of benefits} & Work carried out in a short cycle of preparation, review, and checking, with delivery scheduled for 6 November 2026. The benefits of adopting the domain are hypotheses to be tested.\\[3pt]
 \textbf{Business needs met} & The need described in section 3.1, managing the effects of personal data processing throughout the project, received a structured proposal. Its effective fulfillment depends on validation.\\[3pt]
 \textbf{Risks and issues encountered} & (i) Scope delimitation: it was decided to develop a single domain, Privacy. (ii) Redundancy with Stakeholders and Risk: addressed by the table of additions and changes (§7.1) and by the criterion of not duplicating. (iii) Formulation of the gap: the initial hypothesis of absence was replaced by a more precise formulation, after reading the \textit{Guide} (§2.1). (iv) Legal application varying by case and jurisdiction: addressed with caveats throughout the text.\\[3pt]
 \end{longtable}
@@ -698,7 +727,7 @@ Following the format of the \textit{Final report}, an output of the \textit{Clos
 
 \refitem{dtcai}{DIGITAL TWIN CONSORTIUM (DTC). \textbf{AI agent capabilities periodic table: user guide}. Version 1.0. [S.l.]: DTC, 2025.}
 
-\refitem{gdpr}{EUROPEAN UNION. \textbf{Regulation (EU) 2016/679 of the European Parliament and of the Council, of 27 April 2016} (General Data Protection Regulation).}
+\refitem{gdpr}{EUROPEAN UNION. \textbf{Regulation (EU) 2016/679 of the European Parliament and of the Council, of 27 April 2016} (General Data Protection Regulation). \textbf{Official Journal of the European Union}, L 119, 4 May 2016.}
 
 \refitem{jorgensen}{JØRGENSEN, B. N.; MA, Z. G. Digital twins under EU law: a unified compliance framework across smart cities, industry, transportation, and energy systems. \textbf{Electronics}, vol. 14, no. 24, art. 4881, 2025. DOI: 10.3390/electronics14244881.}
 

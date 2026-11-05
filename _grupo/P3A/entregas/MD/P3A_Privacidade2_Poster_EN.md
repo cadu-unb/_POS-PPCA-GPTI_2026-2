@@ -1,7 +1,7 @@
 # Privacy as a proposed PMBOK 8 performance domain
 
 **SIPA Privacy 2 group · Who (WH) concentration**  
-**Academic proposal:** processes P1–P8 **are not official PMBOK 8 processes**.
+<!-- **Academic proposal:** processes P1–P8 **are not official PMBOK 8 processes**. NOTA-COMENTADA -->
 
 ## Problem and contribution
 
@@ -117,3 +117,8 @@ flowchart LR
 [17] WANG et al., *IEEE Internet of Things Journal*, 2023.
 
 Full references, with DOI and URL, in the report.
+
+<!-- AVISO-IA:INICIO -->
+---
+***AI use:** generative AI (ChatGPT Astral 6 Sol and Sonnet 5.5, high mode) supported text editing, formatting, figure creation, and table drafting. The group is responsible for the content (COPE, 2023: <https://publicationethics.org/guidance/cope-position/authorship-and-ai-tools>).*
+<!-- AVISO-IA:FIM -->

@@ -36,12 +36,12 @@ Cada documento é compilado duas vezes, para resolver sumário e listas. **As fi
 python ferramentas/gerar_tex.py
 ```
 
-Isso **sobrescreve** o relatório, as lições e as figuras. Se você editar esses `.tex` à mão, guarde as edições antes. Os pôsteres não são gerados. O gerador é uma adaptação do da P3A (`../../../P3A/entregas/TEX/ferramentas/gerar_tex.py`).
+Isso **sobrescreve** o relatório, as lições e as figuras. Os ajustes de tabela e figura, o aviso de IA e os nomes estão no gerador (`ferramentas/ajustes_tabelas.py`, `aviso_ia.py`), então regenerar não os perde; edições à mão em texto corrido, sim: faça-as no Markdown. Os pôsteres não são gerados. O gerador é uma adaptação do da P3A (`../../../P3A/entregas/TEX/ferramentas/gerar_tex.py`).
 
 ## Pontos a preencher ou conferir
 
-- **Integrantes do grupo:** a macro `\integrantes` na capa traz o texto provisório "[nomes dos integrantes do grupo]". Edite a linha `\newcommand{\integrantes}{...}` no preâmbulo de cada relatório.
-- **Autores no pôster:** o bloco `\blocoautores`, no preâmbulo de cada pôster, usa o mesmo texto do pôster da P3A (Filipe Alves de Sousa e membros do Grupo Colégio Reciclagem 1; disciplina; código 3p2 / 3R31). Confirme se vale para a P3D.
+- **Integrantes e professores:** preenchidos (os quatro integrantes e os professores Dr. João Mello da Silva e Dr. Edison Ishikawa; ver `../../README.md`). A macro `\integrantes` e a capa vêm de `ferramentas/gerar_tex.py` (dicionário `MEMBERS`); a capa `style2`, de `ferramentas/gerar_style2.py`.
+- **Autores no pôster:** o bloco `\blocoautores`, no preâmbulo de cada pôster, traz os quatro integrantes, a disciplina, os dois professores e o código 3p2 / 3R31 (ver `../../README.md`).
 - **Pôster em uma página:** o conteúdo fica em uma caixa única envolvida por `adjustbox`, que reduz tudo proporcionalmente se passar de uma página. O tamanho do texto está em `\corpo`.
 - **Capa:** segue a da P2B (universidade, programa, disciplina e professor).
 - **Citações numéricas:** cada referência tem um número definido por `\defref{chave}{n}` no preâmbulo (ordem alfabética da lista). Em inglês, a numeração difere da do português porque "European Union" ordena antes de ISO.

@@ -1,7 +1,7 @@
 # Privacidade como domínio de desempenho proposto para o PMBOK 8
 
 **Grupo SIPA Privacidade 2 · Concentração Quem (WH)**  
-**Proposta acadêmica:** os processos P1–P8 **não integram oficialmente o PMBOK 8**.
+<!-- **Proposta acadêmica:** os processos P1–P8 **não integram oficialmente o PMBOK 8**. NOTA-COMENTADA -->
 
 ## Problema e contribuição
 
@@ -116,3 +116,8 @@ flowchart LR
 [13] PMI, *PMBOK Guide*, 8. ed., 2025 (§§2.5 e 2.7). ·
 [17] WANG et al., *IEEE Internet of Things Journal*, 2023.
 Referências completas, com DOI e endereço, no relatório.
+
+<!-- AVISO-IA:INICIO -->
+---
+***Uso de IA:** IA generativa (ChatGPT Astral 6 Sol e Sonnet 5.5, modo alto) apoiou a revisão de texto, a formatação, a criação de figuras e a formulação de tabelas. O grupo é responsável pelo conteúdo (COPE, 2023: <https://publicationethics.org/guidance/cope-position/authorship-and-ai-tools>).*
+<!-- AVISO-IA:FIM -->

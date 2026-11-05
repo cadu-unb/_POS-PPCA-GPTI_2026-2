@@ -26,6 +26,11 @@
 \definecolor{DarkGreen}{rgb}{0.10,0.50,0.10}
 \definecolor{Link}{rgb}{0.10,0.25,0.75}
 
+% AVISO-IA:INICIO (chaves: trocar true/false)
+\newif\ifavisocapa   \avisocapafalse    % caixa de declaração na capa
+\newif\ifavisofinal  \avisofinaltrue    % subseção "Uso de inteligência artificial" no fim da conclusão
+% AVISO-IA:FIM
+
 % Macros do original (cores das figuras-tabela, citações numéricas)
 \Urlmuskip=0mu plus 1mu\relax
 \newcommand{\defref}[2]{\expandafter\gdef\csname refnum@#1\endcsname{#2}}
@@ -103,10 +108,16 @@
     Ruben Isaac Dias da Silva & 262115391 & 261107680 & Carlos Eduardo da Silva Papa
 \end{tabular}\\[6pt]
 \textbf{Disciplina:} Gestão de Projetos de TI (GPTI) -- PPCA/CIC/UnB\\
-\textbf{Professor:} Dr. João Mello da Silva\\
+\textbf{Professores:} Dr. João Mello da Silva e Dr. Edison Ishikawa\\
 \textbf{Entrega:} P3A -- Grupo SIPA Privacidade 2\\[6pt]
 Brasília -- DF, 2026\par}
 \end{center}
+\vspace{1.2cm}
+% AVISO-IA:INICIO (caixa na capa; liga com \avisocapatrue no preâmbulo)
+\ifavisocapa
+\begin{center}\fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\SingleSpacing\small\noindent\textbf{Declaração de uso de inteligência artificial.} Foi utilizada IA generativa (ChatGPT Astral 6 Sol e Sonnet 5.5, ambos no modo alto) como apoio à revisão de texto, à formatação, à criação de figuras e à formulação de tabelas. A IA não é autora: o grupo é responsável pelo conteúdo, conforme a posição do COPE sobre autoria e ferramentas de IA (COPE, 2023).\par\smallskip\noindent COMMITTEE ON PUBLICATION ETHICS (COPE). \textit{Authorship and AI tools: COPE position statement}. 13 fev. 2023. Disponível em: \url{https://publicationethics.org/guidance/cope-position/authorship-and-ai-tools}.}}\end{center}
+\fi
+% AVISO-IA:FIM
 \clearpage
 \pagenumbering{roman}
 \setcounter{page}{2}
@@ -183,7 +194,7 @@ This report proposes a Privacy performance domain as an extension of PMBOK 8. Th
 \setcounter{table}{0}
 
 \begin{flushleft}\small\SingleSpacing
-\noindent\textbf{Nota de natureza.} \textbf{Grupo SIPA:} Privacidade 2\\ \textbf{Concentração:} Quem (\textit{Who})\\ \textbf{Domínios existentes relacionados:} Partes Interessadas (\textit{Stakeholders}) e Riscos (\textit{Risk})\\ \textbf{Natureza:} proposta acadêmica de extensão; os processos P1–P8 abaixo \textbf{não são processos oficiais do PMI}.
+\noindent\textbf{Nota de natureza.} \textbf{Grupo SIPA:} Privacidade 2\\ \textbf{Integrantes:} Filipe Alves de Sousa, Emanuel Brandão de Galvão Correia, Ruben Isaac Dias da Silva e Carlos Eduardo da Silva Papa\\ \textbf{Professores:} Dr. João Mello da Silva e Dr. Edison Ishikawa\\ \textbf{Concentração:} Quem (\textit{Who})\\ \textbf{Domínios existentes relacionados:} Partes Interessadas (\textit{Stakeholders}) e Riscos (\textit{Risk})\\ \textbf{Natureza:} proposta acadêmica de extensão; os processos P1–P8 abaixo \textbf{não são processos oficiais do PMI}.
 \end{flushleft}
 \vspace{\onelineskip}
 
@@ -205,9 +216,9 @@ Esse argumento é \textbf{organizacional}, não uma alegação de que o PMBOK 8 
 \section{Diagnóstico do PMBOK 8}
 \subsection{O que já existe}
 
-O domínio \textbf{Partes Interessadas} contém sete processos: identificar partes interessadas; planejar seu engajamento; planejar comunicações; gerenciar o engajamento; gerenciar comunicações; monitorar o engajamento; e monitorar comunicações [\refnum{pmi}, §2.5.2]. A própria definição de \textit{Manage Communications} alcança criação, distribuição, armazenamento, recuperação e disposição de informação do projeto. Esse é um ponto de contato real com governança de dados, embora não especifique todo o ciclo dos dados pessoais nem os direitos dos titulares.
+O domínio \textbf{Partes Interessadas} contém sete processos: identificar partes interessadas; planejar seu engajamento; planejar comunicações; gerenciar o engajamento; gerenciar comunicações; monitorar o engajamento; e monitorar comunicações [\refnum{pmi}, \textit{Guide} §2.5.2]. A própria definição de \textit{Manage Communications} alcança criação, distribuição, armazenamento, recuperação e disposição de informação do projeto. Esse é um ponto de contato real com governança de dados, embora não especifique todo o ciclo dos dados pessoais nem os direitos dos titulares.
 
-O domínio \textbf{Riscos} contém seis processos: planejar gestão de riscos; identificar riscos; analisar riscos; planejar respostas; implementar respostas; monitorar riscos [\refnum{pmi}, §2.7.2]. É uma estrutura adequada para reconhecer incertezas e acompanhar respostas. Entretanto, sua descrição geral abrange ameaças e oportunidades para os objetivos do projeto; uma avaliação de privacidade precisa considerar também problemas que o tratamento de dados pode causar às pessoas, mesmo sem falha de segurança. O NIST Privacy Framework afirma que gerir risco de cibersegurança contribui para gerir risco de privacidade, mas não é suficiente, pois há riscos de privacidade que surgem por meios alheios a incidentes de cibersegurança [\refnum{nistpf}].
+O domínio \textbf{Riscos} contém seis processos: planejar gestão de riscos; identificar riscos; analisar riscos; planejar respostas; implementar respostas; monitorar riscos [\refnum{pmi}, \textit{Guide} §2.7.2]. É uma estrutura adequada para reconhecer incertezas e acompanhar respostas. Entretanto, sua descrição geral abrange ameaças e oportunidades para os objetivos do projeto; uma avaliação de privacidade precisa considerar também problemas que o tratamento de dados pode causar às pessoas, mesmo sem falha de segurança. O NIST Privacy Framework afirma que gerir risco de cibersegurança contribui para gerir risco de privacidade, mas não é suficiente, pois há riscos de privacidade que surgem por meios alheios a incidentes de cibersegurança [\refnum{nistpf}].
 
 Há ainda referências dispersas no PMBOK 8: leis de proteção de dados podem limitar opções de projeto; ferramentas de IA introduzem questões de privacidade; comunicações podem exigir proteção de informação sensível [\refnum{pmi}]. Logo, a hipótese que sustentamos é mais precisa: \textbf{o tema aparece, mas não está organizado como domínio e conjunto de processos dedicados} nos sete domínios oficiais.
 \subsection{O que a nova organização precisa tornar observável}
@@ -316,31 +327,31 @@ Como nos domínios do \textit{Guide}, a seção começa pelos conceitos que os p
 Os códigos \textbf{P1–P8} abaixo identificam apenas esta proposta. As entradas e saídas são exemplos para orientar o \textit{tailoring}; não reproduzem tabelas oficiais do PMBOK 8.
 
 \begingroup\SingleSpacing\footnotesize
-\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*204/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*90/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*524/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*182/1000\relax}@{}}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*210/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*80/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*490/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*220/1000\relax}@{}}
 \caption{Processos propostos para o domínio Privacidade}\label{tab:t3}\\
 \toprule
-\textbf{Código e processo proposto} & \textbf{Área de foco principal} & \textbf{Entrada \ensuremath{\rightarrow} decisão/atividade \ensuremath{\rightarrow} saída} & \textbf{Interface com processo existente}\\
+\textbf{Código e processo proposto} & \textbf{Área} & \textbf{Entrada \ensuremath{\rightarrow} decisão/atividade \ensuremath{\rightarrow} saída} & \textbf{Interface com processo existente}\\
 \midrule
 \endfirsthead
 \toprule
-\textbf{Código e processo proposto} & \textbf{Área de foco principal} & \textbf{Entrada \ensuremath{\rightarrow} decisão/atividade \ensuremath{\rightarrow} saída} & \textbf{Interface com processo existente}\\
+\textbf{Código e processo proposto} & \textbf{Área} & \textbf{Entrada \ensuremath{\rightarrow} decisão/atividade \ensuremath{\rightarrow} saída} & \textbf{Interface com processo existente}\\
 \midrule
 \endhead
 \bottomrule
 \endfoot
 \bottomrule
 \endlastfoot
-\textbf{P1 Identificar titulares e dados pessoais} & Iniciação & Ideia de projeto, fluxos previstos \ensuremath{\rightarrow} reconhecer categorias de pessoas, dados, pontos de coleta e direção dos fluxos \ensuremath{\rightarrow} inventário inicial & \textit{Identify Stakeholders}; \textit{Identify Risks}\\[3pt]
-\textbf{P2 Planejar a gestão de privacidade} & Planejamento & Inventário, objetivos, ambiente jurídico \ensuremath{\rightarrow} definir finalidade, hipótese legal a verificar, papéis, retenção e resposta a titulares \ensuremath{\rightarrow} plano de privacidade & \textit{Plan Risk Management}; \textit{Plan Communications Management}\\[3pt]
-\textbf{P3 Avaliar impactos à privacidade} & Planejamento & Operações de dados, arquitetura e riscos \ensuremath{\rightarrow} avaliar possíveis efeitos sobre pessoas e necessidade de RIPD \ensuremath{\rightarrow} registro de avaliação e, quando cabível, RIPD & \textit{Perform Risk Analysis}\\[3pt]
-\textbf{P4 Planejar respostas e controles} & Planejamento & Avaliação de impactos \ensuremath{\rightarrow} selecionar minimização, acesso, transparência, retenção e outras respostas proporcionais \ensuremath{\rightarrow} plano de controles, responsáveis e critérios de aceitação & \textit{Plan Risk Responses}\\[3pt]
-\textbf{P5 Gerir comunicação e direitos dos titulares} & Execução & Plano, canais e solicitações \ensuremath{\rightarrow} informar, receber e encaminhar pedidos conforme a regra aplicável \ensuremath{\rightarrow} registros de comunicação e resposta & \textit{Manage Stakeholder Engagement}; \textit{Manage Communications}\\[3pt]
-\textbf{P6 Implementar controles e tratar incidentes} & Execução & Plano de controles, mudanças e alertas \ensuremath{\rightarrow} implementar salvaguardas, registrar ocorrência e acionar resposta \ensuremath{\rightarrow} evidência de implementação e registro de incidentes & \textit{Implement Risk Responses}\\[3pt]
-\textbf{P7 Monitorar riscos e práticas de privacidade} & Monitoramento e controle & Métricas, registros e mudanças \ensuremath{\rightarrow} revisar eficácia, novas finalidades e riscos \ensuremath{\rightarrow} recomendações, revisões de plano e evidências & \textit{Monitor Risks}; \textit{Monitor Stakeholder Engagement}\\[3pt]
-\textbf{P8 Encerrar ou transferir o tratamento sob controle} & Encerramento & Inventário atualizado, requisitos de retenção e transição \ensuremath{\rightarrow} decidir conservação, transferência ou eliminação conforme o caso \ensuremath{\rightarrow} registro de destino e responsabilidades futuras & \textit{Close Project or Phase}\\[3pt]
+\textbf{P1 Identificar titulares e dados pessoais} & IN & Ideia de projeto, fluxos previstos \ensuremath{\rightarrow} reconhecer categorias de pessoas, dados, pontos de coleta e direção dos fluxos \ensuremath{\rightarrow} inventário inicial & \textit{Identify Stakeholders}; \textit{Identify Risks}\\[3pt]
+\textbf{P2 Planejar a gestão de privacidade} & PL & Inventário, objetivos, ambiente jurídico \ensuremath{\rightarrow} definir finalidade, hipótese legal a verificar, papéis, retenção e resposta a titulares \ensuremath{\rightarrow} plano de privacidade & \textit{Plan Risk Management}; \textit{Plan Communications Management}\\[3pt]
+\textbf{P3 Avaliar impactos à privacidade} & PL & Operações de dados, arquitetura e riscos \ensuremath{\rightarrow} avaliar possíveis efeitos sobre pessoas e necessidade de RIPD \ensuremath{\rightarrow} registro de avaliação e, quando cabível, RIPD & \textit{Perform Risk Analysis}\\[3pt]
+\textbf{P4 Planejar respostas e controles} & PL & Avaliação de impactos \ensuremath{\rightarrow} selecionar minimização, acesso, transparência, retenção e outras respostas proporcionais \ensuremath{\rightarrow} plano de controles, responsáveis e critérios de aceitação & \textit{Plan Risk Responses}\\[3pt]
+\textbf{P5 Gerir comunicação e direitos dos titulares} & EX & Plano, canais e solicitações \ensuremath{\rightarrow} informar, receber e encaminhar pedidos conforme a regra aplicável \ensuremath{\rightarrow} registros de comunicação e resposta & \textit{Manage Stakeholder Engagement}; \textit{Manage Communications}\\[3pt]
+\textbf{P6 Implementar controles e tratar incidentes} & EX & Plano de controles, mudanças e alertas \ensuremath{\rightarrow} implementar salvaguardas, registrar ocorrência e acionar resposta \ensuremath{\rightarrow} evidência de implementação e registro de incidentes & \textit{Implement Risk Responses}\\[3pt]
+\textbf{P7 Monitorar riscos e práticas de privacidade} & MC & Métricas, registros e mudanças \ensuremath{\rightarrow} revisar eficácia, novas finalidades e riscos \ensuremath{\rightarrow} recomendações, revisões de plano e evidências & \textit{Monitor Risks}; \textit{Monitor Stakeholder Engagement}\\[3pt]
+\textbf{P8 Encerrar ou transferir o tratamento sob controle} & CL & Inventário atualizado, requisitos de retenção e transição \ensuremath{\rightarrow} decidir conservação, transferência ou eliminação conforme o caso \ensuremath{\rightarrow} registro de destino e responsabilidades futuras & \textit{Close Project or Phase}\\[3pt]
 \end{longtable}
 \endgroup
-\fontetab{Elaborado pelos autores (2026).}
+\fontetab{Elaborado pelos autores (2026). Áreas de foco: IN Iniciação; PL Planejamento; EX Execução; MC Monitoramento e controle; CL Encerramento.}
 
 \begin{figure}[!htbp]
 \centering
@@ -483,7 +494,7 @@ O DTC também lista a privacidade entre as capacidades de confiabilidade do gêm
 O PMBOK 8 conclui cada domínio com orientação para manter o foco em valor [\refnum{pmi}]: para cada saída de processo deve haver um resultado de ordem superior em vista. O quadro aplica essa lógica a Privacidade.
 
 \begingroup\SingleSpacing\footnotesize
-\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*253/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*451/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*233/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*63/1000\relax}@{}}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*230/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*420/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*230/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*120/1000\relax}@{}}
 \caption{Resultados esperados e verificação}\label{tab:t7}\\
 \toprule
 \textbf{Resultado esperado} & \textbf{Perguntas de verificação} & \textbf{Evidência} & \textbf{Processos}\\
@@ -512,22 +523,22 @@ Tratamento encerrado ou transferido sob controle & Cada conjunto de dados tem de
 A matriz abaixo indica a área \textbf{principal} de cada processo proposto, sem proibir iterações em outras áreas. As áreas de foco são categorias de atividades, não uma sequência única para todos os projetos [\refnum{pmi}, §4.5 do \textit{Standard}].
 
 \begingroup\SingleSpacing\footnotesize
-\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*151/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*379/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*79/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*391/1000\relax}@{}}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*150/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*320/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*100/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*430/1000\relax}@{}}
 \caption{Aderência do domínio às cinco áreas de foco}\label{tab:t8}\\
 \toprule
-\textbf{Área de foco} & \textbf{Pergunta de privacidade} & \textbf{Processos da proposta} & \textbf{Evidência de decisão}\\
+\textbf{Área de foco} & \textbf{Pergunta de privacidade} & \textbf{Processos} & \textbf{Evidência de decisão}\\
 \midrule
 \endfirsthead
 \toprule
-\textbf{Área de foco} & \textbf{Pergunta de privacidade} & \textbf{Processos da proposta} & \textbf{Evidência de decisão}\\
+\textbf{Área de foco} & \textbf{Pergunta de privacidade} & \textbf{Processos} & \textbf{Evidência de decisão}\\
 \midrule
 \endhead
 \bottomrule
 \endfoot
 \bottomrule
 \endlastfoot
-\textbf{IN — Iniciação} & Quem pode ser afetado e que tratamento é previsto? & P1 & Inventário inicial de dados e categorias de titulares; premissas e incertezas\\[3pt]
-\textbf{PL — Planejamento} & Por que tratar os dados, quais os riscos e quais respostas são proporcionais? & P2, P3, P4 & Plano de privacidade; avaliação de impacto; critérios de controle e aceitação\\[3pt]
+\textbf{IN — Iniciação} & Quem pode ser afetado e que tratamento é previsto? & P1 & $\bullet$~Inventário inicial de dados e categorias de titulares\newline$\bullet$~Premissas e incertezas\\[3pt]
+\textbf{PL — Planejamento} & Por que tratar os dados, quais os riscos e quais respostas são proporcionais? & P2, P3, P4 & $\bullet$~Plano de privacidade\newline$\bullet$~Avaliação de impacto\newline$\bullet$~Critérios de controle e aceitação\\[3pt]
 \textbf{EX — Execução} & As comunicações, direitos e salvaguardas planejados funcionam na prática? & P5, P6 & Registros de implementação, solicitações e ocorrências\\[3pt]
 \textbf{MC — Monitoramento e controle} & Mudanças alteraram finalidade, exposição ou eficácia das respostas? & P7 & Indicadores, revisão de risco, decisões corretivas e trilha de auditoria\\[3pt]
 \textbf{CL — Encerramento} & Quem passa a responder pelos dados e qual será seu destino? & P8 & Registro de transição, conservação ou eliminação e responsáveis\\[3pt]
@@ -579,7 +590,7 @@ A relação com \textbf{5SPA} merece atenção, pois a proposta SIPA associa sus
 \section{Interações com os domínios existentes e com as demais concentrações}
 \subsection{Inclusões e alterações nos processos de Partes Interessadas e Riscos}
 
-O domínio Privacidade não substitui os treze processos existentes em Quem [\refnum{pmi}, §§2.5.2 e 2.7.2]: utiliza seus registros e acrescenta uma pergunta específica sobre tratamento de dados e efeitos sobre titulares. A tabela propõe, para cada processo, a inclusão ou alteração mínima que o torna sensível à privacidade, sem mudar seu nome nem sua finalidade geral. Todas são propostas deste trabalho.
+O domínio Privacidade não substitui os treze processos existentes em Quem [\refnum{pmi}, \textit{Guide} §§2.5.2 e 2.7.2]: utiliza seus registros e acrescenta uma pergunta específica sobre tratamento de dados e efeitos sobre titulares. A tabela propõe, para cada processo, a inclusão ou alteração mínima que o torna sensível à privacidade, sem mudar seu nome nem sua finalidade geral. Todas são propostas deste trabalho.
 
 \begingroup\SingleSpacing\small
 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*200/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*104/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*696/1000\relax}@{}}
@@ -666,12 +677,30 @@ Para validar a proposta, recomendamos uma matriz de revisão por três perfis: g
 
 Concluímos que o PMBOK 8 oferece instrumentos de gestão úteis para privacidade, mas a organização proposta pode tornar esse objeto mais explícito e contínuo. O domínio \textbf{Privacidade \ensuremath{\rightarrow} Quem} acrescenta o ciclo dos dados pessoais e a avaliação dos efeitos sobre titulares ao diálogo com \textbf{Partes Interessadas} e \textbf{Riscos}. Para projetos de gêmeos digitais, ele oferece uma linha de decisão sobre o tratamento de dados que as tabelas de capacidades técnicas não organizam. A contribuição é uma estrutura de perguntas, processos e evidências a ser avaliada, não uma promessa de conformidade automática.
 
+% AVISO-IA:INICIO (subseção final; liga/desliga com \avisofinaltrue/\avisofinalfalse no preâmbulo)
+\ifavisofinal
+\subsection{Uso de inteligência artificial}
+
+Este trabalho usou IA generativa (ChatGPT Astral 6 Sol e Sonnet 5.5, ambos no modo alto) como apoio à revisão de texto, à formatação, à criação de figuras e à formulação de tabelas. Seguimos a posição do COPE sobre autoria e ferramentas de IA (COPE, 2023), que pede declarar o uso e manter a responsabilidade com os autores. Três pontos orientam a leitura desta declaração.
+
+\textbf{A IA não é autora nem fonte.} Nenhuma afirmação sobre o PMBOK 8, a LGPD ou a literatura deve ser aceita porque um modelo de linguagem a produziu. Cada uma indica a sua fonte (seção, tabela, norma ou referência) para que quem lê possa conferi-la.
+
+\textbf{Riscos conhecidos desse uso.} Modelos de linguagem podem inventar referências, trocar números e suavizar ressalvas, e a tradução entre português e inglês pode deslocar sentidos técnicos. Por isso, referências, contagens e nomes de processos são os pontos que mais merecem conferência contra as fontes, e este relatório não substitui a leitura da edição do PMBOK 8.
+
+\textbf{Responsabilidade.} O grupo responde pelo conteúdo, inclusive pelas partes produzidas com apoio de IA. A declaração descreve categorias de uso, não registra cada interação, e o esforço da equipe não foi medido.
+
+\textbf{Relação com o tema.} O trabalho é documental e o cenário de reciclagem é hipotético; não houve coleta nem tratamento de dados pessoais de terceiros. Em um projeto real que usasse IA sobre dados de pessoas, esse uso entraria no inventário de dados e na avaliação de impacto (P1 e P3).
+
+\begingroup\small\noindent COMMITTEE ON PUBLICATION ETHICS (COPE). \textit{Authorship and AI tools: COPE position statement}. 13 fev. 2023. Disponível em: \url{https://publicationethics.org/guidance/cope-position/authorship-and-ai-tools}.\par\endgroup
+\fi
+% AVISO-IA:FIM
+
 \section{Relatório final do trabalho}
 
-Seguindo o formato do \textit{Final report}, saída do processo \textit{Close Project or Phase} [\refnum{pmi}, §2.1.6.9], este item resume o desempenho do trabalho de elaboração da proposta, tomado como o projeto relatado.
+Seguindo o formato do \textit{Final report}, saída do processo \textit{Close Project or Phase} [\refnum{pmi}, \textit{Guide} §2.1.6.9], este item resume o desempenho do trabalho de elaboração da proposta, tomado como o projeto relatado.
 
 \begingroup\SingleSpacing\small
-\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*190/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*810/1000\relax}@{}}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*189/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*811/1000\relax}@{}}
 \caption{Relatório final do trabalho}\label{tab:t12}\\
 \toprule
 \textbf{Item do relatório final} & \textbf{Situação do trabalho}\\
@@ -690,7 +719,7 @@ Seguindo o formato do \textit{Final report}, saída do processo \textit{Close Pr
 \textbf{Objetivos de qualidade e verificação} & Critérios de desenvolvimento da seção 3.2 usados como critérios de aceitação. Verificação: nomes, contagens e seções do PMBOK 8 conferidos no texto da edição; mesmas estruturas e dados nas versões em português e em inglês. Sem revisão externa.\\[3pt]
 \textbf{Objetivos de custo e variações} & O trabalho não teve orçamento financeiro. O esforço da equipe não é reportado aqui.\\[3pt]
 \textbf{Validação do resultado final} & Conferência documental feita. Validação por especialistas em gestão de projetos, proteção de dados e operação de cooperativas, proposta na seção 9, ainda pendente.\\[3pt]
-\textbf{Cronograma e realização de benefícios} & Trabalho realizado em ciclo curto de elaboração, revisão e conferência, com entrega na data prevista. Os benefícios de adoção do domínio são hipóteses a testar.\\[3pt]
+\textbf{Cronograma e realização de benefícios} & Trabalho realizado em ciclo curto de elaboração, revisão e conferência, com entrega prevista para 06/11/2026. Os benefícios de adoção do domínio são hipóteses a testar.\\[3pt]
 \textbf{Necessidades de negócio atendidas} & A necessidade descrita na seção 3.1, gerir os efeitos do tratamento de dados pessoais ao longo do projeto, recebeu uma proposta estruturada. Seu atendimento efetivo depende de validação.\\[3pt]
 \textbf{Riscos e questões encontrados} & (i) Delimitação de escopo: optou-se por desenvolver um único domínio, Privacidade. (ii) Redundância com Partes Interessadas e Riscos: tratada pela tabela de inclusões e alterações (§7.1) e pelo critério de não duplicar. (iii) Formulação da lacuna: a hipótese inicial de ausência foi substituída por uma formulação mais precisa, após a leitura do \textit{Guide} (§2.1). (iv) Aplicação jurídica variável conforme o caso e a jurisdição: tratada com ressalvas ao longo do texto.\\[3pt]
 \end{longtable}
@@ -735,7 +764,7 @@ Seguindo o formato do \textit{Final report}, saída do processo \textit{Close Pr
 
 \refitem{son}{SON, S.; KWON, D.; LEE, J.; YU, S.; JHO, N.-S.; PARK, Y. On the design of a privacy-preserving communication scheme for cloud-based digital twin environments using blockchain. \textbf{IEEE Access}, v. 10, p. 75365-75375, 2022. DOI: 10.1109/ACCESS.2022.3191414.}
 
-\refitem{gdpr}{UNIÃO EUROPEIA. \textbf{Regulamento (UE) 2016/679 do Parlamento Europeu e do Conselho, de 27 de abril de 2016} (Regulamento Geral sobre a Proteção de Dados).}
+\refitem{gdpr}{UNIÃO EUROPEIA. \textbf{Regulamento (UE) 2016/679 do Parlamento Europeu e do Conselho, de 27 de abril de 2016} (Regulamento Geral sobre a Proteção de Dados). \textbf{Jornal Oficial da União Europeia}, L 119, 4 maio 2016.}
 
 \refitem{wang}{WANG, Y.; SU, Z.; GUO, S.; DAI, M.; LUAN, T. H.; LIU, Y. A survey on digital twins: architecture, enabling technologies, security and privacy, and future prospects. \textbf{IEEE Internet of Things Journal}, v. 10, n. 17, p. 14965-14987, 2023. DOI: 10.1109/JIOT.2023.3263909.}
 

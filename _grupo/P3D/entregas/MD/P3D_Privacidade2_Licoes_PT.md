@@ -1,6 +1,8 @@
 # Relato de lições aprendidas
 
-**Grupo SIPA Privacidade 2**
+**Grupo SIPA Privacidade 2**  
+**Integrantes:** Filipe Alves de Sousa, Emanuel Brandão de Galvão Correia, Ruben Isaac Dias da Silva e Carlos Eduardo da Silva Papa  
+**Professores:** Dr. João Mello da Silva e Dr. Edison Ishikawa  
 
 ## O que aprendemos na síntese do PMBOK 8
 
@@ -23,3 +25,7 @@
 Conferir a tradução dos nomes dos processos com o texto original em inglês, testar se alguém que não participou da redação entende a diferença entre os dois volumes e obter validação de especialistas em gestão de projetos. O tamanho final das figuras depende da diagramação.
 
 **Limite deste trabalho:** é uma síntese documental. Não relata um projeto concluído, não valida uma extensão do PMBOK 8 e não mede resultados dos exemplos hipotéticos.
+
+<!-- AVISO-IA:INICIO -->
+*Uso de IA: IA generativa (ChatGPT Astral 6 Sol e Sonnet 5.5, modo alto) apoiou a revisão de texto, a formatação, a criação de figuras e a formulação de tabelas; o grupo é responsável pelo conteúdo (COPE, 2023).*
+<!-- AVISO-IA:FIM -->

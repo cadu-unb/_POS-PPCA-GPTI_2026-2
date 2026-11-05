@@ -1,6 +1,8 @@
 # Lessons learned
 
-**SIPA Privacy 2 group**
+**SIPA Privacy 2 group**  
+**Members:** Filipe Alves de Sousa, Emanuel Brandão de Galvão Correia, Ruben Isaac Dias da Silva, and Carlos Eduardo da Silva Papa  
+**Professors:** Dr. João Mello da Silva and Dr. Edison Ishikawa  
 
 ## What we learned while synthesizing PMBOK 8
 
@@ -23,3 +25,7 @@
 Check the translation of the process names against the original English text, test whether someone who did not take part in the writing understands the difference between the two volumes, and obtain validation from project management experts. The final size of the figures depends on the layout.
 
 **Limit of this work:** it is a documentary synthesis. It does not report a completed project, does not validate an extension of PMBOK 8, and does not measure results of the hypothetical examples.
+
+<!-- AVISO-IA:INICIO -->
+*AI use: generative AI (ChatGPT Astral 6 Sol and Sonnet 5.5, high mode) supported text editing, formatting, figure creation, and table drafting; the group is responsible for the content (COPE, 2023).*
+<!-- AVISO-IA:FIM -->

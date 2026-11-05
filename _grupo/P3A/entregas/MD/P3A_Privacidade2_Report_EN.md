@@ -1,6 +1,8 @@
 # Privacy as a proposed PMBOK 8 performance domain
 
 **SIPA group:** Privacy 2  
+**Members:** Filipe Alves de Sousa, Emanuel Brandão de Galvão Correia, Ruben Isaac Dias da Silva, and Carlos Eduardo da Silva Papa  
+**Professors:** Dr. João Mello da Silva and Dr. Edison Ishikawa  
 **Concentration:** Who  
 **Related existing domains:** Stakeholders and Risk  
 **Nature:** academic extension proposal; processes P1–P8 below **are not official PMI processes**.
@@ -31,9 +33,9 @@ This argument is **organizational**, not a claim that PMBOK 8 is unaware of priv
 
 ### 2.1 What already exists
 
-The **Stakeholders** domain contains seven processes: Identify Stakeholders; Plan Stakeholder Engagement; Plan Communications Management; Manage Stakeholder Engagement; Manage Communications; Monitor Stakeholder Engagement; and Monitor Communications [14, §2.5.2]. The definition of *Manage Communications* itself reaches the creation, distribution, storage, retrieval, and disposition of project information. This is a real point of contact with data governance, although it does not specify the entire life cycle of personal data or data subject rights.
+The **Stakeholders** domain contains seven processes: Identify Stakeholders; Plan Stakeholder Engagement; Plan Communications Management; Manage Stakeholder Engagement; Manage Communications; Monitor Stakeholder Engagement; and Monitor Communications [14, *Guide* §2.5.2]. The definition of *Manage Communications* itself reaches the creation, distribution, storage, retrieval, and disposition of project information. This is a real point of contact with data governance, although it does not specify the entire life cycle of personal data or data subject rights.
 
-The **Risk** domain contains six processes: Plan Risk Management; Identify Risks; Perform Risk Analysis; Plan Risk Responses; Implement Risk Responses; and Monitor Risks [14, §2.7.2]. It is an adequate structure for recognizing uncertainty and tracking responses. However, its general description covers threats and opportunities for project objectives; a privacy assessment must also consider problems that data processing may cause to people, even without a security failure. The NIST Privacy Framework states that managing cybersecurity risk contributes to managing privacy risk but is not sufficient, since there are privacy risks that arise by means other than cybersecurity incidents [13].
+The **Risk** domain contains six processes: Plan Risk Management; Identify Risks; Perform Risk Analysis; Plan Risk Responses; Implement Risk Responses; and Monitor Risks [14, *Guide* §2.7.2]. It is an adequate structure for recognizing uncertainty and tracking responses. However, its general description covers threats and opportunities for project objectives; a privacy assessment must also consider problems that data processing may cause to people, even without a security failure. The NIST Privacy Framework states that managing cybersecurity risk contributes to managing privacy risk but is not sufficient, since there are privacy risks that arise by means other than cybersecurity incidents [13].
 
 There are also scattered references in PMBOK 8: data protection laws may limit project options; AI tools raise privacy issues; communications may require protection of sensitive information [14]. Hence, the hypothesis we support is more precise: **the topic appears, but it is not organized as a dedicated domain and set of processes** among the seven official domains.
 
@@ -338,7 +340,7 @@ The relationship with **5SPA** deserves attention, since the SIPA proposal assoc
 
 ### 7.1 Additions and changes to the Stakeholders and Risk processes
 
-The Privacy domain does not replace the thirteen existing processes in Who [14, §§2.5.2 and 2.7.2]: it uses their records and adds a specific question about data processing and effects on data subjects. The table proposes, for each process, the minimal addition or change that makes it privacy-sensitive, without changing its name or general purpose. All are proposals of this work.
+The Privacy domain does not replace the thirteen existing processes in Who [14, *Guide* §§2.5.2 and 2.7.2]: it uses their records and adds a specific question about data processing and effects on data subjects. The table proposes, for each process, the minimal addition or change that makes it privacy-sensitive, without changing its name or general purpose. All are proposals of this work.
 
 | Existing process | Type | Proposed addition or change |
 | --- | --- | --- |
@@ -370,14 +372,14 @@ We record separately, as working hypotheses, the interfaces that Privacy may hav
 
 ## 8. Illustrative scenario: recycling by cooperatives and digital twins
 
-To test the proposed processes, we considered a **hypothetical scenario**, devised by the authors: a digital twin project for a recycling system run by cooperatives of waste pickers, with an app to mobilize residents, sorting in a warehouse, and final disposal of tailings. In this scenario, the app could collect registration data, location, and images of residents; the recycling twin could receive, by route, indicators of sorting quality; warehouse workers could be recorded in attendance or productivity controls; and physical media holding data would be discarded at the end. This is an illustration, not a description of an existing operation.
+To test the proposed processes, we considered a **hypothetical scenario**, devised by the authors: a digital twin project for a recycling system run by cooperatives of waste pickers, with an app to mobilize residents, sorting in a warehouse, and final disposal of rejects. In this scenario, the app could collect registration data, location, and images of residents; the recycling twin could receive, by route, indicators of sorting quality; warehouse workers could be recorded in attendance or productivity controls; and physical media holding data would be discarded at the end. This is an illustration, not a description of an existing operation.
 
 **Figure 5 — Scenario used as a test of the extension.** Solid arrows represent movement of materials; the dashed arrow indicates return of information by route. At each component, P1–P8 ask the same questions: **whose data are they, for what purpose, who receives them, and what is their disposition?** The figure is hypothetical and does not represent an audited real flow. *Authors' own elaboration.*
 
 <!-- Design of Figure 5:
 Three blocks of equal height: Digital Mobilization (DM), Recycling (R3), and
 Final Disposal (D). Solid gray arrows carry sorted materials and then
-tailings/media; a dashed blue arrow returns from R3 to DM with a quality
+rejects/media; a dashed blue arrow returns from R3 to DM with a quality
 indicator by route. Above the three blocks, place a teal ruler with
 four privacy questions. The legend separates physical flows from information.
 The text of the figure must say "hypothetical scenario" and not "proven operation".
@@ -387,7 +389,7 @@ and privacy questions valid across the three components. -->
 ```mermaid
 flowchart LR
     DM["DM · Digital mobilization<br/>registration and route"] -->|sorted materials| R3["R3 · Recycling<br/>operation and indicators"]
-    R3 -->|tailings and media| D["D · Final disposal<br/>retention or disposal"]
+    R3 -->|rejects and media| D["D · Final disposal<br/>retention or disposal"]
     R3 -. quality by route .-> DM
     classDef stage fill:#eef4f7,stroke:#17365d,stroke-width:2px,color:#17365d
     class DM,R3,D stage
@@ -405,9 +407,25 @@ To validate the proposal, we recommend a review matrix by three profiles: projec
 
 We conclude that PMBOK 8 offers management instruments useful for privacy, but the proposed organization may make this object more explicit and continuous. The **Privacy → Who** domain adds the life cycle of personal data and the assessment of effects on data subjects to the dialogue with **Stakeholders** and **Risk**. For digital twin projects, it offers a line of decision on data processing that the technical capability tables do not organize. The contribution is a structure of questions, processes, and evidence to be evaluated, not a promise of automatic compliance.
 
+<!-- AVISO-IA:INICIO (subseção final; apagar tudo entre os marcadores a remove) -->
+### 9.1 Use of artificial intelligence
+
+This work used generative AI (ChatGPT Astral 6 Sol and Sonnet 5.5, both in high mode) to support text editing, formatting, figure creation, and table drafting. We follow the COPE position on authorship and AI tools (COPE, 2023), which asks authors to disclose the use and to remain responsible for the work. Three points guide how to read this statement.
+
+**AI is neither an author nor a source.** No claim about PMBOK 8, the LGPD, or the literature should be accepted because a language model produced it. Each claim points to its source (section, table, regulation, or reference) so that readers can check it.
+
+**Known risks of this use.** Language models can invent references, swap numbers, and soften caveats, and translation between Portuguese and English can shift technical meanings. References, counts, and process names are therefore the points that most deserve checking against the sources, and this report does not replace reading the PMBOK 8 edition.
+
+**Responsibility.** The group is responsible for the content, including the parts produced with AI support. The statement describes categories of use, does not log each interaction, and the team's effort was not measured.
+
+**Relation to the topic.** The work is documentary and the recycling scenario is hypothetical; no personal data of third parties was collected or processed. In a real project that used AI on data about people, that use would enter the data inventory and the impact assessment (P1 and P3).
+
+COMMITTEE ON PUBLICATION ETHICS (COPE). *Authorship and AI tools: COPE position statement*. 13 Feb. 2023. Available at: <https://publicationethics.org/guidance/cope-position/authorship-and-ai-tools>.
+<!-- AVISO-IA:FIM -->
+
 ## 10. Final report of the work
 
-Following the format of the *Final report*, an output of the *Close Project or Phase* process [14, §2.1.6.9], this item summarizes the performance of the work of preparing the proposal, taken as the project reported.
+Following the format of the *Final report*, an output of the *Close Project or Phase* process [14, *Guide* §2.1.6.9], this item summarizes the performance of the work of preparing the proposal, taken as the project reported.
 
 | Final report item | Status of the work |
 | --- | --- |
@@ -416,7 +434,7 @@ Following the format of the *Final report*, an output of the *Close Project or P
 | **Quality objectives and verification** | Development criteria of section 3.2 used as acceptance criteria. Verification: names, counts, and sections of PMBOK 8 checked against the text of the edition; same structures and data in the Portuguese and English versions. No external review. |
 | **Cost objectives and variances** | The work had no financial budget. The team's effort is not reported here. |
 | **Validation of the final result** | Documentary check done. Validation by experts in project management, data protection, and cooperative operation, proposed in section 9, still pending. |
-| **Schedule and realization of benefits** | Work carried out in a short cycle of preparation, review, and checking, delivered on the scheduled date. The benefits of adopting the domain are hypotheses to be tested. |
+| **Schedule and realization of benefits** | Work carried out in a short cycle of preparation, review, and checking, with delivery scheduled for 6 November 2026. The benefits of adopting the domain are hypotheses to be tested. |
 | **Business needs met** | The need described in section 3.1, managing the effects of personal data processing throughout the project, received a structured proposal. Its effective fulfillment depends on validation. |
 | **Risks and issues encountered** | (i) Scope delimitation: it was decided to develop a single domain, Privacy. (ii) Redundancy with Stakeholders and Risk: addressed by the table of additions and changes (§7.1) and by the criterion of not duplicating. (iii) Formulation of the gap: the initial hypothesis of absence was replaced by a more precise formulation, after reading the *Guide* (§2.1). (iv) Legal application varying by case and jurisdiction: addressed with caveats throughout the text. |
 
@@ -440,7 +458,7 @@ Numbered in alphabetical order of the first author (or responsible entity). In t
 
 [8] DIGITAL TWIN CONSORTIUM (DTC). *AI agent capabilities periodic table: user guide*. Version 1.0. [S.l.]: DTC, 2025.
 
-[9] EUROPEAN UNION. *Regulation (EU) 2016/679 of the European Parliament and of the Council, of 27 April 2016* (General Data Protection Regulation).
+[9] EUROPEAN UNION. *Regulation (EU) 2016/679 of the European Parliament and of the Council, of 27 April 2016* (General Data Protection Regulation). *Official Journal of the European Union*, L 119, 4 May 2016.
 
 [10] JØRGENSEN, B. N.; MA, Z. G. Digital twins under EU law: a unified compliance framework across smart cities, industry, transportation, and energy systems. *Electronics*, vol. 14, no. 24, art. 4881, 2025. DOI: 10.3390/electronics14244881.
 
