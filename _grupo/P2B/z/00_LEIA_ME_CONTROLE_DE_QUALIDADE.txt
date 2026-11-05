@@ -1,0 +1,10 @@
+P2B — Colégio R3 | PACOTE DE CONFERÊNCIA — 25/10/2026
+
+CONTEÚDO: seis PDFs da P2B (relatórios PT/EN, pôsteres PT/EN, lições aprendidas PT/EN), pôsteres também em PNG e relatório separado do processo de consolidação (PDF + DOCX).
+
+CONTROLE IMPORTANTE:
+1. Os pôsteres de arte impactante são imagens geradas independentemente; a versão EN preserva direção estética e temas, mas NÃO é tradução gráfica espelhada exata. As imagens precisam de revisão humana das legendas, siglas e afirmações.
+2. Os pôsteres novos apresentam termos e agrupamentos de agentes que podem divergir das especificações aprovadas A1 conversacional, A2 procedural, A3 cognitivo e A4 colaborativo. Há também atribuições nominais R3S1/R3S2/R3S3 e menções a resultados esperados/ODS que requerem conferência. Não interpretar figuras como resultados medidos.
+3. Os relatórios técnicos são as últimas versões disponibilizadas em PDF no fluxo anterior; a equivalência completa PT-EN e a auditoria bibliográfica exaustiva ainda NÃO foram certificadas.
+4. O relatório do processo é retrospectivo e não constitui log integral dos prompts.
+5. Este pacote é consolidado PARA CONFERÊNCIA, não foi submetido nem aprovado pelos 12 integrantes.
