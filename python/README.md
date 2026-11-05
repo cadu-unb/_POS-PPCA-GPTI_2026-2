@@ -138,3 +138,31 @@ Os demais são numerados a partir de `01`, na ordem das tabelas, e a pasta mostr
 Opções: `--all` inclui os já salvos, `--start N` retoma a partir do artigo N (o
 programa informa o número ao ser interrompido com Ctrl+C), `--no-copy` só mostra os
 nomes e `--source` aponta para outro Markdown.
+
+## Conversor de PDF para Markdown
+
+`pdf_to_md.py` converte os artigos de `_wos/Manual 3/artigos/pdf` em Markdown
+(`artigos/md`), sem imagens. Precisa de `pip install pymupdf4llm pymupdf-layout`. A conversão tem
+duas fases porque equações e matemática inline não saem corretas do texto do PDF:
+
+```powershell
+python python/pdf_to_md.py extract "_wos/Manual 3/artigos/pdf" --work <pasta-temporária>
+python python/pdf_to_md.py apply --work <pasta-temporária> --out-dir "_wos/Manual 3/artigos/md" `
+    --transcriptions "_wos/Manual 3/artigos/conversao/transcricoes.json" `
+    --patches "_wos/Manual 3/artigos/conversao/patches.py"
+```
+
+1. **`extract`** lê o PDF com análise de layout, ordena as caixas por coluna, junta
+   parágrafos partidos entre colunas e páginas, converte tabelas, remove cabeçalhos e
+   rodapés, troca figuras por um aviso e marca cada equação e cada parágrafo com
+   matemática embaralhada como `{{EQ id}}` ou `{{PAR id}}`. Para cada marcador, grava um
+   recorte PNG da página em `<pasta-temporária>/crops` e o texto bruto em `items.json`.
+2. **`apply`** troca os marcadores pelas transcrições em LaTeX (`transcricoes.json`, feitas
+   olhando os recortes) e aplica `patches.py`, que corrige o que o layout não resolve:
+   ordem de leitura em páginas de duas colunas, capitular colada, tabelas com variáveis
+   matemáticas e artefatos de tabela. Marcadores sem transcrição ficam como
+   `> **[REVISAR id]**` com o texto bruto, e trechos de patch que não casam geram aviso.
+
+Equações aparecem como `$$ ... $$` com `\tag{n}` (o número original) e as fórmulas inline
+como `$ ... $`; um `$` do texto original (moeda, símbolo de nota) é escapado como `\$`.
+Os `id`s mudam se o PDF mudar, então refaça as transcrições nesse caso.
