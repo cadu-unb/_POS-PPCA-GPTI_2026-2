@@ -33,7 +33,7 @@ O texto introdutório fala em questionários GPTI3 e GPTI4 para o PMBOK 8, mas a
 
 ### P3 — Extensão do PMBOK 8 e síntese de referência
 
-**P3A, por grupo SIPA:** justificar a necessidade de uma extensão do PMBOK 8 e incluir novos domínios de desempenho SIPA, em formato adaptado de extensão PMBOK (o título da atividade diz "PMBOK6", mas o texto trata do PMBOK 8). A justificativa segue quatro aspectos: caracterização da necessidade, critérios para desenvolvimento, publicação e formato, e desenvolvimento e manutenção. Cada domínio — sustentabilidade, inovação, privacidade e análise de negócios com decisões ajustadas a riscos — é incluído em uma das concentrações e relacionado aos processos dela:
+**P3A, por grupo SIPA:** justificar a necessidade de uma extensão do PMBOK 8 e incluir novos domínios de desempenho SIPA, em formato adaptado de extensão PMBOK (a página escreve "PMBOK6" no título da atividade; o grupo trata isso como PMBOK 8). A justificativa segue quatro aspectos: caracterização da necessidade, critérios para desenvolvimento, publicação e formato, e desenvolvimento e manutenção. Cada domínio — sustentabilidade, inovação, privacidade e análise de negócios com decisões ajustadas a riscos — é incluído em uma das concentrações e relacionado aos processos dela:
 
 | Novo domínio | Concentração e domínios existentes |
 | --- | --- |
@@ -65,6 +65,6 @@ O resumo das tarefas lista dois tele-eventos de encerramento: **P6C1**, com a ap
 
 ### Formato dos arquivos e materiais indicados
 
-Para **P2A, P2B, P3A e P3D**, os enunciados pedem, em **português e inglês**, um pôster de uma página por idioma, um relatório técnico-científico de 20 a 30 páginas por idioma e um relato de lições aprendidas de uma a duas páginas por idioma. O relatório segue o formato **Relatório Final do PMBOK 6** (item 4.7.3.3, "Relatório Final", do tópico 4.7 *Close Project or Phase*, pp. 121–128 do capítulo 4). Na P3A e na P3D, o envio é atribuído ao líder, com identificação do grupo nos nomes dos arquivos.
+Para **P2A, P2B, P3A e P3D**, os enunciados pedem, em **português e inglês**, um pôster de uma página por idioma, um relatório técnico-científico de 20 a 30 páginas por idioma e um relato de lições aprendidas de uma a duas páginas por idioma. O relatório segue o formato **Relatório Final do PMBOK 8**, a saída *Final report* do processo *Close Project or Phase* (seção 2.1.6.9 do Guia). A página cita o item "4.7.3.3, pp. 121–128", que é a numeração do PMBOK 6; no PMBOK 8 esse conteúdo está na seção indicada. Na P3A e na P3D, o envio é atribuído ao líder, com identificação do grupo nos nomes dos arquivos.
 
 As referências indicadas incluem PMBOK8S (*Standard*), PMBOK8G (*Guide*), materiais da equipe no Teams sobre SIPA e P3 e, para P2, as tabelas de capacidades do *Digital Twin Consortium*.

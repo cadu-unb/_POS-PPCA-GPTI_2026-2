@@ -21,7 +21,7 @@ O `enunciado.md` (nosso entendimento) e o `resumo-aprender3.md` (extraído do Ap
 3. **(b) Aderência aos 6 princípios** do PMBOK 8: 1AHV (visão holística), 2FOV (foco em valor), 3QPD (qualidade nos processos e entregas), 4BAL (líder responsável), 5SPA (sustentabilidade em todas as áreas), 6BEC (cultura empoderada).
 4. **Justificar a necessidade da extensão**, em quatro aspectos: caracterização da necessidade; critérios para desenvolvimento; publicação e formato; desenvolvimento e manutenção.
 5. **Listar à parte** as conexões do novo domínio com processos de *outras* concentrações, para a consolidação geral (P3C).
-6. **Formato dos arquivos** (em português e em inglês): pôster de 1 página por idioma; relatório técnico-científico de 20 a 30 páginas por idioma, no formato do Relatório Final do PMBOK 6 (item 4.7.3.3, pp. 121–128); relato de lições aprendidas de 1 a 2 páginas por idioma. Total: 6 arquivos.
+6. **Formato dos arquivos** (em português e em inglês): pôster de 1 página por idioma; relatório técnico-científico de 20 a 30 páginas por idioma, no formato do Relatório Final do PMBOK 8 (saída *Final report* de *Close Project or Phase*, seção 2.1.6.9 do Guia); relato de lições aprendidas de 1 a 2 páginas por idioma. Total: 6 arquivos.
 
 ## 2. Pontos ainda em aberto
 
@@ -31,7 +31,7 @@ Esses pontos mudam o tamanho do trabalho. Precisam de decisão do grupo, ou de r
 | --- | --- | --- | --- |
 | 1 | **Quantos domínios cada grupo trata?** A ementa diz 4 por grupo SIPA, com 4 conjuntos de sistemas. Um parágrafo de entrega diz "um novo domínio" e atribui a elaboração ao "grupo de componente SRS". | `resumo-aprender3.md`, seção P3A | Aprofundar **Privacidade → Quem**. Tratar S, I e A em nível de mapa (linha na tabela de aderência), sem desenvolver processos. Perguntar ao professor, e ajustar se a resposta for "só um". |
 | 2 | **Princípios agora ou só na P3C?** O enunciado pede aderência aos 6 princípios, mas o texto de apoio diz que a inclusão dos princípios será abordada na P3C. | idem | Fazer a análise **(b)** por privacidade, de forma curta. Entregar a análise dos outros três domínios só como mapa. |
-| 3 | O título da atividade fala em "PMBOK6". O texto trata do PMBOK 8. | idem | Usar **PMBOK 8**. O "PMBOK 6" só vale como modelo de formato do relatório. |
+| 3 | O título da atividade fala em "PMBOK6". | idem | **Decidido:** tratar como **PMBOK 8**, inclusive para o formato do relatório. |
 | 4 | O PDF do PMBOK 8 lista **7 domínios existentes** (Governança, Escopo, Cronograma, Finanças, Partes Interessadas, Recursos, Riscos). A concentração CO tem só Governança. | PMBOK 8 | Seguir o agrupamento do curso (tabela acima) e citar o PMBOK 8 como fonte dos 7 domínios. |
 | 5 | Quem é o líder e quem envia? | enunciado | Definir antes da revisão final. |
 
@@ -99,7 +99,7 @@ Estrutura de referência para cada processo, como nas demais seções do Guia: e
 
 ## 6. Estrutura do relatório (20 a 30 páginas por idioma)
 
-Modelo: Relatório Final do PMBOK 6 (item 4.7.3.3). Distribuição aproximada:
+Modelo: Relatório Final do PMBOK 8 (*Final report*, seção 2.1.6.9 do Guia). Ele resume o desempenho do projeto em oito itens: descrição resumida; objetivos de escopo e evidência de conclusão; objetivos de qualidade; objetivos de custo; validação do produto final; cronograma e realização de benefícios; atendimento das necessidades de negócio; riscos e questões encontrados e como foram tratados. A distribuição abaixo é aproximada e deve ser conferida contra esses itens:
 
 | Seção | Páginas |
 | --- | --- |
@@ -130,7 +130,7 @@ Modelo: Relatório Final do PMBOK 6 (item 4.7.3.3). Distribuição aproximada:
 | Domínios irmãos (para o mapa de S e I) | `documentos/SIPA/02.2.01IpgSipaSustentabilidade2026S.md`, `02.2.02IpgSipaInovação2026S.md` |
 | Literatura (privacidade e gêmeos digitais) | `_wos/Manual 3/artigos/md/` (16 artigos) e `_wos/referencias.bib` |
 | Exemplo concreto | `_grupo/P2B/` (Figura 1, percurso do dado pessoal) |
-| Formato do relatório | PMBOK 6, item 4.7.3.3 (**não está no repositório**; conseguir o texto) |
+| Formato do relatório | PMBOK 8, seção 2.1.6.9 (*Close Project or Phase*, saída *Final report*), no mesmo arquivo do Guia |
 
 Os PDFs do PMBOK 8 e do guia SIPA têm texto extraído por conversão. Para citar página ou trecho, conferir no PDF original.
 
@@ -153,5 +153,5 @@ Hoje é 04/11 e o prazo é 06/11, às 12h. Restam cerca de dois dias, então a p
 | Escopo ambíguo (ponto 1) | Retrabalho, ou entrega a menos | Decisão proposta na seção 2; perguntar cedo. |
 | Prazo curto para 6 arquivos | Versão em inglês fraca ou ausente | Escrever em português já em estrutura que traduz bem; usar a lista de pendências. |
 | Processos propostos sem apoio na literatura | Texto parecer opinião | Citar o guia SIPA (LGPD, GDPR, FIPPs, NIST) e os artigos do Manual 3 em cada processo. |
-| Texto do PMBOK 6, item 4.7.3.3, indisponível | Formato do relatório incerto | Usar a estrutura da seção 6 e ajustar quando o texto aparecer. |
+| Formato do relatório (*Final report* do PMBOK 8) pensado para fechar projeto, não para propor extensão | Itens do modelo sem correspondência no nosso texto | Seguir a estrutura da seção 6 e dizer no relatório quais itens do modelo se aplicam e quais não. |
 | Citações do PMBOK 8 imprecisas | Perda de credibilidade | Conferir página no PDF antes de citar. |
