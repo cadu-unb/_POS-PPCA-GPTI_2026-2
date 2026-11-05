@@ -2,48 +2,147 @@
 
 **Grupo:** Privacidade 2. **Natureza da entrega:** síntese do PMBOK 8, produzida por um grupo SIPA. O tema Privacidade identifica o grupo, mas **não restringe o conteúdo da P3D** ao domínio Privacidade. A proposta desse novo domínio pertence à P3A; aqui, ela aparece apenas para situar a concentração **Quem** no esquema da disciplina.
 
-Este arquivo é um plano de trabalho, não a resposta pronta. Baseia-se no [enunciado local](enunciado.md) e no [resumo da página do Aprender3](../_aprender3/md/resumo-aprender3.md).
+Este arquivo é um plano de trabalho, não a resposta pronta. Baseia-se no [enunciado local](enunciado.md) e no [resumo da página do Aprender3](../_aprender3/md/resumo-aprender3.md). A P3A tem plano próprio em [../P3A/plano-abordagem.md](../P3A/plano-abordagem.md).
+
+**Prazo registrado na cópia do Aprender3:** 06/11/2026, às 12h. **Peso:** 10%. O envio dos arquivos identificados com o grupo cabe ao líder; o nome de quem fará esse envio ainda precisa ser definido pelo grupo.
 
 ## 1. Resultado que queremos produzir
 
 Um panorama que permita ao leitor entender **como o PMBOK 8 se organiza e como pode ser adaptado a um projeto**. A síntese precisa conectar, sem confundi-los:
 
-1. **Tailoring (adaptação sob medida):** por que e conforme quais características do projeto se escolhem e ajustam práticas, processos e entregas.
+1. **Tailoring (adaptação sob medida):** por que e conforme quais características do projeto se escolhem e ajustam práticas, processos e entregas. É a ênfase pedida no enunciado e deve atravessar o texto inteiro (ver seção 3).
 2. **Seis princípios:** as orientações gerais de gestão de projetos apresentadas no *Standard*.
 3. **Cinco áreas de foco:** iniciação, planejamento, execução, monitoramento e controle, e encerramento.
 4. **Sete domínios de desempenho e 40 processos:** o conteúdo do *Guide*, com a distribuição dos processos por domínio e área de foco.
 5. **Quatro concentrações:** a forma de agrupar os sete domínios adotada no material da disciplina; indicar nela onde os quatro domínios SIPA seriam acrescentados, sem desenvolver as extensões da P3A.
 
-| Concentração da disciplina | Domínios existentes e quantidade de processos | Domínio SIPA associado |
-| --- | --- | --- |
-| Consolidação | Governança (9) | Análise de negócios com decisões ajustadas a riscos |
-| Nascimento | Escopo (6), Cronograma (3) | Sustentabilidade |
-| Meios | Finanças (4), Recursos (5) | Inovação |
-| Quem | Partes interessadas (7), Riscos (6) | Privacidade |
+| Concentração da disciplina | Domínios existentes e quantidade de processos | Processos | Domínio SIPA associado |
+| --- | --- | --- | --- |
+| Consolidação | Governança (9) | 9 | Análise de negócios com decisões ajustadas a riscos |
+| Nascimento | Escopo (6), Cronograma (3) | 9 | Sustentabilidade |
+| Meios | Finanças (4), Recursos (5) | 9 | Inovação |
+| Quem | Partes interessadas (7), Riscos (6) | 13 | Privacidade |
 
 Os **40 processos pertencem aos sete domínios existentes**. Os quatro domínios SIPA são uma proposta de ampliação do curso; não devem ser apresentados como domínios já integrantes do PMBOK 8. Da mesma forma, identificar as quatro concentrações como **organização do material da disciplina**, não como classificação oficial do PMI.
 
-## 2. Caminho de elaboração
+## 2. O que a síntese precisa conter, por fonte
 
-1. **Conferir a fonte primária.** Ler no [PDF do PMBOK 8](<../../documentos/PMBOK8/PMBOK® Guide 8th Edition (Project Management Institute).pdf>) as seções sobre princípios e adaptação no *Standard* e as seções sobre áreas de foco, domínios e processos no *Guide*. Usar o [Markdown convertido](<../../documentos/PMBOK8/PMBOK® Guide 8th Edition (Project Management Institute).md>) para localizar trechos; conferir citações e páginas no PDF.
-2. **Montar uma tabela-mestra dos 40 processos.** Registrar, para cada processo, nome original, tradução de trabalho, domínio e área de foco. Conferir os totais por domínio (9 + 6 + 3 + 4 + 5 + 7 + 6 = 40) e por área de foco antes de redigir. A tabela completa pode ir no relatório; o pôster mostrará apenas os totais e as relações principais.
+Referências de seção conforme o sumário do PMBOK 8. Os números de página são os da edição impressa e podem diferir dos do PDF.
+
+### 2.1 PMBOK8S (*The Standard for Project Management*)
+
+| Parte | Conteúdo a resumir |
+| --- | --- |
+| 1 Introdução | Finalidade, características de um projeto, governança organizacional e de projeto, relação entre portfólio, programa, projeto e operações. |
+| 2 Sistema de entrega de valor | Criação de valor, ambiente do projeto, funções e papéis. |
+| 3 Princípios (p. 35) | O *mindset* e os seis princípios (abaixo). |
+| 4 Ciclos de vida (p. 57) | Fases, abordagens de desenvolvimento (preditiva, adaptativa, híbrida), critérios de escolha, cadência de entrega e as **cinco áreas de foco** (seção 4.5, p. 69). |
+
+O *mindset* tem três dimensões, e cada uma reúne dois princípios:
+
+| Dimensão | Princípios |
+| --- | --- |
+| Proativa | 1AHV — adotar uma visão holística; 3QPD — embutir qualidade em processos e entregas |
+| De responsabilidade | 4BAL — ser um líder responsável; 6BEC — construir uma cultura empoderada |
+| Orientada a valor | 2FOV — focar em valor; 5SPA — integrar sustentabilidade em todas as áreas do projeto |
+
+Cada princípio tem, no *Standard*, os itens "Project Impact", "Principle in Action" e "Connected Performance Domains" (seções 3.3 a 3.8). O último diz como o princípio se liga a cada domínio e alimenta a matriz princípios × domínios (seção 4).
+
+### 2.2 PMBOK8G (*A Guide to the PMBOK*)
+
+| Parte | Conteúdo a resumir |
+| --- | --- |
+| 1 Introdução | Estrutura do Guia, relação com o *Standard*, mudanças da edição. |
+| 2 Domínios de desempenho | Sete domínios. Em cada um: conceitos-chave, processos, considerações de adaptação (2.x.3), interações com outros domínios e verificação de resultados. Páginas de abertura: Governança 10, Escopo 35, Cronograma 47, Finanças 58, Partes interessadas 67, Recursos 79, Riscos 92. |
+| 3 *Tailoring* | Por que adaptar, o que adaptar, o processo de adaptação, adaptação dos domínios, diagnósticos (ver seção 3). |
+| 4 e 5 | Segundo o sumário: "Inputs and Outputs" e "Tools and Techniques". Tratar como catálogo de consulta, sem resumir item a item. |
+
+A introdução do Guia, no texto convertido, descreve a seção 4 como "Models, Methods, and Artifacts", o que diverge do sumário. **Conferir no PDF** como esses capítulos devem ser citados.
+
+## 3. O "sob medida" (capítulo 3 do Guia)
+
+Ponto de partida do PMBOK 8: não há abordagem única para todos os projetos. Processos de menos tornam a gestão ineficaz, e processos demais custam caro e desperdiçam esforço (seção 3.2). A síntese deve trazer:
+
+- **O que se adapta (3.3):** ciclo de vida e abordagem de desenvolvimento; processos; engajamento (pessoas, empoderamento e integração).
+- **Cinco ações sobre um processo (3.3.2):** adicionar, modificar, remover, combinar (*blend*) e alinhar.
+- **O processo de adaptação (3.4):** escolher a abordagem inicial; adaptar para a organização; adaptar para o projeto; implementar melhoria contínua.
+- **Variáveis que influenciam:** criticidade, escala, duração, complexidade, padrões do setor, cultura organizacional, número de partes interessadas e maturidade em gestão de projetos.
+- **Adaptação dos domínios (3.5) e diagnósticos (3.6):** a seção 3.5 remete às "Tailoring Considerations" de cada domínio; a 3.6 usa retrospectivas e lições aprendidas para decidir se é preciso adaptar de novo.
+- **Limites:** a adaptação pode ser restrita por política da organização ou por contrato (Guia, seção 1.1).
+
+Um exemplo breve, com Privacidade/Quem, pode ilustrar a adaptação para o nosso contexto sem dominar o documento.
+
+## 4. Caminho de elaboração
+
+1. **Conferir a fonte primária.** Ler no [PDF do PMBOK 8](<../../documentos/PMBOK8/PMBOK® Guide 8th Edition (Project Management Institute).pdf>) as seções sobre princípios e adaptação no *Standard* e as seções sobre áreas de foco, domínios e processos no *Guide*. O [Markdown convertido](<../../documentos/PMBOK8/PMBOK® Guide 8th Edition (Project Management Institute).md>) traz as duas obras no mesmo arquivo (o *Standard* primeiro) e serve para localizar trechos. Ele tem cabeçalhos e sumários com texto embaralhado; conferir citações, páginas e figuras no PDF.
+2. **Montar a tabela-mestra dos 40 processos.** Para cada processo: nome original, tradução de trabalho, domínio, área de foco e concentração. A tabela completa pode ir no relatório; o pôster mostra apenas os totais e as relações principais. Os totais por domínio (9 + 6 + 3 + 4 + 5 + 7 + 6 = 40) conferem com a Tabela 2-1 do Guia. A distribuição por área de foco, lida nas figuras de visão geral de cada domínio:
+
+   | Domínio | Iniciação | Planejamento | Execução | Monitoramento e controle | Encerramento | Total |
+   | --- | --- | --- | --- | --- | --- | --- |
+   | Governança | 1 | 2 | 3 | 2 | 1 | 9 |
+   | Escopo | 0 | 4 | 0 | 2 | 0 | 6 |
+   | Cronograma | 0 | 2 | 0 | 1 | 0 | 3 |
+   | Finanças | 0 | 3 | 0 | 1 | 0 | 4 |
+   | Recursos | 0 | 2 | 2 | 1 | 0 | 5 |
+   | Riscos | 0 | 4 | 1 | 1 | 0 | 6 |
+   | Partes interessadas (sem *Identify Stakeholders*) | 0 | 2 | 2 | 2 | 0 | 6 |
+   | *Identify Stakeholders* | ? | ? | | | | 1 |
+
+   A figura 2-32 não mostra, no texto convertido, em qual área de foco fica *Identify Stakeholders*. **Conferir na imagem do PDF** e então fechar a tabela. Sem esse processo, os totais por área são: Iniciação 1, Planejamento 19, Execução 8, Monitoramento e controle 10, Encerramento 1.
 3. **Explicar os seis princípios em linguagem curta.** Para cada um, registrar a ideia central e um exemplo de como orienta uma escolha de gestão. Mostrar que princípios orientam decisões, enquanto áreas de foco e processos organizam o trabalho; não transformar princípio em processo adicional.
-4. **Explicar as cinco áreas de foco como percurso do projeto.** Mostrar o que cada área reúne e como processos de domínios diferentes podem aparecer nela. Evitar tratar as áreas como etapas rígidas ou mutuamente exclusivas.
-5. **Sintetizar os sete domínios por contribuição.** Dar a cada domínio um parágrafo sobre sua finalidade e suas interfaces principais; usar a tabela-mestra para assegurar que nenhum dos 40 processos desapareça do panorama.
-6. **Introduzir as quatro concentrações e a adaptação.** Mostrar o agrupamento adotado na disciplina, a posição proposta dos quatro SIPA e um exemplo breve de *tailoring* aplicado ao contexto de um projeto. Privacidade/Quem pode servir de exemplo para o nosso grupo, sem dominar o documento.
-7. **Revisar rastreabilidade e consistência.** Verificar nomes, contagens, tradução dos termos, distinção entre conteúdo do PMI e proposta da disciplina, e correspondência entre relatório, pôster e lições aprendidas.
+4. **Explicar as cinco áreas de foco como percurso do projeto.** Mostrar o que cada área reúne e como processos de domínios diferentes aparecem nela. O PMBOK 8 diz que elas não se confundem com fases e que se sobrepõem na prática; evitar tratá-las como etapas rígidas ou mutuamente exclusivas.
+5. **Sintetizar os sete domínios por contribuição.** Dar a cada domínio um parágrafo sobre sua finalidade e suas interfaces principais, mais uma linha com as considerações de adaptação de 2.x.3. Usar a tabela-mestra para assegurar que nenhum dos 40 processos desapareça do panorama.
+6. **Compilar a matriz princípios × domínios** (6 × 7), a partir dos itens "Connected Performance Domains". Pontos já confirmados na seção 3.2 do *Standard*: a visão holística é sustentada por todos os domínios; qualidade e foco em valor ligam-se sobretudo a Governança, Escopo, Riscos, Cronograma, Finanças e Partes interessadas; "líder responsável" cruza Governança, Partes interessadas e Riscos.
+7. **Introduzir as quatro concentrações.** Mostrar o agrupamento adotado na disciplina e a posição proposta dos quatro SIPA, sempre rotulados como organização do curso.
+8. **Revisar rastreabilidade e consistência.** Verificar nomes, contagens, tradução dos termos, distinção entre conteúdo do PMI e proposta da disciplina, e correspondência entre relatório, pôster e lições aprendidas.
 
-## 3. Estrutura sugerida do relatório
+## 5. Estrutura sugerida
 
-O relatório de **20 a 30 páginas por idioma** pode seguir esta sequência: objetivo e método de síntese; adaptação sob medida; seis princípios; cinco áreas de foco; sete domínios e tabela dos 40 processos; quatro concentrações e posicionamento dos SIPA; relações entre esses elementos; conclusão e referências. A organização final deve acomodar o formato de **Relatório Final** indicado no Aprender3, sem fingir que este trabalho já é o encerramento de um projeto real.
+O relatório de **20 a 30 páginas por idioma** pode seguir esta distribuição aproximada:
+
+| Seção | Páginas |
+| --- | --- |
+| Resumo e palavras-chave | 1 |
+| Objetivo e método de síntese | 2 |
+| Seis princípios e *mindset* | 3–4 |
+| Cinco áreas de foco e ciclos de vida | 3–4 |
+| Sete domínios e tabela dos 40 processos | 6–8 |
+| Adaptação sob medida (seção 3 deste plano) | 3–4 |
+| Quatro concentrações e posicionamento dos SIPA | 1–2 |
+| Relações entre os elementos (matrizes) | 2–3 |
+| Conclusão | 1 |
+| Referências | 1 |
+
+A organização final deve acomodar o formato de **Relatório Final** indicado no Aprender3, sem fingir que este trabalho já é o encerramento de um projeto real. A página cita o item "4.7.3.3, pp. 121–128", que é numeração do PMBOK 6. No PMBOK 8, o equivalente é a saída *Final report* do processo *Close Project or Phase* (Guia, seção 2.1.6.9), que resume: descrição do projeto ou fase; objetivos e critérios de escopo; qualidade; custo; validação do produto; cronograma e benefícios; necessidades de negócio atendidas; riscos e questões. Dizer no relatório quais desses itens se aplicam a uma síntese e quais não.
 
 O **pôster de uma página por idioma** deve privilegiar um diagrama de relações (princípios → escolhas de adaptação → áreas de foco e processos, agrupados em domínios e concentrações), com contagens legíveis. As **lições aprendidas de uma a duas páginas por idioma** devem registrar decisões de síntese, dificuldades de interpretação e como as fontes foram conferidas. São, portanto, **seis arquivos**: pôster, relatório e lições aprendidas em português e inglês.
 
-## 4. Cuidados específicos
+## 6. Cuidados específicos
 
-- **Evitar uma P3A disfarçada:** a P3D resume a base PMBOK 8; não precisa criar processos de Privacidade nem justificar a extensão em profundidade.
+- **Evitar uma P3A disfarçada:** a P3D resume a base PMBOK 8; não precisa criar processos de Privacidade nem justificar a extensão em profundidade. Uma caixa curta sobre onde o PMBOK 8 toca dados pessoais é aceitável e serve de insumo à P3A.
 - **Evitar uma lista sem explicação:** os 40 nomes devem estar presentes, mas o texto deve explicar como domínios, áreas e princípios se relacionam e onde entra o *tailoring*.
 - **Distinguir as fontes:** usar o PMBOK 8 para descrever o conteúdo oficial; atribuir as quatro concentrações e a distribuição SIPA ao material da disciplina.
-- **Conferir o formato do relatório:** a página remete ao *Final report* de *Close Project or Phase* e combina referências de numeração do PMBOK 6 e do PMBOK 8. Antes de diagramar, conferir no PDF a seção efetivamente adotada pelo grupo.
+- **Nomes oficiais em inglês desde o primeiro rascunho**, com tradução de trabalho ao lado, para a versão em inglês sair curta e consistente com a P3A.
 
-**Prazo registrado na cópia do Aprender3:** 06/11/2026, às 12h. **Peso:** 10%. O envio dos arquivos identificados com o grupo cabe ao líder; o nome de quem fará esse envio ainda precisa ser definido pelo grupo.
+## 7. Ordem de trabalho e prazo
+
+A P3A pede aderência do novo domínio às cinco áreas de foco e aos seis princípios, e a P3D já organiza o PMBOK 8 por esses dois eixos. **Recomendação: escrever a P3D primeiro** e reaproveitar tabela-mestra, matriz e vocabulário na P3A. O prazo é o mesmo para as duas (06/11, 12h), e hoje é 04/11.
+
+| Quando | P3D |
+| --- | --- |
+| 04/11, noite | Definir o líder. Fechar a tabela-mestra (inclusive *Identify Stakeholders*) e a matriz princípios × domínios. |
+| 05/11, manhã | Texto sobre princípios, áreas de foco e domínios. |
+| 05/11, tarde | Adaptação sob medida, concentrações e matrizes. Pôster em português. |
+| 05/11, noite | Lições aprendidas. Versões em inglês. Revisão cruzada. |
+| 06/11, até 10h | Conferência final dos seis arquivos e dos nomes. Envio pelo líder, com folga até as 12h. |
+
+## 8. Riscos
+
+| Risco | Resposta |
+| --- | --- |
+| Acumular P3A e P3D no mesmo prazo | Fazer a P3D primeiro; a P3A reaproveita o material. |
+| Confundir concentrações e domínios SIPA com conteúdo do PMBOK 8 | Rotular sempre como organização ou proposta da disciplina. |
+| Texto convertido do PMBOK 8 com trechos corrompidos | Conferir no PDF antes de citar página, figura ou tabela. |
+| Sumário virar paráfrase longa | Ancorar o texto na tabela-mestra, nas matrizes e no capítulo de *tailoring*. |
+| Formato *Final report* estranho a uma síntese | Dizer quais itens do modelo se aplicam (seção 5). |
+| Versão em inglês fraca por falta de tempo | Nomes oficiais em inglês desde o primeiro rascunho. |
