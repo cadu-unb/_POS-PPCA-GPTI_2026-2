@@ -255,7 +255,7 @@ Cada domínio traz uma seção de considerações de adaptação (2.x.3 do *Guid
 
 As subseções *Connected Performance Domains* do *Standard* (§§3.3.3 a 3.8.3) descrevem, para cada princípio, como ele se conecta a cada um dos sete domínios. Em cada uma das seis seções o texto trata dos sete domínios, o que dá **42 conexões expressas**. O *Standard* acrescenta que a visão holística é apoiada por todos os domínios; que qualidade e foco em valor são tratados sobretudo em Governança, Escopo, Riscos, Cronograma, Finanças e Partes Interessadas; e que o líder responsável cruza Governança, Partes Interessadas e Riscos [4, *Standard* §3.2].
 
-A matriz abaixo resume **uma contribuição característica por célula**. É paráfrase analítica dos trechos do PMBOK 8, não uma escala de força, prioridade ou conformidade. **Legenda:** todas as células têm base expressa no texto do *Standard*; a redação curta é do grupo.
+A matriz da Figura 3 resume **uma contribuição característica por célula**. É paráfrase analítica dos trechos do PMBOK 8, não uma escala de força, prioridade ou conformidade. **Legenda:** todas as células têm base expressa no texto do *Standard*; a redação curta é do grupo.
 
 | Princípio | GO | SO | SH | FI | ST | RE | RI |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -266,7 +266,7 @@ A matriz abaixo resume **uma contribuição característica por célula**. É pa
 | **5SPA** Sustentabilidade | metas de sustentabilidade na governança | requisitos sustentáveis no escopo | decisões consideram impacto ambiental | custos e benefícios de longo prazo | educação e colaboração em sustentabilidade | acesso a recursos alinhado aos requisitos | ameaças ambientais e sociais identificadas e mitigadas |
 | **6BEC** Cultura empoderada | canal transparente entre equipe e governança | ajustar requisitos com comunicação aberta | equipe sugere acelerar, desacelerar ou parar | menos gasto não planejado, foco em valor | equipe define o nível de engajamento | acesso a recursos conforme os requisitos | equipe define limites de risco e participa |
 
-**Figura 3 — Matriz de relações dos princípios.** Na futura figura, a cor distingue os três pares da mentalidade do *Standard*, e o texto curto mantém a leitura acessível sem cor. A matriz não cria índice numérico de desempenho. *Elaboração própria a partir de [4, Standard, §§3.2 a 3.8].*
+**Figura 3 — Matriz de relações dos princípios.** Na figura, a cor de fundo distingue os três pares da mentalidade do *Standard*, e o texto curto mantém a leitura acessível sem cor. A matriz não cria índice numérico de desempenho. *Elaboração própria a partir de [4, Standard, §§3.2 a 3.8].*
 
 <!-- Desenho futuro: manter 6 linhas × 7 colunas, com legenda para GO/SO/SH/FI/
 ST/RE/RI. Usar três cores discretas nas faixas de linhas, uma por dimensão da

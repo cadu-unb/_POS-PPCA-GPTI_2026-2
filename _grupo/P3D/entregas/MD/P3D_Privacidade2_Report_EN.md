@@ -255,7 +255,7 @@ Each domain carries a section of tailoring considerations (2.x.3 of the *Guide*)
 
 The *Connected Performance Domains* subsections of the *Standard* (§§3.3.3 to 3.8.3) describe, for each principle, how it connects to each of the seven domains. In each of the six sections the text addresses the seven domains, which gives **42 expressed connections**. The *Standard* adds that the holistic view is supported by all domains; that quality and focus on value are addressed mainly in Governance, Scope, Risk, Schedule, Finance, and Stakeholders; and that the accountable leader cuts across Governance, Stakeholders, and Risk [5, Standard §3.2].
 
-The matrix below summarizes **one characteristic contribution per cell**. It is an analytical paraphrase of PMBOK 8 passages, not a scale of strength, priority, or compliance. **Legend:** all cells have an express basis in the text of the *Standard*; the short wording is the group's.
+The matrix in Figure 3 summarizes **one characteristic contribution per cell**. It is an analytical paraphrase of PMBOK 8 passages, not a scale of strength, priority, or compliance. **Legend:** all cells have an express basis in the text of the *Standard*; the short wording is the group's.
 
 | Principle | GO | SO | SH | FI | ST | RE | RI |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -266,7 +266,7 @@ The matrix below summarizes **one characteristic contribution per cell**. It is 
 | **5SPA** Sustainability | sustainability goals in governance | sustainable requirements in scope | decisions consider environmental impact | long-term costs and benefits | education and collaboration on sustainability | access to resources aligned to requirements | environmental and social threats identified and mitigated |
 | **6BEC** Empowered culture | transparent channel between team and governance | adjust requirements with open communication | team suggests speeding up, slowing down, or stopping | less unplanned spending, focus on value | team defines the level of engagement | access to resources according to requirements | team defines risk limits and participates |
 
-**Figure 3 — Matrix of principle relationships.** In the future figure, color distinguishes the three pairs of the *Standard*'s mindset, and the short text keeps the reading accessible without color. The matrix does not create a numerical performance index. *Authors' own elaboration based on [5, Standard §§3.2 to 3.8].*
+**Figure 3 — Matrix of principle relationships.** In the figure, background color distinguishes the three pairs of the *Standard*'s mindset, and the short text keeps the reading accessible without color. The matrix does not create a numerical performance index. *Authors' own elaboration based on [5, Standard §§3.2 to 3.8].*
 
 <!-- Future design: keep 6 rows × 7 columns, with a legend for GO/SO/SH/FI/
 ST/RE/RI. Use three discreet colors on the row bands, one for each dimension of the

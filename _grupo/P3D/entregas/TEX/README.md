@@ -9,14 +9,14 @@ Os seis documentos (relatório, pôster e lições, em português e inglês) em 
 | Arquivo | Conteúdo |
 | --- | --- |
 | `P3D_Privacidade2_Relatorio_PT.tex`, `P3D_Privacidade2_Report_EN.tex` | Relatório: capa, resumo e abstract, sumário, listas de ilustrações e de tabelas, lista de abreviaturas e siglas, seções 1 a 13, referências numeradas |
-| `P3D_Privacidade2_Poster_PT.tex`, `P3D_Privacidade2_Poster_EN.tex` | Pôster A3 retrato, uma página, duas colunas, bloco de autores e três referências |
+| `P3D_Privacidade2_Poster_PT.tex`, `P3D_Privacidade2_Poster_EN.tex` | Pôster A3 retrato, uma página: P1 e P2 lado a lado, P3 em largura total, caixas de limites e referências; bloco de autores e três referências |
 | `P3D_Privacidade2_Licoes_PT.tex`, `P3D_Privacidade2_Lessons_EN.tex` | Lições aprendidas (uma a duas páginas) |
-| `figuras/Fig1`, `Fig4`, `Fig5` e `FigP1` (`_PT` e `_EN`) | Figuras em TikZ, uma por arquivo, no padrão da figura da P2B |
+| `figuras/Fig1`, `Fig4`, `Fig5` (relatório) e `FigP1`, `FigP3` (pôster), `_PT` e `_EN` | Figuras em TikZ, uma por arquivo, no padrão da figura da P2B; as do pôster têm fontes maiores |
 | `ferramentas/gerar_tex.py` | Gera o relatório, as lições e as figuras a partir dos Markdown |
 | `compilar.sh` | Compila figuras e documentos |
 | `out/` | PDFs e arquivos auxiliares (criada na compilação) |
 
-**Figuras do relatório.** As Figuras 1, 4 e 5 são TikZ. A Figura 2 (mapa de calor 7 × 5) e a Figura 3 (matriz de princípios por domínios) são **tabelas coloridas** escritas dentro do relatório (pacote `colortbl`), então não têm PDF próprio. O pôster usa `FigP1` (relações entre as peças) e `Fig5` (concentrações); o mapa de calor do pôster é uma tabela escrita no próprio arquivo.
+**Figuras do relatório.** As Figuras 1, 4 e 5 são TikZ. A Figura 2 (mapa de calor 7 × 5) e a Figura 3 (matriz de princípios por domínios) são **tabelas coloridas** escritas dentro do relatório (pacote `colortbl`), então não têm PDF próprio. O pôster usa `FigP1` (relações entre as peças) e `FigP3` (concentrações, em largura total); o mapa de calor do pôster é uma tabela escrita no próprio arquivo.
 
 ## Como compilar (WSL)
 

@@ -600,7 +600,7 @@ def build_lessons(lang):
     blocks = parse_blocks((MD / c["md_lessons"]).read_text(encoding="utf-8"))
     ctx = Ctx({})
     out = [preamble(lang, {}, f"P3D -- Lições aprendidas ({'PT-BR' if lang == 'pt' else 'EN'})"),
-           r"\begin{document}", r"\SingleSpacing", r"\thispagestyle{plain}", ""]
+           r"\begin{document}", r"\SingleSpacing", r"\small", r"\thispagestyle{plain}", ""]
     title = next(b[2] for b in blocks if b[0] == "h" and b[1] == 1)
     out.append(r"\begin{center}\textbf{" + inline(title.upper(), ctx) + r"}\end{center}")
     for b in blocks:
@@ -738,24 +738,24 @@ def _narrow(s, w):
 def figP1(l):
     """Pôster: relações entre as peças. Tela de 11 cm (ampliada ~1,2x na coluna do pôster), fontes maiores."""
     s = _narrow(FIG_HEAD.replace("@@H@@", "10.2"), 11)
-    T = "font=\normalsize"
-    s += f"  \node[anchor=west,text=exLine,{T}] at (0,9.95) {{\textbf{{{l['l1']}}}}};\n"
+    T = r"font=\normalsize"
+    s += f"  \\node[anchor=west,text=exLine,{T}] at (0,9.95) {{\\textbf{{{l['l1']}}}}};\n"
     for k, (a, b) in enumerate([(l["pa"], "1AHV · 3QPD"), (l["pb"], "4BAL · 6BEC"), (l["pc"], "2FOV · 5SPA")]):
         y = 8.7 - k * 1.05
-        s += (f"  \draw[fill=exFill,draw=exLine,line width=1.1pt,rounded corners=0.2cm] (0,{y}) rectangle (11,{y + 0.9});\n"
-              f"  \node[text=exLine,{T}] at (5.5,{y + 0.45}) {{\textbf{{{a}}} \ $\cdot$ \ {b}}};\n")
-    s += (f"  \draw[draw=exLine,line width=1.3pt,{ARR}] (9.0,6.6) -- (9.0,5.7);\n"
-          f"  \node[text=exLine,fill=white,inner sep=2pt,anchor=east,{T}] at (8.85,6.15) {{{l['orient']}}};\n"
-          f"  \node[anchor=west,text=exLine,{T}] at (0,5.45) {{\textbf{{{l['l2']}}}}};\n"
-          "  \draw[fill=prFill,draw=prLine,line width=1.6pt,rounded corners=0.25cm] (0,3.45) rectangle (11,5.1);\n"
-          f"  \node[align=center,text=prText,{T}] at (5.5,4.27) {{\Large\textbf{{{l['tl']}}}\\ {l['tl2']}\\ {l['cyc']}: 1 $\rightarrow$ 2 $\rightarrow$ 3 $\rightarrow$ 4}};\n"
-          f"  \draw[draw=exLine,line width=1.3pt,{ARR}] (9.0,3.45) -- (9.0,2.65);\n"
-          f"  \node[text=exLine,fill=white,inner sep=2pt,anchor=east,{T}] at (8.85,3.05) {{{l['adjusts']}}};\n"
-          f"  \node[anchor=west,text=exLine,{T}] at (0,2.4) {{\textbf{{{l['l3']}}}}};\n"
-          "  \draw[fill=exFill,draw=exLine,line width=1.1pt,rounded corners=0.2cm] (0,0.1) rectangle (5.3,1.8);\n"
-          "  \draw[fill=exFill,draw=exLine,line width=1.1pt,rounded corners=0.2cm] (5.7,0.1) rectangle (11,1.8);\n"
-          f"  \node[align=center,text=exLine,{T}] at (2.65,0.95) {{\textbf{{{l['af']}}}}};\n"
-          f"  \node[align=center,text=exLine,{T}] at (8.35,0.95) {{\textbf{{{l['dd']}}}}};\n")
+        s += (f"  \\draw[fill=exFill,draw=exLine,line width=1.1pt,rounded corners=0.2cm] (0,{y}) rectangle (11,{y + 0.9});\n"
+              f"  \\node[text=exLine,{T}] at (5.5,{y + 0.45}) {{\\textbf{{{a}}} \\ $\\cdot$ \\ {b}}};\n")
+    s += (f"  \\draw[draw=exLine,line width=1.3pt,{ARR}] (9.0,6.6) -- (9.0,5.7);\n"
+          f"  \\node[text=exLine,fill=white,inner sep=2pt,anchor=east,{T}] at (8.85,6.15) {{{l['orient']}}};\n"
+          f"  \\node[anchor=west,text=exLine,{T}] at (0,5.45) {{\\textbf{{{l['l2']}}}}};\n"
+          "  \\draw[fill=prFill,draw=prLine,line width=1.6pt,rounded corners=0.25cm] (0,3.45) rectangle (11,5.1);\n"
+          f"  \\node[align=center,text=prText,{T}] at (5.5,4.27) {{\\Large\\textbf{{{l['tl']}}}\\\\ {l['tl2']}\\\\ {l['cyc']}: 1 $\\rightarrow$ 2 $\\rightarrow$ 3 $\\rightarrow$ 4}};\n"
+          f"  \\draw[draw=exLine,line width=1.3pt,{ARR}] (9.0,3.45) -- (9.0,2.65);\n"
+          f"  \\node[text=exLine,fill=white,inner sep=2pt,anchor=east,{T}] at (8.85,3.05) {{{l['adjusts']}}};\n"
+          f"  \\node[anchor=west,text=exLine,{T}] at (0,2.4) {{\\textbf{{{l['l3']}}}}};\n"
+          "  \\draw[fill=exFill,draw=exLine,line width=1.1pt,rounded corners=0.2cm] (0,0.1) rectangle (5.3,1.8);\n"
+          "  \\draw[fill=exFill,draw=exLine,line width=1.1pt,rounded corners=0.2cm] (5.7,0.1) rectangle (11,1.8);\n"
+          f"  \\node[align=center,text=exLine,{T}] at (2.65,0.95) {{\\textbf{{{l['af']}}}}};\n"
+          f"  \\node[align=center,text=exLine,{T}] at (8.35,0.95) {{\\textbf{{{l['dd']}}}}};\n")
     return s + FIG_TAIL
 
 
@@ -764,10 +764,10 @@ def figP3(l):
     s = FIG_HEAD.replace("@@H@@", "3.5")
     for k, ((t, d, n), e) in enumerate(zip(l["cards"], l["exts"])):
         x = 0.1 + k * 3.97
-        s += (f"  \draw[fill=exFill,draw=exLine,line width=1.2pt,rounded corners=0.2cm] ({x},0.1) rectangle ({x + 3.7},3.4);\n"
-              f"  \node[align=center,text width=3.4cm,text=exLine,font=\small] at ({x + 1.85},2.15) {{\normalsize\textbf{{{t}}}\\ {d}\\ \large\textbf{{{n}}} {l['procs']}}};\n"
-              f"  \draw[fill=ctxFill,draw=ctxLine,line width=1pt,dash pattern=on 4pt off 3pt,rounded corners=0.12cm] ({x + 0.3},0.25) rectangle ({x + 3.4},0.85);\n"
-              f"  \node[align=center,text=ctxText,font=\footnotesize] at ({x + 1.85},0.55) {{\textbf{{+ {e}}} · {l['ext']}}};\n")
+        s += (f"  \\draw[fill=exFill,draw=exLine,line width=1.2pt,rounded corners=0.2cm] ({x},0.1) rectangle ({x + 3.7},3.4);\n"
+              f"  \\node[align=center,text width=3.4cm,text=exLine,font=\\small] at ({x + 1.85},2.15) {{\\normalsize\\textbf{{{t}}}\\\\ {d}\\\\ \\large\\textbf{{{n}}} {l['procs']}}};\n"
+              f"  \\draw[fill=ctxFill,draw=ctxLine,line width=1pt,dash pattern=on 4pt off 3pt,rounded corners=0.12cm] ({x + 0.3},0.25) rectangle ({x + 3.4},0.85);\n"
+              f"  \\node[align=center,text=ctxText,font=\\footnotesize] at ({x + 1.85},0.55) {{\\textbf{{+ {e}}} · {l['ext']}}};\n")
     return s + FIG_TAIL
 
 

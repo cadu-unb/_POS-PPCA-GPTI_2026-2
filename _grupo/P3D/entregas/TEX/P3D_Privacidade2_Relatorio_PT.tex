@@ -34,6 +34,8 @@
 \setlength{\emergencystretch}{3em}
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{3}
+% Títulos de seção em caixa alta sem hifenização (evita "PROCES-SOS")
+\setsecheadstyle{\hyphenpenalty=10000 \exhyphenpenalty=10000 \raggedright\ABNTEXsectionfont\ABNTEXsectionfontsize\ABNTEXsectionupperifneeded}
 \renewcommand{\contentsname}{SUMÁRIO}
 \renewcommand{\listfigurename}{LISTA DE ILUSTRAÇÕES}
 \renewcommand{\listtablename}{LISTA DE TABELAS}
@@ -97,6 +99,8 @@ Este relatório sintetiza \textit{The Standard for Project Management} e \textit
 \noindent\textbf{Palavras-chave:} PMBOK 8; gerenciamento de projetos; princípios; áreas de foco; domínios de desempenho; processos; adaptação sob medida; abordagens híbridas.
 \end{resumo}
 
+\clearpage
+
 \begin{resumo}[Abstract]
 \begin{otherlanguage*}{english}
 This report synthesizes \textit{The Standard for Project Management} and \textit{A Guide to the Project Management Body of Knowledge}, both from the eighth edition of the PMBOK. Its aim is to explain how six principles guide decisions, five Focus Areas organize activities, and seven performance domains group 40 processes. The reading emphasizes tailoring: choosing the development approach, processes, and forms of engagement that make sense for the organization and the project, and reviewing those choices as results come in. The text covers the value delivery system, life cycles and the choice of approach, the five actions on processes, the four steps of the tailoring process, and the diagnostics in the tailoring chapter. A table relates each of the 40 processes to its domain, Focus Area, and an analytical grouping; a 7 \ensuremath{\times} 5 map shows the distribution of the processes; a 6 \ensuremath{\times} 7 matrix summarizes the connections between principles and domains that the \textit{Standard} describes. Four concentrations — Consolidation, Birth, Means, and Who — are used as an \textbf{analytical grouping of this work}, without attributing them to PMI. Recent studies on hybrid approaches and an international project management standard situate the synthesis. A final table shows where PMBOK 8 already touches personal data; no new process is proposed here.
@@ -108,11 +112,11 @@ This report synthesizes \textit{The Standard for Project Management} and \textit
 
 \clearpage
 
-\tableofcontents
+\tableofcontents*
 \clearpage
-\listoffigures
+\listoffigures*
 \clearpage
-\listoftables
+\listoftables*
 \clearpage
 
 \begingroup
@@ -152,6 +156,7 @@ This report synthesizes \textit{The Standard for Project Management} and \textit
 \endgroup
 \clearpage
 
+\setcounter{table}{0}
 \begin{flushleft}\small\SingleSpacing
 \noindent\textbf{Nota de natureza.} \textbf{Grupo SIPA:} Privacidade 2\\ \textbf{Natureza:} síntese técnica do PMBOK 8, com um agrupamento analítico dos domínios apresentado separadamente da estrutura oficial do PMI.
 \end{flushleft}
@@ -287,7 +292,7 @@ O capítulo 4 do \textit{Standard} trata de como o trabalho se organiza no tempo
 A \textbf{abordagem de desenvolvimento} é o meio usado para criar e evoluir o produto, serviço ou resultado ao longo do ciclo de vida. As três abordagens usuais formam um espectro, da preditiva à adaptativa, com a híbrida como combinação das duas [\refnum{pmi}, \textit{Standard} §4.2].
 
 \begingroup\SingleSpacing\small
-\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*78/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*360/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*562/1000\relax}@{}}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*162/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*327/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*511/1000\relax}@{}}
 \caption{Abordagens de desenvolvimento: preditiva, adaptativa e híbrida}\label{tab:t4}\\
 \hline
 \textbf{Abordagem} & \textbf{Quando tende a servir} & \textbf{Características}\\
@@ -314,7 +319,7 @@ O \textit{Standard} observa que, na prática, a maioria dos projetos pode se ben
 A escolha da abordagem depende de variáveis do \textbf{produto}, do \textbf{projeto} e da \textbf{organização}. O quadro resume os fatores que o \textit{Standard} lista [\refnum{pmi}, \textit{Standard} §4.3].
 
 \begingroup\SingleSpacing\small
-\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*135/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*865/1000\relax}@{}}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*176/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*824/1000\relax}@{}}
 \caption{Fatores de escolha da abordagem de desenvolvimento}\label{tab:t5}\\
 \hline
 \textbf{Categoria} & \textbf{Fatores}\\
@@ -342,7 +347,7 @@ A abordagem escolhida condiciona a \textbf{cadência de entrega}: entrega única
 As \textit{Project Management Focus Areas} são \textbf{Iniciação (IN), Planejamento (PL), Execução (EX), Monitoramento e Controle (MC) e Encerramento (CL)}. Elas agrupam práticas de gestão e são aplicáveis independentemente da área de aplicação, do setor e da abordagem de desenvolvimento. Não impõem sequência rígida nem se confundem com as fases do ciclo de vida. Os processos, práticas ou ações de cada área costumam ser iterados antes de concluir uma fase ou o projeto [\refnum{pmi}, \textit{Standard} §4.5].
 
 \begingroup\SingleSpacing\small
-\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*120/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*543/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*337/1000\relax}@{}}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*202/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*493/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*305/1000\relax}@{}}
 \caption{As cinco áreas de foco}\label{tab:t6}\\
 \hline
 \textbf{Área} & \textbf{O que reúne} & \textbf{Pergunta orientadora}\\
@@ -440,7 +445,7 @@ Um domínio de desempenho é um grupo de processos relacionados e essenciais par
 A tabela mantém os \textbf{nomes oficiais em inglês}. A coluna em português serve à leitura e não é tradução autorizada pelo PMI. A coluna \textbf{concentração} traz o agrupamento analítico deste trabalho (seção 10), que \textbf{não} pertence ao PMI. A presença de um processo no inventário não obriga sua execução formal em todos os projetos; sua aplicação depende de \textit{tailoring} [\refnum{pmi}, \textit{Guide} Tabela 2-1 e §§2.1–2.7].
 
 \begingroup\SingleSpacing\footnotesize
-\begin{longtable}{@{}>{\raggedleft\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*108/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*108/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*108/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*127/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*549/1000\relax}@{}}
+\begin{longtable}{@{}>{\raggedleft\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*99/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*117/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*99/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*178/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*507/1000\relax}@{}}
 \caption{Inventário dos 40 processos do PMBOK 8}\label{tab:t8}\\
 \hline
 \textbf{\#} & \textbf{Domínio} & \textbf{Área} & \textbf{Concentração} & \textbf{Processo oficial — tradução de trabalho}\\
@@ -504,7 +509,7 @@ O inventário revela dependências concretas. Um requisito do Escopo pode exigir
 Cada domínio traz uma seção de considerações de adaptação (2.x.3 do \textit{Guide}). A tabela resume uma consideração característica de cada um; as listas completas estão no livro [\refnum{pmi}, \textit{Guide} §§2.1.7, 2.2.3, 2.3.3, 2.4.3, 2.5.3, 2.6.3 e 2.7.3].
 
 \begingroup\SingleSpacing\small
-\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*127/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*873/1000\relax}@{}}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*189/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*811/1000\relax}@{}}
 \caption{Consideração de adaptação característica de cada domínio}\label{tab:t9}\\
 \hline
 \textbf{Domínio} & \textbf{Consideração de adaptação característica}\\
@@ -533,7 +538,7 @@ Riscos & Tamanho e complexidade definem se é preciso uma abordagem detalhada ou
 
 As subseções \textit{Connected Performance Domains} do \textit{Standard} (§§3.3.3 a 3.8.3) descrevem, para cada princípio, como ele se conecta a cada um dos sete domínios. Em cada uma das seis seções o texto trata dos sete domínios, o que dá \textbf{42 conexões expressas}. O \textit{Standard} acrescenta que a visão holística é apoiada por todos os domínios; que qualidade e foco em valor são tratados sobretudo em Governança, Escopo, Riscos, Cronograma, Finanças e Partes Interessadas; e que o líder responsável cruza Governança, Partes Interessadas e Riscos [\refnum{pmi}, \textit{Standard} §3.2].
 
-A matriz abaixo resume \textbf{uma contribuição característica por célula}. É paráfrase analítica dos trechos do PMBOK 8, não uma escala de força, prioridade ou conformidade. \textbf{Legenda:} todas as células têm base expressa no texto do \textit{Standard}; a redação curta é do grupo.
+A matriz da Figura 3 resume \textbf{uma contribuição característica por célula}. É paráfrase analítica dos trechos do PMBOK 8, não uma escala de força, prioridade ou conformidade. \textbf{Legenda:} todas as células têm base expressa no texto do \textit{Standard}; a redação curta é do grupo.
 
 \begin{figure}[!htbp]
 \centering
@@ -556,7 +561,7 @@ A matriz abaixo resume \textbf{uma contribuição característica por célula}. 
 \fontetab{Elaborado pelos autores (2026) a partir de [\refnum{pmi}, Standard, §§3.2 a 3.8].}
 \end{figure}
 
-Na futura figura, a cor distingue os três pares da mentalidade do \textit{Standard}, e o texto curto mantém a leitura acessível sem cor. A matriz não cria índice numérico de desempenho.
+Na figura, a cor de fundo distingue os três pares da mentalidade do \textit{Standard}, e o texto curto mantém a leitura acessível sem cor. A matriz não cria índice numérico de desempenho.
 
 Esta leitura evita dois erros. O primeiro seria transformar princípios em processos adicionais. O segundo seria tomar os domínios como silos: uma escolha de qualidade em Escopo pode requerer orçamento, competência e resposta a risco.
 
@@ -570,14 +575,18 @@ Não existe uma forma única de gerir todos os projetos. Poucos processos podem 
 
 Três objetos podem ser adaptados [\refnum{pmi}, \textit{Guide} §3.3]:
 
-- \textbf{Ciclo de vida e abordagem de desenvolvimento.} Escolher fases, cadência e combinação preditiva, adaptativa ou híbrida. Um projeto pode ter, por exemplo, abordagem preditiva para a construção de um prédio e adaptativa para definir as capacidades de computação; do ponto de vista do projeto, trata-se de uma abordagem híbrida. - \textbf{Processos.} Cinco operações podem ser aplicadas aos elementos de um processo: \textbf{adicionar}, para tratar condições próprias ou aumentar o rigor; \textbf{modificar}, para ajustar entradas, saídas e ferramentas; \textbf{remover}, para reduzir custo ou esforço desnecessário; \textbf{combinar}, para somar valor; e \textbf{alinhar}, para garantir consistência de definição e aplicação. - \textbf{Engajamento.} Pessoas (avaliar competências da liderança e da equipe), empoderamento (que responsabilidades e decisões locais ficam com a equipe) e integração (como formar uma equipe a partir de contribuintes diversos, internos e externos).
+\begin{itemize}
+\item \textbf{Ciclo de vida e abordagem de desenvolvimento.} Escolher fases, cadência e combinação preditiva, adaptativa ou híbrida. Um projeto pode ter, por exemplo, abordagem preditiva para a construção de um prédio e adaptativa para definir as capacidades de computação; do ponto de vista do projeto, trata-se de uma abordagem híbrida.
+\item \textbf{Processos.} Cinco operações podem ser aplicadas aos elementos de um processo: \textbf{adicionar}, para tratar condições próprias ou aumentar o rigor; \textbf{modificar}, para ajustar entradas, saídas e ferramentas; \textbf{remover}, para reduzir custo ou esforço desnecessário; \textbf{combinar}, para somar valor; e \textbf{alinhar}, para garantir consistência de definição e aplicação.
+\item \textbf{Engajamento.} Pessoas (avaliar competências da liderança e da equipe), empoderamento (que responsabilidades e decisões locais ficam com a equipe) e integração (como formar uma equipe a partir de contribuintes diversos, internos e externos).
+\end{itemize}
 
 Essas operações não autorizam omitir uma exigência legal ou contratual; ajudam a configurar a prática de gestão sob restrições reais.
 
 \textbf{Exemplos hipotéticos das cinco operações.} A tabela ilustra, em um projeto de TIC com gêmeo digital, como as operações poderiam ser usadas. São exemplos de trabalho, \textbf{não prescrições do PMBOK 8}.
 
 \begingroup\SingleSpacing\small
-\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*115/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*261/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*624/1000\relax}@{}}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*149/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*251/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*600/1000\relax}@{}}
 \caption{Exemplos hipotéticos das cinco operações sobre processos}\label{tab:t10}\\
 \hline
 \textbf{Operação} & \textbf{Processo} & \textbf{Exemplo hipotético}\\
@@ -695,7 +704,7 @@ O agrupamento facilita a conversa e a distribuição de trabalho, mas não alter
 Como o relatório será lido também por quem trabalha com projetos que tratam dados pessoais, este quadro registra, \textbf{sem propor processo novo}, os pontos em que a edição já menciona o tema. As referências são paráfrases de trabalho [\refnum{pmi}].
 
 \begingroup\SingleSpacing\small
-\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*203/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*670/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*127/1000\relax}@{}}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*202/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*662/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*136/1000\relax}@{}}
 \caption{Pontos do PMBOK 8 que tocam dados pessoais}\label{tab:t13}\\
 \hline
 \textbf{Onde} & \textbf{O que a edição diz} & \textbf{Seção}\\

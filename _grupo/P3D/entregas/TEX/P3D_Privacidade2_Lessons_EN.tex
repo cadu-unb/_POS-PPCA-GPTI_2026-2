@@ -34,6 +34,8 @@
 \setlength{\emergencystretch}{3em}
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{3}
+% Títulos de seção em caixa alta sem hifenização (evita "PROCES-SOS")
+\setsecheadstyle{\hyphenpenalty=10000 \exhyphenpenalty=10000 \raggedright\ABNTEXsectionfont\ABNTEXsectionfontsize\ABNTEXsectionupperifneeded}
 \renewcommand{\contentsname}{CONTENTS}
 \renewcommand{\listfigurename}{LIST OF FIGURES}
 \renewcommand{\listtablename}{LIST OF TABLES}
@@ -63,6 +65,7 @@
 
 \begin{document}
 \SingleSpacing
+\small
 \thispagestyle{plain}
 
 \begin{center}\textbf{LESSONS LEARNED}\end{center}

@@ -34,6 +34,8 @@
 \setlength{\emergencystretch}{3em}
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{3}
+% Títulos de seção em caixa alta sem hifenização (evita "PROCES-SOS")
+\setsecheadstyle{\hyphenpenalty=10000 \exhyphenpenalty=10000 \raggedright\ABNTEXsectionfont\ABNTEXsectionfontsize\ABNTEXsectionupperifneeded}
 \renewcommand{\contentsname}{CONTENTS}
 \renewcommand{\listfigurename}{LIST OF FIGURES}
 \renewcommand{\listtablename}{LIST OF TABLES}
@@ -97,6 +99,8 @@ This report synthesizes \textit{The Standard for Project Management} and \textit
 \noindent\textbf{Keywords:} PMBOK 8; project management; principles; Focus Areas; performance domains; processes; tailoring; hybrid approaches.
 \end{resumo}
 
+\clearpage
+
 \begin{resumo}[Resumo]
 \begin{otherlanguage*}{brazilian}
 Este relatório sintetiza \textit{The Standard for Project Management} e \textit{A Guide to the Project Management Body of Knowledge}, ambos da oitava edição do PMBOK. O objetivo é explicar como seis princípios orientam decisões, cinco áreas de foco organizam atividades e sete domínios de desempenho reúnem 40 processos. A leitura enfatiza a adaptação sob medida (\textit{tailoring}): escolher abordagem de desenvolvimento, processos e formas de engajamento que façam sentido para a organização e o projeto, revendo as escolhas conforme os resultados. O texto cobre o sistema de entrega de valor, os ciclos de vida e a escolha da abordagem, as cinco ações sobre processos, os quatro passos do processo de adaptação e os diagnósticos do capítulo de adaptação. Uma tabela relaciona cada um dos 40 processos ao domínio, à área de foco e a um agrupamento analítico; um mapa 7 \ensuremath{\times} 5 mostra a distribuição dos processos; uma matriz 6 \ensuremath{\times} 7 resume as conexões entre princípios e domínios que o \textit{Standard} descreve. Quatro concentrações — Consolidação, Nascimento, Meios e Quem — são usadas como \textbf{agrupamento analítico deste trabalho}, sem atribuí-las ao PMI. Estudos recentes sobre abordagens híbridas e uma norma internacional de gestão de projetos situam a síntese. Um quadro final mostra onde o PMBOK 8 já toca dados pessoais; não se propõe aqui um novo processo.
@@ -108,11 +112,11 @@ Este relatório sintetiza \textit{The Standard for Project Management} e \textit
 
 \clearpage
 
-\tableofcontents
+\tableofcontents*
 \clearpage
-\listoffigures
+\listoffigures*
 \clearpage
-\listoftables
+\listoftables*
 \clearpage
 
 \begingroup
@@ -152,6 +156,7 @@ Este relatório sintetiza \textit{The Standard for Project Management} e \textit
 \endgroup
 \clearpage
 
+\setcounter{table}{0}
 \begin{flushleft}\small\SingleSpacing
 \noindent\textbf{Nature of the work.} \textbf{SIPA group:} Privacy 2\\ \textbf{Nature:} technical synthesis of PMBOK 8, with an analytical grouping of the domains presented separately from PMI's official structure.
 \end{flushleft}
@@ -229,7 +234,7 @@ Chapter 2 of the \textit{Standard} describes where the project operates. \textbf
 The \textit{Standard} organizes a management mindset in three dimensions: \textbf{proactive}, \textbf{ownership}, and \textbf{value-oriented}. Each dimension integrates two principles [\refnum{pmi}, Standard §3.1].
 
 \begingroup\SingleSpacing\small
-\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*213/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*787/1000\relax}@{}}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*215/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*785/1000\relax}@{}}
 \caption{Mindset dimensions and principles}\label{tab:t2}\\
 \hline
 \textbf{Dimension} & \textbf{Principles}\\
@@ -287,7 +292,7 @@ Chapter 4 of the \textit{Standard} addresses how work is organized over time. A 
 The \textbf{development approach} is the means used to create and evolve the product, service, or result over the life cycle. The three usual approaches form a spectrum, from predictive to adaptive, with hybrid as a combination of the two [\refnum{pmi}, Standard §4.2].
 
 \begingroup\SingleSpacing\small
-\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*74/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*383/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*543/1000\relax}@{}}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*162/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*346/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*492/1000\relax}@{}}
 \caption{Development approaches: predictive, adaptive and hybrid}\label{tab:t4}\\
 \hline
 \textbf{Approach} & \textbf{When it tends to serve} & \textbf{Characteristics}\\
@@ -314,7 +319,7 @@ The \textit{Standard} observes that, in practice, most projects can benefit from
 The choice of approach depends on variables of the \textbf{product}, the \textbf{project}, and the \textbf{organization}. The table summarizes the factors that the \textit{Standard} lists [\refnum{pmi}, Standard §4.3].
 
 \begingroup\SingleSpacing\small
-\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*158/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*842/1000\relax}@{}}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*189/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*811/1000\relax}@{}}
 \caption{Factors for choosing the development approach}\label{tab:t5}\\
 \hline
 \textbf{Category} & \textbf{Factors}\\
@@ -342,7 +347,7 @@ The chosen approach conditions the \textbf{delivery cadence}: single delivery, m
 The \textit{Project Management Focus Areas} are \textbf{Initiating (IN), Planning (PL), Executing (EX), Monitoring and Controlling (MC), and Closing (CL)}. They group management practices and are applicable regardless of application area, industry, and development approach. They do not impose a rigid sequence nor are they to be confused with life cycle phases. The processes, practices, or actions of each area are usually iterated before concluding a phase or the project [\refnum{pmi}, Standard §4.5].
 
 \begingroup\SingleSpacing\small
-\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*114/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*544/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*342/1000\relax}@{}}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*176/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*507/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*317/1000\relax}@{}}
 \caption{The five Focus Areas}\label{tab:t6}\\
 \hline
 \textbf{Area} & \textbf{What it brings together} & \textbf{Guiding question}\\
@@ -440,7 +445,7 @@ A performance domain is a group of related processes that are essential for the 
 The table keeps the \textbf{official English names}. The Portuguese text in parentheses serves reading and is not a translation authorized by PMI. The \textbf{concentration} column carries the analytical grouping of this work (section 10), which does \textbf{not} belong to PMI. The presence of a process in the inventory does not oblige its formal execution in every project; its application depends on \textit{tailoring} [\refnum{pmi}, Guide Table 2-1 and §§2.1–2.7].
 
 \begingroup\SingleSpacing\footnotesize
-\begin{longtable}{@{}>{\raggedleft\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*109/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*109/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*109/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*113/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*560/1000\relax}@{}}
+\begin{longtable}{@{}>{\raggedleft\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*99/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*104/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*99/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*190/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*508/1000\relax}@{}}
 \caption{Inventory of the 40 PMBOK 8 processes}\label{tab:t8}\\
 \hline
 \textbf{\#} & \textbf{Domain} & \textbf{Area} & \textbf{Concentration} & \textbf{Official process — Working translation (Portuguese)}\\
@@ -504,7 +509,7 @@ The inventory reveals concrete dependencies. A Scope requirement may demand reso
 Each domain carries a section of tailoring considerations (2.x.3 of the \textit{Guide}). The table summarizes one characteristic consideration for each; the complete lists are in the book [\refnum{pmi}, Guide §§2.1.7, 2.2.3, 2.3.3, 2.4.3, 2.5.3, 2.6.3, and 2.7.3].
 
 \begingroup\SingleSpacing\small
-\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*109/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*891/1000\relax}@{}}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*189/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*811/1000\relax}@{}}
 \caption{Characteristic tailoring consideration of each domain}\label{tab:t9}\\
 \hline
 \textbf{Domain} & \textbf{Characteristic tailoring consideration}\\
@@ -533,7 +538,7 @@ Risk & Size and complexity determine whether a detailed approach is needed or a 
 
 The \textit{Connected Performance Domains} subsections of the \textit{Standard} (§§3.3.3 to 3.8.3) describe, for each principle, how it connects to each of the seven domains. In each of the six sections the text addresses the seven domains, which gives \textbf{42 expressed connections}. The \textit{Standard} adds that the holistic view is supported by all domains; that quality and focus on value are addressed mainly in Governance, Scope, Risk, Schedule, Finance, and Stakeholders; and that the accountable leader cuts across Governance, Stakeholders, and Risk [\refnum{pmi}, Standard §3.2].
 
-The matrix below summarizes \textbf{one characteristic contribution per cell}. It is an analytical paraphrase of PMBOK 8 passages, not a scale of strength, priority, or compliance. \textbf{Legend:} all cells have an express basis in the text of the \textit{Standard}; the short wording is the group's.
+The matrix in Figure 3 summarizes \textbf{one characteristic contribution per cell}. It is an analytical paraphrase of PMBOK 8 passages, not a scale of strength, priority, or compliance. \textbf{Legend:} all cells have an express basis in the text of the \textit{Standard}; the short wording is the group's.
 
 \begin{figure}[!htbp]
 \centering
@@ -556,7 +561,7 @@ The matrix below summarizes \textbf{one characteristic contribution per cell}. I
 \fontetab{Prepared by the authors (2026) based on [\refnum{pmi}, Standard §§3.2 to 3.8].}
 \end{figure}
 
-In the future figure, color distinguishes the three pairs of the \textit{Standard}'s mindset, and the short text keeps the reading accessible without color. The matrix does not create a numerical performance index.
+In the figure, background color distinguishes the three pairs of the \textit{Standard}'s mindset, and the short text keeps the reading accessible without color. The matrix does not create a numerical performance index.
 
 This reading avoids two errors. The first would be to turn principles into additional processes. The second would be to take the domains as silos: a quality choice in Scope may require budget, skills, and a risk response.
 
@@ -570,14 +575,18 @@ There is no single way to manage all projects. Too few processes may leave criti
 
 Three objects can be tailored [\refnum{pmi}, Guide §3.3]:
 
-- \textbf{Life cycle and development approach.} Choose phases, cadence, and a predictive, adaptive, or hybrid combination. A project may have, for example, a predictive approach for constructing a building and an adaptive one for defining the computing capabilities; from the project's point of view, this is a hybrid approach. - \textbf{Processes.} Five operations can be applied to the elements of a process: \textbf{add}, to address specific conditions or increase rigor; \textbf{modify}, to adjust inputs, outputs, and tools; \textbf{remove}, to reduce unnecessary cost or effort; \textbf{combine}, to add value; and \textbf{align}, to ensure consistency of definition and application. - \textbf{Engagement.} People (assess the skills of leadership and the team), empowerment (which responsibilities and local decisions stay with the team), and integration (how to form a team from diverse contributors, internal and external).
+\begin{itemize}
+\item \textbf{Life cycle and development approach.} Choose phases, cadence, and a predictive, adaptive, or hybrid combination. A project may have, for example, a predictive approach for constructing a building and an adaptive one for defining the computing capabilities; from the project's point of view, this is a hybrid approach.
+\item \textbf{Processes.} Five operations can be applied to the elements of a process: \textbf{add}, to address specific conditions or increase rigor; \textbf{modify}, to adjust inputs, outputs, and tools; \textbf{remove}, to reduce unnecessary cost or effort; \textbf{combine}, to add value; and \textbf{align}, to ensure consistency of definition and application.
+\item \textbf{Engagement.} People (assess the skills of leadership and the team), empowerment (which responsibilities and local decisions stay with the team), and integration (how to form a team from diverse contributors, internal and external).
+\end{itemize}
 
 These operations do not authorize omitting a legal or contractual requirement; they help configure management practice under real constraints.
 
 \textbf{Hypothetical examples of the five operations.} The table illustrates, in an ICT project with a digital twin, how the operations could be used. They are working examples, \textbf{not PMBOK 8 prescriptions}.
 
 \begingroup\SingleSpacing\small
-\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*95/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*270/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*635/1000\relax}@{}}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*149/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*254/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*597/1000\relax}@{}}
 \caption{Hypothetical examples of the five operations on processes}\label{tab:t10}\\
 \hline
 \textbf{Operation} & \textbf{Process} & \textbf{Hypothetical example}\\
@@ -695,7 +704,7 @@ The grouping facilitates conversation and the distribution of work, but it does 
 Since the report will also be read by those who work with projects that process personal data, this table records, \textbf{without proposing a new process}, the points at which the edition already mentions the topic. The references are working paraphrases [\refnum{pmi}].
 
 \begingroup\SingleSpacing\small
-\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*199/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*667/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*134/1000\relax}@{}}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*215/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*649/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*136/1000\relax}@{}}
 \caption{PMBOK 8 points that touch personal data}\label{tab:t13}\\
 \hline
 \textbf{Where} & \textbf{What the edition says} & \textbf{Section}\\
@@ -731,7 +740,7 @@ The four concentrations presented here are a way of reading, not a replacement f
 Following the format of the \textit{Final report}, an output of the \textit{Close Project or Phase} process [\refnum{pmi}, Guide §2.1.6.9], this item summarizes the performance of the work of preparing this synthesis, taken as the project reported.
 
 \begingroup\SingleSpacing\small
-\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*188/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*812/1000\relax}@{}}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*189/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*811/1000\relax}@{}}
 \caption{Final report of the work}\label{tab:t14}\\
 \hline
 \textbf{Final report item} & \textbf{Status of the work}\\
