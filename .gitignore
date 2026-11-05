@@ -27,3 +27,26 @@
 *.ist
 *.ps
 _minted-*/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Sistema operacional e editores
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*~
+
+# Temporários do Office e genéricos
+~$*
+.~lock.*#
+*.tmp
+*.bak
