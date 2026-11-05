@@ -170,13 +170,16 @@ O grupo já começou a escrever a P3A, em Markdown, em `_grupo/P3A/entregas/`. S
 | Relatório | `P3A_Privacidade2_Relatorio_PT.md` | `P3A_Privacidade2_Report_EN.md` |
 | Lições aprendidas | `P3A_Privacidade2_Licoes_PT.md` | `P3A_Privacidade2_Lessons_EN.md` |
 
-Situação em 04/11:
-- Os arquivos **ainda não foram versionados** no Git (aparecem como não rastreados).
-- O relatório em português tem cerca de 4,6 mil palavras. Falta conferir se isso cobre as 20 a 30 páginas por idioma pedidas.
-- O relatório tem os blocos previstos neste plano: diagnóstico do PMBOK 8, justificativa em quatro aspectos (caracterização da necessidade, critérios, publicação e formato, desenvolvimento e manutenção), domínio Privacidade na concentração Quem, aderência às cinco áreas de foco e aos seis princípios, conexões para a P3C, exemplo de reciclagem por cooperativas e correspondência com o formato de Relatório Final.
-- Os oito processos do domínio estão numerados P1 a P8 no rascunho do pôster, e o rascunho os marca como proposta acadêmica, fora do PMBOK 8.
-- O rascunho do pôster em português tem duas tabelas e nenhum diagrama. A mesma meta de duas ou três figuras do pôster da P3D (ver `../P3D/plano-abordagem.md`, seção 10) vale aqui.
+Situação em 04/11, depois da revisão:
+- Os arquivos estão no Git.
+- O relatório em português passou de cerca de 4,6 mil para cerca de 8,6 mil palavras, e o inglês tem a mesma estrutura (30 cabeçalhos, 5 figuras e 103 linhas de tabela em cada idioma). Só a compilação mostra o número de páginas. A expectativa é ficar perto do mínimo de 20.
+- O relatório, o pôster e as lições **não citam** o Aprender3, outras atividades (P2B, P3C etc.), o enunciado nem arquivos do repositório. O exemplo de reciclagem é um cenário hipotético.
+- As referências usam **citações numéricas entre colchetes**, com lista numerada em ordem alfabética. São 17 fontes: PMBOK 8, LGPD, ANPD, NIST, GDPR, Digital Twin Consortium, Kritzinger et al. e artigos científicos sobre privacidade em gêmeos digitais. Todas as 17 são citadas no corpo.
+- O relatório acrescentou: ferramentas e técnicas por processo (§4.2.1), conceitos-chave (§4.1), adaptação por perfil (§4.3), gêmeos digitais e fluxo de dados (§4.5), verificação de resultados (§4.6), tabela de inclusões e alterações nos 13 processos existentes (§7.1) e relatório final do próprio trabalho (§10).
+- O pôster tem três figuras em cada idioma, sem outras atividades citadas.
 
-Não revisei o conteúdo dos relatórios; só li o pôster em português e a estrutura de seções do relatório.
+Os links que não abriram na verificação (Digital Twin Consortium e EUR-Lex) foram removidos das referências; as entradas ficam só com autor, título, versão e ano. A referência de Deng et al. (2011) foi conferida contra o artigo e a exportação da Web of Science em `_wos/Manual 3/Extras/1`.
+
+Pendências: confirmar com o grupo as afirmações de método (busca na Web of Science e a verificação de nomes, contagens e seções do PMBOK 8 no texto da edição, §1 e §10 do relatório) e completar o esforço da equipe, que o relatório final deliberadamente não informa.
 
 O desenvolvimento segue a mesma divisão em duas etapas descrita na P3D (seção 9): o Markdown vem primeiro e é revisado pelo grupo; a conversão para LaTeX só acontece se o usuário autorizar.

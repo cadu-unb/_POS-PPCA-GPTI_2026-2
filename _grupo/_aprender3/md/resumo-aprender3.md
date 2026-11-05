@@ -33,7 +33,7 @@ O texto introdutório fala em questionários GPTI3 e GPTI4 para o PMBOK 8, mas a
 
 ### P3 — Extensão do PMBOK 8 e síntese de referência
 
-**P3A, por grupo SIPA:** justificar a necessidade de uma extensão do PMBOK 8 e incluir novos domínios de desempenho SIPA, em formato adaptado de extensão PMBOK (a página escreve "PMBOK6" no título da atividade; o grupo trata isso como PMBOK 8). A justificativa segue quatro aspectos: caracterização da necessidade, critérios para desenvolvimento, publicação e formato, e desenvolvimento e manutenção. Cada domínio — sustentabilidade, inovação, privacidade e análise de negócios com decisões ajustadas a riscos — é incluído em uma das concentrações e relacionado aos processos dela:
+**P3A, por grupo SIPA:** justificar a necessidade de uma extensão do PMBOK 8 e incluir novos domínios de desempenho SIPA, em formato adaptado de extensão PMBOK. A justificativa segue quatro aspectos: caracterização da necessidade, critérios para desenvolvimento, publicação e formato, e desenvolvimento e manutenção. Cada domínio — sustentabilidade, inovação, privacidade e análise de negócios com decisões ajustadas a riscos — é incluído em uma das concentrações e relacionado aos processos dela:
 
 | Novo domínio | Concentração e domínios existentes |
 | --- | --- |
@@ -42,11 +42,11 @@ O texto introdutório fala em questionários GPTI3 e GPTI4 para o PMBOK 8, mas a
 | Privacidade | Quem: partes interessadas e riscos |
 | Análise de negócios | Consolidação: governança |
 
-Para o grupo de **privacidade**, o foco da P3A é a conexão do novo domínio com **partes interessadas e riscos**, na concentração **Quem**. O enunciado também pede examinar a aderência às **cinco áreas de foco** do PMBOK 8. Possíveis conexões com processos das outras concentrações devem ser listadas separadamente para a consolidação geral da **P3C**. **Peso: 10%; prazo registrado: 06/11/2026, às 12h.**
+Para o grupo de **privacidade**, o foco da P3A é a conexão do novo domínio com **partes interessadas e riscos**, na concentração **Quem**. O enunciado também pede examinar a aderência às **cinco áreas de foco** do PMBOK 8. Possíveis conexões com processos das outras concentrações devem ser listadas separadamente para a consolidação geral da **P3C**. O nível de incorporação pedido para cada domínio é de **inclusões e/ou alterações** decorrentes das conexões com os domínios existentes da própria concentração (no caso da privacidade, partes interessadas e riscos). Cada novo domínio deve ainda ser caracterizado como sistema, por função, estrutura, processo e contexto (F/S/P/C), com destaque para o modelo PISO (procura, industrialização, solução e oferta). **Peso: 10%; prazo registrado: 06/11/2026, às 12h.**
 
 Há duas inconsistências na página sobre a P3A:
 
-- **Quantidade de domínios.** A ementa fala em incluir os **4** novos domínios por grupo SIPA, com resultado em "4 conjuntos de sistemas", um por domínio. O parágrafo que descreve os arquivos de entrega diz "a inclusão de **um** novo domínio" e atribui a elaboração ao "grupo de componente SRS". A página não esclarece qual vale para cada grupo.
+- **Quantidade de domínios.** A ementa fala em incluir os **4** novos domínios por grupo SIPA, com resultado em "4 conjuntos de sistemas", um por domínio. O parágrafo que descreve os arquivos de entrega diz "a inclusão de **um** novo domínio" e atribui a elaboração ao "grupo de componente SRS". A página não esclarece qual vale para cada grupo. O detalhamento da entrega diz que o resultado é a obtenção de "4 conjuntos de sistemas", cada um representando a inclusão, em separado, de um dos quatro domínios, o que favorece a leitura de um domínio por grupo.
 - **Princípios.** O enunciado cita a aderência aos **seis princípios** do PMBOK 8, mas o texto de apoio diz que a **inclusão dos princípios** na evolução do guia será abordada somente na P3C.
 
 **P3D, por grupo SIPA:** produzir um resumo do PMBOK8S e do PMBOK8G. Deve cobrir a adaptação (*tailoring*), os **seis princípios**, as **cinco áreas de foco** (iniciação, planejamento, execução, monitoramento e controle, encerramento) e os **sete domínios existentes**, distribuídos nas quatro concentrações acima. A página contabiliza **40 processos**: governança (9), escopo (6), cronograma (3), finanças (4), recursos (5), partes interessadas (7) e riscos (6). **Peso: 10%; prazo registrado: 06/11/2026, às 12h.**
@@ -65,6 +65,6 @@ O resumo das tarefas lista dois tele-eventos de encerramento: **P6C1**, com a ap
 
 ### Formato dos arquivos e materiais indicados
 
-Para **P2A, P2B, P3A e P3D**, os enunciados pedem, em **português e inglês**, um pôster de uma página por idioma, um relatório técnico-científico de 20 a 30 páginas por idioma e um relato de lições aprendidas de uma a duas páginas por idioma. O relatório segue o formato **Relatório Final do PMBOK 8**, a saída *Final report* do processo *Close Project or Phase* (seção 2.1.6.9 do Guia). A página cita o item "4.7.3.3, pp. 121–128", que é a numeração do PMBOK 6; no PMBOK 8 esse conteúdo está na seção indicada. Na P3A e na P3D, o envio é atribuído ao líder, com identificação do grupo nos nomes dos arquivos.
+Para **P2A, P2B, P3A e P3D**, os enunciados pedem, em **português e inglês**, um pôster de uma página por idioma, um relatório técnico-científico de 20 a 30 páginas por idioma e um relato de lições aprendidas de uma a duas páginas por idioma. O relatório segue o formato **Relatório Final do PMBOK 8**, a saída *Final report* do processo *Close Project or Phase* (seção 2.1.6.9 do Guia). Na P3A e na P3D, o envio é atribuído ao líder, com identificação do grupo nos nomes dos arquivos.
 
 As referências indicadas incluem PMBOK8S (*Standard*), PMBOK8G (*Guide*), materiais da equipe no Teams sobre SIPA e P3 e, para P2, as tabelas de capacidades do *Digital Twin Consortium*.
