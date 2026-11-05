@@ -657,10 +657,12 @@ FIG_LABELS = {
         ops="Operações sobre processos", ops2="adicionar · modificar · remover · combinar · alinhar",
         cards=[("Consolidação", "Governança", "9"), ("Nascimento", "Escopo + Cronograma", "9"),
                ("Meios", "Finanças + Recursos", "9"), ("Quem", "Partes Interessadas + Riscos", "13")],
+        poster_cards=[("Consolidação", "Governança", "9"), ("Nascimento", "Escopo +\\\\Cronograma", "9"),
+                      ("Meios", "Finanças +\\\\Recursos", "9"), ("Quem", "Partes\\\\Interessadas\\\\+ Riscos", "13")],
         procs="processos", ext="em análise", exts=["A", "S", "I", "P"],
         l1="Camada 1 · Princípios (mentalidade)", l2="Camada 2 · Ajuste (tailoring)", pa="Proativa", pb="De responsabilidade", pc="Orientada a valor",
         tl="TAILORING", tl2="abordagem · processos · engajamento", cyc="Ciclo de quatro passos",
-        l3="Camada 3 · Estrutura de trabalho", af="5 áreas de foco", dd="7 domínios · 40 processos",
+        l3="Camada 3 · Estrutura de trabalho", af="5 áreas\\\\de foco", dd="7 domínios\\\\40 processos",
         orient="orientam", adjusts="ajusta a aplicação",
     ),
     "en": dict(
@@ -674,10 +676,12 @@ FIG_LABELS = {
         ops="Operations on processes", ops2="add · modify · remove · blend · align",
         cards=[("Consolidation", "Governance", "9"), ("Birth", "Scope + Schedule", "9"),
                ("Means", "Finance + Resources", "9"), ("Who", "Stakeholders + Risk", "13")],
+        poster_cards=[("Consolidation", "Governance", "9"), ("Birth", "Scope +\\\\Schedule", "9"),
+                      ("Means", "Finance +\\\\Resources", "9"), ("Who", "Stakeholders\\\\+ Risk", "13")],
         procs="processes", ext="under analysis", exts=["A", "S", "I", "P"],
         l1="Layer 1 · Principles (mindset)", l2="Layer 2 · Adjustment (tailoring)", pa="Proactive", pb="Ownership", pc="Value-driven",
         tl="TAILORING", tl2="approach · processes · engagement", cyc="Four-step cycle",
-        l3="Layer 3 · Work structure", af="5 Focus Areas", dd="7 domains · 40 processes",
+        l3="Layer 3 · Work structure", af="5 Focus\\\\Areas", dd="7 domains\\\\40 processes",
         orient="guide", adjusts="adjusts application",
     ),
 }
@@ -736,37 +740,39 @@ def _narrow(s, w):
 
 
 def figP1(l):
-    """Pôster: relações entre as peças. Tela de 11 cm (ampliada ~1,2x na coluna do pôster), fontes maiores."""
-    s = _narrow(FIG_HEAD.replace("@@H@@", "10.2"), 11)
+    """Pôster: relações entre as peças, com margem interna e rótulos em duas linhas."""
+    s = _narrow(FIG_HEAD.replace("@@H@@", "10.2"), 11.4)
+    s += "  \\begin{scope}[xshift=0.2cm]\n"
     T = r"font=\normalsize"
-    s += f"  \\node[anchor=west,text=exLine,{T}] at (0,9.95) {{\\textbf{{{l['l1']}}}}};\n"
+    H = r"font=\small"
+    s += f"  \\node[anchor=west,text=exLine,{H}] at (0,9.95) {{\\textbf{{{l['l1']}}}}};\n"
     for k, (a, b) in enumerate([(l["pa"], "1AHV · 3QPD"), (l["pb"], "4BAL · 6BEC"), (l["pc"], "2FOV · 5SPA")]):
         y = 8.7 - k * 1.05
         s += (f"  \\draw[fill=exFill,draw=exLine,line width=1.1pt,rounded corners=0.2cm] (0,{y}) rectangle (11,{y + 0.9});\n"
               f"  \\node[text=exLine,{T}] at (5.5,{y + 0.45}) {{\\textbf{{{a}}} \\ $\\cdot$ \\ {b}}};\n")
     s += (f"  \\draw[draw=exLine,line width=1.3pt,{ARR}] (9.0,6.6) -- (9.0,5.7);\n"
           f"  \\node[text=exLine,fill=white,inner sep=2pt,anchor=east,{T}] at (8.85,6.15) {{{l['orient']}}};\n"
-          f"  \\node[anchor=west,text=exLine,{T}] at (0,5.45) {{\\textbf{{{l['l2']}}}}};\n"
+          f"  \\node[anchor=west,text=exLine,{H}] at (0,5.45) {{\\textbf{{{l['l2']}}}}};\n"
           "  \\draw[fill=prFill,draw=prLine,line width=1.6pt,rounded corners=0.25cm] (0,3.45) rectangle (11,5.1);\n"
-          f"  \\node[align=center,text=prText,{T}] at (5.5,4.27) {{\\Large\\textbf{{{l['tl']}}}\\\\ {l['tl2']}\\\\ {l['cyc']}: 1 $\\rightarrow$ 2 $\\rightarrow$ 3 $\\rightarrow$ 4}};\n"
+          f"  \\node[align=center,text=prText,{T}] at (5.5,4.27) {{\\large\\textbf{{{l['tl']}}}\\\\ {l['tl2']}\\\\ {l['cyc']}: 1 $\\rightarrow$ 2 $\\rightarrow$ 3 $\\rightarrow$ 4}};\n"
           f"  \\draw[draw=exLine,line width=1.3pt,{ARR}] (9.0,3.45) -- (9.0,2.65);\n"
           f"  \\node[text=exLine,fill=white,inner sep=2pt,anchor=east,{T}] at (8.85,3.05) {{{l['adjusts']}}};\n"
-          f"  \\node[anchor=west,text=exLine,{T}] at (0,2.4) {{\\textbf{{{l['l3']}}}}};\n"
+          f"  \\node[anchor=west,text=exLine,{H}] at (0,2.4) {{\\textbf{{{l['l3']}}}}};\n"
           "  \\draw[fill=exFill,draw=exLine,line width=1.1pt,rounded corners=0.2cm] (0,0.1) rectangle (5.3,1.8);\n"
           "  \\draw[fill=exFill,draw=exLine,line width=1.1pt,rounded corners=0.2cm] (5.7,0.1) rectangle (11,1.8);\n"
-          f"  \\node[align=center,text=exLine,{T}] at (2.65,0.95) {{\\textbf{{{l['af']}}}}};\n"
-          f"  \\node[align=center,text=exLine,{T}] at (8.35,0.95) {{\\textbf{{{l['dd']}}}}};\n")
-    return s + FIG_TAIL
+          f"  \\node[align=center,text width=5cm,text=exLine,{T}] at (2.65,0.95) {{\\bfseries {l['af']}}};\n"
+          f"  \\node[align=center,text width=5cm,text=exLine,{T}] at (8.35,0.95) {{\\bfseries {l['dd']}}};\n")
+    return s + "  \\end{scope}\n" + FIG_TAIL
 
 
 def figP3(l):
-    """Pôster: quatro concentrações em largura total (16 cm -> ~1,7x), fontes maiores, rótulo de extensão dentro do cartão."""
+    """Pôster: quatro concentrações com rótulos e caixas de largura uniforme."""
     s = FIG_HEAD.replace("@@H@@", "3.5")
-    for k, ((t, d, n), e) in enumerate(zip(l["cards"], l["exts"])):
+    for k, ((t, d, n), e) in enumerate(zip(l["poster_cards"], l["exts"])):
         x = 0.1 + k * 3.97
         s += (f"  \\draw[fill=exFill,draw=exLine,line width=1.2pt,rounded corners=0.2cm] ({x},0.1) rectangle ({x + 3.7},3.4);\n"
-              f"  \\node[align=center,text width=3.4cm,text=exLine,font=\\small] at ({x + 1.85},2.15) {{\\normalsize\\textbf{{{t}}}\\\\ {d}\\\\ \\large\\textbf{{{n}}} {l['procs']}}};\n"
-              f"  \\draw[fill=ctxFill,draw=ctxLine,line width=1pt,dash pattern=on 4pt off 3pt,rounded corners=0.12cm] ({x + 0.3},0.25) rectangle ({x + 3.4},0.85);\n"
+              f"  \\node[align=center,text width=3.4cm,text=exLine,font=\\small] at ({x + 1.85},2.15) {{\\bfseries {t}\\\\ \\mdseries {d}\\\\ \\bfseries {n} {l['procs']}}};\n"
+              f"  \\draw[fill=ctxFill,draw=ctxLine,line width=1pt,dash pattern=on 4pt off 3pt,rounded corners=0.12cm] ({x + 0.2},0.25) rectangle ({x + 3.5},0.85);\n"
               f"  \\node[align=center,text=ctxText,font=\\footnotesize] at ({x + 1.85},0.55) {{\\textbf{{+ {e}}} · {l['ext']}}};\n")
     return s + FIG_TAIL
 
