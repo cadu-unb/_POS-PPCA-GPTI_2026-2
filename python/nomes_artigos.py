@@ -15,8 +15,8 @@ from wos_query import wait_and_copy  # noqa: E402
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 WOS = PROJECT_ROOT / "_wos"
 DEFAULT_SOURCE = WOS / "Manual 3" / "candidatos-leitura-integral.md"
-# Artigos sem ficha em Manual 1 ou 2 ainda não têm pasta definida; ajuste com --folder.
-DEFAULT_NEW_FOLDER = WOS / "artigos_m3"
+# Pasta dos PDFs do Manual 3; também serve de destino para artigos sem ficha em Manual 1 ou 2.
+DEFAULT_NEW_FOLDER = WOS / "Manual 3" / "artigos" / "pdf"
 
 # Linha de tabela: | n | [Título](https://doi.org/...) (ano ...) | ... | origem |
 ROW = re.compile(
@@ -109,7 +109,7 @@ def main(argv: list[str] | None = None) -> int:
         "--folder",
         type=Path,
         default=DEFAULT_NEW_FOLDER,
-        help="pasta dos artigos sem ficha em Manual 1/2 (padrão: _wos/artigos_m3)",
+        help="pasta dos PDFs do Manual 3 e dos artigos sem ficha (padrão: _wos/Manual 3/artigos/pdf)",
     )
     parser.add_argument("--list", action="store_true", help="só lista todos, sem esperar Enter")
     parser.add_argument("--all", action="store_true", help="inclui os que já têm PDF salvo")

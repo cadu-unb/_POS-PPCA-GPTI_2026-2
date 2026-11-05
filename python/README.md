@@ -1,6 +1,8 @@
 # Montador de buscas da Web of Science
 
-Requer apenas Python 3.10 ou superior. No terminal, a partir da raiz do projeto:
+Requer Python 3.10 ou superior. Só o `xls_to_csv.py` e o `pdf_to_md.py` precisam de bibliotecas
+externas; para instalá-las, rode `python -m pip install -r python/requirements.txt`. No terminal,
+a partir da raiz do projeto:
 
 ```powershell
 python python/wos_query.py --list
@@ -73,7 +75,7 @@ dessas palavras no resultado não prova a ausência do pilar no artigo.
 `wos_query.py`, ele precisa de uma biblioteca externa:
 
 ```powershell
-python -m pip install xlrd
+python -m pip install xlrd   # ou: -r python/requirements.txt
 python python/xls_to_csv.py _wos/tentativa3/saida_wos/8__NOT_0F.xls
 python python/xls_to_csv.py a.xls b.xls -o saida --encoding utf-8-sig
 python python/xls_to_csv.py _wos/tentativa3/saida_wos
@@ -133,7 +135,7 @@ antes dos dois-pontos e sem caracteres proibidos em nomes de arquivo (limite de 
 caracteres). Quando o artigo tem ficha no Manual 1 ou 2, o `NN` é o número da ficha e
 a pasta é a do manual (`01 - Navigating Privacy in Digital Twin.pdf` em `_wos/Manual 2`).
 Os demais são numerados a partir de `01`, na ordem das tabelas, e a pasta mostrada é
-`_wos/artigos_m3`; mude com `--folder` se for outra.
+`_wos/Manual 3/artigos/pdf`, que também é a pasta onde o programa procura os PDFs já salvos; mude com `--folder` se for outra.
 
 Opções: `--all` inclui os já salvos, `--start N` retoma a partir do artigo N (o
 programa informa o número ao ser interrompido com Ctrl+C), `--no-copy` só mostra os
@@ -142,7 +144,7 @@ nomes e `--source` aponta para outro Markdown.
 ## Conversor de PDF para Markdown
 
 `pdf_to_md.py` converte os artigos de `_wos/Manual 3/artigos/pdf` em Markdown
-(`artigos/md`), sem imagens. Precisa de `pip install pymupdf4llm pymupdf-layout`. A conversão tem
+(`artigos/md`), sem imagens. Precisa de `pymupdf4llm` e `pymupdf-layout` (`python/requirements.txt`). A conversão tem
 duas fases porque equações e matemática inline não saem corretas do texto do PDF:
 
 ```powershell

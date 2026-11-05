@@ -1,0 +1,9 @@
+# wos_query.py e nomes_artigos.py usam apenas a biblioteca padrão.
+# Instalação: python -m pip install -r python/requirements.txt
+
+# xls_to_csv.py
+xlrd>=2.0
+
+# pdf_to_md.py
+pymupdf4llm>=2.1
+pymupdf-layout>=2.1
