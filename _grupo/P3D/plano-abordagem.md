@@ -188,3 +188,99 @@ O relatório também precisa de apoio visual. Cada figura entra **imediatamente 
 | **R5 — Quatro concentrações** | Após a apresentação dos sete domínios oficiais. | Cartões Consolidação (GO), Nascimento (SO + SH), Meios (FI + RE) e Quem (ST + RI); em cada um, um acréscimo SIPA destacado como **proposta do curso**. Exibir os totais 9, 9, 9 e 13 dos processos existentes, sem somar processos ainda não definidos dos novos domínios. |
 
 **Especificação mínima de cada figura:** título, uma frase com a mensagem principal, nós/linhas/eixos e seus significados, números a conferir, fonte exata, legenda, texto alternativo e notas de layout para a futura versão. Nas matrizes, usar números e rótulos além da cor; indicar células sem relação documentada sem inventar correspondências. As figuras PT e EN devem conservar os mesmos dados e diferenças de fonte. A versão em Markdown já deve conter o esboço Mermaid, uma tabela visual ou uma descrição suficiente para o grupo avaliar a ideia **antes** de qualquer conversão para LaTeX.
+
+
+---
+
+> **Acréscimo de 04/11.** A seção 12 é **nova** neste plano. Ela descreve só o plano de como inserir o aviso; **não foi aplicado** nos arquivos de `entregas/`.
+
+## 12. Declaração de uso de inteligência artificial
+
+### 12.1 O que deve constar
+
+O grupo decidiu declarar o uso de modelos de IA. O texto indicado pelo grupo, em redação formal, é:
+
+- **Português:** "Para auxiliar na compilação e na identificação de problemas de formatação e de referenciação, foram utilizados os modelos ChatGPT Astral 6 Sol e Sonnet 5.5, ambos no modo alto."
+- **Inglês:** "The ChatGPT Astral 6 Sol and Sonnet 5.5 models, both in high mode, were used to assist with compilation and with the identification of formatting and referencing problems."
+
+Os nomes dos modelos e o modo seguem o que o grupo informou. **Confirmar a grafia oficial dos nomes e das versões antes de publicar.**
+
+### 12.2 Ponto de atenção sob a ótica do pesquisador sênior
+
+O perfil do pesquisador (`.agent/pesquisador.md`) é o de quem trabalha com gestão de projetos alinhada ao PMBOK 8 e espera rigor de relato. Para esse leitor, uma declaração de uso de IA é completa quando diz quais ferramentas foram usadas, para quê e quem responde pelo conteúdo. O texto acima cobre as duas primeiras partes. Há uma questão a decidir:
+
+- **O texto descreve só compilação e verificação de formatação e referências.** No fluxo real deste trabalho, modelos de IA também ajudaram a redigir rascunhos, a pesquisar e organizar a literatura e a traduzir entre português e inglês. Uma declaração que cita só a compilação subestima esse uso, e o leitor atento percebe a diferença quando compara com o texto.
+
+Duas redações possíveis; a escolha é do grupo:
+
+| Opção | Texto em português | Quando usar |
+| --- | --- | --- |
+| **A. Como o grupo indicou** | "Para auxiliar na compilação e na identificação de problemas de formatação e de referenciação, foram utilizados os modelos ChatGPT Astral 6 Sol e Sonnet 5.5, ambos no modo alto." | Se o uso de IA ficou de fato restrito a essas tarefas. |
+| **B. Mais completa** | "Foram utilizados os modelos ChatGPT Astral 6 Sol e Sonnet 5.5, ambos no modo alto, para auxiliar na redação de rascunhos, na tradução entre português e inglês, na compilação e na identificação de problemas de formatação e de referenciação. O grupo revisou o conteúdo e é responsável por ele." | Se a IA também redigiu ou traduziu trechos. A última frase só pode entrar se for verdadeira: **confirmar com o grupo**. |
+
+### 12.3 Como deixar o aviso visível
+
+Regras para os dois formatos:
+
+- **Um único trecho isolado** por arquivo, nunca espalhado pelo texto.
+- **Posição de maior visibilidade:** no relatório, logo depois do bloco de identificação e antes do Resumo; no pôster, em faixa própria no rodapé; nas lições aprendidas, logo abaixo do título.
+- **Moldura e título próprios**, em negrito, para não se confundir com texto corrente.
+- **Mesmo texto nas duas línguas**, com a tradução da seção 12.1.
+
+**Em Markdown**, o bloco usa marcadores de comentário para ser localizado e removido com facilidade:
+
+```markdown
+<!-- AVISO-IA:INICIO (trecho único; apagar tudo entre os marcadores desativa o aviso) -->
+---
+
+> ### AVISO — DECLARAÇÃO DE USO DE INTELIGÊNCIA ARTIFICIAL
+>
+> **Para auxiliar na compilação e na identificação de problemas de formatação e de referenciação, foram utilizados os modelos ChatGPT Astral 6 Sol e Sonnet 5.5, ambos no modo alto.**
+
+---
+<!-- AVISO-IA:FIM -->
+```
+
+Para localizar o trecho em todos os arquivos: `grep -rn "AVISO-IA" _grupo/*/entregas`. A versão em inglês usa o título "NOTICE — STATEMENT ON THE USE OF ARTIFICIAL INTELLIGENCE" e os mesmos marcadores.
+
+**Em LaTeX**, o aviso é um ambiente que se liga e desliga com uma chave. Código a colocar no preâmbulo (ainda não testado; o grupo compila e o ajuste, se preciso, é feito no `.tex`):
+
+```latex
+% --- Declaração de uso de IA: ambiente com chave liga/desliga ---
+\usepackage{comment}
+\usepackage[most]{tcolorbox}
+\newif\ifavisoia
+\ifdefined\SemAvisoIA   % compilar com: pdflatex "\def\SemAvisoIA{}\input{arquivo}"
+  \avisoiafalse
+\else
+  \avisoiatrue          % para desativar de vez: trocar por \avisoiafalse
+\fi
+\ifavisoia
+  \newtcolorbox{declaracaoia}{%
+    colback=yellow!12, colframe=black!75, boxrule=1.2pt, arc=2pt,
+    left=6pt, right=6pt, top=4pt, bottom=4pt,
+    fonttitle=\bfseries, fontupper=\small,
+    title={Declaração de uso de inteligência artificial}}  % EN: Statement on the use of artificial intelligence
+\else
+  \excludecomment{declaracaoia}   % ignora o conteúdo quando desativado
+\fi
+```
+
+Uso no corpo do documento:
+
+```latex
+\begin{declaracaoia}
+Para auxiliar na compilação e na identificação de problemas de formatação e de referenciação,
+foram utilizados os modelos ChatGPT Astral 6 Sol e Sonnet 5.5, ambos no modo alto.
+\end{declaracaoia}
+```
+
+Observações para a conversão:
+- O ambiente depende dos pacotes `comment` e `tcolorbox` (este vem em `texlive-latex-extra`, que já foi pedido na instalação do grupo). Se o `tcolorbox` der conflito com a classe `abntex2`, a alternativa simples é trocar a caixa por `\fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{...}}`, mantendo a chave `\ifavisoia`.
+- No **pôster**, usar a mesma definição com `fontupper=\footnotesize` e largura total, em faixa no rodapé, para o aviso continuar visível sem tomar espaço das figuras.
+- Com a chave desligada, **nada** do aviso aparece, nem a moldura nem o texto. Antes de enviar, conferir qual estado está ativo.
+- Cada arquivo (relatório, pôster e lições, em português e em inglês) recebe o ambiente com o texto na língua correspondente. Para o inglês, trocar o título da caixa e o texto pela versão da seção 12.1.
+
+### 12.4 Quando aplicar
+
+Por ora, **só este plano registra a decisão**. Aplicar no Markdown dos arquivos de `entregas/` e, depois, no LaTeX quando o grupo escolher a opção A ou B da seção 12.2 e confirmar os nomes dos modelos.
