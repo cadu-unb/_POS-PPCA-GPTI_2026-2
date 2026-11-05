@@ -247,7 +247,27 @@ def table_tex(rows, cap, ctx, label):
         vals = [len(re.sub(r"[*\[\]]", "", r[c])) for r in body if c < len(r)] + [len(header[c])]
         lens.append(max(6, sum(vals) / len(vals)) ** 0.75)
     tot = sum(lens)
-    w = [int(round(1000 * x / tot)) for x in lens]
+    w = [1000 * x / tot for x in lens]
+    # largura mínima por coluna: a maior palavra (cabeçalho em negrito) tem de caber sem estourar
+    mins = []
+    for c in range(nc):
+        words = [len(re.sub(r"[*\[\]`]", "", x)) for r in [header] + body if c < len(r) for x in r[c].split()]
+        L_ = max(words + [4])
+        mm = L_ * (1.95 if nc >= 4 else 2.1) + 5.0  # mm; \footnotesize (>=4 colunas) ou \small
+        mins.append(1000 * mm / 160.0)
+    for _ in range(6):
+        low = [c for c in range(nc) if w[c] < mins[c]]
+        if not low:
+            break
+        for c in low:
+            w[c] = mins[c]
+        free = [c for c in range(nc) if c not in low]
+        excess = sum(w) - 1000
+        if free and excess > 0:
+            tf = sum(w[c] for c in free)
+            for c in free:
+                w[c] -= excess * w[c] / tf
+    w = [int(round(x)) for x in w]
     w[-1] += 1000 - sum(w)
     right = [bool(re.match(r"^[-:]+:$", rows[1][c].strip())) for c in range(nc)]
     align = [r"\raggedleft\arraybackslash" if right[c] else r"\raggedright\arraybackslash" for c in range(nc)]
@@ -354,6 +374,8 @@ def preamble(lang, keymap, title_comment):
 \setlength{{\emergencystretch}}{{3em}}
 \setcounter{{secnumdepth}}{{3}}
 \setcounter{{tocdepth}}{{3}}
+% Títulos de seção em caixa alta sem hifenização (evita "PROCES-SOS")
+\setsecheadstyle{{\hyphenpenalty=10000 \exhyphenpenalty=10000 \raggedright\ABNTEXsectionfont\ABNTEXsectionfontsize\ABNTEXsectionupperifneeded}}
 \renewcommand{{\contentsname}}{{{c['contents']}}}
 \renewcommand{{\listfigurename}}{{{c['listfig']}}}
 \renewcommand{{\listtablename}}{{{c['listtab']}}}
@@ -496,11 +518,11 @@ def build_report(lang):
         return "\n".join(lines)
 
     if lang == "pt":
-        out += [resumo_env(own, ctx), "", resumo_env(oth, Ctx(other_keymap), "Abstract", "english")]
+        out += [resumo_env(own, ctx), "", r"\clearpage", "", resumo_env(oth, Ctx(other_keymap), "Abstract", "english")]
     else:
-        out += [resumo_env(own, ctx, "Abstract"), "", resumo_env(oth, Ctx(other_keymap), "Resumo", "brazilian")]
-    out += ["", r"\clearpage", "", r"\tableofcontents", r"\clearpage", r"\listoffigures", r"\clearpage",
-            r"\listoftables", r"\clearpage", siglas_block(lang)]
+        out += [resumo_env(own, ctx, "Abstract"), "", r"\clearpage", "", resumo_env(oth, Ctx(other_keymap), "Resumo", "brazilian")]
+    out += ["", r"\clearpage", "", r"\tableofcontents*", r"\clearpage", r"\listoffigures*", r"\clearpage",
+            r"\listoftables*", r"\clearpage", siglas_block(lang), r"\setcounter{table}{0}"]
     out += [r"\begin{flushleft}\small\SingleSpacing", r"\noindent\textbf{%s.} " % c["nota"] + para_text(meta[1], ctx),
             r"\end{flushleft}", r"\vspace{\onelineskip}"]
 
@@ -531,7 +553,10 @@ def build_report(lang):
             if re.match(r"^\*\*(Figura|Figure) \d+", b[1][0]):
                 pending_fig = " ".join(x.strip() for x in b[1])
                 continue
-            out += ["", para_text(b[1], ctx)]
+            if all(x.startswith("- ") for x in b[1]):
+                out += ["", r"\begin{itemize}"] + [r"\item " + inline(x[2:].strip(), ctx) for x in b[1]] + [r"\end{itemize}"]
+            else:
+                out += ["", para_text(b[1], ctx)]
         elif t in ("fence", "table") and pending_fig is not None:
             m = re.match(r"^\*\*(?:Figura|Figure) (\d+) — (.+?)\*\*\s*(.*)$", pending_fig)
             if not m:
@@ -633,7 +658,7 @@ FIG_LABELS = {
         cards=[("Consolidação", "Governança", "9"), ("Nascimento", "Escopo + Cronograma", "9"),
                ("Meios", "Finanças + Recursos", "9"), ("Quem", "Partes Interessadas + Riscos", "13")],
         procs="processos", ext="em análise", exts=["A", "S", "I", "P"],
-        l1="Camada 1 · Princípios (mentalidade)", pa="Proativa", pb="De responsabilidade", pc="Orientada a valor",
+        l1="Camada 1 · Princípios (mentalidade)", l2="Camada 2 · Ajuste (tailoring)", pa="Proativa", pb="De responsabilidade", pc="Orientada a valor",
         tl="TAILORING", tl2="abordagem · processos · engajamento", cyc="Ciclo de quatro passos",
         l3="Camada 3 · Estrutura de trabalho", af="5 áreas de foco", dd="7 domínios · 40 processos",
         orient="orientam", adjusts="ajusta a aplicação",
@@ -650,7 +675,7 @@ FIG_LABELS = {
         cards=[("Consolidation", "Governance", "9"), ("Birth", "Scope + Schedule", "9"),
                ("Means", "Finance + Resources", "9"), ("Who", "Stakeholders + Risk", "13")],
         procs="processes", ext="under analysis", exts=["A", "S", "I", "P"],
-        l1="Layer 1 · Principles (mindset)", pa="Proactive", pb="Ownership", pc="Value-driven",
+        l1="Layer 1 · Principles (mindset)", l2="Layer 2 · Adjustment (tailoring)", pa="Proactive", pb="Ownership", pc="Value-driven",
         tl="TAILORING", tl2="approach · processes · engagement", cyc="Four-step cycle",
         l3="Layer 3 · Work structure", af="5 Focus Areas", dd="7 domains · 40 processes",
         orient="guide", adjusts="adjusts application",
@@ -705,27 +730,48 @@ def fig5(l):
     return s + FIG_TAIL
 
 
+def _narrow(s, w):
+    """Reduz a largura da tela do padrão (16 cm) para w cm."""
+    return s.replace("paperwidth=16cm", f"paperwidth={w}cm").replace("(0,0) rectangle (16,", f"(0,0) rectangle ({w},")
+
+
 def figP1(l):
-    s = FIG_HEAD.replace("@@H@@", "8.4")
-    s += (f"  \\node[anchor=west,text=exLine] at (0.2,8.05) {{\\footnotesize\\textbf{{{l['l1']}}}}};\n")
-    for x, a, b in [(0.2, l["pa"], "1AHV · 3QPD"), (5.5, l["pb"], "4BAL · 6BEC"), (10.8, l["pc"], "2FOV · 5SPA")]:
-        s += (f"  \\draw[fill=exFill,draw=exLine,line width=1.1pt,rounded corners=0.2cm] ({x},6.1) rectangle ({x + 5.0},7.7);\n"
-              f"  \\node[align=center,text=exLine] at ({x + 2.5},6.9) {{\\textbf{{{a}}}\\\\ {b}}};\n")
-    s += (f"  \\draw[draw=exLine,line width=1.2pt,{ARR}] (8.0,6.1) -- (8.0,5.55);\n"
-          f"  \\node[text=exLine,fill=white,inner sep=2pt,anchor=west] at (8.15,5.85) {{\\footnotesize {l['orient']}}};\n"
-          "  \\draw[fill=prFill,draw=prLine,line width=1.6pt,rounded corners=0.25cm] (3.2,3.5) rectangle (12.8,5.5);\n"
-          f"  \\node[align=center,text=prText] at (8.0,4.5) {{\\large\\textbf{{{l['tl']}}}\\\\ {l['tl2']}\\\\ \\footnotesize {l['cyc']}: 1 $\\rightarrow$ 2 $\\rightarrow$ 3 $\\rightarrow$ 4}};\n"
-          f"  \\draw[draw=exLine,line width=1.2pt,{ARR}] (8.0,3.5) -- (8.0,2.55);\n"
-          f"  \\node[text=exLine,fill=white,inner sep=2pt,anchor=west] at (8.15,3.0) {{\\footnotesize {l['adjusts']}}};\n"
-          f"  \\node[anchor=west,text=exLine] at (0.2,2.3) {{\\footnotesize\\textbf{{{l['l3']}}}}};\n"
-          "  \\draw[fill=exFill,draw=exLine,line width=1.1pt,rounded corners=0.2cm] (0.2,0.2) rectangle (7.6,1.9);\n"
-          "  \\draw[fill=exFill,draw=exLine,line width=1.1pt,rounded corners=0.2cm] (8.4,0.2) rectangle (15.8,1.9);\n"
-          f"  \\node[text=exLine] at (3.9,1.05) {{\\textbf{{{l['af']}}}}};\n"
-          f"  \\node[text=exLine] at (12.1,1.05) {{\\textbf{{{l['dd']}}}}};\n")
+    """Pôster: relações entre as peças. Tela de 11 cm (ampliada ~1,2x na coluna do pôster), fontes maiores."""
+    s = _narrow(FIG_HEAD.replace("@@H@@", "10.2"), 11)
+    T = "font=\normalsize"
+    s += f"  \node[anchor=west,text=exLine,{T}] at (0,9.95) {{\textbf{{{l['l1']}}}}};\n"
+    for k, (a, b) in enumerate([(l["pa"], "1AHV · 3QPD"), (l["pb"], "4BAL · 6BEC"), (l["pc"], "2FOV · 5SPA")]):
+        y = 8.7 - k * 1.05
+        s += (f"  \draw[fill=exFill,draw=exLine,line width=1.1pt,rounded corners=0.2cm] (0,{y}) rectangle (11,{y + 0.9});\n"
+              f"  \node[text=exLine,{T}] at (5.5,{y + 0.45}) {{\textbf{{{a}}} \ $\cdot$ \ {b}}};\n")
+    s += (f"  \draw[draw=exLine,line width=1.3pt,{ARR}] (9.0,6.6) -- (9.0,5.7);\n"
+          f"  \node[text=exLine,fill=white,inner sep=2pt,anchor=east,{T}] at (8.85,6.15) {{{l['orient']}}};\n"
+          f"  \node[anchor=west,text=exLine,{T}] at (0,5.45) {{\textbf{{{l['l2']}}}}};\n"
+          "  \draw[fill=prFill,draw=prLine,line width=1.6pt,rounded corners=0.25cm] (0,3.45) rectangle (11,5.1);\n"
+          f"  \node[align=center,text=prText,{T}] at (5.5,4.27) {{\Large\textbf{{{l['tl']}}}\\ {l['tl2']}\\ {l['cyc']}: 1 $\rightarrow$ 2 $\rightarrow$ 3 $\rightarrow$ 4}};\n"
+          f"  \draw[draw=exLine,line width=1.3pt,{ARR}] (9.0,3.45) -- (9.0,2.65);\n"
+          f"  \node[text=exLine,fill=white,inner sep=2pt,anchor=east,{T}] at (8.85,3.05) {{{l['adjusts']}}};\n"
+          f"  \node[anchor=west,text=exLine,{T}] at (0,2.4) {{\textbf{{{l['l3']}}}}};\n"
+          "  \draw[fill=exFill,draw=exLine,line width=1.1pt,rounded corners=0.2cm] (0,0.1) rectangle (5.3,1.8);\n"
+          "  \draw[fill=exFill,draw=exLine,line width=1.1pt,rounded corners=0.2cm] (5.7,0.1) rectangle (11,1.8);\n"
+          f"  \node[align=center,text=exLine,{T}] at (2.65,0.95) {{\textbf{{{l['af']}}}}};\n"
+          f"  \node[align=center,text=exLine,{T}] at (8.35,0.95) {{\textbf{{{l['dd']}}}}};\n")
     return s + FIG_TAIL
 
 
-FIGS = [("Fig1", fig1), ("Fig4", fig4), ("Fig5", fig5), ("FigP1", figP1)]
+def figP3(l):
+    """Pôster: quatro concentrações em largura total (16 cm -> ~1,7x), fontes maiores, rótulo de extensão dentro do cartão."""
+    s = FIG_HEAD.replace("@@H@@", "3.5")
+    for k, ((t, d, n), e) in enumerate(zip(l["cards"], l["exts"])):
+        x = 0.1 + k * 3.97
+        s += (f"  \draw[fill=exFill,draw=exLine,line width=1.2pt,rounded corners=0.2cm] ({x},0.1) rectangle ({x + 3.7},3.4);\n"
+              f"  \node[align=center,text width=3.4cm,text=exLine,font=\small] at ({x + 1.85},2.15) {{\normalsize\textbf{{{t}}}\\ {d}\\ \large\textbf{{{n}}} {l['procs']}}};\n"
+              f"  \draw[fill=ctxFill,draw=ctxLine,line width=1pt,dash pattern=on 4pt off 3pt,rounded corners=0.12cm] ({x + 0.3},0.25) rectangle ({x + 3.4},0.85);\n"
+              f"  \node[align=center,text=ctxText,font=\footnotesize] at ({x + 1.85},0.55) {{\textbf{{+ {e}}} · {l['ext']}}};\n")
+    return s + FIG_TAIL
+
+
+FIGS = [("Fig1", fig1), ("Fig4", fig4), ("Fig5", fig5), ("FigP1", figP1), ("FigP3", figP3)]
 
 
 def main():
