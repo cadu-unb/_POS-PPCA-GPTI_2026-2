@@ -6,7 +6,7 @@
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta,shapes.geometric}
 
-\geometry{paperwidth=16cm,paperheight=6.9cm,margin=0cm}
+\geometry{paperwidth=13cm,paperheight=6.5cm,margin=0cm}
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
 
@@ -23,23 +23,23 @@
 \begin{document}
 \noindent
 \begin{tikzpicture}[x=1cm,y=1cm,font=\small]
-  \path[use as bounding box] (0,0) rectangle (16,6.9);
-  \draw[fill=exFill!50,draw=exLine,line width=1.2pt,rounded corners=0.2cm] (0.3,2.7) rectangle (4.6,4.7);
-  \node[align=center,text=exLine] at (2.4499999999999997,3.7) {\textbf{Digital mobilization}\\ registration and route};
-  \draw[fill=exFill!50,draw=exLine,line width=1.2pt,rounded corners=0.2cm] (5.85,2.7) rectangle (10.149999999999999,4.7);
-  \node[align=center,text=exLine] at (8.0,3.7) {\textbf{Recycling}\\ operations and indicators};
-  \draw[fill=exFill!50,draw=exLine,line width=1.2pt,rounded corners=0.2cm] (11.4,2.7) rectangle (15.7,4.7);
-  \node[align=center,text=exLine] at (13.55,3.7) {\textbf{Final disposal}\\ retention or deletion};
-  \draw[draw=ctxLine,line width=1.2pt,-{Triangle[length=5pt,width=5pt]}] (4.6,3.7) -- (5.85,3.7);
-  \draw[draw=ctxLine,line width=1.2pt,-{Triangle[length=5pt,width=5pt]}] (10.15,3.7) -- (11.4,3.7);
-  \node[text=ctxText,align=center] at (5.22,5.05) {\scriptsize sorted materials};
-  \node[text=ctxText,align=center] at (10.78,5.05) {\scriptsize tailings and media};
-  \draw[draw=exLine,line width=1.1pt,dash pattern=on 4pt off 3pt,-{Triangle[length=5pt,width=5pt]}] (8.0,4.7) -- (8.0,6.0) -- (2.45,6.0) -- (2.45,4.7);
-  \node[text=exLine,fill=white,inner sep=2pt] at (5.2,6.0) {\footnotesize quality by route};
-  \draw[fill=prFill,draw=prLine,line width=1.4pt,rounded corners=0.2cm] (0.3,0.2) rectangle (15.7,2.2);
-  \node[text=prText,align=center,text width=3.4cm] at (2.2,1.2) {\footnotesize\textbf{Whose data is it?}};
-  \node[text=prText,align=center,text width=3.4cm] at (6.050000000000001,1.2) {\footnotesize\textbf{For what purpose?}};
-  \node[text=prText,align=center,text width=3.4cm] at (9.9,1.2) {\footnotesize\textbf{Who receives it?}};
-  \node[text=prText,align=center,text width=3.4cm] at (13.75,1.2) {\footnotesize\textbf{What happens to it?}};
+  \path[use as bounding box] (0,0) rectangle (13,6.5);
+  \draw[fill=exFill!50,draw=exLine,line width=1.2pt,rounded corners=0.2cm] (0.2,2.7) rectangle (4.0,4.7);
+  \node[align=center,text=exLine,text width=3.4cm] at (2.1,3.7) {\normalsize\textbf{Digital mobilization}\\ registration and route};
+  \draw[fill=exFill!50,draw=exLine,line width=1.2pt,rounded corners=0.2cm] (4.6,2.7) rectangle (8.399999999999999,4.7);
+  \node[align=center,text=exLine,text width=3.4cm] at (6.5,3.7) {\normalsize\textbf{Recycling}\\ operations and indicators};
+  \draw[fill=exFill!50,draw=exLine,line width=1.2pt,rounded corners=0.2cm] (9.0,2.7) rectangle (12.8,4.7);
+  \node[align=center,text=exLine,text width=3.4cm] at (10.9,3.7) {\normalsize\textbf{Final disposal}\\ retention or deletion};
+  \draw[draw=ctxLine,line width=1.2pt,-{Triangle[length=5pt,width=5pt]}] (4.0,3.7) -- (4.6,3.7);
+  \draw[draw=ctxLine,line width=1.2pt,-{Triangle[length=5pt,width=5pt]}] (8.4,3.7) -- (9.0,3.7);
+  \node[text=ctxText,align=center] at (4.3,5.1) {\small sorted materials};
+  \node[text=ctxText,align=center] at (8.7,5.1) {\small tailings and media};
+  \draw[draw=exLine,line width=1.1pt,dash pattern=on 4pt off 3pt,-{Triangle[length=5pt,width=5pt]}] (6.5,4.7) -- (6.5,6.0) -- (2.1,6.0) -- (2.1,4.7);
+  \node[text=exLine,fill=white,inner sep=2pt] at (4.3,6.0) {\small quality by route};
+  \draw[fill=prFill,draw=prLine,line width=1.4pt,rounded corners=0.2cm] (0.2,0.2) rectangle (12.8,2.2);
+  \node[text=prText,align=center,text width=2.9cm] at (1.75,1.2) {\normalsize\textbf{Whose data is it?}};
+  \node[text=prText,align=center,text width=2.9cm] at (4.9,1.2) {\normalsize\textbf{For what purpose?}};
+  \node[text=prText,align=center,text width=2.9cm] at (8.05,1.2) {\normalsize\textbf{Who receives it?}};
+  \node[text=prText,align=center,text width=2.9cm] at (11.2,1.2) {\normalsize\textbf{What happens to it?}};
 \end{tikzpicture}
 \end{document}

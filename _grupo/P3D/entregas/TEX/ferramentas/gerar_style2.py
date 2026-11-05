@@ -136,6 +136,14 @@ def move_captions(body: str) -> str:
     return re.sub(r"\\begin\{figure\}.*?\\end\{figure\}", fix, body, flags=re.S)
 
 
+def booktabs_rules(body: str) -> str:
+    """\\hline -> filetes booktabs (topo, abaixo do cabeçalho, fim), como nas tabelas da P2A."""
+    body = re.sub(r"\\hline\n(\\textbf\{[^\n]*\\\\\n)\\hline\n(\\endfirsthead|\\endhead)",
+                  lambda m: "\\toprule\n" + m.group(1) + "\\midrule\n" + m.group(2), body)
+    body = re.sub(r"\\hline\n(\\endfoot|\\endlastfoot)", lambda m: "\\bottomrule\n" + m.group(1), body)
+    return body.replace("\\hline", "\\midrule")
+
+
 def convert(src: Path, lang: str) -> str:
     t = L[lang]
     text = src.read_text(encoding="utf-8")
@@ -163,6 +171,7 @@ def convert(src: Path, lang: str) -> str:
     body = re.sub(r"\\setcounter\{table\}\{0\}\s*", "", body)
     body = re.sub(r"\\section\{(.*)\}", lambda m: "\\section{" + sentence_case(m.group(1)) + "}", body)
     body = move_captions(body)
+    body = booktabs_rules(body)
 
     resumos = [re.sub(r"\\begin\{resumo\}(\[[^\]]*\])?", lambda m: "\\begin{resumo}" + (m.group(1) or ""), r) for r in resumos]
 
@@ -216,6 +225,8 @@ def convert(src: Path, lang: str) -> str:
 \\setcounter{{secnumdepth}}{{3}}
 \\setcounter{{tocdepth}}{{2}}
 \\renewcommand{{\\arraystretch}}{{1.2}}
+\\setlength{{\\LTpre}}{{6pt}}
+\\setlength{{\\LTpost}}{{0pt}}
 
 \\titleformat{{\\section}}{{\\sffamily\\Large\\color{{DarkBlue}}}}{{\\thesection}}{{0.8em}}{{}}
 \\titleformat{{\\subsection}}{{\\sffamily\\large\\color{{DarkBlue}}}}{{\\thesubsection}}{{0.8em}}{{}}

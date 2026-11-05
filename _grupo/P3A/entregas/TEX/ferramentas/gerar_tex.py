@@ -542,7 +542,7 @@ def build_report(lang: str) -> str:
             source = inline(source, ctx) + "."
             out += ["", r"\begin{figure}[!htbp]", r"\centering",
                     r"\caption{" + inline(title, ctx) + r"}\label{fig:%s}" % num,
-                    r"\includegraphics[width=\linewidth]{out/Fig%s%s.pdf}" % (num, c["fig_dir"]),
+                    r"\includegraphics[width=%s]{out/Fig%s%s.pdf}" % (FIG_WIDTH.get(num, r"\linewidth"), num, c["fig_dir"]),
                     r"\fontetab{" + source + "}", r"\end{figure}"]
             if interp:
                 out += ["", inline(interp, ctx)]
@@ -617,6 +617,10 @@ FIG_HEAD = r"""\documentclass[11pt]{article}
   \path[use as bounding box] (0,0) rectangle (16,@@H@@);
 """
 FIG_TAIL = "\\end{tikzpicture}\n\\end{document}\n"
+
+# Largura de inclusão por figura. As figuras 4 e 5 são desenhadas com 13 cm e entram em tamanho
+# natural (fonte legível); as 1 e 2 ficam um pouco menores para não formarem página só de figuras.
+FIG_WIDTH = {"1": r"0.9\linewidth", "2": r"0.9\linewidth", "4": "13cm", "5": "13cm"}
 
 FIG_LABELS = {
     "pt": dict(
@@ -720,44 +724,53 @@ def fig3(l):
     return s + FIG_TAIL
 
 
+def fig_head(h, w=16):
+    """Cabeçalho das figuras com largura própria (w cm). Figuras mais estreitas são incluídas em
+    tamanho natural (width=w cm): o texto da figura fica na escala 1:1 e, portanto, legível."""
+    return FIG_HEAD.replace("@@H@@", str(h)).replace("paperwidth=16cm", f"paperwidth={w}cm") \
+                   .replace("rectangle (16,", f"rectangle ({w},")
+
+
 def fig4(l):
-    s = FIG_HEAD.replace("@@H@@", "7.4")
-    strips = [(l["t1"], 6.2), (l["t2"], 3.8), (l["t3"], 1.4)]
+    # 13 x 6,9 cm, fontes \large/\normalsize; o relatório inclui em width=13cm (escala 1:1)
+    s = fig_head(6.9, 13)
+    strips = [(l["t1"], 5.6), (l["t2"], 3.4), (l["t3"], 1.2)]
     for j, (title, yc) in enumerate(strips):
-        s += (f"  \\node[anchor=west,text=exLine] at (0.2,{yc + 0.95}) {{\\textbf{{{title}}}}};\n"
-              f"  \\draw[fill=ctxFill,draw=ctxLine,line width=0.9pt,rounded corners=0.15cm] (0.4,{yc - 0.55}) rectangle (4.4,{yc + 0.55});\n"
-              f"  \\node[text=ctxText] at (2.4,{yc}) {{\\normalsize {l['phys']}}};\n"
-              f"  \\draw[fill=exFill,draw=exLine,line width=1pt,rounded corners=0.15cm] (11.6,{yc - 0.55}) rectangle (15.6,{yc + 0.55});\n"
-              f"  \\node[text=exLine] at (13.6,{yc}) {{\\normalsize {l['rep']}}};\n")
+        s += (f"  \\node[anchor=west,text=exLine] at (0.2,{yc + 0.95}) {{\\large\\textbf{{{title}}}}};\n"
+              f"  \\draw[fill=ctxFill,draw=ctxLine,line width=0.9pt,rounded corners=0.15cm] (0.2,{yc - 0.55}) rectangle (4.0,{yc + 0.55});\n"
+              f"  \\node[text=ctxText] at (2.1,{yc}) {{\\large {l['phys']}}};\n"
+              f"  \\draw[fill=exFill,draw=exLine,line width=1pt,rounded corners=0.15cm] (9.0,{yc - 0.55}) rectangle (12.8,{yc + 0.55});\n"
+              f"  \\node[text=exLine] at (10.9,{yc}) {{\\large {l['rep']}}};\n")
         if j == 0:
-            s += (f"  \\draw[draw=ctxLine,line width=1.1pt,dash pattern=on 4pt off 3pt,-{{Triangle[length=5pt,width=5pt]}}] (4.4,{yc}) -- (11.6,{yc});\n"
-                  f"  \\node[text=ctxText,fill=white,inner sep=2pt] at (8,{yc}) {{\\normalsize {l['manual']}}};\n")
+            s += (f"  \\draw[draw=ctxLine,line width=1.1pt,dash pattern=on 4pt off 3pt,-{{Triangle[length=5pt,width=5pt]}}] (4.0,{yc}) -- (9.0,{yc});\n"
+                  f"  \\node[text=ctxText,fill=white,inner sep=2pt] at (6.5,{yc}) {{\\normalsize {l['manual']}}};\n")
         elif j == 1:
-            s += (f"  \\draw[draw=exLine,line width=1.2pt,-{{Triangle[length=5pt,width=5pt]}}] (4.4,{yc}) -- (11.6,{yc});\n"
-                  f"  \\node[text=exLine,fill=white,inner sep=2pt] at (8,{yc}) {{\\normalsize {l['auto']}}};\n")
+            s += (f"  \\draw[draw=exLine,line width=1.2pt,-{{Triangle[length=5pt,width=5pt]}}] (4.0,{yc}) -- (9.0,{yc});\n"
+                  f"  \\node[text=exLine,fill=white,inner sep=2pt] at (6.5,{yc}) {{\\normalsize {l['auto']}}};\n")
         else:
-            s += (f"  \\draw[draw=exLine,line width=1.2pt,-{{Triangle[length=5pt,width=5pt]}}] (4.4,{yc + 0.25}) -- (11.6,{yc + 0.25});\n"
-                  f"  \\draw[draw=prLine,line width=1.4pt,-{{Triangle[length=5pt,width=5pt]}}] (11.6,{yc - 0.25}) -- (4.4,{yc - 0.25});\n"
-                  f"  \\node[text=exLine,fill=white,inner sep=2pt] at (8,{yc + 0.25}) {{\\normalsize {l['auto']}}};\n"
-                  f"  \\node[text=prText,fill=white,inner sep=2pt] at (8,{yc - 0.25}) {{\\normalsize {l['back']}}};\n")
+            s += (f"  \\draw[draw=exLine,line width=1.2pt,-{{Triangle[length=5pt,width=5pt]}}] (4.0,{yc + 0.25}) -- (9.0,{yc + 0.25});\n"
+                  f"  \\draw[draw=prLine,line width=1.4pt,-{{Triangle[length=5pt,width=5pt]}}] (9.0,{yc - 0.25}) -- (4.0,{yc - 0.25});\n"
+                  f"  \\node[text=exLine,fill=white,inner sep=2pt] at (6.5,{yc + 0.25}) {{\\normalsize {l['auto']}}};\n"
+                  f"  \\node[text=prText,fill=white,inner sep=2pt] at (6.5,{yc - 0.25}) {{\\normalsize {l['back']}}};\n")
     return s + FIG_TAIL
 
 
 def fig5(l):
-    s = FIG_HEAD.replace("@@H@@", "6.9")
-    boxes = [(0.3, l["s1"], l["s1b"]), (5.85, l["s2"], l["s2b"]), (11.4, l["s3"], l["s3b"])]
+    # 13 x 6,5 cm, texto em \normalsize/\small (antes \footnotesize/\scriptsize); incluída em width=13cm
+    s = fig_head(6.5, 13)
+    boxes = [(0.2, l["s1"], l["s1b"]), (4.6, l["s2"], l["s2b"]), (9.0, l["s3"], l["s3b"])]
     for x, a, b in boxes:
-        s += (f"  \\draw[fill=exFill!50,draw=exLine,line width=1.2pt,rounded corners=0.2cm] ({x},2.7) rectangle ({x + 4.3},4.7);\n"
-              f"  \\node[align=center,text=exLine] at ({x + 2.15},3.7) {{\\textbf{{{a}}}\\\\ {b}}};\n")
-    s += ("  \\draw[draw=ctxLine,line width=1.2pt,-{Triangle[length=5pt,width=5pt]}] (4.6,3.7) -- (5.85,3.7);\n"
-          "  \\draw[draw=ctxLine,line width=1.2pt,-{Triangle[length=5pt,width=5pt]}] (10.15,3.7) -- (11.4,3.7);\n"
-          f"  \\node[text=ctxText,align=center] at (5.22,5.05) {{\\scriptsize {l['mat']}}};\n"
-          f"  \\node[text=ctxText,align=center] at (10.78,5.05) {{\\scriptsize {l['rej']}}};\n"
-          "  \\draw[draw=exLine,line width=1.1pt,dash pattern=on 4pt off 3pt,-{Triangle[length=5pt,width=5pt]}] (8.0,4.7) -- (8.0,6.0) -- (2.45,6.0) -- (2.45,4.7);\n"
-          f"  \\node[text=exLine,fill=white,inner sep=2pt] at (5.2,6.0) {{\\footnotesize {l['qual']}}};\n"
-          "  \\draw[fill=prFill,draw=prLine,line width=1.4pt,rounded corners=0.2cm] (0.3,0.2) rectangle (15.7,2.2);\n")
+        s += (f"  \\draw[fill=exFill!50,draw=exLine,line width=1.2pt,rounded corners=0.2cm] ({x},2.7) rectangle ({x + 3.8},4.7);\n"
+              f"  \\node[align=center,text=exLine,text width=3.4cm] at ({x + 1.9},3.7) {{\\normalsize\\textbf{{{a}}}\\\\ {b}}};\n")
+    s += ("  \\draw[draw=ctxLine,line width=1.2pt,-{Triangle[length=5pt,width=5pt]}] (4.0,3.7) -- (4.6,3.7);\n"
+          "  \\draw[draw=ctxLine,line width=1.2pt,-{Triangle[length=5pt,width=5pt]}] (8.4,3.7) -- (9.0,3.7);\n"
+          f"  \\node[text=ctxText,align=center] at (4.3,5.1) {{\\small {l['mat']}}};\n"
+          f"  \\node[text=ctxText,align=center] at (8.7,5.1) {{\\small {l['rej']}}};\n"
+          "  \\draw[draw=exLine,line width=1.1pt,dash pattern=on 4pt off 3pt,-{Triangle[length=5pt,width=5pt]}] (6.5,4.7) -- (6.5,6.0) -- (2.1,6.0) -- (2.1,4.7);\n"
+          f"  \\node[text=exLine,fill=white,inner sep=2pt] at (4.3,6.0) {{\\small {l['qual']}}};\n"
+          "  \\draw[fill=prFill,draw=prLine,line width=1.4pt,rounded corners=0.2cm] (0.2,0.2) rectangle (12.8,2.2);\n")
     for k, q in enumerate(l["q"]):
-        s += f"  \\node[text=prText,align=center,text width=3.4cm] at ({2.2 + k * 3.85},1.2) {{\\footnotesize\\textbf{{{q}}}}};\n"
+        s += f"  \\node[text=prText,align=center,text width=2.9cm] at ({1.75 + k * 3.15},1.2) {{\\normalsize\\textbf{{{q}}}}};\n"
     return s + FIG_TAIL
 
 

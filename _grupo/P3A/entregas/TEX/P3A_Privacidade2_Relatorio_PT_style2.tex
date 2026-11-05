@@ -61,6 +61,8 @@
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{2}
 \renewcommand{\arraystretch}{1.2}
+\setlength{\LTpre}{6pt}
+\setlength{\LTpost}{0pt}
 
 \titleformat{\section}{\sffamily\Large\color{DarkBlue}}{\thesection}{0.8em}{}
 \titleformat{\subsection}{\sffamily\large\color{DarkBlue}}{\thesubsection}{0.8em}{}
@@ -213,17 +215,17 @@ Há ainda referências dispersas no PMBOK 8: leis de proteção de dados podem l
 \begingroup\SingleSpacing\small
 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*240/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*281/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*479/1000\relax}@{}}
 \caption{O que a nova organização precisa tornar observável}\label{tab:t1}\\
-\hline
+\toprule
 \textbf{Questão de gestão} & \textbf{Cobertura já disponível} & \textbf{Evidência adicional proposta}\\
-\hline
+\midrule
 \endfirsthead
-\hline
+\toprule
 \textbf{Questão de gestão} & \textbf{Cobertura já disponível} & \textbf{Evidência adicional proposta}\\
-\hline
+\midrule
 \endhead
-\hline
+\bottomrule
 \endfoot
-\hline
+\bottomrule
 \endlastfoot
 Quem pode ser afetado pelo tratamento? & Identificar e engajar partes interessadas & Categorias de titulares, inclusive pessoas sem participação ativa no projeto\\[3pt]
 Que evento pode prejudicar alguém? & Identificar, analisar e monitorar riscos & Cenários de dano à pessoa associados a operações de dados, com critérios próprios\\[3pt]
@@ -272,7 +274,7 @@ Uma versão posterior deveria passar por revisão de profissionais de projetos, 
 \begin{figure}[!htbp]
 \centering
 
-\includegraphics[width=\linewidth]{out/Fig1_PT.pdf}
+\includegraphics[width=0.9\linewidth]{out/Fig1_PT.pdf}
 \caption{Posição do domínio proposto entre as concentrações}\label{fig:1}
 \fontetab{Elaborado pelos autores (2026).}
 \end{figure}
@@ -285,17 +287,17 @@ Como nos domínios do \textit{Guide}, a seção começa pelos conceitos que os p
 \begingroup\SingleSpacing\small
 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*193/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*807/1000\relax}@{}}
 \caption{Conceitos-chave e sentido adotado}\label{tab:t2}\\
-\hline
+\toprule
 \textbf{Conceito} & \textbf{Sentido adotado}\\
-\hline
+\midrule
 \endfirsthead
-\hline
+\toprule
 \textbf{Conceito} & \textbf{Sentido adotado}\\
-\hline
+\midrule
 \endhead
-\hline
+\bottomrule
 \endfoot
-\hline
+\bottomrule
 \endlastfoot
 \textbf{Dado pessoal} & Informação relacionada a pessoa natural identificada ou identificável.\\[3pt]
 \textbf{Titular} & Pessoa natural a quem se referem os dados. Pode não participar do projeto nem conhecer o tratamento.\\[3pt]
@@ -316,17 +318,17 @@ Os códigos \textbf{P1–P8} abaixo identificam apenas esta proposta. As entrada
 \begingroup\SingleSpacing\footnotesize
 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*204/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*90/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*524/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*182/1000\relax}@{}}
 \caption{Processos propostos para o domínio Privacidade}\label{tab:t3}\\
-\hline
+\toprule
 \textbf{Código e processo proposto} & \textbf{Área de foco principal} & \textbf{Entrada \ensuremath{\rightarrow} decisão/atividade \ensuremath{\rightarrow} saída} & \textbf{Interface com processo existente}\\
-\hline
+\midrule
 \endfirsthead
-\hline
+\toprule
 \textbf{Código e processo proposto} & \textbf{Área de foco principal} & \textbf{Entrada \ensuremath{\rightarrow} decisão/atividade \ensuremath{\rightarrow} saída} & \textbf{Interface com processo existente}\\
-\hline
+\midrule
 \endhead
-\hline
+\bottomrule
 \endfoot
-\hline
+\bottomrule
 \endlastfoot
 \textbf{P1 Identificar titulares e dados pessoais} & Iniciação & Ideia de projeto, fluxos previstos \ensuremath{\rightarrow} reconhecer categorias de pessoas, dados, pontos de coleta e direção dos fluxos \ensuremath{\rightarrow} inventário inicial & \textit{Identify Stakeholders}; \textit{Identify Risks}\\[3pt]
 \textbf{P2 Planejar a gestão de privacidade} & Planejamento & Inventário, objetivos, ambiente jurídico \ensuremath{\rightarrow} definir finalidade, hipótese legal a verificar, papéis, retenção e resposta a titulares \ensuremath{\rightarrow} plano de privacidade & \textit{Plan Risk Management}; \textit{Plan Communications Management}\\[3pt]
@@ -343,7 +345,7 @@ Os códigos \textbf{P1–P8} abaixo identificam apenas esta proposta. As entrada
 \begin{figure}[!htbp]
 \centering
 
-\includegraphics[width=\linewidth]{out/Fig2_PT.pdf}
+\includegraphics[width=0.9\linewidth]{out/Fig2_PT.pdf}
 \caption{Sequência e retorno dos oito processos propostos}\label{fig:2}
 \fontetab{Elaborado pelos autores (2026); correspondências com áreas de foco fundamentadas no PMBOK 8 e propostas pelo grupo.}
 \end{figure}
@@ -372,17 +374,17 @@ Os processos do PMBOK 8 são descritos por entradas, ferramentas e técnicas e s
 \begingroup\SingleSpacing\small
 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*73/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*733/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*194/1000\relax}@{}}
 \caption{Ferramentas e técnicas e fundamentos dos processos propostos}\label{tab:t4}\\
-\hline
+\toprule
 \textbf{Processo} & \textbf{Ferramentas e técnicas (exemplos)} & \textbf{Fundamento}\\
-\hline
+\midrule
 \endfirsthead
-\hline
+\toprule
 \textbf{Processo} & \textbf{Ferramentas e técnicas (exemplos)} & \textbf{Fundamento}\\
-\hline
+\midrule
 \endhead
-\hline
+\bottomrule
 \endfoot
-\hline
+\bottomrule
 \endlastfoot
 \textbf{P1} & Mapeamento de dados e fluxos; entrevistas e oficinas com partes interessadas; análise de documentos de requisitos; classificação dos fluxos por direção (modelo, sombra, gêmeo); juízo especializado & [\refnum{lgpd}, art. 5º] (dado pessoal, titular); [\refnum{kritzinger}]; [\refnum{wang}]\\[3pt]
 \textbf{P2} & Análise de hipótese legal e de finalidade, necessidade e adequação; definição de papéis (matriz de responsabilidades); privacidade desde a concepção & [\refnum{lgpd}, arts. 6º, 7º e 11]; [\refnum{dhinakaran}]\\[3pt]
@@ -402,17 +404,17 @@ O PMBOK 8 pede que processos e domínios sejam adaptados ao contexto [\refnum{pm
 \begingroup\SingleSpacing\small
 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*311/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*154/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*535/1000\relax}@{}}
 \caption{Adaptação do esforço por perfil de projeto}\label{tab:t5}\\
-\hline
+\toprule
 \textbf{Perfil do projeto} & \textbf{Esforço esperado} & \textbf{Exemplos de ajuste}\\
-\hline
+\midrule
 \endfirsthead
-\hline
+\toprule
 \textbf{Perfil do projeto} & \textbf{Esforço esperado} & \textbf{Exemplos de ajuste}\\
-\hline
+\midrule
 \endhead
-\hline
+\bottomrule
 \endfoot
-\hline
+\bottomrule
 \endlastfoot
 \textbf{A. Dados agregados, sem possibilidade razoável de identificar pessoas} & Mínimo, concentrado em demonstrar e revisar essa condição & P1 e P8 curtos; P3 limitado à análise de reidentificação por cruzamento; P7 revisa se houver novos cruzamentos\\[3pt]
 \textbf{B. Dados pessoais comuns, em escala limitada} & Moderado & Plano de privacidade enxuto (P2); avaliação de impacto registrada, RIPD só se justificada (P3); canal simples para titulares (P5)\\[3pt]
@@ -444,17 +446,17 @@ O Digital Twin Consortium define gêmeo digital como \textquotedblleft{}uma repr
 \begingroup\SingleSpacing\footnotesize
 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*126/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*224/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*515/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*135/1000\relax}@{}}
 \caption{Tipos de réplica digital e implicações para a privacidade}\label{tab:t6}\\
-\hline
+\toprule
 \textbf{Tipo de réplica} & \textbf{Fluxo de dados} & \textbf{Implicação para privacidade} & \textbf{Processos mais acionados}\\
-\hline
+\midrule
 \endfirsthead
-\hline
+\toprule
 \textbf{Tipo de réplica} & \textbf{Fluxo de dados} & \textbf{Implicação para privacidade} & \textbf{Processos mais acionados}\\
-\hline
+\midrule
 \endhead
-\hline
+\bottomrule
 \endfoot
-\hline
+\bottomrule
 \endlastfoot
 \textbf{Modelo digital} & Nenhum fluxo automático; atualização manual & Exposição limitada às cargas de dados feitas pela equipe; risco concentrado na origem dos dados & P1, P2, P8\\[3pt]
 \textbf{Sombra digital} & Automático, do físico para o digital & Coleta contínua sobre pessoas e ambientes; risco de vigilância e de inferência por acúmulo & P1, P3, P4, P7\\[3pt]
@@ -466,7 +468,7 @@ O Digital Twin Consortium define gêmeo digital como \textquotedblleft{}uma repr
 \begin{figure}[!htbp]
 \centering
 
-\includegraphics[width=\linewidth]{out/Fig4_PT.pdf}
+\includegraphics[width=13cm]{out/Fig4_PT.pdf}
 \caption{Direção do fluxo de dados nos três tipos de réplica digital}\label{fig:4}
 \fontetab{Elaborado pelos autores (2026), com base em Kritzinger et al. [\refnum{kritzinger}].}
 \end{figure}
@@ -483,17 +485,17 @@ O PMBOK 8 conclui cada domínio com orientação para manter o foco em valor [\r
 \begingroup\SingleSpacing\footnotesize
 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*253/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*451/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*233/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*63/1000\relax}@{}}
 \caption{Resultados esperados e verificação}\label{tab:t7}\\
-\hline
+\toprule
 \textbf{Resultado esperado} & \textbf{Perguntas de verificação} & \textbf{Evidência} & \textbf{Processos}\\
-\hline
+\midrule
 \endfirsthead
-\hline
+\toprule
 \textbf{Resultado esperado} & \textbf{Perguntas de verificação} & \textbf{Evidência} & \textbf{Processos}\\
-\hline
+\midrule
 \endhead
-\hline
+\bottomrule
 \endfoot
-\hline
+\bottomrule
 \endlastfoot
 Titulares e fluxos de dados conhecidos & O inventário cobre categorias de titulares, fluxos, frequência e direção? Há revisão quando surge dado ou finalidade nova? & Inventário atualizado e datado & P1, P7\\[3pt]
 Finalidade e hipótese legal decididas por quem tem competência & A finalidade é específica e a hipótese legal foi determinada, sem presumir consentimento? & Plano de privacidade com responsável & P2\\[3pt]
@@ -512,17 +514,17 @@ A matriz abaixo indica a área \textbf{principal} de cada processo proposto, sem
 \begingroup\SingleSpacing\footnotesize
 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*151/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*379/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*79/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*391/1000\relax}@{}}
 \caption{Aderência do domínio às cinco áreas de foco}\label{tab:t8}\\
-\hline
+\toprule
 \textbf{Área de foco} & \textbf{Pergunta de privacidade} & \textbf{Processos da proposta} & \textbf{Evidência de decisão}\\
-\hline
+\midrule
 \endfirsthead
-\hline
+\toprule
 \textbf{Área de foco} & \textbf{Pergunta de privacidade} & \textbf{Processos da proposta} & \textbf{Evidência de decisão}\\
-\hline
+\midrule
 \endhead
-\hline
+\bottomrule
 \endfoot
-\hline
+\bottomrule
 \endlastfoot
 \textbf{IN — Iniciação} & Quem pode ser afetado e que tratamento é previsto? & P1 & Inventário inicial de dados e categorias de titulares; premissas e incertezas\\[3pt]
 \textbf{PL — Planejamento} & Por que tratar os dados, quais os riscos e quais respostas são proporcionais? & P2, P3, P4 & Plano de privacidade; avaliação de impacto; critérios de controle e aceitação\\[3pt]
@@ -550,17 +552,17 @@ Esta é uma \textbf{análise de aderência} do domínio Privacidade aos seis pri
 \begingroup\SingleSpacing\small
 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*227/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*453/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*320/1000\relax}@{}}
 \caption{Aderência do domínio aos seis princípios}\label{tab:t9}\\
-\hline
+\toprule
 \textbf{Princípio do PMBOK 8} & \textbf{Como o domínio proposto o sustenta} & \textbf{Teste de aderência}\\
-\hline
+\midrule
 \endfirsthead
-\hline
+\toprule
 \textbf{Princípio do PMBOK 8} & \textbf{Como o domínio proposto o sustenta} & \textbf{Teste de aderência}\\
-\hline
+\midrule
 \endhead
-\hline
+\bottomrule
 \endfoot
-\hline
+\bottomrule
 \endlastfoot
 \textbf{1AHV — Adopt a Holistic View} & Segue os dados do planejamento ao encerramento, entre equipe, fornecedores, operação e pessoas afetadas. & O mapa de fluxos inclui compartilhamentos e transições entre sistemas?\\[3pt]
 \textbf{2FOV — Focus on Value} & Compara benefício do uso de dados com possíveis danos às pessoas e à confiança no serviço. & A decisão explicita benefício, finalidade e custo social da alternativa?\\[3pt]
@@ -582,17 +584,17 @@ O domínio Privacidade não substitui os treze processos existentes em Quem [\re
 \begingroup\SingleSpacing\small
 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*200/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*104/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*696/1000\relax}@{}}
 \caption{Inclusões e alterações propostas nos processos de Partes Interessadas e Riscos}\label{tab:t10}\\
-\hline
+\toprule
 \textbf{Processo existente} & \textbf{Tipo} & \textbf{Inclusão ou alteração proposta}\\
-\hline
+\midrule
 \endfirsthead
-\hline
+\toprule
 \textbf{Processo existente} & \textbf{Tipo} & \textbf{Inclusão ou alteração proposta}\\
-\hline
+\midrule
 \endhead
-\hline
+\bottomrule
 \endfoot
-\hline
+\bottomrule
 \endlastfoot
 \textbf{Identify Stakeholders} & Alteração e entrada & Estender a análise a titulares de dados que não participam do projeto; marcar no registro de partes interessadas a categoria \textquotedblleft{}titular de dados pessoais\textquotedblright{}; incluir o inventário de P1 como entrada.\\[3pt]
 \textbf{Plan Stakeholder Engagement} & Inclusão & Prever, no plano de engajamento, estratégia para titulares sem participação ativa: canal, linguagem e momento de informação.\\[3pt]
@@ -617,17 +619,17 @@ Registramos à parte, como hipóteses de trabalho, as interfaces que Privacidade
 \begingroup\SingleSpacing\small
 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*182/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*450/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*368/1000\relax}@{}}
 \caption{Interfaces potenciais com as demais concentrações}\label{tab:t11}\\
-\hline
+\toprule
 \textbf{Concentração} & \textbf{Interface a avaliar} & \textbf{Decisão potencial}\\
-\hline
+\midrule
 \endfirsthead
-\hline
+\toprule
 \textbf{Concentração} & \textbf{Interface a avaliar} & \textbf{Decisão potencial}\\
-\hline
+\midrule
 \endhead
-\hline
+\bottomrule
 \endfoot
-\hline
+\bottomrule
 \endlastfoot
 \textbf{Consolidação / Governança} & Critérios de aprovação, atribuição de responsabilidade, escalonamento e prestação de contas & Quem aceita risco residual e com que evidência?\\[3pt]
 \textbf{Nascimento / Escopo} & Requisitos e limites do produto, inclusive necessidade de dados e transparência & É possível cumprir a função com menos identificação?\\[3pt]
@@ -645,7 +647,7 @@ Para testar os processos propostos, consideramos um \textbf{cenário hipotético
 \begin{figure}[!htbp]
 \centering
 
-\includegraphics[width=\linewidth]{out/Fig5_PT.pdf}
+\includegraphics[width=13cm]{out/Fig5_PT.pdf}
 \caption{Cenário usado como teste da extensão}\label{fig:5}
 \fontetab{Elaborado pelos autores (2026).}
 \end{figure}
@@ -671,17 +673,17 @@ Seguindo o formato do \textit{Final report}, saída do processo \textit{Close Pr
 \begingroup\SingleSpacing\small
 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*190/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*810/1000\relax}@{}}
 \caption{Relatório final do trabalho}\label{tab:t12}\\
-\hline
+\toprule
 \textbf{Item do relatório final} & \textbf{Situação do trabalho}\\
-\hline
+\midrule
 \endfirsthead
-\hline
+\toprule
 \textbf{Item do relatório final} & \textbf{Situação do trabalho}\\
-\hline
+\midrule
 \endhead
-\hline
+\bottomrule
 \endfoot
-\hline
+\bottomrule
 \endlastfoot
 \textbf{Descrição resumida} & Elaboração de uma proposta de domínio Privacidade para o PMBOK 8, na concentração Quem: diagnóstico, justificativa em quatro aspectos, oito processos com ferramentas e técnicas, inclusões e alterações nos treze processos existentes, adaptação, verificação de resultados e aderência às áreas de foco e aos princípios.\\[3pt]
 \textbf{Objetivos de escopo e evidência de conclusão} & Escopo: justificar e propor o domínio, mapear aderência às cinco áreas de foco e aos seis princípios e registrar interfaces com as demais concentrações. Critério de conclusão: seções 3 a 7 produzidas. Evidência: tabelas das seções 4 a 7. Limite: nenhum outro domínio SIPA foi desenvolvido.\\[3pt]

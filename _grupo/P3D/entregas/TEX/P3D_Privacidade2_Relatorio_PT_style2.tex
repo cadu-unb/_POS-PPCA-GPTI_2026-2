@@ -55,6 +55,8 @@
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{2}
 \renewcommand{\arraystretch}{1.2}
+\setlength{\LTpre}{6pt}
+\setlength{\LTpost}{0pt}
 
 \titleformat{\section}{\sffamily\Large\color{DarkBlue}}{\thesection}{0.8em}{}
 \titleformat{\subsection}{\sffamily\large\color{DarkBlue}}{\thesubsection}{0.8em}{}
@@ -201,17 +203,17 @@ A edição de 2025 reúne dois volumes com funções diferentes. A tabela resume
 \begingroup\SingleSpacing\small
 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*269/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*595/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*136/1000\relax}@{}}
 \caption{Estrutura do PMBOK 8: Standard e Guide}\label{tab:t1}\\
-\hline
+\toprule
 \textbf{Obra e parte} & \textbf{Conteúdo} & \textbf{Onde}\\
-\hline
+\midrule
 \endfirsthead
-\hline
+\toprule
 \textbf{Obra e parte} & \textbf{Conteúdo} & \textbf{Onde}\\
-\hline
+\midrule
 \endhead
-\hline
+\bottomrule
 \endfoot
-\hline
+\bottomrule
 \endlastfoot
 \textit{Standard} — 1 Introdução & Finalidade, características de um projeto, governança organizacional e de projeto, operações e gestão de projetos, relação entre portfólio, programa, projeto e operações & cap. 1\\[3pt]
 \textit{Standard} — 2 Sistema de entrega de valor & Criação de valor, ambiente do projeto, gestão de produto, funções e papéis & cap. 2\\[3pt]
@@ -245,17 +247,17 @@ O \textit{Standard} organiza uma mentalidade de gestão em três dimensões: \te
 \begingroup\SingleSpacing\small
 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*278/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*722/1000\relax}@{}}
 \caption{Dimensões da mentalidade e princípios}\label{tab:t2}\\
-\hline
+\toprule
 \textbf{Dimensão} & \textbf{Princípios}\\
-\hline
+\midrule
 \endfirsthead
-\hline
+\toprule
 \textbf{Dimensão} & \textbf{Princípios}\\
-\hline
+\midrule
 \endhead
-\hline
+\bottomrule
 \endfoot
-\hline
+\bottomrule
 \endlastfoot
 Proativa & \textbf{1AHV} \textit{Adopt a Holistic View} e \textbf{3QPD} \textit{Embed Quality Into Processes and Deliverables}\\[3pt]
 De responsabilidade (\textit{ownership}) & \textbf{4BAL} \textit{Be an Accountable Leader} e \textbf{6BEC} \textit{Build an Empowered Culture}\\[3pt]
@@ -269,17 +271,17 @@ A tabela formula, em linguagem de trabalho, uma pergunta útil para aplicar cada
 \begingroup\SingleSpacing\small
 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*252/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*347/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*401/1000\relax}@{}}
 \caption{Perguntas práticas e consequências de cada princípio}\label{tab:t3}\\
-\hline
+\toprule
 \textbf{Código e princípio oficial} & \textbf{Pergunta prática} & \textbf{Consequência para uma decisão}\\
-\hline
+\midrule
 \endfirsthead
-\hline
+\toprule
 \textbf{Código e princípio oficial} & \textbf{Pergunta prática} & \textbf{Consequência para uma decisão}\\
-\hline
+\midrule
 \endhead
-\hline
+\bottomrule
 \endfoot
-\hline
+\bottomrule
 \endlastfoot
 \textbf{1AHV — Adopt a Holistic View} & Que relações e efeitos fora da entrega imediata influenciam o resultado? & Examinar dependências entre domínios, organização, pessoas e ambiente.\\[3pt]
 \textbf{2FOV — Focus on Value} & Que resultado justifica o trabalho e como saber se continua valioso? & Comparar alternativas pelo benefício esperado, não só pela quantidade de atividades.\\[3pt]
@@ -303,17 +305,17 @@ A \textbf{abordagem de desenvolvimento} é o meio usado para criar e evoluir o p
 \begingroup\SingleSpacing\small
 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*162/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*327/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*511/1000\relax}@{}}
 \caption{Abordagens de desenvolvimento: preditiva, adaptativa e híbrida}\label{tab:t4}\\
-\hline
+\toprule
 \textbf{Abordagem} & \textbf{Quando tende a servir} & \textbf{Características}\\
-\hline
+\midrule
 \endfirsthead
-\hline
+\toprule
 \textbf{Abordagem} & \textbf{Quando tende a servir} & \textbf{Características}\\
-\hline
+\midrule
 \endhead
-\hline
+\bottomrule
 \endfoot
-\hline
+\bottomrule
 \endlastfoot
 \textbf{Preditiva} & Escopo estável cedo; grandes investimentos; supervisão regulatória; custo de iterar maior que o valor & Planejamento antecipado, linhas de base de escopo, cronograma e custo; controle de mudanças robusto; pode entregar de modo incremental\\[3pt]
 \textbf{Adaptativa} & Requisitos e solução técnica com alta incerteza e volatilidade & Visão clara no início; requisitos elaborados progressivamente com \textit{feedback}; revisões periódicas em ciclos curtos; alguns métodos usam iterações de 1 a 4 semanas\\[3pt]
@@ -330,17 +332,17 @@ A escolha da abordagem depende de variáveis do \textbf{produto}, do \textbf{pro
 \begingroup\SingleSpacing\small
 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*176/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*824/1000\relax}@{}}
 \caption{Fatores de escolha da abordagem de desenvolvimento}\label{tab:t5}\\
-\hline
+\toprule
 \textbf{Categoria} & \textbf{Fatores}\\
-\hline
+\midrule
 \endfirsthead
-\hline
+\toprule
 \textbf{Categoria} & \textbf{Fatores}\\
-\hline
+\midrule
 \endhead
-\hline
+\bottomrule
 \endfoot
-\hline
+\bottomrule
 \endlastfoot
 Entregas & Grau de inovação; certeza dos requisitos; estabilidade do escopo; facilidade de mudança; opções de entrega; risco; requisitos de segurança; \textit{feedback}; regulamentação\\[3pt]
 Projeto & Partes interessadas; restrições de cronograma; incerteza de financiamento; tamanho e complexidade; experiência e habilidades da equipe; interdependências\\[3pt]
@@ -358,17 +360,17 @@ As \textit{Project Management Focus Areas} são \textbf{Iniciação (IN), Planej
 \begingroup\SingleSpacing\small
 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*202/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*493/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*305/1000\relax}@{}}
 \caption{As cinco áreas de foco}\label{tab:t6}\\
-\hline
+\toprule
 \textbf{Área} & \textbf{O que reúne} & \textbf{Pergunta orientadora}\\
-\hline
+\midrule
 \endfirsthead
-\hline
+\toprule
 \textbf{Área} & \textbf{O que reúne} & \textbf{Pergunta orientadora}\\
-\hline
+\midrule
 \endhead
-\hline
+\bottomrule
 \endfoot
-\hline
+\bottomrule
 \endlastfoot
 \textbf{IN} Iniciação & Ações para definir um novo projeto ou fase, com autorização formal; escopo inicial, recursos financeiros iniciais, partes interessadas e papéis & Que trabalho deve ser autorizado e quem está envolvido?\\[3pt]
 \textbf{PL} Planejamento & Ações que estabelecem o escopo pretendido, refinam objetivos e desenvolvem o curso de ação; laços repetidos de \textit{feedback} & Como integrar planos, requisitos, recursos, custos, comunicação e respostas a risco?\\[3pt]
@@ -382,25 +384,27 @@ As \textit{Project Management Focus Areas} são \textbf{Iniciação (IN), Planej
 A distribuição dos 40 processos pelas áreas aparece na Tabela 2-1 do \textit{Guide} e nas figuras de visão geral de cada domínio. \textit{Identify Stakeholders} é o único processo de Partes Interessadas na Iniciação, como mostra a Figura 2-32 do \textit{Guide} [\refnum{pmi}, \textit{Guide} §2.5.2]; com ele, os totais por área fecham em 2 + 19 + 8 + 10 + 1 = 40.
 
 \begingroup\SingleSpacing\small
-\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*495/1000\relax}>{\raggedleft\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*505/1000\relax}@{}}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{1.6cm}>{\raggedright\arraybackslash}p{6.4cm}>{\centering\arraybackslash}p{3.2cm}@{}}
 \caption{Contagem de processos por área de foco}\label{tab:t7}\\
-\hline
-\textbf{Área} & \textbf{Processos no quadro do PMBOK 8}\\
-\hline
+\toprule
+\textbf{Sigla} & \textbf{Área de foco} & \textbf{Processos no PMBOK 8}\\
+\midrule
 \endfirsthead
-\hline
-\textbf{Área} & \textbf{Processos no quadro do PMBOK 8}\\
-\hline
+\toprule
+\textbf{Sigla} & \textbf{Área de foco} & \textbf{Processos no PMBOK 8}\\
+\midrule
 \endhead
-\hline
+\bottomrule
 \endfoot
-\hline
+\bottomrule
 \endlastfoot
-IN & \textbf{2}\\[3pt]
-PL & \textbf{19}\\[3pt]
-EX & \textbf{8}\\[3pt]
-MC & \textbf{10}\\[3pt]
-CL & \textbf{1}\\[3pt]
+IN & Iniciação & 2\\[3pt]
+PL & Planejamento & 19\\[3pt]
+EX & Execução & 8\\[3pt]
+MC & Monitoramento e controle & 10\\[3pt]
+CL & Encerramento & 1\\[3pt]
+\midrule
+ & \textbf{Total} & \textbf{40}\\[3pt]
 \end{longtable}
 \endgroup
 \fontetab{Elaborado pelos autores (2026), a partir de \cit{pmi}.}
@@ -410,9 +414,9 @@ CL & \textbf{1}\\[3pt]
 
 \begingroup\SingleSpacing\small
 \begin{tabular}{@{}lrrrrrr@{}}
-\hline
+\midrule
 \textbf{Domínio} & \textbf{IN} & \textbf{PL} & \textbf{EX} & \textbf{MC} & \textbf{CL} & \textbf{Total}\\
-\hline
+\midrule
 Governança (GO) & \cellcolor{exLine!11}1 & \cellcolor{exLine!22}2 & \cellcolor{exLine!33}3 & \cellcolor{exLine!22}2 & \cellcolor{exLine!11}1 & 9\\
 Escopo (SO) & 0 & \cellcolor{exLine!44}4 & 0 & \cellcolor{exLine!22}2 & 0 & 6\\
 Cronograma (SH) & 0 & \cellcolor{exLine!22}2 & 0 & \cellcolor{exLine!11}1 & 0 & 3\\
@@ -420,9 +424,9 @@ Finanças (FI) & 0 & \cellcolor{exLine!33}3 & 0 & \cellcolor{exLine!11}1 & 0 & 4
 Partes Interessadas (ST) & \cellcolor{exLine!11}1 & \cellcolor{exLine!22}2 & \cellcolor{exLine!22}2 & \cellcolor{exLine!22}2 & 0 & 7\\
 Recursos (RE) & 0 & \cellcolor{exLine!22}2 & \cellcolor{exLine!22}2 & \cellcolor{exLine!11}1 & 0 & 5\\
 Riscos (RI) & 0 & \cellcolor{exLine!44}4 & \cellcolor{exLine!11}1 & \cellcolor{exLine!11}1 & 0 & 6\\
-\hline
+\midrule
 \textbf{Total} & \textbf{2} & \textbf{19} & \textbf{8} & \textbf{10} & \textbf{1} & \textbf{40}\\
-\hline
+\midrule
 \end{tabular}
 \endgroup
 \fontetab{[\refnum{pmi}, Guide, Tabela 2-1 e figuras de visão geral dos domínios]; cálculo e apresentação próprios.}
@@ -457,17 +461,17 @@ A tabela mantém os \textbf{nomes oficiais em inglês}. A coluna em português s
 \begingroup\SingleSpacing\footnotesize
 \begin{longtable}{@{}>{\raggedleft\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*99/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*117/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*99/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*178/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-8\tabcolsep)*507/1000\relax}@{}}
 \caption{Inventário dos 40 processos do PMBOK 8}\label{tab:t8}\\
-\hline
+\toprule
 \textbf{\#} & \textbf{Domínio} & \textbf{Área} & \textbf{Concentração} & \textbf{Processo oficial — tradução de trabalho}\\
-\hline
+\midrule
 \endfirsthead
-\hline
+\toprule
 \textbf{\#} & \textbf{Domínio} & \textbf{Área} & \textbf{Concentração} & \textbf{Processo oficial — tradução de trabalho}\\
-\hline
+\midrule
 \endhead
-\hline
+\bottomrule
 \endfoot
-\hline
+\bottomrule
 \endlastfoot
 1 & GO & IN & Consolidação & \textit{Initiate Project or Phase} — iniciar projeto ou fase\\[3pt]
 2 & GO & PL & Consolidação & \textit{Integrate and Align Project Plans} — integrar e alinhar planos do projeto\\[3pt]
@@ -521,17 +525,17 @@ Cada domínio traz uma seção de considerações de adaptação (2.x.3 do \text
 \begingroup\SingleSpacing\small
 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*189/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*811/1000\relax}@{}}
 \caption{Consideração de adaptação característica de cada domínio}\label{tab:t9}\\
-\hline
+\toprule
 \textbf{Domínio} & \textbf{Consideração de adaptação característica}\\
-\hline
+\midrule
 \endfirsthead
-\hline
+\toprule
 \textbf{Domínio} & \textbf{Consideração de adaptação característica}\\
-\hline
+\midrule
 \endhead
-\hline
+\bottomrule
 \endfoot
-\hline
+\bottomrule
 \endlastfoot
 Governança & Adaptar ao setor, às considerações regulatórias, à organização e ao contexto do projeto; identificar comitês e requisitos de relato de situação\\[3pt]
 Escopo & Dependência de parceiros externos (como integrar o escopo a acordos contratuais) e dinamismo do ambiente, que pede flexibilidade na gestão do escopo\\[3pt]
@@ -555,16 +559,16 @@ A matriz da Figura 3 resume \textbf{uma contribuição característica por célu
 
 \begingroup\SingleSpacing\scriptsize
 \begin{tabular}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-14\tabcolsep)*130/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-14\tabcolsep)*124/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-14\tabcolsep)*124/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-14\tabcolsep)*124/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-14\tabcolsep)*124/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-14\tabcolsep)*124/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-14\tabcolsep)*124/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-14\tabcolsep)*126/1000\relax}@{}}
-\hline
+\midrule
 \textbf{Princípio} & \textbf{GO} & \textbf{SO} & \textbf{SH} & \textbf{FI} & \textbf{ST} & \textbf{RE} & \textbf{RI}\\
-\hline
+\midrule
 \rowcolor{bandaProativa}\textbf{1AHV} Visão holística & decisão transparente e baseada em dados & alinha as atividades ao escopo & considera interdependências & alinha orçamento às prioridades & engajamento inclusivo & integra os componentes para maximizar valor & riscos em todos os domínios e suas interdependências\\
 \rowcolor{bandaValor}\textbf{2FOV} Valor & governança dimensionada ao valor, sem burocracia & todo trabalho contribui ao valor; evita excesso & prazo ligado ao valor esperado & recursos financeiros para maximizar valor & valor na perspectiva das partes interessadas & decisões guiadas pela proposta de valor & respostas pragmáticas e eficazes\\
 \rowcolor{bandaProativa}\textbf{3QPD} Qualidade & estruturas que asseguram padrões de qualidade & conexão especialmente forte com as entregas & revisões de qualidade no cronograma & evita retrabalho e desperdício & feedback integrado às decisões & recursos certos mantêm os limiares & riscos de qualidade antecipados\\
 \rowcolor{bandaResp}\textbf{4BAL} Liderança responsável & decisões transparentes e éticas & resolver desacordos sobre incluir ou excluir & discussões com as partes certas & pressões financeiras tratadas com responsabilidade & obter e manter apoio & gerir com responsabilidade e integridade & agir com integridade diante de ameaças e oportunidades\\
 \rowcolor{bandaValor}\textbf{5SPA} Sustentabilidade & metas de sustentabilidade na governança & requisitos sustentáveis no escopo & decisões consideram impacto ambiental & custos e benefícios de longo prazo & educação e colaboração em sustentabilidade & acesso a recursos alinhado aos requisitos & ameaças ambientais e sociais identificadas e mitigadas\\
 \rowcolor{bandaResp}\textbf{6BEC} Cultura empoderada & canal transparente entre equipe e governança & ajustar requisitos com comunicação aberta & equipe sugere acelerar, desacelerar ou parar & menos gasto não planejado, foco em valor & equipe define o nível de engajamento & acesso a recursos conforme os requisitos & equipe define limites de risco e participa\\
-\hline
+\midrule
 \end{tabular}
 \endgroup
 \par\vspace{3pt}{\scriptsize\noindent Faixas: azul = dimensão proativa; turquesa = dimensão de responsabilidade; cinza = dimensão orientada a valor.\par}
@@ -599,17 +603,17 @@ Essas operações não autorizam omitir uma exigência legal ou contratual; ajud
 \begingroup\SingleSpacing\small
 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*149/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*251/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*600/1000\relax}@{}}
 \caption{Exemplos hipotéticos das cinco operações sobre processos}\label{tab:t10}\\
-\hline
+\toprule
 \textbf{Operação} & \textbf{Processo} & \textbf{Exemplo hipotético}\\
-\hline
+\midrule
 \endfirsthead
-\hline
+\toprule
 \textbf{Operação} & \textbf{Processo} & \textbf{Exemplo hipotético}\\
-\hline
+\midrule
 \endhead
-\hline
+\bottomrule
 \endfoot
-\hline
+\bottomrule
 \endlastfoot
 Adicionar & \textit{Identify Risks} & Acrescentar categorias de risco de dados e de integração entre sistemas de informação e de operação\\[3pt]
 Modificar & \textit{Plan Communications Management} & Ajustar canais e frequência para operadores de campo com conectividade limitada\\[3pt]
@@ -647,17 +651,17 @@ O trabalho de cada domínio também pode ser adaptado conforme a singularidade d
 \begingroup\SingleSpacing\small
 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*346/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*654/1000\relax}@{}}
 \caption{Situações comuns e sugestões de adaptação}\label{tab:t11}\\
-\hline
+\toprule
 \textbf{Situação} & \textbf{Sugestão de adaptação}\\
-\hline
+\midrule
 \endfirsthead
-\hline
+\toprule
 \textbf{Situação} & \textbf{Sugestão de adaptação}\\
-\hline
+\midrule
 \endhead
-\hline
+\bottomrule
 \endfoot
-\hline
+\bottomrule
 \endlastfoot
 Entregas de baixa qualidade & Analisar causas e aplicar medidas direcionadas de \textit{feedback} e garantia da qualidade, com foco em melhorar processos e não só em aumentar verificações\\[3pt]
 Equipe insegura sobre como trabalhar & Avaliar necessidades da equipe e oferecer orientação, mentoria, treinamento e compartilhamento de conhecimento\\[3pt]
@@ -678,24 +682,26 @@ Em síntese, o capítulo 3 do \textit{Guide} descreve a adaptação como anális
 Para apresentar os sete domínios em blocos, este relatório usa \textbf{quatro concentrações analíticas}: \textbf{Consolidação} reúne Governança; \textbf{Nascimento} reúne Escopo e Cronograma; \textbf{Meios} reúne Finanças e Recursos; \textbf{Quem} reúne Partes Interessadas e Riscos. Esse agrupamento \textbf{não é um componente oficial do PMBOK 8}: é uma organização de leitura adotada neste trabalho. Os rótulos A, S, I e P indicam, respectivamente, possíveis extensões em análise de negócios, sustentabilidade, inovação e privacidade; não entram na soma dos 40 processos nem são descritos aqui como novos processos do PMI.
 
 \begingroup\SingleSpacing\footnotesize
-\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*232/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*383/1000\relax}>{\raggedleft\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*177/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*208/1000\relax}@{}}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*232/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*383/1000\relax}>{\centering\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*177/1000\relax}>{\centering\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*208/1000\relax}@{}}
 \caption{Concentrações analíticas e contagem de processos}\label{tab:t12}\\
-\hline
+\toprule
 \textbf{Concentração} & \textbf{Domínios} & \textbf{Processos} & \textbf{Extensão em análise (fora do PMI)}\\
-\hline
+\midrule
 \endfirsthead
-\hline
+\toprule
 \textbf{Concentração} & \textbf{Domínios} & \textbf{Processos} & \textbf{Extensão em análise (fora do PMI)}\\
-\hline
+\midrule
 \endhead
-\hline
+\bottomrule
 \endfoot
-\hline
+\bottomrule
 \endlastfoot
 Consolidação & Governança & 9 & A\\[3pt]
 Nascimento & Escopo e Cronograma & 9 & S\\[3pt]
 Meios & Finanças e Recursos & 9 & I\\[3pt]
 Quem & Partes Interessadas e Riscos & 13 & P\\[3pt]
+\midrule
+\textbf{Total} & Sete domínios & \textbf{40} & \\[3pt]
 \end{longtable}
 \endgroup
 \fontetab{Elaborado pelos autores (2026).}
@@ -719,17 +725,17 @@ Como o relatório será lido também por quem trabalha com projetos que tratam d
 \begingroup\SingleSpacing\small
 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*202/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*662/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*136/1000\relax}@{}}
 \caption{Pontos do PMBOK 8 que tocam dados pessoais}\label{tab:t13}\\
-\hline
+\toprule
 \textbf{Onde} & \textbf{O que a edição diz} & \textbf{Seção}\\
-\hline
+\midrule
 \endfirsthead
-\hline
+\toprule
 \textbf{Onde} & \textbf{O que a edição diz} & \textbf{Seção}\\
-\hline
+\midrule
 \endhead
-\hline
+\bottomrule
 \endfoot
-\hline
+\bottomrule
 \endlastfoot
 Fatores ambientais da empresa & Restrições legais incluem leis e regulamentos sobre segurança, proteção de dados, conduta empresarial, emprego e aquisições & \textit{Standard} §2.2.1\\[3pt]
 Atributos do produto na adaptação & O atributo \textquotedblleft{}segurança\textquotedblright{} pergunta se elementos do produto são confidenciais ou classificados & \textit{Guide} §3.4.3.1\\[3pt]
@@ -755,17 +761,17 @@ Seguindo o formato do \textit{Final report}, saída do processo \textit{Close Pr
 \begingroup\SingleSpacing\small
 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*197/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*803/1000\relax}@{}}
 \caption{Relatório final do trabalho}\label{tab:t14}\\
-\hline
+\toprule
 \textbf{Item do relatório final} & \textbf{Situação do trabalho}\\
-\hline
+\midrule
 \endfirsthead
-\hline
+\toprule
 \textbf{Item do relatório final} & \textbf{Situação do trabalho}\\
-\hline
+\midrule
 \endhead
-\hline
+\bottomrule
 \endfoot
-\hline
+\bottomrule
 \endlastfoot
 \textbf{Descrição resumida} & Elaboração de uma síntese do \textit{Standard} e do \textit{Guide} do PMBOK 8: estrutura da edição, sistema de entrega de valor, seis princípios, ciclos de vida e abordagens, cinco áreas de foco, sete domínios e 40 processos, adaptação sob medida, agrupamento analítico em concentrações e pontos de contato com dados pessoais.\\[3pt]
 \textbf{Objetivos de escopo e evidência de conclusão} & Escopo: cobrir os elementos do PMBOK 8 acima, com ênfase em \textit{tailoring}. Critério de conclusão: seções 2 a 11 produzidas. Evidência: tabela-mestra dos 40 processos, mapa 7 \ensuremath{\times} 5, matriz 6 \ensuremath{\times} 7, ciclo de adaptação e quadro de diagnósticos. Limite: o relatório não reproduz os capítulos 4 e 5 do \textit{Guide}, que são catálogos de consulta.\\[3pt]
