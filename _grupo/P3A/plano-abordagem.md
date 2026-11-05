@@ -162,7 +162,7 @@ Hoje é 04/11 e o prazo é 06/11, às 12h. Restam cerca de dois dias, então a p
 
 ## 10. Observação: a implementação já começou
 
-O grupo já começou a escrever a P3A, em Markdown, em `_grupo/P3A/entregas/`. Seis arquivos existem, um para cada entrega prevista na seção 1:
+O grupo já escreveu a P3A em Markdown, hoje em `_grupo/P3A/entregas/MD/`, e a versão LaTeX está em `_grupo/P3A/entregas/TEX/` (ver `TEX/README.md`). Seis documentos existem nos dois formatos, um para cada entrega prevista na seção 1:
 
 | Entrega | Português | Inglês |
 | --- | --- | --- |
@@ -177,6 +177,8 @@ Situação em 04/11, depois da revisão:
 - As referências usam **citações numéricas entre colchetes**, com lista numerada em ordem alfabética. São 17 fontes: PMBOK 8, LGPD, ANPD, NIST, GDPR, Digital Twin Consortium, Kritzinger et al. e artigos científicos sobre privacidade em gêmeos digitais. Todas as 17 são citadas no corpo.
 - O relatório acrescentou: ferramentas e técnicas por processo (§4.2.1), conceitos-chave (§4.1), adaptação por perfil (§4.3), gêmeos digitais e fluxo de dados (§4.5), verificação de resultados (§4.6), tabela de inclusões e alterações nos 13 processos existentes (§7.1) e relatório final do próprio trabalho (§10).
 - O pôster tem três figuras em cada idioma, sem outras atividades citadas.
+
+A **versão LaTeX** foi escrita em 04/11 sem compilar. Segue o estilo da P2B (`abntex2`, `article`, Latin Modern, margens 3/2/3/2 cm) e acrescenta lista de ilustrações, lista de tabelas e lista de abreviaturas e siglas. As referências são numéricas, com o número definido uma vez no preâmbulo. As cinco figuras do relatório foram redesenhadas em TikZ, no padrão da figura da P2B. Os pôsteres são A1 retrato em duas colunas. Pendências: preencher os nomes dos integrantes na capa (`\integrantes`), compilar e ajustar os erros de LaTeX e de layout (inclusive o encaixe do pôster em uma página), e conferir visualmente as figuras. A declaração de uso de IA **não** foi incluída.
 
 Os links que não abriram na verificação (Digital Twin Consortium e EUR-Lex) foram removidos das referências; as entradas ficam só com autor, título, versão e ano. A referência de Deng et al. (2011) foi conferida contra o artigo e a exportação da Web of Science em `_wos/Manual 3/Extras/1`.
 

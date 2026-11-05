@@ -1,0 +1,721 @@
+% =============================================================================
+% P3A -- Privacidade 2 (PT-BR)
+% Formatação: ABNT (classe abnTeX2, modo article), A4, Latin Modern, 12 pt,
+% margens 3/2/3/2 cm, espaçamento 1,5, recuo de parágrafo 1,25 cm.
+% Figuras esperadas em out/ (compiladas a partir de figuras/):
+%   Fig1..Fig5_PT.pdf
+% ARQUIVO GERADO por ferramentas/gerar_tex.py a partir de ../MD. Para mudar o
+% conteúdo, edite o Markdown e gere de novo, ou edite este .tex diretamente.
+% =============================================================================
+\documentclass[12pt,a4paper,article,oneside,english,brazil]{abntex2}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}           % Latin Modern (fonte padrão do LaTeX, com T1)
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage[expansion=false]{microtype}
+\usepackage{url}
+\Urlmuskip=0mu plus 1mu\relax
+
+% Margens ABNT: superior 3 cm, inferior 2 cm, esquerda 3 cm, direita 2 cm
+\setlrmarginsandblock{3cm}{2cm}{*}
+\setulmarginsandblock{3cm}{2cm}{*}
+\checkandfixthelayout
+
+\setlength{\parindent}{1.25cm}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{3em}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+\renewcommand{\contentsname}{SUMÁRIO}
+\renewcommand{\listfigurename}{LISTA DE ILUSTRAÇÕES}
+\renewcommand{\listtablename}{LISTA DE TABELAS}
+
+% Tabelas: sem filetes verticais (padrão IBGE adotado pela ABNT)
+\renewcommand{\arraystretch}{1.2}
+
+% Fonte abaixo de tabelas e figuras (ABNT NBR 14724)
+\newcommand{\fontetab}[1]{\par\vspace{3pt}{\small\noindent Fonte: #1\par}}
+
+% Citações numéricas: o número de cada referência é definido uma vez (ordem
+% alfabética da lista) e usado por \refnum{chave}, \cit{chave} e \refitem.
+\newcommand{\defref}[2]{\expandafter\gdef\csname refnum@#1\endcsname{#2}}
+\newcommand{\refnum}[1]{\csname refnum@#1\endcsname}
+\newcommand{\cit}[1]{[\refnum{#1}]}
+\newcommand{\refitem}[2]{\par\noindent\hangindent=1.2cm\hangafter=1\makebox[1.2cm][l]{[\refnum{#1}]}#2\par}
+\defref{anpd}{1}
+\defref{lgpd}{2}
+\defref{brooks}{3}
+\defref{deng}{4}
+\defref{dhinakaran}{5}
+\defref{dtc2020}{6}
+\defref{dtccpt}{7}
+\defref{dtcai}{8}
+\defref{jorgensen}{9}
+\defref{korchenko}{10}
+\defref{kritzinger}{11}
+\defref{nistpf}{12}
+\defref{pmi}{13}
+\defref{shaikh}{14}
+\defref{son}{15}
+\defref{gdpr}{16}
+\defref{wang}{17}
+
+% Integrantes do grupo (preencher; a capa usa esta macro)
+\newcommand{\integrantes}{[nomes dos integrantes do grupo]}
+
+\begin{document}
+
+% ------------------------------- CAPA ----------------------------------------
+\thispagestyle{empty}
+\noindent\begin{minipage}[t][0.92\textheight]{\textwidth}
+\centering
+\SingleSpacing
+\textbf{UNIVERSIDADE DE BRASÍLIA -- UNB\\PROGRAMA DE PÓS-GRADUAÇÃO EM COMPUTAÇÃO APLICADA -- PPCA\\DISCIPLINA: GESTÃO DE PROJETOS DE TI (GPTI)\\PROFESSOR: Dr. JOÃO MELLO DA SILVA}
+
+\vspace{1cm}
+
+\textbf{Grupo SIPA Privacidade 2}: \integrantes
+
+\vspace{3cm}
+
+\textbf{PRIVACIDADE COMO DOMÍNIO DE DESEMPENHO PROPOSTO PARA O PMBOK 8}
+
+\vfill
+
+BRASÍLIA -- DF\\2026
+\end{minipage}
+\clearpage
+
+\begin{resumo}
+Este relatório propõe um domínio de desempenho Privacidade como extensão do PMBOK 8. O método combina leitura dirigida do \textit{Standard} e do \textit{Guide}, análise dos domínios Partes Interessadas e Riscos, revisão de estudos sobre privacidade em gêmeos digitais e comparação com referências de proteção de dados. A análise encontrou referências explícitas a proteção de dados, GDPR e privacidade no PMBOK 8, sobretudo em restrições legais, no exemplo de conformidade em Finanças e no apêndice sobre inteligência artificial. Não encontrou, entre seus sete domínios e 40 processos, um domínio cujo objeto principal sejam os efeitos do tratamento de dados sobre pessoas identificadas ou identificáveis. Os estudos examinados sobre gêmeos digitais tratam de requisitos legais, arquiteturas e controles técnicos, mas não organizam essas preocupações como processos de gestão de projetos. Propõem-se oito processos, distribuídos pelas cinco áreas de foco, com ferramentas e técnicas, inclusões e alterações nos treze processos existentes de Partes Interessadas e Riscos, adaptação por contexto e critérios de verificação de resultados. A proposta é avaliada frente aos seis princípios de gestão de projetos e ilustrada com um cenário hipotético de gêmeo digital em reciclagem por cooperativas. O resultado é um modelo a testar e ajustar; sua inclusão formal dependeria de validação editorial e empírica posterior.
+
+\vspace{\onelineskip}
+\noindent\textbf{Palavras-chave:} privacidade; proteção de dados; PMBOK 8; domínios de desempenho; gêmeos digitais; partes interessadas; riscos; extensão de área de aplicação.
+\end{resumo}
+
+\begin{resumo}[Abstract]
+\begin{otherlanguage*}{english}
+This report proposes a Privacy performance domain as an extension of PMBOK 8. The method combines a focused reading of the \textit{Standard} and the \textit{Guide}, an analysis of the Stakeholders and Risk domains, a review of studies on privacy in digital twins, and a comparison with data protection references. The analysis found explicit references to data protection, the GDPR, and privacy in PMBOK 8, chiefly in legal constraints, in the compliance example under Finance, and in the appendix on artificial intelligence. It did not find, among its seven domains and 40 processes, a domain whose main object is the effects of data processing on identified or identifiable people. The digital twin studies examined address legal requirements, architectures, and technical controls, but do not organize these concerns as project management processes. Eight processes are proposed, distributed across the five Focus Areas, with tools and techniques, additions and changes to the thirteen existing Stakeholders and Risk processes, tailoring by context, and criteria for verifying results. The proposal is assessed against the six project management principles and illustrated with a hypothetical scenario of a digital twin for recycling by cooperatives. The result is a model to be tested and adjusted; its formal inclusion would depend on subsequent editorial and empirical validation.
+
+\vspace{\onelineskip}
+\noindent\textbf{Keywords:} privacy; data protection; PMBOK 8; performance domains; digital twins; stakeholders; risk; application area extension.
+\end{otherlanguage*}
+\end{resumo}
+
+\clearpage
+
+\tableofcontents
+\clearpage
+\listoffigures
+\clearpage
+\listoftables
+\clearpage
+
+\begingroup
+\SingleSpacing
+\begin{center}\textbf{LISTA DE ABREVIATURAS E SIGLAS}\end{center}
+\small
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{2.6cm}>{\raggedright\arraybackslash}p{\dimexpr\linewidth-2.6cm-2\tabcolsep\relax}@{}}
+\textbf{1AHV} & \textit{Adopt a Holistic View}: adotar uma visão holística\\[2pt]
+\textbf{2FOV} & \textit{Focus on Value}: focar em valor\\[2pt]
+\textbf{3QPD} & \textit{Embed Quality Into Processes and Deliverables}: embutir qualidade em processos e entregas\\[2pt]
+\textbf{4BAL} & \textit{Be an Accountable Leader}: ser um líder responsável\\[2pt]
+\textbf{5SPA} & \textit{Integrate Sustainability Within All Project Areas}: integrar sustentabilidade em todas as áreas do projeto\\[2pt]
+\textbf{6BEC} & \textit{Build an Empowered Culture}: construir uma cultura empoderada\\[2pt]
+\textbf{ANPD} & Autoridade Nacional de Proteção de Dados\\[2pt]
+\textbf{BI} & Concentração Nascimento (\textit{Birth})\\[2pt]
+\textbf{CD} & Critérios de desenvolvimento\\[2pt]
+\textbf{CL} & Encerramento (\textit{Closing}), área de foco\\[2pt]
+\textbf{CN} & Caracterização da necessidade\\[2pt]
+\textbf{CO} & Concentração Consolidação (\textit{Consolidation})\\[2pt]
+\textbf{DM} & Desenvolvimento e manutenção\\[2pt]
+\textbf{DTC} & \textit{Digital Twin Consortium}\\[2pt]
+\textbf{EX} & Execução (\textit{Executing}), área de foco\\[2pt]
+\textbf{F/S/P/C} & Função, Estrutura, Processo e Contexto\\[2pt]
+\textbf{GDPR} & \textit{General Data Protection Regulation} (Regulamento Geral sobre a Proteção de Dados)\\[2pt]
+\textbf{HIPAA} & \textit{Health Insurance Portability and Accountability Act}\\[2pt]
+\textbf{IA} & Inteligência artificial\\[2pt]
+\textbf{IN} & Iniciação (\textit{Initiating}), área de foco\\[2pt]
+\textbf{LGPD} & Lei Geral de Proteção de Dados Pessoais (Lei nº 13.709/2018)\\[2pt]
+\textbf{LINDDUN} & \textit{Linkability, Identifiability, Non-repudiation, Detectability, Disclosure of information, Unawareness, Non-compliance}\\[2pt]
+\textbf{MC} & Monitoramento e controle (\textit{Monitoring and Controlling}), área de foco\\[2pt]
+\textbf{ME} & Concentração Meios (\textit{Means})\\[2pt]
+\textbf{NIS2} & \textit{Network and Information Security Directive}\\[2pt]
+\textbf{NIST} & \textit{National Institute of Standards and Technology}\\[2pt]
+\textbf{NISTIR} & \textit{NIST Interagency or Internal Report}\\[2pt]
+\textbf{P1--P8} & Processos de Privacidade propostos neste trabalho\\[2pt]
+\textbf{PF} & Publicação e formato\\[2pt]
+\textbf{PISO} & Procura, Industrialização, Solução e Oferta\\[2pt]
+\textbf{PL} & Planejamento (\textit{Planning}), área de foco\\[2pt]
+\textbf{PMBOK} & \textit{Project Management Body of Knowledge}\\[2pt]
+\textbf{PMI} & \textit{Project Management Institute}\\[2pt]
+\textbf{RIPD} & Relatório de impacto à proteção de dados pessoais\\[2pt]
+\textbf{SIPA} & Sustentabilidade, Inovação, Privacidade e Análise de negócios com decisões ajustadas a riscos\\[2pt]
+\textbf{UE} & União Europeia\\[2pt]
+\textbf{WH} & Concentração Quem (\textit{Who})\\[2pt]
+\end{longtable}
+\endgroup
+\clearpage
+
+\begin{flushleft}\small\SingleSpacing
+\noindent\textbf{Nota de natureza.} \textbf{Grupo SIPA:} Privacidade 2\\ \textbf{Concentração:} Quem (\textit{Who})\\ \textbf{Domínios existentes relacionados:} Partes Interessadas (\textit{Stakeholders}) e Riscos (\textit{Risk})\\ \textbf{Natureza:} proposta acadêmica de extensão; os processos P1–P8 abaixo \textbf{não são processos oficiais do PMI}.
+\end{flushleft}
+\vspace{\onelineskip}
+
+\section{OBJETO, ESCOPO E MÉTODO}
+
+Este trabalho situa os quatro domínios SIPA — Sustentabilidade, Inovação, Privacidade e Análise de Negócios com Decisões Ajustadas a Riscos — em quatro concentrações que agrupam os sete domínios do PMBOK 8: Consolidação (Governança), Nascimento (Escopo e Cronograma), Meios (Finanças e Recursos) e Quem (Partes Interessadas e Riscos). Esse agrupamento é uma organização adotada neste trabalho; \textbf{não é uma classificação do PMI}. Como grupo SIPA de Privacidade, desenvolvemos \textbf{P \ensuremath{\rightarrow} Quem}, junto aos domínios oficiais Partes Interessadas e Riscos. Os demais domínios SIPA aparecem apenas no mapa de integração (Figura 1).
+
+O corpus principal é a oitava edição de \textit{The Standard for Project Management and A Guide to the Project Management Body of Knowledge} [\refnum{pmi}]. Identificamos os sete domínios e 40 processos na organização do \textit{Guide}, com atenção às seções 2.5 (Partes Interessadas), 2.7 (Riscos) e à tabela que associa processos às áreas de foco. Lemos os seis princípios no \textit{Standard}. Fizemos uma busca textual dirigida por termos de privacidade no texto da edição e conferimos o sentido dos trechos relevantes. A busca textual não prova ausência conceitual em todo o livro; serve apenas para localizar linguagem explícita.
+
+Para a literatura sobre gêmeos digitais, fizemos busca bibliográfica na Web of Science combinando gêmeos digitais, privacidade e proteção de dados, e examinamos os estudos mais aderentes ao tema. Os resultados citados no texto são Wang et al. [\refnum{wang}], Dhinakaran et al. [\refnum{dhinakaran}], Korchenko et al. [\refnum{korchenko}], Shaikh et al. [\refnum{shaikh}], Son et al. [\refnum{son}] e Jørgensen e Ma [\refnum{jorgensen}]. A conceituação de gêmeo digital apoia-se no Digital Twin Consortium [\refnum{dtc2020}] e na classificação de Kritzinger et al. [\refnum{kritzinger}].
+
+Para a dimensão de proteção de dados, tomamos a LGPD brasileira [\refnum{lgpd}] como referência normativa, o \textit{NIST Privacy Framework} [\refnum{nistpf}] como referência de gestão de risco à pessoa e o NIST IR 8062 [\refnum{brooks}] como referência de engenharia de privacidade. O GDPR [\refnum{gdpr}] aparece como contraponto comparativo, não como regra automaticamente aplicável a qualquer cooperativa brasileira. Não fizemos auditoria jurídica ou medição empírica de conformidade.
+\subsection{Critério para propor um domínio próprio}
+
+Uma extensão faz sentido se acrescentar um \textbf{objeto de gestão identificável}, decisões e evidências que os domínios existentes não tornam visíveis de forma suficiente. Aqui, o objeto é o tratamento de dados pessoais e seus possíveis efeitos sobre os titulares. O projeto pode atingir prazo, custo e escopo e ainda produzir riscos indevidos às pessoas. Uma matriz genérica de riscos pode registrar esses eventos, mas não garante, por si só, inventário de dados, finalidade, hipótese legal, direitos dos titulares ou destino dos dados ao final do ciclo. A gestão de partes interessadas identifica pessoas relevantes ao projeto, mas um titular pode não participar dele, sequer saber que seus dados foram inferidos, e continuar titular de direitos.
+
+Esse argumento é \textbf{organizacional}, não uma alegação de que o PMBOK 8 desconheça privacidade. O \textit{Guide} menciona proteção de dados em restrições legais, GDPR em exemplo de conformidade no domínio Finanças e privacidade no apêndice sobre IA [\refnum{pmi}]. A proposta reúne essas preocupações em um domínio verificável, situado em Quem porque coloca pessoas afetadas e suas relações com o projeto no centro.
+
+\section{DIAGNÓSTICO DO PMBOK 8}
+\subsection{O que já existe}
+
+O domínio \textbf{Partes Interessadas} contém sete processos: identificar partes interessadas; planejar seu engajamento; planejar comunicações; gerenciar o engajamento; gerenciar comunicações; monitorar o engajamento; e monitorar comunicações [\refnum{pmi}, §2.5.2]. A própria definição de \textit{Manage Communications} alcança criação, distribuição, armazenamento, recuperação e disposição de informação do projeto. Esse é um ponto de contato real com governança de dados, embora não especifique todo o ciclo dos dados pessoais nem os direitos dos titulares.
+
+O domínio \textbf{Riscos} contém seis processos: planejar gestão de riscos; identificar riscos; analisar riscos; planejar respostas; implementar respostas; monitorar riscos [\refnum{pmi}, §2.7.2]. É uma estrutura adequada para reconhecer incertezas e acompanhar respostas. Entretanto, sua descrição geral abrange ameaças e oportunidades para os objetivos do projeto; uma avaliação de privacidade precisa considerar também problemas que o tratamento de dados pode causar às pessoas, mesmo sem falha de segurança. O NIST Privacy Framework afirma que gerir risco de cibersegurança contribui para gerir risco de privacidade, mas não é suficiente, pois há riscos de privacidade que surgem por meios alheios a incidentes de cibersegurança [\refnum{nistpf}].
+
+Há ainda referências dispersas no PMBOK 8: leis de proteção de dados podem limitar opções de projeto; ferramentas de IA introduzem questões de privacidade; comunicações podem exigir proteção de informação sensível [\refnum{pmi}]. Logo, a hipótese que sustentamos é mais precisa: \textbf{o tema aparece, mas não está organizado como domínio e conjunto de processos dedicados} nos sete domínios oficiais.
+\subsection{O que a nova organização precisa tornar observável}
+
+\begingroup\SingleSpacing\small
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*240/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*281/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*479/1000\relax}@{}}
+\caption{O que a nova organização precisa tornar observável}\label{tab:t1}\\
+\hline
+\textbf{Questão de gestão} & \textbf{Cobertura já disponível} & \textbf{Evidência adicional proposta}\\
+\hline
+\endfirsthead
+\hline
+\textbf{Questão de gestão} & \textbf{Cobertura já disponível} & \textbf{Evidência adicional proposta}\\
+\hline
+\endhead
+\hline
+\endfoot
+\hline
+\endlastfoot
+Quem pode ser afetado pelo tratamento? & Identificar e engajar partes interessadas & Categorias de titulares, inclusive pessoas sem participação ativa no projeto\\[3pt]
+Que evento pode prejudicar alguém? & Identificar, analisar e monitorar riscos & Cenários de dano à pessoa associados a operações de dados, com critérios próprios\\[3pt]
+Que informação circula e por quê? & Planejar e gerenciar comunicações & Inventário de dados, finalidade, hipótese legal, necessidade, retenção e compartilhamento\\[3pt]
+Quando intervir no projeto? & Áreas de foco e decisões de governança & Critérios para prosseguir, modificar ou interromper um tratamento de dados\\[3pt]
+Como demonstrar resultado? & Relatórios, registros e lições aprendidas & Evidências de controles, solicitações de titulares, revisão de impacto e destino dos dados\\[3pt]
+\end{longtable}
+\endgroup
+\fontetab{Elaborado pelos autores (2026).}
+
+O quadro descreve \textbf{responsabilidades propostas}, sem afirmar que todos os projetos necessitem de todas as técnicas. O próprio PMBOK 8 enfatiza \textit{tailoring}: intensidade, formalidade e artefatos devem refletir o contexto [\refnum{pmi}, cap. 3 do \textit{Guide}]. A ANPD, por exemplo, orienta que o relatório de impacto à proteção de dados pessoais (RIPD) é recomendado quando o tratamento pode gerar alto risco aos princípios de proteção de dados, e que a LGPD prevê situações em que ele pode ser exigido [\refnum{anpd}]; não o tratamos como obrigação universal para todo projeto.
+\subsection{O que a literatura sobre gêmeos digitais acrescenta}
+
+Os estudos examinados convergem em pontos que sustentam a proposta.
+
+\textbf{Coleta e compartilhamento como origem do risco.} Em levantamento sobre a Internet dos gêmeos digitais, Wang et al. [\refnum{wang}] apontam que violações de privacidade podem surgir da coleta individual generalizada de dados e do compartilhamento massivo de dados entre gêmeos. Son et al. [\refnum{son}] observam que os dados gerados por ativos físicos podem conter informação sensível de seus proprietários e que o vazamento causa problemas graves de privacidade, o que torna o compartilhamento seguro de dados de gêmeos um desafio central.
+
+\textbf{Questões éticas e legais em gêmeos que envolvem pessoas.} Dhinakaran et al. [\refnum{dhinakaran}], ao tratar de gêmeos digitais domésticos, identificam privacidade, segurança de dados, consentimento e responsabilização como questões centrais, além de conformidade regulatória, inclusive fluxo transfronteiriço de dados. As práticas que o estudo revisa incluem privacidade desde a concepção, transparência, projeto centrado no usuário, auditorias e atualizações periódicas e anonimização.
+
+\textbf{Resolução dos dados e identificação indireta.} Em gêmeos digitais ambientais, Korchenko et al. [\refnum{korchenko}] mostram que alta resolução espaço-temporal dos dados pode permitir identificação indireta, e propõem mapear GDPR e NIS2 ao longo de todo o ciclo de vida dos dados: recepção, transporte, armazenamento, análise, compartilhamento e publicação. O estudo também menciona avaliação de impacto à proteção de dados e privacidade diferencial como instrumentos.
+
+\textbf{Controles técnicos existem; a prática de conformidade é a lacuna.} Em revisão sobre gêmeos digitais em saúde com blockchain, Shaikh et al. [\refnum{shaikh}] encontram que a tecnologia é usada sobretudo para controle de acesso, registro de auditoria, integridade, gestão de consentimento e proveniência de dados, e identificam lacunas na implementação formal de práticas de engenharia conformes ao GDPR e ao HIPAA. Jørgensen e Ma [\refnum{jorgensen}] mostram que seis normas europeias (entre elas GDPR, Data Act, AI Act e NIS2) governam em conjunto os gêmeos digitais, com obrigações que se sobrepõem em governança de dados, privacidade e cibersegurança.
+
+Nos estudos examinados, o foco recai sobre requisitos legais, arquiteturas e controles técnicos. Não encontramos neles a organização dessas preocupações como processos de gestão de projetos alinhados ao PMBOK 8. Essa observação se limita ao conjunto examinado e não é uma afirmação sobre toda a literatura.
+
+\section{JUSTIFICATIVA DA EXTENSÃO EM QUATRO ASPECTOS}
+\subsection{CN — Caracterização da necessidade}
+
+Projetos que constroem plataformas, gêmeos digitais ou modelos de IA podem coletar, combinar, inferir, compartilhar e descartar dados sobre pessoas. Nesse contexto, um incidente de confidencialidade é apenas uma das formas possíveis de dano. Também importam uso incompatível com a finalidade informada, inferências indevidas, exposição de localização, retenção excessiva e decisões automatizadas que afetem indivíduos. O NIST distingue riscos oriundos do processamento daqueles decorrentes de incidentes de segurança [\refnum{nistpf}]; a LGPD organiza princípios, hipóteses de tratamento, direitos e prestação de contas [\refnum{lgpd}]. A literatura sobre gêmeos digitais confirma que a coleta contínua, o compartilhamento entre gêmeos e a resolução dos dados criam exposição das pessoas [\refnum{korchenko}, \refnum{wang}]. A necessidade da extensão é criar uma linha de decisão visível do início ao encerramento do projeto.
+\subsection{CD — Critérios de desenvolvimento}
+
+O domínio proposto deve: (i) ter escopo próprio e não duplicar integralmente Partes Interessadas ou Riscos; (ii) usar verbos e artefatos reconhecíveis no vocabulário de processos do PMBOK 8; (iii) deixar claro onde há entrada, ferramenta ou técnica, decisão, responsável e saída; (iv) ser adaptável conforme volume, sensibilidade, tecnologia, finalidade e contexto institucional; (v) registrar risco \textbf{para os titulares} além do risco \textbf{para a organização}; e (vi) permitir avaliação por evidências observáveis. Esses critérios são proposta editorial do grupo.
+\subsection{PF — Publicação e formato}
+
+Propomos uma seção de domínio com a mesma estrutura dos domínios do \textit{Guide}: conceitos-chave (§4.1), processos com entradas, ferramentas e técnicas e saídas (§4.2), considerações de adaptação (§4.3), interações com outros domínios (§7) e verificação de resultados (§4.6). As tabelas de aderência às áreas de foco e aos princípios fariam parte do material de apoio. Na publicação, cada processo receberia exemplo de aplicação e ressalva de que as obrigações legais dependem do caso concreto e da jurisdição. Neste trabalho, o domínio é um \textbf{protótipo acadêmico}; seu número e seus nomes podem mudar após revisão.
+\subsection{DM — Desenvolvimento e manutenção}
+
+Uma versão posterior deveria passar por revisão de profissionais de projetos, privacidade, operação de sistemas e representantes de titulares; teste em casos com características diferentes; registro de decisões editoriais; e revisão quando normas, tecnologia ou evidências mudarem. As medidas de êxito incluem cobertura do fluxo de dados, qualidade dos registros de decisão, identificação de riscos a pessoas e capacidade de corrigir tratamento inadequado. Não propomos afirmar conformidade jurídica a partir da simples adoção do domínio.
+
+\section{O DOMÍNIO PRIVACIDADE NA CONCENTRAÇÃO QUEM}
+
+\textbf{Finalidade proposta:} fazer com que projetos que tratem dados pessoais reconheçam titulares, expliquem finalidades, avaliem impactos às pessoas e produzam evidências proporcionais de proteção ao longo do ciclo de vida. O domínio dialoga diretamente com Partes Interessadas e Riscos. Sua posição em \textbf{Quem} é uma decisão de modelagem deste trabalho, não uma classificação oficial do PMI.
+
+\textbf{Resultados esperados:} dados e titulares identificados na medida necessária; decisões sobre finalidade e hipótese legal registradas; riscos a pessoas avaliados; controles e responsáveis definidos; solicitações de titulares encaminhadas; mudanças e encerramento do tratamento documentados. Indicadores concretos dependerão do projeto. O NIST IR 8062 oferece três objetivos úteis para avaliar o desenho: previsibilidade sobre o uso dos dados, capacidade de administrá-los e limitação de associação de dados a pessoas além do necessário [\refnum{brooks}].
+
+\begin{figure}[!htbp]
+\centering
+\caption{Posição do domínio proposto entre as concentrações}\label{fig:1}
+\includegraphics[width=\linewidth]{out/Fig1_PT.pdf}
+\fontetab{Elaborado pelos autores (2026).}
+\end{figure}
+
+Os cartões cinza situam as outras concentrações; o cartão azul delimita \textbf{Quem} e o turquesa identifica a contribuição deste grupo. A figura distingue os domínios existentes do PMBOK 8 das inclusões SIPA propostas.
+\subsection{Conceitos-chave}
+
+Como nos domínios do \textit{Guide}, a seção começa pelos conceitos que os processos usam. Os sentidos abaixo seguem a LGPD [\refnum{lgpd}, art. 5º] e o NIST Privacy Framework [\refnum{nistpf}].
+
+\begingroup\SingleSpacing\small
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*193/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*807/1000\relax}@{}}
+\caption{Conceitos-chave e sentido adotado}\label{tab:t2}\\
+\hline
+\textbf{Conceito} & \textbf{Sentido adotado}\\
+\hline
+\endfirsthead
+\hline
+\textbf{Conceito} & \textbf{Sentido adotado}\\
+\hline
+\endhead
+\hline
+\endfoot
+\hline
+\endlastfoot
+\textbf{Dado pessoal} & Informação relacionada a pessoa natural identificada ou identificável.\\[3pt]
+\textbf{Titular} & Pessoa natural a quem se referem os dados. Pode não participar do projeto nem conhecer o tratamento.\\[3pt]
+\textbf{Tratamento} & Toda operação com dados pessoais: coleta, produção, recepção, classificação, uso, acesso, reprodução, transmissão, distribuição, processamento, arquivamento, armazenamento, eliminação, avaliação, controle, modificação, comunicação, transferência, difusão ou extração.\\[3pt]
+\textbf{Controlador e operador} & Quem decide sobre o tratamento e quem o realiza em nome do controlador. A equipe de projeto não assume um desses papéis automaticamente.\\[3pt]
+\textbf{Finalidade, adequação e necessidade} & Princípios da LGPD (art. 6º): propósito legítimo e informado, compatibilidade do tratamento com ele e limitação ao mínimo necessário.\\[3pt]
+\textbf{Hipótese legal} & Fundamento que autoriza o tratamento (art. 7º; art. 11 para dados sensíveis) [\refnum{lgpd}]. Não é sinônimo de consentimento.\\[3pt]
+\textbf{Ação de dados} & Operação do ciclo de vida dos dados, como coleta, retenção, registro, geração, transformação, uso, divulgação, compartilhamento, transmissão e descarte [\refnum{nistpf}]. O risco de privacidade vem do conjunto dessas ações.\\[3pt]
+\textbf{Relatório de impacto (RIPD)} & Documento do controlador que descreve processos de tratamento que podem gerar riscos às liberdades civis e aos direitos fundamentais, e as medidas de mitigação [\refnum{lgpd}, art. 5º, XVII].\\[3pt]
+\textbf{Evento de privacidade e incidente de segurança} & Conceitos distintos. Um tratamento pode prejudicar pessoas sem que haja falha de segurança [\refnum{nistpf}].\\[3pt]
+\end{longtable}
+\endgroup
+\fontetab{Elaborado pelos autores (2026), a partir de \cit{lgpd} e \cit{nistpf}.}
+\subsection{Processos propostos pelo grupo}
+
+Os códigos \textbf{P1–P8} abaixo identificam apenas esta proposta. As entradas e saídas são exemplos para orientar o \textit{tailoring}; não reproduzem tabelas oficiais do PMBOK 8.
+
+\begingroup\SingleSpacing\footnotesize
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*204/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*90/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*524/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*182/1000\relax}@{}}
+\caption{Processos propostos para o domínio Privacidade}\label{tab:t3}\\
+\hline
+\textbf{Código e processo proposto} & \textbf{Área de foco principal} & \textbf{Entrada \ensuremath{\rightarrow} decisão/atividade \ensuremath{\rightarrow} saída} & \textbf{Interface com processo existente}\\
+\hline
+\endfirsthead
+\hline
+\textbf{Código e processo proposto} & \textbf{Área de foco principal} & \textbf{Entrada \ensuremath{\rightarrow} decisão/atividade \ensuremath{\rightarrow} saída} & \textbf{Interface com processo existente}\\
+\hline
+\endhead
+\hline
+\endfoot
+\hline
+\endlastfoot
+\textbf{P1 Identificar titulares e dados pessoais} & Iniciação & Ideia de projeto, fluxos previstos \ensuremath{\rightarrow} reconhecer categorias de pessoas, dados, pontos de coleta e direção dos fluxos \ensuremath{\rightarrow} inventário inicial & \textit{Identify Stakeholders}; \textit{Identify Risks}\\[3pt]
+\textbf{P2 Planejar a gestão de privacidade} & Planejamento & Inventário, objetivos, ambiente jurídico \ensuremath{\rightarrow} definir finalidade, hipótese legal a verificar, papéis, retenção e resposta a titulares \ensuremath{\rightarrow} plano de privacidade & \textit{Plan Risk Management}; \textit{Plan Communications Management}\\[3pt]
+\textbf{P3 Avaliar impactos à privacidade} & Planejamento & Operações de dados, arquitetura e riscos \ensuremath{\rightarrow} avaliar possíveis efeitos sobre pessoas e necessidade de RIPD \ensuremath{\rightarrow} registro de avaliação e, quando cabível, RIPD & \textit{Perform Risk Analysis}\\[3pt]
+\textbf{P4 Planejar respostas e controles} & Planejamento & Avaliação de impactos \ensuremath{\rightarrow} selecionar minimização, acesso, transparência, retenção e outras respostas proporcionais \ensuremath{\rightarrow} plano de controles, responsáveis e critérios de aceitação & \textit{Plan Risk Responses}\\[3pt]
+\textbf{P5 Gerir comunicação e direitos dos titulares} & Execução & Plano, canais e solicitações \ensuremath{\rightarrow} informar, receber e encaminhar pedidos conforme a regra aplicável \ensuremath{\rightarrow} registros de comunicação e resposta & \textit{Manage Stakeholder Engagement}; \textit{Manage Communications}\\[3pt]
+\textbf{P6 Implementar controles e tratar incidentes} & Execução & Plano de controles, mudanças e alertas \ensuremath{\rightarrow} implementar salvaguardas, registrar ocorrência e acionar resposta \ensuremath{\rightarrow} evidência de implementação e registro de incidentes & \textit{Implement Risk Responses}\\[3pt]
+\textbf{P7 Monitorar riscos e práticas de privacidade} & Monitoramento e controle & Métricas, registros e mudanças \ensuremath{\rightarrow} revisar eficácia, novas finalidades e riscos \ensuremath{\rightarrow} recomendações, revisões de plano e evidências & \textit{Monitor Risks}; \textit{Monitor Stakeholder Engagement}\\[3pt]
+\textbf{P8 Encerrar ou transferir o tratamento sob controle} & Encerramento & Inventário atualizado, requisitos de retenção e transição \ensuremath{\rightarrow} decidir conservação, transferência ou eliminação conforme o caso \ensuremath{\rightarrow} registro de destino e responsabilidades futuras & \textit{Close Project or Phase}\\[3pt]
+\end{longtable}
+\endgroup
+\fontetab{Elaborado pelos autores (2026).}
+
+\begin{figure}[!htbp]
+\centering
+\caption{Sequência e retorno dos oito processos propostos}\label{fig:2}
+\includegraphics[width=\linewidth]{out/Fig2_PT.pdf}
+\fontetab{Elaborado pelos autores (2026); correspondências com áreas de foco fundamentadas no PMBOK 8 e propostas pelo grupo.}
+\end{figure}
+
+As setas contínuas mostram a ordem inicial sugerida; a seta tracejada representa a necessidade de voltar ao planejamento quando a observação revela nova finalidade, tecnologia ou risco. O registro e a gestão de dados podem prosseguir na operação depois de encerrado o projeto.
+
+\textbf{P1} precisa ocorrer cedo para que o tratamento não seja descoberto apenas quando o sistema entra em produção. A identificação pode ser revisitada em qualquer área de foco quando houver novo dado, titular ou finalidade. O inventário deve distinguir dado pessoal de dado operacional sem pessoa identificável; não se presume que todo sensor processe dados pessoais. Em projetos de gêmeo digital, o inventário classifica também cada fluxo por direção e frequência (§4.5).
+
+\textbf{P2} registra a decisão de projeto sobre por que, por quem e por quanto tempo dados seriam tratados. A hipótese legal não é sinônimo de consentimento: ela deve ser determinada no contexto concreto por quem tem competência para isso. O processo integra planejamento de comunicação, compras, arquitetura e responsabilidade institucional, e incorpora a privacidade desde a concepção, prática recorrente nos estudos sobre gêmeos digitais [\refnum{dhinakaran}].
+
+\textbf{P3} avalia efeitos potenciais sobre pessoas, inclusive quando não existe vazamento. Conforme orientação da ANPD, um RIPD é recomendado especialmente quando o tratamento pode gerar alto risco e pode ser exigido pela autoridade [\refnum{anpd}]. A decisão de elaborar ou não o documento precisa ser justificada; o processo não estabelece automaticamente sua obrigatoriedade para todos os casos.
+
+\textbf{P4} transforma os riscos analisados em alternativas de desenho e operação. Exemplos são reduzir coleta, restringir acesso, separar identificadores, limitar compartilhamento, agregar dados, aplicar privacidade diferencial quando cabível [\refnum{korchenko}] e definir prazo de retenção. A escolha tem de considerar benefício, custo, viabilidade, efeitos residuais e responsabilidade por implantação.
+
+\textbf{P5} aproxima titulares e equipe sem presumir que todo titular seja usuário do produto. O projeto deve prever informação inteligível e fluxo para pedidos de acesso, correção ou outras providências cabíveis [\refnum{lgpd}, art. 18]. O atendimento efetivo depende do controlador e das regras aplicáveis; a equipe de projeto desenha e documenta o mecanismo de transição para a operação. Quando houver consentimento, a gestão do consentimento é parte do mecanismo [\refnum{shaikh}].
+
+\textbf{P6} implementa os controles aprovados e responde a ocorrências. Incidente de segurança e evento de privacidade não são conceitos idênticos [\refnum{nistpf}]; ambos podem demandar investigação e mudança. O registro de acessos e operações sustenta a auditoria [\refnum{shaikh}]. Não se deve prometer que uma medida técnica isolada garanta conformidade.
+
+\textbf{P7} verifica se as decisões continuam adequadas após mudanças de escopo, tecnologia, fornecedores ou finalidade. Pode produzir revisão da avaliação de impacto, plano e critérios de aceitação. A avaliação da eficácia precisa incluir efeitos sobre pessoas, não apenas continuidade do serviço. Auditorias e atualizações periódicas são prática recomendada na literatura [\refnum{dhinakaran}].
+
+\textbf{P8} não significa apagar todos os dados quando o projeto termina. O encerramento deve definir o destino de cada conjunto conforme obrigações de conservação, finalidade remanescente e responsabilidade operacional [\refnum{lgpd}, arts. 15 e 16]. A saída mínima é uma decisão rastreável de conservação, transferência ou eliminação, com responsáveis.
+\subsubsection{Ferramentas e técnicas e fundamentos}
+
+Os processos do PMBOK 8 são descritos por entradas, ferramentas e técnicas e saídas. A tabela completa o desenho dos processos propostos com exemplos de ferramentas e técnicas e com o fundamento de cada uma. São exemplos para o \textit{tailoring}, não prescrições.
+
+\begingroup\SingleSpacing\small
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*73/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*733/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*194/1000\relax}@{}}
+\caption{Ferramentas e técnicas e fundamentos dos processos propostos}\label{tab:t4}\\
+\hline
+\textbf{Processo} & \textbf{Ferramentas e técnicas (exemplos)} & \textbf{Fundamento}\\
+\hline
+\endfirsthead
+\hline
+\textbf{Processo} & \textbf{Ferramentas e técnicas (exemplos)} & \textbf{Fundamento}\\
+\hline
+\endhead
+\hline
+\endfoot
+\hline
+\endlastfoot
+\textbf{P1} & Mapeamento de dados e fluxos; entrevistas e oficinas com partes interessadas; análise de documentos de requisitos; classificação dos fluxos por direção (modelo, sombra, gêmeo); juízo especializado & [\refnum{lgpd}, art. 5º] (dado pessoal, titular); [\refnum{kritzinger}]; [\refnum{wang}]\\[3pt]
+\textbf{P2} & Análise de hipótese legal e de finalidade, necessidade e adequação; definição de papéis (matriz de responsabilidades); privacidade desde a concepção & [\refnum{lgpd}, arts. 6º, 7º e 11]; [\refnum{dhinakaran}]\\[3pt]
+\textbf{P3} & Relatório de impacto (RIPD); avaliação dos problemas de privacidade decorrentes do processamento; modelagem de ameaças à privacidade (por exemplo, LINDDUN); critérios de alto risco & [\refnum{lgpd}, arts. 5º, XVII, e 38]; [\refnum{anpd}]; [\refnum{nistpf}]; [\refnum{deng}]\\[3pt]
+\textbf{P4} & Minimização, agregação, pseudonimização e anonimização, controle de acesso, privacidade diferencial; seleção de respostas por benefício, custo e risco residual & [\refnum{brooks}]; [\refnum{korchenko}]; [\refnum{dhinakaran}]\\[3pt]
+\textbf{P5} & Canais de atendimento ao titular; modelos de aviso e comunicação; gestão de consentimento quando aplicável; registro de pedidos & [\refnum{lgpd}, art. 18]; [\refnum{shaikh}]\\[3pt]
+\textbf{P6} & Controles técnicos e organizacionais; registro de auditoria; plano de resposta a incidentes; comunicação de incidente & [\refnum{lgpd}, art. 48]; [\refnum{shaikh}]; [\refnum{son}]\\[3pt]
+\textbf{P7} & Auditorias periódicas; indicadores de eficácia; revisão do RIPD em mudanças; gatilhos de reavaliação & [\refnum{dhinakaran}]; [\refnum{nistpf}]\\[3pt]
+\textbf{P8} & Política de retenção e eliminação; decisão de transferência com registro; verificação de responsáveis futuros & [\refnum{lgpd}, arts. 15 e 16]; [\refnum{korchenko}], ciclo de vida dos dados\\[3pt]
+\end{longtable}
+\endgroup
+\fontetab{Elaborado pelos autores (2026), a partir das fontes indicadas na coluna Fundamento.}
+\subsection{Adaptação conforme contexto}
+
+O PMBOK 8 pede que processos e domínios sejam adaptados ao contexto [\refnum{pmi}, cap. 3 do \textit{Guide}]. Para Privacidade, as variáveis mais relevantes são volume de dados, sensibilidade, resolução (espacial e temporal), direção dos fluxos, existência de decisão automatizada e tipo de operador. A tabela gradua o esforço em três perfis.
+
+\begingroup\SingleSpacing\small
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*311/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*154/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*535/1000\relax}@{}}
+\caption{Adaptação do esforço por perfil de projeto}\label{tab:t5}\\
+\hline
+\textbf{Perfil do projeto} & \textbf{Esforço esperado} & \textbf{Exemplos de ajuste}\\
+\hline
+\endfirsthead
+\hline
+\textbf{Perfil do projeto} & \textbf{Esforço esperado} & \textbf{Exemplos de ajuste}\\
+\hline
+\endhead
+\hline
+\endfoot
+\hline
+\endlastfoot
+\textbf{A. Dados agregados, sem possibilidade razoável de identificar pessoas} & Mínimo, concentrado em demonstrar e revisar essa condição & P1 e P8 curtos; P3 limitado à análise de reidentificação por cruzamento; P7 revisa se houver novos cruzamentos\\[3pt]
+\textbf{B. Dados pessoais comuns, em escala limitada} & Moderado & Plano de privacidade enxuto (P2); avaliação de impacto registrada, RIPD só se justificada (P3); canal simples para titulares (P5)\\[3pt]
+\textbf{C. Dados sensíveis, larga escala, decisão automatizada ou gêmeo com fluxo bidirecional} & Alto & RIPD elaborado antes do tratamento (P3); controles reforçados e auditoria periódica (P4, P6, P7); revisão independente; registro explícito de decisão de prosseguir, modificar ou interromper\\[3pt]
+\end{longtable}
+\endgroup
+\fontetab{Elaborado pelos autores (2026), com base em \cit{anpd}.}
+
+A graduação em C acompanha os critérios que a ANPD indica como referência de alto risco: um critério geral, como larga escala, combinado a um específico, como dados sensíveis ou decisões automatizadas, em lista não exaustiva [\refnum{anpd}]. O responsável pelo projeto documenta o perfil escolhido e o revisa quando o contexto mudar. Essa gradação evita tanto um ritual documental desproporcional quanto a omissão de riscos relevantes.
+\subsection{Leitura sistêmica por função, estrutura, processo e contexto}
+
+O domínio pode ser caracterizado como sistema aberto. \textbf{Função:} tornar visíveis e governáveis os efeitos do tratamento de dados sobre pessoas, preservando o valor legítimo do projeto. \textbf{Estrutura:} papéis, processos P1–P8, registros, canais, critérios de decisão e interfaces com Partes Interessadas e Riscos. \textbf{Processo:} identificar, planejar, avaliar, implementar, monitorar e transferir ou encerrar o tratamento, com retorno a decisões anteriores quando o contexto mudar. \textbf{Contexto:} PMBOK 8 e sua adaptação, marco brasileiro de proteção de dados, instituições envolvidas, tecnologia e cenário de cooperativas. A dimensão Contexto impede tratar privacidade como simples configuração técnica do produto; Estrutura e Processo impedem que permaneça apenas como valor abstrato.
+
+O modelo de encadeamento Procura, Industrialização, Solução e Oferta (PISO) pode servir à leitura do valor: a procura por informação deve ser justificada antes de industrializar a coleta; a solução deve demonstrar benefício; e a oferta ao usuário ou operador precisa preservar as condições sob as quais os dados foram obtidos. Esse uso é interpretativo e não acrescenta quatro processos ao domínio.
+
+\begin{figure}[!htbp]
+\centering
+\caption{O tetraedro F/S/P/C como instrumento de leitura}\label{fig:3}
+\includegraphics[width=\linewidth]{out/Fig3_PT.pdf}
+\fontetab{Elaborado pelos autores (2026).}
+\end{figure}
+
+Os quatro vértices representam as perguntas sistêmicas de função, estrutura, processo e contexto; \textbf{Privacidade} ocupa o volume conceitual que elas delimitam. A projeção em Mermaid é um esquema de relações, não um desenho geométrico em perspectiva.
+\subsection{Gêmeos digitais: fluxo de dados e privacidade}
+
+O Digital Twin Consortium define gêmeo digital como \textquotedblleft{}uma representação virtual de entidades e processos do mundo real, sincronizada a uma frequência e fidelidade específicas\textquotedblright{} [\refnum{dtc2020}] (tradução nossa). Na classificação de Kritzinger et al. [\refnum{kritzinger}], o que distingue as réplicas digitais é a \textbf{direção do fluxo automático de dados} entre o objeto físico e o digital. Essa distinção importa para a privacidade porque cada tipo expõe as pessoas de forma diferente.
+
+\begingroup\SingleSpacing\footnotesize
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*126/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*224/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*515/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*135/1000\relax}@{}}
+\caption{Tipos de réplica digital e implicações para a privacidade}\label{tab:t6}\\
+\hline
+\textbf{Tipo de réplica} & \textbf{Fluxo de dados} & \textbf{Implicação para privacidade} & \textbf{Processos mais acionados}\\
+\hline
+\endfirsthead
+\hline
+\textbf{Tipo de réplica} & \textbf{Fluxo de dados} & \textbf{Implicação para privacidade} & \textbf{Processos mais acionados}\\
+\hline
+\endhead
+\hline
+\endfoot
+\hline
+\endlastfoot
+\textbf{Modelo digital} & Nenhum fluxo automático; atualização manual & Exposição limitada às cargas de dados feitas pela equipe; risco concentrado na origem dos dados & P1, P2, P8\\[3pt]
+\textbf{Sombra digital} & Automático, do físico para o digital & Coleta contínua sobre pessoas e ambientes; risco de vigilância e de inferência por acúmulo & P1, P3, P4, P7\\[3pt]
+\textbf{Gêmeo digital} & Automático nos dois sentidos & Além da coleta, o retorno automático pode afetar pessoas (decisões ou recomendações aplicadas ao mundo físico); exige canal de contestação e revisão humana & P3, P5, P6, P7\\[3pt]
+\end{longtable}
+\endgroup
+\fontetab{Elaborado pelos autores (2026), com base em \cit{kritzinger}.}
+
+\begin{figure}[!htbp]
+\centering
+\caption{Direção do fluxo de dados nos três tipos de réplica digital}\label{fig:4}
+\includegraphics[width=\linewidth]{out/Fig4_PT.pdf}
+\fontetab{Elaborado pelos autores (2026), com base em Kritzinger et al. [\refnum{kritzinger}].}
+\end{figure}
+
+O modelo digital não tem fluxo automático; a sombra tem fluxo do físico ao digital; o gêmeo tem fluxo nos dois sentidos.
+
+A frequência e a fidelidade da sincronização, que a própria definição do DTC destaca, ampliam a exposição. Os achados sobre identificação indireta por resolução espaço-temporal [\refnum{korchenko}] indicam que maior fidelidade tende a aumentar a possibilidade de identificar pessoas, o que justifica que P1 registre frequência e resolução, e P3 as considere. Trata-se de hipótese de trabalho a testar.
+
+O DTC também lista a privacidade entre as capacidades de confiabilidade do gêmeo digital (categoria \textit{Trustworthiness}, com a capacidade de privacidade ao lado de segurança, proteção física, confiabilidade e resiliência) e, na tabela de capacidades de agentes de IA, entre as de governança e segurança [\refnum{dtccpt}, \refnum{dtcai}]. Essas tabelas descrevem \textbf{o que o gêmeo é capaz de fazer} do ponto de vista técnico. O domínio proposto descreve \textbf{como o projeto que constrói ou opera o gêmeo planeja, decide e comprova} que essas capacidades existem e são adequadas às pessoas afetadas. Em termos práticos, P4 seleciona os controles que realizam as capacidades de privacidade e de criptografia de dados, P6 os implementa e P7 verifica seu funcionamento. A gestão do projeto de um gêmeo digital passa a incluir, assim, uma linha de decisão sobre o tratamento de dados que as tabelas de capacidades, por si, não organizam.
+\subsection{Verificação de resultados}
+
+O PMBOK 8 conclui cada domínio com orientação para manter o foco em valor [\refnum{pmi}]: para cada saída de processo deve haver um resultado de ordem superior em vista. O quadro aplica essa lógica a Privacidade.
+
+\begingroup\SingleSpacing\footnotesize
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*253/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*451/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*233/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*63/1000\relax}@{}}
+\caption{Resultados esperados e verificação}\label{tab:t7}\\
+\hline
+\textbf{Resultado esperado} & \textbf{Perguntas de verificação} & \textbf{Evidência} & \textbf{Processos}\\
+\hline
+\endfirsthead
+\hline
+\textbf{Resultado esperado} & \textbf{Perguntas de verificação} & \textbf{Evidência} & \textbf{Processos}\\
+\hline
+\endhead
+\hline
+\endfoot
+\hline
+\endlastfoot
+Titulares e fluxos de dados conhecidos & O inventário cobre categorias de titulares, fluxos, frequência e direção? Há revisão quando surge dado ou finalidade nova? & Inventário atualizado e datado & P1, P7\\[3pt]
+Finalidade e hipótese legal decididas por quem tem competência & A finalidade é específica e a hipótese legal foi determinada, sem presumir consentimento? & Plano de privacidade com responsável & P2\\[3pt]
+Riscos às pessoas avaliados e tratados & A avaliação considerou dano à pessoa, além de risco ao projeto? A decisão sobre RIPD está justificada? & Registro de avaliação; RIPD quando cabível & P3, P4\\[3pt]
+Direitos dos titulares atendíveis & Há canal inteligível, fluxo de pedidos e responsável pela resposta após a transição? & Registros de pedidos e respostas & P5\\[3pt]
+Controles implementados e eficazes & Os controles aprovados foram implementados e testados? As ocorrências foram registradas e tratadas? & Evidência de implementação; registro de incidentes e auditoria & P6, P7\\[3pt]
+Tratamento encerrado ou transferido sob controle & Cada conjunto de dados tem destino decidido, responsável e prazo? & Registro de destino e transição & P8\\[3pt]
+\end{longtable}
+\endgroup
+\fontetab{Elaborado pelos autores (2026), com base em \cit{pmi}.}
+
+\section{ADERÊNCIA ÀS CINCO ÁREAS DE FOCO}
+
+A matriz abaixo indica a área \textbf{principal} de cada processo proposto, sem proibir iterações em outras áreas. As áreas de foco são categorias de atividades, não uma sequência única para todos os projetos [\refnum{pmi}, §4.5 do \textit{Standard}].
+
+\begingroup\SingleSpacing\footnotesize
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*151/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*379/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*79/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-6\tabcolsep)*391/1000\relax}@{}}
+\caption{Aderência do domínio às cinco áreas de foco}\label{tab:t8}\\
+\hline
+\textbf{Área de foco} & \textbf{Pergunta de privacidade} & \textbf{Processos da proposta} & \textbf{Evidência de decisão}\\
+\hline
+\endfirsthead
+\hline
+\textbf{Área de foco} & \textbf{Pergunta de privacidade} & \textbf{Processos da proposta} & \textbf{Evidência de decisão}\\
+\hline
+\endhead
+\hline
+\endfoot
+\hline
+\endlastfoot
+\textbf{IN — Iniciação} & Quem pode ser afetado e que tratamento é previsto? & P1 & Inventário inicial de dados e categorias de titulares; premissas e incertezas\\[3pt]
+\textbf{PL — Planejamento} & Por que tratar os dados, quais os riscos e quais respostas são proporcionais? & P2, P3, P4 & Plano de privacidade; avaliação de impacto; critérios de controle e aceitação\\[3pt]
+\textbf{EX — Execução} & As comunicações, direitos e salvaguardas planejados funcionam na prática? & P5, P6 & Registros de implementação, solicitações e ocorrências\\[3pt]
+\textbf{MC — Monitoramento e controle} & Mudanças alteraram finalidade, exposição ou eficácia das respostas? & P7 & Indicadores, revisão de risco, decisões corretivas e trilha de auditoria\\[3pt]
+\textbf{CL — Encerramento} & Quem passa a responder pelos dados e qual será seu destino? & P8 & Registro de transição, conservação ou eliminação e responsáveis\\[3pt]
+\end{longtable}
+\endgroup
+\fontetab{Elaborado pelos autores (2026).}
+
+\textbf{Iniciação.} Identificar pessoas afetadas no termo de abertura do projeto ajuda a revelar uma externalidade que poderia ficar escondida em requisitos técnicos. O grupo não propõe avaliar definitivamente toda a licitude nessa fase: o resultado é um mapa inicial que orienta o planejamento. Se o projeto ainda não sabe quais dados coletará, essa incerteza deve constar do registro.
+
+\textbf{Planejamento.} O plano de privacidade conecta propósito do tratamento, responsáveis, riscos e controle. A análise deve distinguir risco à entrega do projeto e risco à pessoa. Uma ação pode melhorar a eficiência da operação e, ao mesmo tempo, ampliar exposição individual. A decisão exige comparação documentada entre alternativas, incluindo a de não coletar ou reduzir granularidade.
+
+\textbf{Execução.} A conformidade não decorre apenas de um texto aprovado. É preciso verificar implementação de canais, políticas de acesso, avisos e resposta a eventos. Quando a operação passa a uma cooperativa ou a outro responsável, a interface entre equipe de projeto e operação precisa estar clara. O processo P5 não transforma o gerente do projeto automaticamente em controlador ou encarregado.
+
+\textbf{Monitoramento e controle.} Mudanças de arquitetura, contratos, sensores, modelos de IA ou públicos atendidos podem criar tratamento novo sem uma alteração visível no escopo físico. Por isso, o monitoramento compara operação real, plano e efeitos observados. Uma mudança relevante deve reabrir avaliação e decisão, inclusive quando o projeto está perto do encerramento.
+
+\textbf{Encerramento.} A área de foco de encerramento exige uma transição auditável: que dados e registros ficam com a operação, sob qual justificativa, e quais devem ser eliminados ou ter sua retenção revista. Encerrar o projeto não encerra necessariamente o tratamento. A saída de P8 é a atribuição de responsabilidade e a documentação do destino dos dados.
+
+\section{ADERÊNCIA AOS SEIS PRINCÍPIOS}
+
+Esta é uma \textbf{análise de aderência} do domínio Privacidade aos seis princípios do PMBOK 8 [\refnum{pmi}, cap. 3 do \textit{Standard}]. Aderência não significa equivalência: um princípio orienta julgamento, enquanto o domínio e seus processos organizam trabalho específico.
+
+\begingroup\SingleSpacing\small
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*227/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*453/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*320/1000\relax}@{}}
+\caption{Aderência do domínio aos seis princípios}\label{tab:t9}\\
+\hline
+\textbf{Princípio do PMBOK 8} & \textbf{Como o domínio proposto o sustenta} & \textbf{Teste de aderência}\\
+\hline
+\endfirsthead
+\hline
+\textbf{Princípio do PMBOK 8} & \textbf{Como o domínio proposto o sustenta} & \textbf{Teste de aderência}\\
+\hline
+\endhead
+\hline
+\endfoot
+\hline
+\endlastfoot
+\textbf{1AHV — Adopt a Holistic View} & Segue os dados do planejamento ao encerramento, entre equipe, fornecedores, operação e pessoas afetadas. & O mapa de fluxos inclui compartilhamentos e transições entre sistemas?\\[3pt]
+\textbf{2FOV — Focus on Value} & Compara benefício do uso de dados com possíveis danos às pessoas e à confiança no serviço. & A decisão explicita benefício, finalidade e custo social da alternativa?\\[3pt]
+\textbf{3QPD — Embed Quality into Processes and Deliverables} & Inclui minimização, transparência e controles como critérios verificáveis de entregas. & Os critérios são testáveis antes da aceitação do produto?\\[3pt]
+\textbf{4BAL — Be an Accountable Leader} & Registra quem decidiu, quem implementa, quem supervisiona e como questões são escaladas. & Há responsável e evidência para cada decisão relevante?\\[3pt]
+\textbf{5SPA — Integrate Sustainability Within All Project Areas} & Considera efeitos duradouros do tratamento sobre pessoas, relações de confiança e continuidade do serviço. & O projeto avalia consequências além da entrega imediata?\\[3pt]
+\textbf{6BEC — Build an Empowered Culture} & Dá à equipe e aos afetados canais para sinalizar problemas e melhorar práticas sem ocultar falhas. & O fluxo permite contestação, aprendizado e correção?\\[3pt]
+\end{longtable}
+\endgroup
+\fontetab{Elaborado pelos autores (2026), com base em \cit{pmi}.}
+
+A relação com \textbf{5SPA} merece atenção, pois a proposta SIPA associa sustentabilidade e privacidade sem fundi-las. Um projeto ambientalmente benéfico ainda pode produzir dano informacional; tratar ambos melhora a avaliação global de valor. Os estudos sobre gêmeos digitais ambientais reforçam esse ponto: dados ambientais de alta resolução podem identificar pessoas indiretamente [\refnum{korchenko}].
+
+\section{INTERAÇÕES COM OS DOMÍNIOS EXISTENTES E COM AS DEMAIS CONCENTRAÇÕES}
+\subsection{Inclusões e alterações nos processos de Partes Interessadas e Riscos}
+
+O domínio Privacidade não substitui os treze processos existentes em Quem [\refnum{pmi}, §§2.5.2 e 2.7.2]: utiliza seus registros e acrescenta uma pergunta específica sobre tratamento de dados e efeitos sobre titulares. A tabela propõe, para cada processo, a inclusão ou alteração mínima que o torna sensível à privacidade, sem mudar seu nome nem sua finalidade geral. Todas são propostas deste trabalho.
+
+\begingroup\SingleSpacing\small
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*200/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*104/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*696/1000\relax}@{}}
+\caption{Inclusões e alterações propostas nos processos de Partes Interessadas e Riscos}\label{tab:t10}\\
+\hline
+\textbf{Processo existente} & \textbf{Tipo} & \textbf{Inclusão ou alteração proposta}\\
+\hline
+\endfirsthead
+\hline
+\textbf{Processo existente} & \textbf{Tipo} & \textbf{Inclusão ou alteração proposta}\\
+\hline
+\endhead
+\hline
+\endfoot
+\hline
+\endlastfoot
+\textbf{Identify Stakeholders} & Alteração e entrada & Estender a análise a titulares de dados que não participam do projeto; marcar no registro de partes interessadas a categoria \textquotedblleft{}titular de dados pessoais\textquotedblright{}; incluir o inventário de P1 como entrada.\\[3pt]
+\textbf{Plan Stakeholder Engagement} & Inclusão & Prever, no plano de engajamento, estratégia para titulares sem participação ativa: canal, linguagem e momento de informação.\\[3pt]
+\textbf{Plan Communications Management} & Inclusão & Incluir requisitos de comunicação sobre o tratamento (finalidade, canal de direitos) e restrições ao compartilhamento de informação com dados pessoais.\\[3pt]
+\textbf{Manage Stakeholder Engagement} & Inclusão & Registrar manifestações e pedidos de titulares como questões, encaminhadas a P5.\\[3pt]
+\textbf{Manage Communications} & Alteração & Aplicar, à armazenagem, recuperação e disposição de informação do projeto, as regras de acesso e retenção definidas em P2 e P8.\\[3pt]
+\textbf{Monitor Stakeholder Engagement} & Inclusão & Acrescentar indicador de efetividade do canal de titulares (por exemplo, pedidos recebidos e respondidos).\\[3pt]
+\textbf{Monitor Communications} & Inclusão & Verificar se a informação destinada aos titulares chega e é compreendida.\\[3pt]
+\textbf{Plan Risk Management} & Inclusão & Definir critérios de probabilidade e impacto que considerem dano às pessoas, além dos objetivos do projeto, e o nível de risco aceitável com responsável.\\[3pt]
+\textbf{Identify Risks} & Inclusão e entrada & Incluir o inventário de P1 como entrada e categorias de risco de privacidade no registro de riscos, descritas por causa, evento e consequência para o titular.\\[3pt]
+\textbf{Perform Risk Analysis} & Inclusão & Adotar escala de impacto sobre titulares e análise de cenários de dano; receber a avaliação de P3 como entrada.\\[3pt]
+\textbf{Plan Risk Responses} & Inclusão & Incluir as respostas de minimização e controle de P4 entre as opções, com aceitação de risco residual por responsável nomeado.\\[3pt]
+\textbf{Implement Risk Responses} & Inclusão & Vincular a evidência de implementação dos controles (P6) ao risco correspondente.\\[3pt]
+\textbf{Monitor Risks} & Inclusão & Reavaliar o risco residual de privacidade em mudanças de finalidade, tecnologia ou fornecedor, com gatilhos definidos.\\[3pt]
+\end{longtable}
+\endgroup
+\fontetab{Elaborado pelos autores (2026), com base em \cit{pmi}.}
+\subsection{Interfaces potenciais com as demais concentrações}
+
+Registramos à parte, como hipóteses de trabalho, as interfaces que Privacidade pode ter com os domínios das outras concentrações. \textbf{Não} as tratamos como alterações propostas a esses processos.
+
+\begingroup\SingleSpacing\small
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*182/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*450/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-4\tabcolsep)*368/1000\relax}@{}}
+\caption{Interfaces potenciais com as demais concentrações}\label{tab:t11}\\
+\hline
+\textbf{Concentração} & \textbf{Interface a avaliar} & \textbf{Decisão potencial}\\
+\hline
+\endfirsthead
+\hline
+\textbf{Concentração} & \textbf{Interface a avaliar} & \textbf{Decisão potencial}\\
+\hline
+\endhead
+\hline
+\endfoot
+\hline
+\endlastfoot
+\textbf{Consolidação / Governança} & Critérios de aprovação, atribuição de responsabilidade, escalonamento e prestação de contas & Quem aceita risco residual e com que evidência?\\[3pt]
+\textbf{Nascimento / Escopo} & Requisitos e limites do produto, inclusive necessidade de dados e transparência & É possível cumprir a função com menos identificação?\\[3pt]
+\textbf{Nascimento / Cronograma} & Momento da avaliação de impacto e da verificação dos controles & Um marco deve impedir implantação antes da análise necessária?\\[3pt]
+\textbf{Meios / Finanças} & Recursos para controle, atendimento a titulares e revisão independente & O orçamento reflete o risco e o ciclo completo dos dados?\\[3pt]
+\textbf{Meios / Recursos} & Competências, fornecedores, treinamento e operação & Quem executa e mantém controles após a transição?\\[3pt]
+\end{longtable}
+\endgroup
+\fontetab{Elaborado pelos autores (2026).}
+
+\section{CENÁRIO ILUSTRATIVO: RECICLAGEM POR COOPERATIVAS E GÊMEOS DIGITAIS}
+
+Para testar os processos propostos, consideramos um \textbf{cenário hipotético}, elaborado pelos autores: um projeto de gêmeo digital para um sistema de reciclagem por cooperativas de catadores, com um aplicativo de mobilização de moradores, triagem em galpão e destinação final de rejeitos. Nesse cenário, o aplicativo poderia coletar cadastro, localização e imagens de moradores; o gêmeo da reciclagem poderia receber, por rota, indicadores de qualidade da separação; trabalhadores do galpão poderiam ser registrados em controles de presença ou produtividade; e suportes físicos com dados seriam descartados ao final. Trata-se de ilustração, não de descrição de uma operação existente.
+
+\begin{figure}[!htbp]
+\centering
+\caption{Cenário usado como teste da extensão}\label{fig:5}
+\includegraphics[width=\linewidth]{out/Fig5_PT.pdf}
+\fontetab{Elaborado pelos autores (2026).}
+\end{figure}
+
+Setas contínuas representam movimento de materiais; a seta tracejada indica retorno de informação por rota. Em cada componente, P1–P8 fazem as mesmas perguntas: \textbf{de quem são os dados, para qual finalidade, quem os recebe e qual seu destino?} A figura é hipotética e não representa fluxo real auditado.
+
+O cenário ajuda a testar P1–P8. Na iniciação, P1 pergunta quais dados do cadastro e dos trabalhadores são indispensáveis para a finalidade do gêmeo e classifica o fluxo de indicadores por rota como retorno automático do tipo gêmeo (§4.5). No planejamento, P2 fixa papéis e condições de compartilhamento entre componentes; P3 compara riscos de inferir comportamento de domicílios ou de ranquear pessoas, e considera que a resolução por rota e por horário pode permitir identificação indireta [\refnum{korchenko}]; P4 considera agregação de indicadores e restrição de acesso. Na execução, P5 torna os canais inteligíveis e P6 verifica controles. No monitoramento, P7 detecta nova finalidade quando um modelo passa a cruzar dados antes separados. No encerramento, P8 decide sobre conservação e descarte de registros digitais e suportes físicos.
+
+Esse exemplo explica por que a concentração \textbf{Quem} é apropriada: moradores, catadores, representantes de cooperativas e outras pessoas afetadas não têm a mesma posição no projeto. A identificação de partes interessadas deve ser complementada pela análise de titulares e operações de dados. Também explica por que \textbf{Riscos} permanece interface indispensável: há incertezas técnicas e organizacionais, mas o critério de dano precisa incluir o efeito sobre as pessoas. O exemplo não prova que os oito processos sejam o único desenho possível; oferece um caso para testar cobertura e redundância.
+
+\section{LIMITES, VALIDAÇÃO E CONCLUSÃO}
+
+Este é um projeto de extensão acadêmica, não uma publicação do PMI nem uma declaração de conformidade com a LGPD. Sua evidência principal é documental. Oito processos podem ser muitos ou poucos; alguns podem ser reunidos depois de testes. O mapa das cinco áreas de foco atribui uma localização principal a cada processo, mas a prática pode exigir retorno a etapas anteriores. A observação sobre a literatura limita-se aos estudos examinados. Os demais domínios SIPA aparecem apenas no mapa de integração.
+
+Para validar a proposta, recomendamos uma matriz de revisão por três perfis: gestão de projetos, proteção de dados e operação de cooperativas. Cada perfil deve verificar se os processos têm objeto claro, entradas obtíveis, decisões reais e saídas que possam ser auditadas sem burocracia excessiva. Testes em casos com poucos dados pessoais e casos com alta granularidade ajudariam a calibrar o \textit{tailoring}. Testes em projetos de gêmeo digital com fluxo bidirecional permitiriam avaliar a hipótese sobre frequência e resolução (§4.5).
+
+Concluímos que o PMBOK 8 oferece instrumentos de gestão úteis para privacidade, mas a organização proposta pode tornar esse objeto mais explícito e contínuo. O domínio \textbf{Privacidade \ensuremath{\rightarrow} Quem} acrescenta o ciclo dos dados pessoais e a avaliação dos efeitos sobre titulares ao diálogo com \textbf{Partes Interessadas} e \textbf{Riscos}. Para projetos de gêmeos digitais, ele oferece uma linha de decisão sobre o tratamento de dados que as tabelas de capacidades técnicas não organizam. A contribuição é uma estrutura de perguntas, processos e evidências a ser avaliada, não uma promessa de conformidade automática.
+
+\section{RELATÓRIO FINAL DO TRABALHO}
+
+Seguindo o formato do \textit{Final report}, saída do processo \textit{Close Project or Phase} [\refnum{pmi}, §2.1.6.9], este item resume o desempenho do trabalho de elaboração da proposta, tomado como o projeto relatado.
+
+\begingroup\SingleSpacing\small
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*190/1000\relax}>{\raggedright\arraybackslash}p{\dimexpr(\linewidth-2\tabcolsep)*810/1000\relax}@{}}
+\caption{Relatório final do trabalho}\label{tab:t12}\\
+\hline
+\textbf{Item do relatório final} & \textbf{Situação do trabalho}\\
+\hline
+\endfirsthead
+\hline
+\textbf{Item do relatório final} & \textbf{Situação do trabalho}\\
+\hline
+\endhead
+\hline
+\endfoot
+\hline
+\endlastfoot
+\textbf{Descrição resumida} & Elaboração de uma proposta de domínio Privacidade para o PMBOK 8, na concentração Quem: diagnóstico, justificativa em quatro aspectos, oito processos com ferramentas e técnicas, inclusões e alterações nos treze processos existentes, adaptação, verificação de resultados e aderência às áreas de foco e aos princípios.\\[3pt]
+\textbf{Objetivos de escopo e evidência de conclusão} & Escopo: justificar e propor o domínio, mapear aderência às cinco áreas de foco e aos seis princípios e registrar interfaces com as demais concentrações. Critério de conclusão: seções 3 a 7 produzidas. Evidência: tabelas das seções 4 a 7. Limite: nenhum outro domínio SIPA foi desenvolvido.\\[3pt]
+\textbf{Objetivos de qualidade e verificação} & Critérios de desenvolvimento da seção 3.2 usados como critérios de aceitação. Verificação: nomes, contagens e seções do PMBOK 8 conferidos no texto da edição; mesmas estruturas e dados nas versões em português e em inglês. Sem revisão externa.\\[3pt]
+\textbf{Objetivos de custo e variações} & O trabalho não teve orçamento financeiro. O esforço da equipe não é reportado aqui.\\[3pt]
+\textbf{Validação do resultado final} & Conferência documental feita. Validação por especialistas em gestão de projetos, proteção de dados e operação de cooperativas, proposta na seção 9, ainda pendente.\\[3pt]
+\textbf{Cronograma e realização de benefícios} & Trabalho realizado em ciclo curto de elaboração, revisão e conferência, com entrega na data prevista. Os benefícios de adoção do domínio são hipóteses a testar.\\[3pt]
+\textbf{Necessidades de negócio atendidas} & A necessidade descrita na seção 3.1, gerir os efeitos do tratamento de dados pessoais ao longo do projeto, recebeu uma proposta estruturada. Seu atendimento efetivo depende de validação.\\[3pt]
+\textbf{Riscos e questões encontrados} & (i) Delimitação de escopo: optou-se por desenvolver um único domínio, Privacidade. (ii) Redundância com Partes Interessadas e Riscos: tratada pela tabela de inclusões e alterações (§7.1) e pelo critério de não duplicar. (iii) Formulação da lacuna: a hipótese inicial de ausência foi substituída por uma formulação mais precisa, após a leitura do \textit{Guide} (§2.1). (iv) Aplicação jurídica variável conforme o caso e a jurisdição: tratada com ressalvas ao longo do texto.\\[3pt]
+\end{longtable}
+\endgroup
+\fontetab{Elaborado pelos autores (2026), no formato do \textit{Final report} de \cit{pmi}.}
+
+\clearpage
+\begin{center}
+\textbf{REFERÊNCIAS}
+\end{center}
+
+\begingroup
+\SingleSpacing
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{10pt}
+
+\refitem{anpd}{ANPD — AUTORIDADE NACIONAL DE PROTEÇÃO DE DADOS. \textbf{Relatório de Impacto à Proteção de Dados Pessoais (RIPD): perguntas e respostas}. Brasília: ANPD, [s.d.]. Disponível em: \url{https://www.gov.br/anpd/pt-br/canais_atendimento/agente-de-tratamento/relatorio-de-impacto-a-protecao-de-dados-pessoais-ripd}. Acesso em: 4 nov. 2026.}
+
+\refitem{lgpd}{BRASIL. \textbf{Lei nº 13.709, de 14 de agosto de 2018}. Lei Geral de Proteção de Dados Pessoais (LGPD). Disponível em: \url{https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm}. Acesso em: 4 nov. 2026.}
+
+\refitem{brooks}{BROOKS, S.; GARCIA, M.; LEFKOVITZ, N.; LIGHTMAN, S.; NADEAU, E. \textbf{An introduction to privacy engineering and risk management in federal systems}. NISTIR 8062. Gaithersburg: National Institute of Standards and Technology, 2017. Disponível em: \url{https://csrc.nist.gov/pubs/ir/8062/final}. Acesso em: 4 nov. 2026.}
+
+\refitem{deng}{DENG, M.; WUYTS, K.; SCANDARIATO, R.; PRENEEL, B.; JOOSEN, W. A privacy threat analysis framework: supporting the elicitation and fulfillment of privacy requirements. \textbf{Requirements Engineering}, v. 16, n. 1, p. 3-32, 2011. DOI: 10.1007/s00766-010-0115-7.}
+
+\refitem{dhinakaran}{DHINAKARAN, D.; RAJA, S. E.; RAMATHILAGAM, A.; VENNILA, G.; ALAGULAKSHMI, A. Ethical and legal challenges with IoT in home digital twins. \textbf{MethodsX}, v. 14, art. 103409, 2025. DOI: 10.1016/j.mex.2025.103409.}
+
+\refitem{dtc2020}{DIGITAL TWIN CONSORTIUM (DTC). \textbf{Digital Twin Consortium defines digital twin}. [S.l.]: DTC, 2020.}
+
+\refitem{dtccpt}{DIGITAL TWIN CONSORTIUM (DTC). \textbf{Digital twins capabilities periodic table}. Versão 1.2. [S.l.]: DTC, 2025.}
+
+\refitem{dtcai}{DIGITAL TWIN CONSORTIUM (DTC). \textbf{AI agent capabilities periodic table: user guide}. Versão 1.0. [S.l.]: DTC, 2025.}
+
+\refitem{jorgensen}{JØRGENSEN, B. N.; MA, Z. G. Digital twins under EU law: a unified compliance framework across smart cities, industry, transportation, and energy systems. \textbf{Electronics}, v. 14, n. 24, art. 4881, 2025. DOI: 10.3390/electronics14244881.}
+
+\refitem{korchenko}{KORCHENKO, O.; KORCHENKO, A.; PROKOPOVYCH-TKACHENKO, D.; KARPINSKI, M.; KAZMIRCHUK, S. Multi-layered open data, differential privacy, and secure engineering: the operational framework for environmental digital twins. \textbf{Sustainability}, v. 18, n. 4, art. 1912, 2026. DOI: 10.3390/su18041912.}
+
+\refitem{kritzinger}{KRITZINGER, W.; KARNER, M.; TRAAR, G.; HENJES, J.; SIHN, W. Digital twin in manufacturing: a categorical literature review and classification. \textbf{IFAC-PapersOnLine}, v. 51, n. 11, p. 1016-1022, 2018. DOI: 10.1016/j.ifacol.2018.08.474.}
+
+\refitem{nistpf}{NIST — NATIONAL INSTITUTE OF STANDARDS AND TECHNOLOGY. \textbf{NIST Privacy Framework: a tool for improving privacy through enterprise risk management}. Versão 1.0. Gaithersburg: NIST, 2020. Disponível em: \url{https://www.nist.gov/privacy-framework}. Acesso em: 4 nov. 2026.}
+
+\refitem{pmi}{PMI — PROJECT MANAGEMENT INSTITUTE. \textbf{The Standard for Project Management and A Guide to the Project Management Body of Knowledge (PMBOK Guide)}. 8. ed. Newtown Square: PMI, 2025.}
+
+\refitem{shaikh}{SHAIKH, M. F.; HASSAN, S. H.; SHAMSI, J.; MACCARO, A.; PIAGGIO, D. Blockchain-enabled digital twin systems in healthcare: a systematic scoping review of architectural integration, privacy, governance, ethical challenges, and regulatory solutions under GDPR and HIPAA. \textbf{Frontiers in Digital Health}, v. 8, art. 1898383, 2026. DOI: 10.3389/fdgth.2026.1898383.}
+
+\refitem{son}{SON, S.; KWON, D.; LEE, J.; YU, S.; JHO, N.-S.; PARK, Y. On the design of a privacy-preserving communication scheme for cloud-based digital twin environments using blockchain. \textbf{IEEE Access}, v. 10, p. 75365-75375, 2022. DOI: 10.1109/ACCESS.2022.3191414.}
+
+\refitem{gdpr}{UNIÃO EUROPEIA. \textbf{Regulamento (UE) 2016/679 do Parlamento Europeu e do Conselho, de 27 de abril de 2016} (Regulamento Geral sobre a Proteção de Dados).}
+
+\refitem{wang}{WANG, Y.; SU, Z.; GUO, S.; DAI, M.; LUAN, T. H.; LIU, Y. A survey on digital twins: architecture, enabling technologies, security and privacy, and future prospects. \textbf{IEEE Internet of Things Journal}, v. 10, n. 17, p. 14965-14987, 2023. DOI: 10.1109/JIOT.2023.3263909.}
+
+\endgroup
+
+\end{document}

@@ -1,0 +1,87 @@
+% =============================================================================
+% P3A -- Lições aprendidas (EN)
+% Formatação: ABNT (classe abnTeX2, modo article), A4, Latin Modern, 12 pt,
+% margens 3/2/3/2 cm, espaçamento 1,5, recuo de parágrafo 1,25 cm.
+% Figuras esperadas em out/ (compiladas a partir de figuras/):
+%   Fig1..Fig5_EN.pdf
+% ARQUIVO GERADO por ferramentas/gerar_tex.py a partir de ../MD. Para mudar o
+% conteúdo, edite o Markdown e gere de novo, ou edite este .tex diretamente.
+% =============================================================================
+\documentclass[12pt,a4paper,article,oneside,brazil,english]{abntex2}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}           % Latin Modern (fonte padrão do LaTeX, com T1)
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage[expansion=false]{microtype}
+\usepackage{url}
+\Urlmuskip=0mu plus 1mu\relax
+
+% Margens ABNT: superior 3 cm, inferior 2 cm, esquerda 3 cm, direita 2 cm
+\setlrmarginsandblock{3cm}{2cm}{*}
+\setulmarginsandblock{3cm}{2cm}{*}
+\checkandfixthelayout
+
+\setlength{\parindent}{1.25cm}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{3em}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+\renewcommand{\contentsname}{CONTENTS}
+\renewcommand{\listfigurename}{LIST OF FIGURES}
+\renewcommand{\listtablename}{LIST OF TABLES}
+
+% Tabelas: sem filetes verticais (padrão IBGE adotado pela ABNT)
+\renewcommand{\arraystretch}{1.2}
+
+% Fonte abaixo de tabelas e figuras (ABNT NBR 14724)
+\newcommand{\fontetab}[1]{\par\vspace{3pt}{\small\noindent Source: #1\par}}
+
+% Citações numéricas: o número de cada referência é definido uma vez (ordem
+% alfabética da lista) e usado por \refnum{chave}, \cit{chave} e \refitem.
+\newcommand{\defref}[2]{\expandafter\gdef\csname refnum@#1\endcsname{#2}}
+\newcommand{\refnum}[1]{\csname refnum@#1\endcsname}
+\newcommand{\cit}[1]{[\refnum{#1}]}
+\newcommand{\refitem}[2]{\par\noindent\hangindent=1.2cm\hangafter=1\makebox[1.2cm][l]{[\refnum{#1}]}#2\par}
+
+
+% Integrantes do grupo (preencher; a capa usa esta macro)
+\newcommand{\integrantes}{[nomes dos integrantes do grupo]}
+
+\begin{document}
+\SingleSpacing
+\thispagestyle{plain}
+
+\begin{center}\textbf{LESSONS LEARNED}\end{center}
+
+\textbf{SIPA Privacy 2 group}
+
+\subsection*{What we learned while preparing the proposal}
+
+\textbf{1. Formulating the gap precisely changed the argument.} An initial hypothesis said that PMBOK 8 treated privacy only implicitly. Reading the guide revealed explicit mentions of data protection, the GDPR, and privacy, including in the context of artificial intelligence. The defensible formulation became more specific: among the seven official domains and 40 processes, there is no domain and set of processes dedicated to managing the effects of personal data processing on individuals. This revision avoided building the extension on an absolute absence that the text itself does not support.
+
+\textbf{2. Stakeholders and data subjects overlap, but they are not equivalent.} The Stakeholders processes help identify people and organize communication and engagement. A person may, however, have their data processed without taking part in the project or knowing it exists. The proposed domain needs to give visibility to these data subjects and to the operations on the data, preserving the interfaces with the existing processes.
+
+\textbf{3. Risk to the project does not exhaust risk to the person.} The structure of the Risk domain was useful for analysis, responses, and monitoring. The NIST Privacy Framework helped distinguish possible harms from data processing itself from cybersecurity incidents. For this reason, the proposal associates each assessment with affected people, purpose, and decision, without creating a parallel system that ignores the general risk register.
+
+\textbf{4. Proposing processes requires more than names and Focus Areas.} PMBOK 8 describes each process by inputs, tools and techniques, and outputs. Our first version had inputs and outputs, but not the techniques. Adding tools and techniques with their foundation (LGPD, NIST, literature) made the processes verifiable and showed where the proposal is still fragile.
+
+\textbf{5. A new domain is convincing only if it shows what changes in the existing domains.} At first we described only interfaces. Going through the thirteen Stakeholders and Risk processes one by one made it clear that the contribution lies in the minimal additions and changes to each of them (inputs, records, and criteria), more than in the eight new processes taken in isolation.
+
+\textbf{6. The digital twin literature changed the focus.} The studies examined address legal requirements, architectures, and technical controls. The distinction among model, shadow, and digital twin by the direction of the data flow showed that automatic return to the physical world is the point at which privacy most requires a management decision. This led us to include the direction and frequency of flows in the initial inventory. The observation holds for the studies we examined, not for the literature as a whole.
+
+\textbf{7. The scope required an explicit editorial decision.} We developed a single domain, \textbf{Privacy \ensuremath{\rightarrow} Who}, and showed Sustainability, Innovation, and Business Analysis only in the integration map. This choice keeps the contribution reviewable and should remain visible in the joint review.
+
+\textbf{8. A hypothetical scenario made the proposal testable.} A digital twin for recycling by cooperatives, with mobilization of residents, sorting, and final disposal, made it possible to ask where data subjects are identified, how sharing is limited, and who is responsible for the disposition of records. The scenario is an illustration by the authors; it was not used as proof of compliance of a real cooperative.
+
+\subsection*{What we would revise in a next version}
+
+We would test the eight processes with project, privacy, and cooperative practitioners to remove duplication and calibrate the effort required in the three context profiles. We would check whether each process has an available input, an applicable technique, an assigned decision, a useful output, and a clear interface with Stakeholders and Risk. We would test the hypothesis that greater data frequency and resolution increase the possibility of identification in digital twin projects with bidirectional flow.
+
+\textbf{Limit of this work:} the matrices and processes are a documentary academic proposal. They do not constitute an official PMI extension, a legal audit, or empirical validation.
+
+\end{document}
