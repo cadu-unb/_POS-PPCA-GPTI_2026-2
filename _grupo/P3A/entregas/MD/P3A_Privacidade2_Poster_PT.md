@@ -37,7 +37,7 @@ flowchart LR
     class P proposal
 ```
 
-*Leitura:* as quatro concentrações são uma organização adotada neste trabalho; **Privacidade** é a contribuição deste grupo à concentração **Quem**.
+*Leitura:* as quatro concentrações são a organização adotada na disciplina GPTI/PPCA; **Privacidade** é a contribuição deste grupo à concentração **Quem**.
 
 ## Figura 2 — Como o domínio percorre o projeto
 

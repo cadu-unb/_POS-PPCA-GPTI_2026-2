@@ -67,7 +67,7 @@ Table 2-1 and domain overview figures. -->
 <!-- Future composition: visual footer with four equal cards. Solid part
 of each card = official PMBOK 8 domains and number of processes. Dashed
 gray label with + sign = theme under analysis, outside PMI. Explicit header:
-"analytical grouping of this work; not an official PMI classification".
+"analytical grouping; not an official PMI classification".
 Give Who the same size as the other cards, since this synthesis covers the entire
 guide. Alt text: seven domains grouped into four concentrations,
 with four themes kept apart from the official count. -->
@@ -84,7 +84,7 @@ flowchart LR
     class A,S,I,P proposed
 ```
 
-**Reading note:** the four concentrations and the labels A, S, I, and P are an **analytical grouping of this work**; the seven domains and their 40 processes belong to PMBOK 8 [5]. *Identify Stakeholders* is in Initiating (Figure 2-32 of the *Guide*). PMBOK 8 does not mention the digital twin; hybrid approaches are frequent in practice [4, 6].
+**Reading note:** the four concentrations and the labels A, S, I, and P are an **analytical grouping adopted in the GPTI/PPCA course**; the seven domains and their 40 processes belong to PMBOK 8 [5]. *Identify Stakeholders* is in Initiating (Figure 2-32 of the *Guide*). PMBOK 8 does not mention the digital twin; hybrid approaches are frequent in practice [4, 6].
 
 **References** (numbering of the full report, in alphabetical order):
 [4] NOLL; BEECHAM. *How agile is hybrid agile?*, PROFES 2019. ·

@@ -37,7 +37,7 @@ flowchart LR
     class P proposal
 ```
 
-*Reading:* the four concentrations are an organization adopted in this work; **Privacy** is this group's contribution to the **Who** concentration.
+*Reading:* the four concentrations are the organization adopted in the GPTI/PPCA course; **Privacy** is this group's contribution to the **Who** concentration.
 
 ## Figure 2 — How the domain spans the project
 

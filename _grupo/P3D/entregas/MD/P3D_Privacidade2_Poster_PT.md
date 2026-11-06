@@ -67,7 +67,7 @@ Tabela 2-1 e figuras de visão geral dos domínios. -->
 <!-- Composição futura: rodapé visual com quatro cartões iguais. Parte sólida
 de cada cartão = domínios oficiais do PMBOK 8 e quantidade de processos. Etiqueta
 cinza tracejada com sinal + = tema em análise, fora do PMI. Cabeçalho explícito:
-"agrupamento analítico deste trabalho; não é classificação oficial do PMI".
+"agrupamento analítico; não é classificação oficial do PMI".
 Dar a Quem o mesmo tamanho dos outros cartões, pois esta síntese cobre o guia
 inteiro. Texto alternativo: sete domínios agrupados em quatro concentrações,
 com quatro temas separados da contagem oficial. -->
@@ -84,7 +84,7 @@ flowchart LR
     class A,S,I,P proposed
 ```
 
-**Aviso de leitura:** as quatro concentrações e as etiquetas A, S, I e P são **agrupamento analítico deste trabalho**; os sete domínios e seus 40 processos são do PMBOK 8 [4]. *Identify Stakeholders* está em Iniciação (Figura 2-32 do *Guide*). O PMBOK 8 não menciona gêmeo digital; abordagens híbridas são frequentes na prática [3, 5].
+**Aviso de leitura:** as quatro concentrações e as etiquetas A, S, I e P são **agrupamento analítico adotado na disciplina GPTI/PPCA**; os sete domínios e seus 40 processos são do PMBOK 8 [4]. *Identify Stakeholders* está em Iniciação (Figura 2-32 do *Guide*). O PMBOK 8 não menciona gêmeo digital; abordagens híbridas são frequentes na prática [3, 5].
 
 **Referências** (numeração do relatório completo, em ordem alfabética):
 [3] NOLL; BEECHAM. *How agile is hybrid agile?*, PROFES 2019. ·

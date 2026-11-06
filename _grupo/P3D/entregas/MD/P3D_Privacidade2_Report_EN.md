@@ -7,7 +7,7 @@
 
 ## Abstract
 
-This report synthesizes *The Standard for Project Management* and *A Guide to the Project Management Body of Knowledge*, both from the eighth edition of the PMBOK. Its aim is to explain how six principles guide decisions, five Focus Areas organize activities, and seven performance domains group 40 processes. The reading emphasizes tailoring: choosing the development approach, processes, and forms of engagement that make sense for the organization and the project, and reviewing those choices as results come in. The text covers the value delivery system, life cycles and the choice of approach, the five actions on processes, the four steps of the tailoring process, and the diagnostics in the tailoring chapter. A table relates each of the 40 processes to its domain, Focus Area, and an analytical grouping; a 7 × 5 map shows the distribution of the processes; a 6 × 7 matrix summarizes the connections between principles and domains that the *Standard* describes. Four concentrations — Consolidation, Birth, Means, and Who — are used as an **analytical grouping of this work**, without attributing them to PMI. Recent studies on hybrid approaches and an international project management standard situate the synthesis. A final table shows where PMBOK 8 already touches personal data; no new process is proposed here.
+This report synthesizes *The Standard for Project Management* and *A Guide to the Project Management Body of Knowledge*, both from the eighth edition of the PMBOK. Its aim is to explain how six principles guide decisions, five Focus Areas organize activities, and seven performance domains group 40 processes. The reading emphasizes tailoring: choosing the development approach, processes, and forms of engagement that make sense for the organization and the project, and reviewing those choices as results come in. The text covers the value delivery system, life cycles and the choice of approach, the five actions on processes, the four steps of the tailoring process, and the diagnostics in the tailoring chapter. A table relates each of the 40 processes to its domain, Focus Area, and an analytical grouping; a 7 × 5 map shows the distribution of the processes; a 6 × 7 matrix summarizes the connections between principles and domains that the *Standard* describes. Four concentrations — Consolidation, Birth, Means, and Who — are used as an **analytical grouping adopted in the GPTI/PPCA course**, without attributing them to PMI. Recent studies on hybrid approaches and an international project management standard situate the synthesis. A final table shows where PMBOK 8 already touches personal data; no new process is proposed here.
 
 **Keywords:** PMBOK 8; project management; principles; Focus Areas; performance domains; processes; tailoring; hybrid approaches.
 
@@ -23,13 +23,13 @@ PMBOK 8 brings together a *Standard*, which presents foundations for project man
 
 **Limits of the method.** The list of the 40 processes is complete to allow the count to be audited, but the report does not reproduce the book. PMBOK 8 states that the inputs and outputs in chapter 4 of the *Guide* are not intended to be comprehensive or mandatory in every project: they are common selections among many options [5, Guide §1.1]. The number of processes presented is therefore not equivalent to the number of processes to be performed in a project.
 
-**Figure 1 — Structure of the two works and analytical grouping of this work.** The *Standard* provides the value orientation, the principles, the life cycle, and the Focus Areas; the *Guide* offers the detail on the domains, the processes, and the tailoring decisions. A third, dashed frame identifies the analytical grouping into four concentrations, which does not belong to PMI. *Authors' own elaboration based on [5].*
+**Figure 1 — Structure of the two works and analytical grouping.** The *Standard* provides the value orientation, the principles, the life cycle, and the Focus Areas; the *Guide* offers the detail on the domains, the processes, and the tailoring decisions. A third, dashed frame identifies the analytical grouping into four concentrations, which does not belong to PMI. *Authors' own elaboration based on [5].*
 
 <!-- Future design: two frames of the same size, Standard and Guide, linked by
 a double arrow. In the Standard: value delivery system, six principles, life
 cycles, and five Focus Areas. In the Guide: seven domains, 40 processes, tailoring,
 inputs and outputs, tools and techniques. Apart, a third dashed gray
-frame, labeled "analytical grouping of this work (not PMI's)".
+frame, labeled "analytical grouping".
 Dark blue identifies official content. Alt text: the two parts of
 PMBOK 8 complement each other; an analytical grouping lies outside the official structure. -->
 
@@ -38,7 +38,7 @@ flowchart LR
     subgraph PMI["PMBOK 8 [5]"]
         S["STANDARD<br/>value · mindset and 6 principles<br/>life cycles · 5 Focus Areas"] <--> G["GUIDE<br/>7 domains · 40 processes · tailoring<br/>inputs and outputs · tools and techniques"]
     end
-    subgraph AN["Analytical grouping of this work (not PMI's)"]
+    subgraph AN["Analytical grouping"]
         C["4 concentrations<br/>Consolidation · Birth · Means · Who"]
     end
     G -.-> C
@@ -192,7 +192,7 @@ A performance domain is a group of related processes that are essential for the 
 
 ### 7.1 Auditable inventory of the 40 processes
 
-The table keeps the **official English names**. The Portuguese text in parentheses serves reading and is not a translation authorized by PMI. The **concentration** column carries the analytical grouping of this work (section 10), which does **not** belong to PMI. The presence of a process in the inventory does not oblige its formal execution in every project; its application depends on *tailoring* [5, Guide Table 2-1 and §§2.1–2.7].
+The table keeps the **official English names**. The Portuguese text in parentheses serves reading and is not a translation authorized by PMI. The **concentration** column carries the analytical grouping (section 10), which does **not** belong to PMI. The presence of a process in the inventory does not oblige its formal execution in every project; its application depends on *tailoring* [5, Guide Table 2-1 and §§2.1–2.7].
 
 | # | Domain | Area | Concentration | Official process — Working translation (Portuguese) |
 | ---: | --- | --- | --- | --- |
@@ -359,7 +359,7 @@ In summary, chapter 3 of the *Guide* describes tailoring as the analysis and mod
 
 ## 10. Four concentrations as an analytical grouping
 
-To present the seven domains in blocks, this report uses **four analytical concentrations**: **Consolidation** brings together Governance; **Birth** brings together Scope and Schedule; **Means** brings together Finance and Resources; **Who** brings together Stakeholders and Risk. This grouping is **not an official component of PMBOK 8**: it is a reading organization adopted in this work. The labels A, S, I, and P indicate, respectively, possible extensions in business analysis, sustainability, innovation, and privacy under analysis; they are not included in the sum of the 40 processes nor are they described here as new PMI processes.
+To present the seven domains in blocks, this report uses the **four analytical concentrations adopted in the GPTI/PPCA course**: **Consolidation** brings together Governance; **Birth** brings together Scope and Schedule; **Means** brings together Finance and Resources; **Who** brings together Stakeholders and Risk. This grouping is **not an official component of PMBOK 8**: it corresponds to the didactic organization of the course, used here as a reading reference. The labels A, S, I, and P indicate, respectively, proposed extensions in business analysis, sustainability, innovation, and privacy under analysis; they are not included in the sum of the 40 processes nor are they described here as new PMI processes.
 
 | Concentration | Domains | Processes | Extension under analysis (outside PMI) |
 | --- | --- | ---: | --- |
@@ -368,7 +368,7 @@ To present the seven domains in blocks, this report uses **four analytical conce
 | Means | Finance and Resources | 9 | I |
 | Who | Stakeholders and Risk | 13 | P |
 
-**Figure 5 — Grouping of the seven domains into four concentrations.** The numbers 9, 9, 9, and 13 add up only existing processes. Cards with dashed outlines mark extension themes and prevent them from being confused with official domains. *Source of the domains and counts: [5, Guide, Table 2-1]. Grouping and labels: analytical organization of this report.*
+**Figure 5 — Grouping of the seven domains into four concentrations.** The numbers 9, 9, 9, and 13 add up only existing processes. Cards with dashed outlines mark extension themes and prevent them from being confused with official domains. *Source of the domains and counts: [5, Guide, Table 2-1]. Grouping and labels: didactic organization of the GPTI/PPCA course.*
 
 <!-- Future design: four cards with title, domain acronyms, and total
 processes. Solid blue band for PMBOK 8 domains; small dashed
@@ -407,7 +407,7 @@ The edition does **not** define data subject, legal basis, privacy impact assess
 
 The eighth edition combines **principle-based guidance** with **technical detail** and insists on tailoring. This combination avoids two extremes: using a list of processes as a universal recipe or invoking principles without explaining how decisions will be tracked. The *Standard* offers the value delivery system, the six principles, the life cycle, the development approaches, and the five Focus Areas; the *Guide* distributes 40 processes across seven domains and describes how to tailor them. The table of 40 processes shows possibilities for action; the tailoring cycle explains why their form, intensity, and combination vary. The literature consulted converges with this view: hybrid approaches are frequent, the choice depends on context, and tailoring is the core of the topic [4, 6, 7].
 
-The four concentrations presented here are a way of reading, not a replacement for PMI's official index. The tailoring examples are hypothetical and do not demonstrate realized benefit. This synthesis likewise neither validates an extension nor measures project performance. A concrete application would need to choose indicators, responsibilities, artifacts, and review frequency, in addition to verifying the organization's and the contract's own constraints. Since PMBOK 8 does not address digital twins, a project of that nature must complement the management structure with specific technical references.
+The four concentrations adopted in the GPTI/PPCA course are a way of reading, not a replacement for PMI's official index. The tailoring examples are hypothetical and do not demonstrate realized benefit. This synthesis likewise neither validates an extension nor measures project performance. A concrete application would need to choose indicators, responsibilities, artifacts, and review frequency, in addition to verifying the organization's and the contract's own constraints. Since PMBOK 8 does not address digital twins, a project of that nature must complement the management structure with specific technical references.
 
 <!-- AVISO-IA:INICIO (subseção final; apagar tudo entre os marcadores a remove) -->
 ### 12.1 Use of artificial intelligence
@@ -433,12 +433,12 @@ Following the format of the *Final report*, an output of the *Close Project or P
 | --- | --- |
 | **Summary description** | Preparation of a synthesis of the PMBOK 8 *Standard* and *Guide*: structure of the edition, value delivery system, six principles, life cycles and approaches, five Focus Areas, seven domains and 40 processes, tailoring, analytical grouping into concentrations, and points of contact with personal data. |
 | **Scope objectives and evidence of completion** | Scope: cover the PMBOK 8 elements above, with an emphasis on *tailoring*. Completion criterion: sections 2 to 11 produced. Evidence: master table of the 40 processes, 7 × 5 map, 6 × 7 matrix, tailoring cycle, and diagnostics table. Limit: the report does not reproduce chapters 4 and 5 of the *Guide*, which are reference catalogs. |
-| **Quality objectives and verification** | Names and counts of the 40 processes checked in sections 2.1 to 2.7, in Table 2-1, and in the domain overview figures of the *Guide*; the 42 principle-domain connections checked in sections 3.3.3 to 3.8.3 of the *Standard*; same structures and data in the Portuguese and English versions. No external review. |
+| **Quality objectives and verification** | The document presents the names and counts of the 40 processes, with reference to sections 2.1 to 2.7, Table 2-1, and the domain overview figures of the *Guide*, as well as the 42 principle-domain connections associated with sections 3.3.3 to 3.8.3 of the *Standard*. The final check of these correspondences and of the equivalence between the Portuguese and English versions must be confirmed by the authors. There is no record of external review. |
 | **Cost objectives and variances** | The work had no financial budget. The team's effort is not reported here. |
-| **Validation of the final result** | Documentary check done. Validation by project management experts still pending. |
+| **Validation of the final result** | Documentary synthesis produced; final collective review and confirmation of the documentary checks still to be recorded. Validation by project management experts still pending. |
 | **Schedule and realization of benefits** | Work carried out in a short cycle of preparation, review, and checking, with delivery scheduled for 6 November 2026. The benefits of applying the synthesis are hypotheses to be tested. |
 | **Business needs met** | The need for an adaptable PMBOK 8 synthesis as a basis for project management guides received a structured response; its effectiveness depends on validation. |
-| **Risks and issues encountered** | (i) Confusion between official structure and analytical grouping: addressed with separate labels and figures. (ii) Translation and oversimplification: addressed with official English names and caveats. (iii) Restricted-access source: addressed by citing sections, tables, and figures. (iv) Absence of the digital twin in PMBOK 8: recorded in section 2 and in section 11. |
+| **Risks and issues encountered** | (i) Confusion between official structure and analytical grouping: addressed with separate labels and figures. (ii) Translation and oversimplification: addressed with official English names and caveats. (iii) Restricted-access source: addressed by citing sections, tables, and figures. (iv) Risk of keeping claims or references without final verification: mitigation proposed by checking the sources, the counts, and the PT/EN equivalence before submission. |
 
 ## References
 

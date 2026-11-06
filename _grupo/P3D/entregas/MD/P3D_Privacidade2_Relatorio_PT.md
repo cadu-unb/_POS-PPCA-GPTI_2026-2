@@ -7,7 +7,7 @@
 
 ## Resumo
 
-Este relatório sintetiza *The Standard for Project Management* e *A Guide to the Project Management Body of Knowledge*, ambos da oitava edição do PMBOK. O objetivo é explicar como seis princípios orientam decisões, cinco áreas de foco organizam atividades e sete domínios de desempenho reúnem 40 processos. A leitura enfatiza a adaptação sob medida (*tailoring*): escolher abordagem de desenvolvimento, processos e formas de engajamento que façam sentido para a organização e o projeto, revendo as escolhas conforme os resultados. O texto cobre o sistema de entrega de valor, os ciclos de vida e a escolha da abordagem, as cinco ações sobre processos, os quatro passos do processo de adaptação e os diagnósticos do capítulo de adaptação. Uma tabela relaciona cada um dos 40 processos ao domínio, à área de foco e a um agrupamento analítico; um mapa 7 × 5 mostra a distribuição dos processos; uma matriz 6 × 7 resume as conexões entre princípios e domínios que o *Standard* descreve. Quatro concentrações — Consolidação, Nascimento, Meios e Quem — são usadas como **agrupamento analítico deste trabalho**, sem atribuí-las ao PMI. Estudos recentes sobre abordagens híbridas e uma norma internacional de gestão de projetos situam a síntese. Um quadro final mostra onde o PMBOK 8 já toca dados pessoais; não se propõe aqui um novo processo.
+Este relatório sintetiza *The Standard for Project Management* e *A Guide to the Project Management Body of Knowledge*, ambos da oitava edição do PMBOK. O objetivo é explicar como seis princípios orientam decisões, cinco áreas de foco organizam atividades e sete domínios de desempenho reúnem 40 processos. A leitura enfatiza a adaptação sob medida (*tailoring*): escolher abordagem de desenvolvimento, processos e formas de engajamento que façam sentido para a organização e o projeto, revendo as escolhas conforme os resultados. O texto cobre o sistema de entrega de valor, os ciclos de vida e a escolha da abordagem, as cinco ações sobre processos, os quatro passos do processo de adaptação e os diagnósticos do capítulo de adaptação. Uma tabela relaciona cada um dos 40 processos ao domínio, à área de foco e a um agrupamento analítico; um mapa 7 × 5 mostra a distribuição dos processos; uma matriz 6 × 7 resume as conexões entre princípios e domínios que o *Standard* descreve. Quatro concentrações — Consolidação, Nascimento, Meios e Quem — são usadas como **agrupamento analítico adotado na disciplina GPTI/PPCA**, sem atribuí-las ao PMI. Estudos recentes sobre abordagens híbridas e uma norma internacional de gestão de projetos situam a síntese. Um quadro final mostra onde o PMBOK 8 já toca dados pessoais; não se propõe aqui um novo processo.
 
 **Palavras-chave:** PMBOK 8; gerenciamento de projetos; princípios; áreas de foco; domínios de desempenho; processos; adaptação sob medida; abordagens híbridas.
 
@@ -23,13 +23,13 @@ O PMBOK 8 reúne um *Standard*, que apresenta fundamentos para a gestão de proj
 
 **Limites do método.** A lista dos 40 processos é completa para permitir auditoria da contagem, mas o relatório não reproduz o livro. O PMBOK 8 afirma que as entradas e saídas do capítulo 4 do *Guide* não pretendem ser abrangentes nem obrigatórias em qualquer projeto: são seleções comuns entre muitas opções [4, *Guide* §1.1]. O número de processos apresentados não equivale, portanto, ao número de processos a executar em um projeto.
 
-**Figura 1 — Estrutura das duas obras e agrupamento analítico deste trabalho.** O *Standard* fornece a orientação de valor, os princípios, o ciclo de vida e as áreas de foco; o *Guide* oferece o detalhamento dos domínios, dos processos e das decisões de adaptação. Uma terceira moldura, tracejada, identifica o agrupamento analítico em quatro concentrações, que não pertence ao PMI. *Elaboração própria com base em [4].*
+**Figura 1 — Estrutura das duas obras e agrupamento analítico.** O *Standard* fornece a orientação de valor, os princípios, o ciclo de vida e as áreas de foco; o *Guide* oferece o detalhamento dos domínios, dos processos e das decisões de adaptação. Uma terceira moldura, tracejada, identifica o agrupamento analítico em quatro concentrações, que não pertence ao PMI. *Elaboração própria com base em [4].*
 
 <!-- Desenho futuro: duas molduras de mesmo tamanho, Standard e Guide, ligadas por
 seta dupla. No Standard: sistema de entrega de valor, seis princípios, ciclos de
 vida e cinco áreas de foco. No Guide: sete domínios, 40 processos, adaptação,
 entradas e saídas, ferramentas e técnicas. À parte, uma terceira moldura
-tracejada, cinza, rotulada "agrupamento analítico deste trabalho (não é do PMI)".
+tracejada, cinza, rotulada "agrupamento analítico".
 Azul escuro identifica conteúdo oficial. Texto alternativo: as duas partes do
 PMBOK 8 se complementam; um agrupamento analítico fica fora da estrutura oficial. -->
 
@@ -38,7 +38,7 @@ flowchart LR
     subgraph PMI["PMBOK 8 [4]"]
         S["STANDARD<br/>valor · mindset e 6 princípios<br/>ciclos de vida · 5 áreas de foco"] <--> G["GUIDE<br/>7 domínios · 40 processos · adaptação<br/>entradas e saídas · ferramentas e técnicas"]
     end
-    subgraph AN["Agrupamento analítico deste trabalho (não é do PMI)"]
+    subgraph AN["Agrupamento analítico"]
         C["4 concentrações<br/>Consolidação · Nascimento · Meios · Quem"]
     end
     G -.-> C
@@ -192,7 +192,7 @@ Um domínio de desempenho é um grupo de processos relacionados e essenciais par
 
 ### 7.1 Inventário auditável dos 40 processos
 
-A tabela mantém os **nomes oficiais em inglês**. A coluna em português serve à leitura e não é tradução autorizada pelo PMI. A coluna **concentração** traz o agrupamento analítico deste trabalho (seção 10), que **não** pertence ao PMI. A presença de um processo no inventário não obriga sua execução formal em todos os projetos; sua aplicação depende de *tailoring* [4, *Guide* Tabela 2-1 e §§2.1–2.7].
+A tabela mantém os **nomes oficiais em inglês**. A coluna em português serve à leitura e não é tradução autorizada pelo PMI. A coluna **concentração** traz o agrupamento analítico (seção 10), que **não** pertence ao PMI. A presença de um processo no inventário não obriga sua execução formal em todos os projetos; sua aplicação depende de *tailoring* [4, *Guide* Tabela 2-1 e §§2.1–2.7].
 
 | # | Domínio | Área | Concentração | Processo oficial — tradução de trabalho |
 | ---: | --- | --- | --- | --- |
@@ -359,7 +359,7 @@ Em síntese, o capítulo 3 do *Guide* descreve a adaptação como análise e mod
 
 ## 10. Quatro concentrações como agrupamento analítico
 
-Para apresentar os sete domínios em blocos, este relatório usa **quatro concentrações analíticas**: **Consolidação** reúne Governança; **Nascimento** reúne Escopo e Cronograma; **Meios** reúne Finanças e Recursos; **Quem** reúne Partes Interessadas e Riscos. Esse agrupamento **não é um componente oficial do PMBOK 8**: é uma organização de leitura adotada neste trabalho. Os rótulos A, S, I e P indicam, respectivamente, possíveis extensões em análise de negócios, sustentabilidade, inovação e privacidade; não entram na soma dos 40 processos nem são descritos aqui como novos processos do PMI.
+Para apresentar os sete domínios em blocos, este relatório utiliza as **quatro concentrações analíticas adotadas na disciplina GPTI/PPCA**: **Consolidação** reúne Governança; **Nascimento** reúne Escopo e Cronograma; **Meios** reúne Finanças e Recursos; **Quem** reúne Partes Interessadas e Riscos. Esse agrupamento **não é um componente oficial do PMBOK 8**: corresponde à organização didática da disciplina, utilizada aqui como referência de leitura. Os rótulos A, S, I e P indicam, respectivamente, propostas de extensão em análise de negócios, sustentabilidade, inovação e privacidade; não entram na soma dos 40 processos nem são descritos aqui como novos processos do PMI.
 
 | Concentração | Domínios | Processos | Extensão em análise (fora do PMI) |
 | --- | --- | ---: | --- |
@@ -368,7 +368,7 @@ Para apresentar os sete domínios em blocos, este relatório usa **quatro concen
 | Meios | Finanças e Recursos | 9 | I |
 | Quem | Partes Interessadas e Riscos | 13 | P |
 
-**Figura 5 — Agrupamento dos sete domínios em quatro concentrações.** Os números 9, 9, 9 e 13 somam apenas processos existentes. Cartões de contorno tracejado marcam temas de extensão e impedem que sejam confundidos com domínios oficiais. *Fonte dos domínios e contagens: [4, Guide, Tabela 2-1]. Agrupamento e rótulos: organização analítica deste relatório.*
+**Figura 5 — Agrupamento dos sete domínios em quatro concentrações.** Os números 9, 9, 9 e 13 somam apenas processos existentes. Cartões de contorno tracejado marcam temas de extensão e impedem que sejam confundidos com domínios oficiais. *Fonte dos domínios e contagens: [4, Guide, Tabela 2-1]. Agrupamento e rótulos: organização didática da disciplina GPTI/PPCA.*
 
 <!-- Desenho futuro: quatro cartões com título, siglas dos domínios e total de
 processos. Faixa azul sólida para domínios PMBOK 8; pequeno cartão cinza
@@ -407,7 +407,7 @@ A edição **não** define titular de dados, base legal, avaliação de impacto 
 
 A oitava edição combina **orientação por princípios** com **detalhamento técnico** e insiste na adaptação. Essa combinação evita dois extremos: usar uma lista de processos como receita universal ou invocar princípios sem explicar como as decisões serão acompanhadas. O *Standard* oferece o sistema de entrega de valor, os seis princípios, o ciclo de vida, as abordagens de desenvolvimento e as cinco áreas de foco; o *Guide* distribui 40 processos em sete domínios e descreve como adaptá-los. A tabela de 40 processos mostra possibilidades de ação; o ciclo de adaptação explica por que sua forma, intensidade e combinação variam. A literatura consultada converge com essa visão: abordagens híbridas são frequentes, a escolha depende do contexto e a adaptação é o núcleo do tema [3, 5, 6].
 
-As quatro concentrações apresentadas aqui são um modo de leitura, não substituem o índice oficial do PMI. Os exemplos de adaptação são hipotéticos e não demonstram benefício realizado. Esta síntese tampouco valida uma extensão ou mede desempenho de projeto. Uma aplicação concreta precisaria escolher indicadores, responsabilidades, artefatos e frequência de revisão, além de verificar restrições próprias da organização e do contrato. Como o PMBOK 8 não trata de gêmeos digitais, um projeto dessa natureza deve completar a estrutura de gestão com referências técnicas específicas.
+As quatro concentrações adotadas na disciplina GPTI/PPCA são um modo de leitura, não substituem o índice oficial do PMI. Os exemplos de adaptação são hipotéticos e não demonstram benefício realizado. Esta síntese tampouco valida uma extensão ou mede desempenho de projeto. Uma aplicação concreta precisaria escolher indicadores, responsabilidades, artefatos e frequência de revisão, além de verificar restrições próprias da organização e do contrato. Como o PMBOK 8 não trata de gêmeos digitais, um projeto dessa natureza deve completar a estrutura de gestão com referências técnicas específicas.
 
 <!-- AVISO-IA:INICIO (subseção final; apagar tudo entre os marcadores a remove) -->
 ### 12.1 Uso de inteligência artificial
@@ -433,12 +433,12 @@ Seguindo o formato do *Final report*, saída do processo *Close Project or Phase
 | --- | --- |
 | **Descrição resumida** | Elaboração de uma síntese do *Standard* e do *Guide* do PMBOK 8: estrutura da edição, sistema de entrega de valor, seis princípios, ciclos de vida e abordagens, cinco áreas de foco, sete domínios e 40 processos, adaptação sob medida, agrupamento analítico em concentrações e pontos de contato com dados pessoais. |
 | **Objetivos de escopo e evidência de conclusão** | Escopo: cobrir os elementos do PMBOK 8 acima, com ênfase em *tailoring*. Critério de conclusão: seções 2 a 11 produzidas. Evidência: tabela-mestra dos 40 processos, mapa 7 × 5, matriz 6 × 7, ciclo de adaptação e quadro de diagnósticos. Limite: o relatório não reproduz os capítulos 4 e 5 do *Guide*, que são catálogos de consulta. |
-| **Objetivos de qualidade e verificação** | Nomes e contagens dos 40 processos conferidos nas seções 2.1 a 2.7, na Tabela 2-1 e nas figuras de visão geral dos domínios do *Guide*; as 42 conexões princípio-domínio conferidas nas seções 3.3.3 a 3.8.3 do *Standard*; mesmas estruturas e dados nas versões em português e em inglês. Sem revisão externa. |
+| **Objetivos de qualidade e verificação** | O documento apresenta os nomes e as contagens dos 40 processos, com indicação das seções 2.1 a 2.7, da Tabela 2-1 e das figuras de visão geral dos domínios do *Guide*, além das 42 conexões princípio-domínio associadas às seções 3.3.3 a 3.8.3 do *Standard*. A conferência final dessas correspondências e da equivalência entre as versões em português e em inglês deve ser confirmada pelos autores. Não há registro de revisão externa. |
 | **Objetivos de custo e variações** | O trabalho não teve orçamento financeiro. O esforço da equipe não é reportado aqui. |
-| **Validação do resultado final** | Conferência documental feita. Validação por especialistas em gestão de projetos, ainda pendente. |
+| **Validação do resultado final** | Síntese documental produzida; revisão final coletiva e confirmação das verificações documentais ainda a registrar. Validação por especialistas em gestão de projetos, ainda pendente. |
 | **Cronograma e realização de benefícios** | Trabalho realizado em ciclo curto de elaboração, revisão e conferência, com entrega prevista para 06/11/2026. Os benefícios de aplicação da síntese são hipóteses a testar. |
 | **Necessidades de negócio atendidas** | A necessidade de uma síntese adaptável do PMBOK 8 como base para guias de gestão de projetos recebeu uma resposta estruturada; sua efetividade depende de validação. |
-| **Riscos e questões encontrados** | (i) Confusão entre estrutura oficial e agrupamento analítico: tratada com rótulos e figuras separadas. (ii) Tradução e simplificação excessiva: tratada com nomes oficiais em inglês e ressalvas. (iii) Fonte de acesso restrito: tratada citando seções, tabelas e figuras. (iv) Ausência de gêmeo digital no PMBOK 8: registrada na seção 2 e na seção 11. |
+| **Riscos e questões encontrados** | (i) Confusão entre estrutura oficial e agrupamento analítico: tratada com rótulos e figuras separadas. (ii) Tradução e simplificação excessiva: tratada com nomes oficiais em inglês e ressalvas. (iii) Fonte de acesso restrito: tratada citando seções, tabelas e figuras. (iv) Risco de manter alegações ou referências sem verificação final: mitigação proposta por conferência das fontes, das contagens e da equivalência PT/EN antes da submissão. |
 
 ## Referências
 
